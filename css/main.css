@@ -4,7 +4,7 @@
 	border: 0;
 	outline: 0;
 	font-family: 'Varela', sans-serif;
-  font-family: 'Lato', sans-serif;
+	font-family: 'Lato', sans-serif;
 }
 
 body {
@@ -22,8 +22,8 @@ body {
 	-moz-box-sizing: border-box;
 	box-shadow: 0 0.1rem 0.3rem #4A3D34;
 	background: #403329;
-  position: fixed;
-  top: 0;
+	position: fixed;
+	top: 0;
 
 }
 
@@ -65,7 +65,11 @@ body {
 	padding-right: 30em;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
-  padding-bottom: 2em;
+	padding-bottom: 2em;
+}
+
+.main_left > h1:first-child {
+	margin-top: 0;
 }
 
 .main_right {
@@ -81,7 +85,7 @@ body {
 	top: 6em;
 	right: 2em;
 
-  position: fixed;
+	position: fixed;
 }
 
 
@@ -94,5 +98,26 @@ h1 {
 p {
 	text-align: justify;
 	margin: 0.2em 0;
-  line-height: 1.3em;
+	margin-bottom: 0.6em;
+	line-height: 1.3em;
+}
+
+
+.cont a {
+	color: rgb(38, 151, 222);
+	text-decoration: none;
+}
+
+.cont a:hover {
+	color: rgb(72, 174, 239);
+	text-decoration: underline;
+}
+
+.highlight {
+	padding: 0.5em;
+	font-size: 1.1em;
+}
+
+.highlight * {
+	font-family: monospace;
 }
