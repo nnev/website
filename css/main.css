@@ -1,160 +1,98 @@
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
-
-/* Global Reset */
 * {
-  margin: 0;
-  padding: 0;
+	margin: 0;
+	padding: 0
+	border: 0;
+	outline: 0;
+	font-family: 'Varela', sans-serif;
+  font-family: 'Lato', sans-serif;
 }
-
-html, body { height: 100%; }
 
 body {
-  background-color: #FFF;
-  font: 13.34px Helvetica, Arial, sans-serif;
-  font-size: small;
-  text-align: center;
+	/* bg from http://subtlepatterns.com/ */
+	background: url('/img/bg.png');
 }
 
-h1, h2, h3, h4, h5, h6 {
-  font-size: 100%; }
+.menu {
+	border-top: 0.2rem solid #4A3D34;
+	width: 100%;
+	height: 4.2rem;
+	padding: 0 2rem;
+	color: #fff;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-shadow: 0 0.1rem 0.3rem #4A3D34;
+	background: #403329;
+  position: fixed;
+  top: 0;
 
-h1 { margin-bottom: 1em; }
-p { margin: 1em 0; }
-
-a         { color: #00a; }
-a:hover   { color: #000; }
-a:visited { color: #a0a; }
-
-/*****************************************************************************/
-/*
-/* Home
-/*
-/*****************************************************************************/
-ul.posts {
-  list-style-type: none;
-  margin-bottom: 2em;
 }
 
-ul.posts li {
-  line-height: 1.75em;
+.menu a {
+	display: inline-block;
+
+	padding:0rem 1rem;
+	margin-top: -0.2rem;
+	border-top: 0.2rem solid transparent;
+
+	color: #fff;
+	text-decoration: none;
+	font-size: 1.2em;
+
+	height: 4rem;
+	line-height: 4rem;
+	vertical-align: middle;
+
 }
 
-ul.posts span {
-  color: #aaa;
-  font-family: Monaco, "Courier New", monospace;
-  font-size: 80%;
+.menu a:hover {
+	background: #4A3D34;
 }
 
-/*****************************************************************************/
-/*
-/* Site
-/*
-/*****************************************************************************/
-
-.site {
-  font-size: 115%;
-  text-align: justify;
-  width: 42em;
-  margin: 3em auto 2em;
-  line-height: 1.5em;
+.menu a:active, .menu a.active {
+	border-top: 0.2rem solid #E12617;
 }
 
-.site .header a {
-  font-weight: bold;
-  text-decoration: none;
+.cont {
+	margin: 0 2em;
+	margin-top: 6.3em;
 }
 
-.site .header h1.title {
-  display: inline-block;
-  margin-bottom: 2em;
+.main_left {
+	width: 100%;
+	display: block;
+	float:left;
+	vertical-align: top;
+	padding-right: 30em;
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+  padding-bottom: 2em;
 }
 
-.site .header h1.title a {
-  color: #a00;
+.main_right {
+	width: 25em;
+	float: right;
+	display: block;
+
+	background: url(/img/noname.svg) top center no-repeat;
+	background-size: 22em;
+	padding-top: 8em;
+
+	position: absolute;
+	top: 6em;
+	right: 2em;
+
+  position: fixed;
 }
 
-.site .header h1.title a:hover {
-  color: #000;
+
+h1 {
+	font-size: 1.7em;
+	margin-top: 1em;
+	margin-bottom: 0.3em;
 }
 
-.site .header a.extra {
-  color: #aaa;
-  margin-left: 1em;
-}
-
-.site .header a.extra:hover {
-  color: #000;
-}
-
-.site .meta {
-  color: #aaa;
-}
-
-.site .footer {
-  font-size: 80%;
-  color: #666;
-  border-top: 4px solid #eee;
-  margin-top: 2em;
-  overflow: hidden;
-}
-
-.site .footer .contact {
-  float: left;
-  margin-right: 3em;
-}
-
-.site .footer .contact a {
-  color: #8085C1;
-}
-
-.site .footer .rss {
-  margin-top: 1.1em;
-  margin-right: -.2em;
-  float: right;
-}
-
-.site .footer .rss img {
-  border: 0;
-}
-
-/*****************************************************************************/
-/*
-/* Posts
-/*
-/*****************************************************************************/
-
-/* standard */
-.post pre {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .4em;
-}
-
-.post ul, .post ol {
-  margin-left: 1.35em;
-}
-
-.post code {
-  border: 1px solid #ddd;
-  background-color: #eef;
-  padding: 0 .2em;
-}
-
-.post pre code {
-  border: none;
-}
-
-/* terminal */
-.post pre.terminal {
-  border: 1px solid #000;
-  background-color: #333;
-  color: #FFF;
-}
-
-.post pre.terminal code {
-  background-color: #333;
+p {
+	text-align: justify;
+	margin: 0.2em 0;
+  line-height: 1.3em;
 }
