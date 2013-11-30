@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-		<title>{{ page.title }}</title>
+		<title>{{ page.title }} – NoName e.V. Heidelberg</title>
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="/css/syntax.css">
 		<link rel="stylesheet" href="/css/main.css">
@@ -13,14 +13,12 @@
 
 		<div class="site">
 			<div class="menu">
-				<a href="/">tl;dr</a>
-				<a href="howtotreff.html">Treff</a>
-				<a href="chaotische_viertelstunde.html">c¼h</a>
-				<a href="verein.html">Verein</a>
-				<a href="kontakt.html">Kontakt</a>
-				<a href="/">Wiki</a>
-
-
+				<a {% if page.url == "/index.html"                    %} class="active" {% endif %} href="/index.html">tl;dr</a>
+				<a {% if page.url == "/howtotreff.html"               %} class="active" {% endif %} href="/howtotreff.html">Treff</a>
+				<a {% if page.url == "/chaotische_viertelstunde.html" %} class="active" {% endif %} href="/chaotische_viertelstunde.html">c¼h</a>
+				<a {% if page.url == "/verein.html"                   %} class="active" {% endif %} href="/verein.html">Verein</a>
+				<a {% if page.url == "/kontakt.html"                  %} class="active" {% endif %} href="/kontakt.html">Kontakt</a>
+				<a href="/mediawikifun">Wiki</a>
 			</div>
 
 			<div class="cont">

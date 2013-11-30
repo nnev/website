@@ -50,11 +50,12 @@ body {
 
 .menu a:active, .menu a.active {
 	border-top: 0.2rem solid #E12617;
+	background: #4A3D34;
 }
 
 .cont {
-  margin-right: 2rem;
-  margin-left: 4rem;
+	margin-right: 2rem;
+	margin-left: 4rem;
 	margin-top: 6.3rem;
 }
 
