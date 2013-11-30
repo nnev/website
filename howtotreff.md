@@ -10,7 +10,7 @@ unterhalten. In bestehende Diskussionen darf natürlich jeder einsteigen,
 und falls momentan keine stattfindet, sind „was machst du da gerade?“ oder
 „wofür interessierst du dich sonst so?“ gute Eisbrecher.
 
-Jedem Treff gemeinsam ist sonst ein kurzer Vortrag um 20 Uhr, die so genannte
+Jedem Treff gemeinsam ist ein kurzer Vortrag um 20 Uhr, die so genannte
 [Chaotische Viertelstunde](chaotische_viertelstunde). Hier erzählen Treffler
 kurz von einem Projekt, einem Hobby, einer Sprache oder sonst irgendeinem
 Thema, welches sie interessant finden. Die einzige Anforderung ist, dass der
