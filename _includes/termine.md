@@ -1,24 +1,30 @@
 {% for termin in page.termine %}
 <p>
-	Datum: {{ termin.date }}<br>
+	<b>Datum: {{ termin.date }}</b><br>
 	{% if termin.stammtisch %}
-	Stammtisch</br>
-	{% for st in site.pages %}
-		{% unless st.layout == "stammtisch" %}
-			{% continue %}
+		Stammtisch</br>
+		{% for st in site.pages %}
+			{% unless st.layout == "stammtisch" %}
+				{% continue %}
+			{% endunless %}
+			{% unless st.name == termin.location %}
+				{% continue %}
+			{% endunless %}
+			{% assign done = true %}
+			Location: <a href="{{ st.link }}">{{ termin.location }}</a>
+		{% endfor %}
+		{% unless done %}
+			Location: <a href="stammtisch.html">{{ termin.location }}</a>
 		{% endunless %}
-		{% unless st.name == termin.location %}
-			{% continue %}
-		{% endunless %}
-		{% assign done = true %}
-		Location: <a href="{{ st.link }}">{{ termin.location }}</a>
-	{% endfor %}
-	{% unless done %}
-		Location: {{ termin.location }}
-	{% endunless %}
 	{% else %}
-	<a href="anfahrt.html">Treff</a><br>
-	c¼h: {{ termin.topic }}
+		Chaos-Treff (<a href="anfahrt.html">Anfahrt?</a>)<br>
+		c¼h:
+		{% if termin.topic %}
+			<a href="chaotische_viertelstunde.html#c14h_{{termin.c14h_id}}">{{ termin.topic }}</a>
+		{% else %}
+			noch keine ◉︵◉.<br/>
+			<a href="edit_c14.html">neue c¼h eintragen?</a>
+		{% endif %}
 	{% endif %}
 </p>
 {% endfor %}
