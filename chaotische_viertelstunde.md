@@ -27,7 +27,7 @@ Interessenten gibt — <a href="edit_c14.html">trag deinen Vortrag einfach ein</
 		<th><a href="edit_c14.html?id={{ vortrag.id }}">edit</a></th>
 	</tr>
 	<tr class="space">
-		<td colspan="3">{{ vortrag.abstract }}</td>
+		<td colspan="3">{{ vortrag.abstract | newline_to_br }}</td>
 	</tr>
 
 {% endfor %}
