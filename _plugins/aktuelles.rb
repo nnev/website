@@ -26,15 +26,22 @@ module Jekyll
 				termine << tuple
 			end
 
-			res = conn.exec('SELECT * FROM vortraege ORDER BY date')
-			vortraege = []
+			res = conn.exec('SELECT * FROM vortraege WHERE date IS NULL OR date >= CURRENT_DATE ORDER BY date')
+			vortraege_zukunft = []
 			res.each do |tuple|
-				vortraege << tuple
+				vortraege_zukunft << tuple
+			end
+
+			res = conn.exec('SELECT * FROM vortraege WHERE date < CURRENT_DATE ORDER BY date')
+			vortraege_vergangenheit = []
+			res.each do |tuple|
+				vortraege_vergangenheit << tuple
 			end
 
 			site.pages.each do |page|
 				page.data['termine'] = termine
-				page.data['vortraege'] = vortraege
+				page.data['vortraege_zukunft'] = vortraege_zukunft
+				page.data['vortraege_vergangenheit'] = vortraege_vergangenheit
 			end
 		end
 	end

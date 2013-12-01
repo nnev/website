@@ -19,28 +19,10 @@ Interessenten gibt — <a href="edit_c14.html">trag deinen Vortrag einfach ein</
 
 # Die nächsten Vorträge
 
-<table>
-{% for vortrag in page.vortraege %}
-	<tr>
-		<th><a id="c14h_{{vortrag.id}}" class="anchorhack"></a>{{ vortrag.date }}</th>
-		<th colspan="2">{{ vortrag.topic }}</th>
-	</tr>
-	<tr><td></td><td class="dim" colspan="2">von {{ vortrag.speaker }}</td></tr>
-	<tr>
-		<td></td>
-		<td class="just" colspan="2">{{ vortrag.abstract | newline_to_br }}</td>
-	</tr>
-	<tr class="space">
-		<td></td>
-		<td>
-			{% if vortrag.infourl != '' %}
-				<a href="{{ vortrag.infourl }}"><b>Details / Folien aufrufen</b></a>
-			{% endif %}
-		</td>
-		<td>
-			<a href="edit_c14.html?id={{ vortrag.id }}">Eintrag bearbeiten</a>
-		</td>
-	</tr>
+{% assign vortraege = page.vortraege_zukunft %}
+{% include c14h.html %}
 
-{% endfor %}
-</table>
+# Das hast du verpasst
+
+{% assign vortraege = page.vortraege_vergangenheit %}
+{% include c14h.html %}
