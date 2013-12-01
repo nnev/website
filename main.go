@@ -7,12 +7,10 @@ import (
 	_ "github.com/lib/pq"
 	"database/sql"
 	"fmt"
-	"io"
-	"io/ioutil"
-	"os"
 	"regexp"
-	"strings"
 	"time"
+	"html/template"
+	"strconv"
 )
 
 var (
@@ -23,9 +21,29 @@ var (
 
 	db *sql.DB
 	loc *time.Location
-	tpl string
+	tpl *template.Template
 	idRe = regexp.MustCompile(`^\d*$`)
 )
+
+type Vortrag struct {
+	Id int
+	Date CustomTime
+	HasDate bool
+	Topic string
+	Abstract string
+	Speaker string
+	InfoURL string
+}
+
+type CustomTime time.Time
+
+func (t CustomTime) String() string {
+	return time.Time(t).Format("2006-01-02")
+}
+
+func (t CustomTime) IsZero() bool {
+	return time.Time(t).IsZero()
+}
 
 func writeError(errno int, res http.ResponseWriter, format string, args... interface{}) {
 	res.WriteHeader(errno)
@@ -33,6 +51,12 @@ func writeError(errno int, res http.ResponseWriter, format string, args... inter
 }
 
 func C14Handler(res http.ResponseWriter, req *http.Request) {
+	var err error
+	tpl, err = template.New("").Delims("<<", ">>").ParseFiles(*gettpl)
+	if err != nil {
+		log.Fatal("Could not parse template:", err)
+	}
+
 	if req.Method == "POST" {
 		handlePost(res, req)
 		return
@@ -52,12 +76,52 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 
 	log.Printf("Incoming GET request: id=\"%s\"\n", idStr)
 
-	if !idRe.MatchString(idStr) {
-		writeError(400, res, "id must be numerical")
+	if idStr == "" {
+		err := tpl.ExecuteTemplate(res, "edit_c14.html", Vortrag{})
+		if err != nil {
+			log.Println(err)
+			return
+		}
 		return
 	}
 
-	io.Copy(res, strings.NewReader(strings.Replace(tpl, "__C14_ID__", idStr, -1)))
+	id, err := strconv.Atoi(idStr)
+	if err != nil {
+		writeError(400, res, "Could not parse \"%d\" as int", idStr)
+		return
+	}
+
+	rows, err := db.Query("SELECT date, topic, abstract, speaker, infourl FROM vortraege WHERE id = $1", id)
+	if err != nil {
+		writeError(500, res, "Could not query db: %v", err)
+		return
+	}
+
+	if !rows.Next() {
+		writeError(400, res, "No such id", err)
+		return
+	}
+
+	vortrag := Vortrag{Id: id}
+
+	var Date time.Time
+	err = rows.Scan(&Date, &vortrag.Topic, &vortrag.Abstract, &vortrag.Speaker, &vortrag.InfoURL)
+	if err != nil {
+		writeError(500, res, "Could not scan row: %v", err)
+		return
+	}
+	vortrag.Date = CustomTime(Date)
+	if !vortrag.Date.IsZero() {
+		vortrag.HasDate = true
+	}
+
+	err = tpl.ExecuteTemplate(res, "edit_c14.html", vortrag)
+	if err != nil {
+		log.Println(err)
+		return
+	}
+
+	return
 }
 
 func handlePost(res http.ResponseWriter, req *http.Request) {
@@ -70,9 +134,14 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 
 	log.Printf("Incoming POST request: id=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", infourl=\"%s\"\n", idStr, dateStr, topic, abstract, speaker, infourl)
 
+	if topic == "" || speaker == "" {
+		writeError(400, res, "You need to supply at least a speaker and a topic")
+		return
+	}
+
 	date, err := time.ParseInLocation("2006-01-02", dateStr, loc)
 	if err != nil {
-		writeError(400, res, "Could not parse \"%s\" as date: %v", dateStr, err)
+		writeError(400, res, "Could not parse \"%s\" as date (expected Format: YYYY-MM-DD): %v", dateStr, err)
 		return
 	}
 
@@ -118,20 +187,14 @@ func main() {
 		log.Fatal("Could not load timezone-data:", err)
 	}
 
-	file, err := os.Open(*gettpl)
+	tpl, err = template.New("").Delims("<<", ">>").ParseFiles(*gettpl)
 	if err != nil {
-		log.Fatal("Could not open template:", err)
+		log.Fatal("Could not parse template:", err)
 	}
-
-	bytes, err := ioutil.ReadAll(file)
-	if err != nil {
-		log.Fatal("Could not read template:", err)
-	}
-	file.Close()
-
-	tpl = string(bytes)
 
 	http.HandleFunc("/", C14Handler)
+
+	log.Println("Listening on", *addr)
 	err = http.ListenAndServe(*addr, nil)
 	if err != nil {
 		log.Println("Could not listen:", err)
