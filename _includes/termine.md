@@ -5,7 +5,7 @@
 	Stammtisch<br>
 	Location: {{ termin.location }}
 	{% else %}
-	Treff<br>
+	<a href="anfahrt.html">Treff</a><br>
 	c¼h: {{ termin.topic }}
 	{% endif %}
 </p>
