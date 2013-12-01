@@ -35,3 +35,5 @@ einem (wechselnden) Restaurant. Die Abwesenheit von Computern soll Konversation
 und Austausch vorantreiben. Der Stammtisch ist von daher wohl die beste
 Gelegenheit, einfach mal zu schauen, ob du mit uns auf einer Wellenlänge
 liegst.
+
+{% include fotos.md %}
