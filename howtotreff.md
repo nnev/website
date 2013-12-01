@@ -1,7 +1,6 @@
 ---
 layout: default
 title: Was dich bei uns erwartet
-sidebar: fotos.md
 ---
 
 Unsere Treffen haben relativ wenig grundlegende Tagesordnung. Grundsätzlich
