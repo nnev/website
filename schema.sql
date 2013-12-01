@@ -50,10 +50,10 @@ ALTER TABLE public.termine OWNER TO mero;
 CREATE TABLE vortraege (
     id integer NOT NULL,
     date date,
-    topic text,
-    abstract text,
-    speaker text,
-    infourl text
+    topic text DEFAULT ''::text NOT NULL,
+    abstract text DEFAULT ''::text NOT NULL,
+    speaker text DEFAULT ''::text NOT NULL,
+    infourl text DEFAULT ''::text NOT NULL
 );
 
 
@@ -104,7 +104,8 @@ f	1	\N	\N	2013-12-19
 
 COPY vortraege (id, date, topic, abstract, speaker, infourl) FROM stdin;
 1	2013-12-19	Enlarge your penis	REAL Doctors, REAL Science, REAL Results!\n\nDr. MaxMan was created by George Acuilar, M.D, a Board Certified Urologist who has treated over 70,000 patients with erectile problems. He is a member of\nboth the College of Urology and the Society of Urology, and the director of 46 Urologists. He is also the past president of his state society of\nUrologists. \n\nAfter over seven years of research and testing in the area of erectile dysfunction, Dr Acuilar and his team came up with the breakthrough herbal formula\nthat is now known as Dr MaxMan : a 100% natural, powerful male enhancement formula.\n\nNot only do men report AMAZING increases in penis length, width and stamina, but they are also equally delighted by the sheer intensity and concentrated\npower of their orgasms!	Dr. MaxMan	http://qren.kosed.ru
-2	2013-12-12	This stock is about to go through the roof!	This Company could have a Rumble after the Tumble! WE ARE UP AND \nGOING HIGHER.\n\nLong Term Target Price: .21\nToday Price: .02\nCompany: Registered Express Corp\nDate: Monday, November 25th\nSym: R-G T-X\n\nCould have a Massive Run This Week! A Technical Report with a \nBullish Chart Setup!!!	smiley465@waspu.ru	\N
+3	2013-01-02	Secure saugt	foo	Merovius	fuuuu you
+2	2013-12-12	This stock is about to go through the roof!	This Company could have a Rumble after the Tumble! WE ARE UP AND \nGOING HIGHER.\n\nLong Term Target Price: .21\nToday Price: .02\nCompany: Registered Express Corp\nDate: Monday, November 25th\nSym: R-G T-X\n\nCould have a Massive Run This Week! A Technical Report with a \nBullish Chart Setup!!!	smiley465@waspu.ru	
 \.
 
 
@@ -112,7 +113,7 @@ COPY vortraege (id, date, topic, abstract, speaker, infourl) FROM stdin;
 -- Name: vortraege_id_seq; Type: SEQUENCE SET; Schema: public; Owner: mero
 --
 
-SELECT pg_catalog.setval('vortraege_id_seq', 2, true);
+SELECT pg_catalog.setval('vortraege_id_seq', 3, true);
 
 
 --
