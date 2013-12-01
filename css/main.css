@@ -178,11 +178,14 @@ th:first-child {
 	white-space: nowrap;
 }
 
-th:last-child, td:last-child {
-	text-align: right;
+.just {
+	text-align: justify;
 }
 
 tr.space td {
 	padding-bottom: 2rem;
-	text-align: justify;
+}
+
+.dim {
+	color: #888;
 }

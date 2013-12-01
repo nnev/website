@@ -22,12 +22,27 @@ Interessenten gibt — <a href="edit_c14.html">trag deinen Vortrag einfach ein</
 {% for vortrag in page.vortraege %}
 	<tr>
 		<th>{{ vortrag.date }}</th>
-		<th>{% if vortrag.infourl != '' %}<a href="{{ vortrag.infourl }}">{{ vortrag.topic }}</a>{% else %}{{ vortrag.topic }}{% endif %}</th>
-		<th>{{ vortrag.speaker }}</th>
-		<th><a href="edit_c14.html?id={{ vortrag.id }}">edit</a></th>
+		<th>
+			{% if vortrag.infourl != '' %}
+				<a href="{{ vortrag.infourl }}">{{ vortrag.topic }}</a>
+			{% else %}
+				{{ vortrag.topic }}
+			{% endif %}
+		</th>
+	</tr>
+	<tr><td></td><td class="dim">von {{ vortrag.speaker }}</td></tr>
+	<tr>
+		<td></td>
+		<td class="just">{{ vortrag.abstract }}</td>
 	</tr>
 	<tr class="space">
-		<td colspan="3">{{ vortrag.abstract }}</td>
+		<td></td>
+		<td>
+			{% if vortrag.infourl != '' %}
+				<a href="{{ vortrag.infourl }}">Details / Folien</a> |
+			{% endif %}
+			<a href="edit_c14.html?id={{ vortrag.id }}">Eintrag bearbeiten</a>
+		</td>
 	</tr>
 
 {% endfor %}
