@@ -5,7 +5,7 @@ title: Beitragsordnung
 
 # Beitragsordnung
 
-Stand: 2013-03-14
+Stand: 2013-03-14, siehe auch [Satzung](satzung.html)
 
 
 
