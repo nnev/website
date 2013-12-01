@@ -3,9 +3,16 @@ layout: default
 title: Über den Verein
 ---
 
+# Verein
 Der NoName e.V. ist ein eingetragener Verein in Heidelberg (Nummer VR 3127).
 Wir haben eine [Satzung](satzung.html) und eine
 [Beitragsordnung](beitragsordnung.html).
+
+Jeglicher schriftliche Kontakt mit dem Verein (z.B. für Austrittserklärungen)
+kann via E-Mail erfolgen an die Adresse vorstand AT noname-ev DOT de.
+
+
+# Mitgliedschaft
 
 Mitglieder erhalten vom Verein einen Blog auf blogs.noname-ev.de, sowie einen
 Shell-Account auf dem Vereinsserver. Dort lässt sich zum Beispiel ein
@@ -18,14 +25,7 @@ zukommen lässt. Das kannst du per Mail tun, oder einfach persönlich auf dem
 Treff. Dort haben wir auch immer ein paar ausgedruckte Exemplare herumliegen,
 du kannst also auch einfach dort fragen und wir machen das direkt.
 
-Jeglicher schriftliche Kontakt mit dem Verein (z.B. für Austrittserklärungen)
-kann via E-Mail erfolgen an die Adresse vorstand AT noname-ev DOT de.
+# Projekt: rgb2r
 
-Vorsitzender:
-
-<address>
-Michael Stapelberg
-Neuer Weg 16
-69118 Heidelberg
-Tel.: 06221/1871942
-</address>
+Einmal im Jahr veranstalten wir die „rgb2r – roots go back to the roots“, ein
+Retro-Gaming-Event. [Alle Einzelheiten dazu findest du auf der rgb2r Seite](http://rgb2r.noname-ev.de/).
