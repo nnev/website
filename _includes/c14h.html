@@ -1,7 +1,7 @@
 <table>
 {% for vortrag in vortraege %}
     <tr>
-        <th>{{ vortrag.date }}</th>
+        <th>{% if vortrag.date %}{{ vortrag.date }}{% else %}TBA{% endif %}</th>
         <th colspan="2">{{ vortrag.topic }}</th>
     </tr>
     <tr><td></td><td class="dim" colspan="2">von {{ vortrag.speaker }}</td></tr>
