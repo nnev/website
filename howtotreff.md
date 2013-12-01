@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Was dich bei uns erwartet
+foto: treff
 ---
 
 Unsere Treffen haben relativ wenig grundlegende Tagesordnung. Grundsätzlich
@@ -34,5 +35,3 @@ einem (wechselnden) Restaurant. Die Abwesenheit von Computern soll Konversation
 und Austausch vorantreiben. Der Stammtisch ist von daher wohl die beste
 Gelegenheit, einfach mal zu schauen, ob du mit uns auf einer Wellenlänge
 liegst.
-
-{% include fotos.md %}
