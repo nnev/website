@@ -21,7 +21,7 @@ Interessenten gibt — <a href="edit_c14.html">trag deinen Vortrag einfach ein</
 <table>
 {% for vortrag in page.vortraege %}
 	<tr>
-		<th>{{ vortrag.date }}</th>
+		<th><a id="c14h_{{vortrag.id}}" class="anchorhack"></a>{{ vortrag.date }}</th>
 		<th colspan="2">{{ vortrag.topic }}</th>
 	</tr>
 	<tr><td></td><td class="dim" colspan="2">von {{ vortrag.speaker }}</td></tr>

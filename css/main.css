@@ -59,6 +59,11 @@ body, iframe {
 	margin-top: 6.3rem;
 }
 
+.anchorhack {
+	top: -6.3rem;
+	position: relative;
+}
+
 .main_left {
 	width: 100%;
 	display: block;
