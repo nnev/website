@@ -1,5 +1,7 @@
 {% for termin in page.termine %}
-<p>
+<p {% if notfirst %}class="dim"{% endif %}>
+	{% assign notfirst = true %}
+
 	<b>Datum: {{ termin.date }}</b><br>
 	{% if termin.stammtisch %}
 		Stammtisch</br>
