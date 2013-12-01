@@ -22,7 +22,7 @@ Interessenten gibt — <a href="edit_c14.html">trag deinen Vortrag einfach ein</
 {% for vortrag in page.vortraege %}
 	<tr>
 		<td>{{ vortrag.date }}</td>
-		<td>{% if vortrag.infourl %}<a href="{{ vortrag.infourl }}">{{ vortrag.topic }}</a>{% else %}{{ vortrag.topic }}{% endif %}</td>
+		<td>{% if vortrag.infourl != '' %}<a href="{{ vortrag.infourl }}">{{ vortrag.topic }}</a>{% else %}{{ vortrag.topic }}{% endif %}</td>
 		<td>{{ vortrag.speaker }}</td>
 		<td><a href="edit_c14.html?id={{ vortrag.id }}">edit</a></td>
 	</tr>
