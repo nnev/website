@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Chaotische Viertelstunde
+foto: c14h
 ---
 
 Seit knapp 2 Jahren findet bei jedem Treff ein Kurzvortrag statt, die so
