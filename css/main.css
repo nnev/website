@@ -168,10 +168,15 @@ th, td {
 	vertical-align: top;
 }
 
-tr.space {
-	margin-bottom: 1rem;
+td:first-child {
+	width: 7.5rem;
+}
+
+td:last-child {
+	text-align: right;
 }
 
 tr.space td {
+	padding-bottom: 2rem;
 	text-align: justify;
 }

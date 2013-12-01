@@ -19,16 +19,11 @@ Interessenten gibt — trag deinen Vortrag einfach ein.
 # Die nächsten Vorträge
 
 <table>
-	<tr>
-		<th>Datum</th>
-		<th>Thema</th>
-		<th>Vortragender</th>
-	</tr>
 {% for vortrag in page.vortraege %}
 	<tr>
-		<td>{{ vortrag.date }}</td>
-		<td>{{ vortrag.topic }}</td>
-		<td>{{ vortrag.speaker }}</td>
+		<th>{{ vortrag.date }}</th>
+		<th>{{ vortrag.topic }}</th>
+		<th>{{ vortrag.speaker }}</th>
 	</tr>
 	<tr class="space">
 		<td colspan="3">{{ vortrag.abstract }}</td>
