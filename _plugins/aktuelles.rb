@@ -6,6 +6,8 @@ require "pp"
 module Jekyll
 	class Aktuelles < Jekyll::Generator
 		def generate(site)
+			return real(site) if ENV['DONT_HIDE_FAILURES']
+
 			begin
 				real(site)
 			rescue => e
