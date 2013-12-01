@@ -4,7 +4,7 @@
 
 	<b>Datum: {{ termin.date }}</b><br>
 	{% if termin.stammtisch %}
-		Stammtisch</br>
+		Stammtisch<br/>
 		{% for st in site.pages %}
 			{% unless st.layout == "stammtisch" %}
 				{% continue %}
