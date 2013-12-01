@@ -15,3 +15,22 @@ Classic, Human Enhancements), Life Hacking und vieles mehr.
 
 Grundsätzlich gilt: uns gefällt alles! Du musst nicht nachfragen, ob es genug
 Interessenten gibt — trag deinen Vortrag einfach ein.
+
+# Die nächsten Vorträge
+
+<table>
+	<tr>
+		<th>Datum</th>
+		<th>Thema</th>
+		<th>Vortragender</th>
+		<th>Abstract</th>
+	</tr>
+{% for vortrag in page.vortraege %}
+	<tr>
+		<td>{{ vortrag.date }}</td>
+		<td>{{ vortrag.topic }}</td>
+		<td>{{ vortrag.speaker }}</td>
+		<td>{{ vortrag.abstract }}</td>
+	</tr>
+{% endfor %}
+</table>

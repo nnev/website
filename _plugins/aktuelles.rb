@@ -14,10 +14,18 @@ module Jekyll
 				termine << tuple
 			end
 
+			res = conn.exec('SELECT * FROM vortraege')
+			vortraege = []
+			res.each do |tuple|
+				vortraege << tuple
+			end
+
 			pp termine
+			pp vortraege
 
 			site.pages.each do |page|
 				page.data['termine'] = termine
+				page.data['vortraege'] = vortraege
 			end
 		end
 	end
