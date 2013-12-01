@@ -120,7 +120,7 @@ p {
 	font-size: 1.1em;
 }
 
-.highlight * {
+.highlight *, pre {
 	font-family: monospace;
 }
 

@@ -3,6 +3,13 @@ layout: default
 title: Kontakt
 ---
 
+<pre style="float: left; font-weight: bold; width: 7rem; margin-right: 1rem">    _
+   (_)_________
+  / / ___/ ___/
+ / / /  / /__
+/_/_/   \___/</pre>
+
+
 Der direkteste Weg, uns online zu erreichen, ist unser
 [IRC](http://de.wikipedia.org/wiki/Internet_Relay_Chat)-Channel:
 [#chaos-hd auf irc.twice-irc.de](ircs://irc.twice-irc.de/chaos-hd). Rechne
@@ -10,21 +17,31 @@ nicht unbedingt sofort mit einer Antwort, aber wenn du ein paar Minuten
 wartest, findet sich üblicherweise ein Gesprächspartner, der dir weiterhelfen
 kann.
 
+
+
+<span style="float: left; width: 7rem; font-size: 2rem;text-align: center; vertical-align: middle; line-height: 2.5rem; margin-right: 1rem">✉</span>
 Falls dir IRC nicht liegt, haben wir auch eine
 [Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/ccchd), bei
 der du dich anmelden kannst.
 
-## Impressum
+
+<div style="height: 3em"></div>
+
+
+
+
+
+#### Impressum
 
 Verantwortlicher Dienstebetreiber:
 
-Michael Stapelberg  
-Neuer Weg 16  
-69118 Heidelberg  
-E-Mail: <img src="/img/michael_stapelberg.png"/>  
-Telefon: +49 6221 1871942  
+Michael Stapelberg
+Neuer Weg 16
+69118 Heidelberg
+E-Mail: <img src="/img/michael_stapelberg.png"/>
+Telefon: +49 6221 1871942
 
-### Haftung für Inhalte
+##### Haftung für Inhalte
 
 Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die
 Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann ich jedoch keine
@@ -41,7 +58,7 @@ ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei
 bekannt werden von entsprechenden Rechtsverletzungen werden wir diese Inhalte
 umgehend entfernen.
 
-### Haftung für Links
+##### Haftung für Links
 
 Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte
 wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch
@@ -54,7 +71,7 @@ jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei
 bekannt werden von Rechtsverletzungen werden wir derartige Links umgehend
 entfernen.
 
-### Urheberrecht
+##### Urheberrecht
 
 Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten
 unterliegen dem deutschen Urheberrecht. Beiträge Dritter sind als solche
@@ -66,7 +83,7 @@ Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
 Die Betreiber der Seiten sind bemüht, stets die Urheberrechte anderer zu
 beachten bzw. auf selbst erstellte sowie lizenzfreie Werke zurückzugreifen.
 
-### Datenschutz
+##### Datenschutz
 
 Soweit auf unseren Seiten personenbezogene Daten (beispielsweise Name,
 Anschrift oder eMail-Adressen) erhoben werden, erfolgt dies soweit möglich
