@@ -198,3 +198,30 @@ tr.space td:last-child {
 .dim {
 	color: #888;
 }
+
+
+label {
+	width: 8rem;
+	display: inline-block;
+	padding: 0.5rem 0;
+}
+
+label + input {
+	display: include-block;
+	width: 20rem;
+}
+
+input, textarea {
+	padding: 0.4em;
+	border: 1px solid #666;
+	border-radius: 0.2rem;
+}
+
+input:focus, textarea:focus {
+	border: 1px solid #114566;
+	box-shadow: 0 0 0.2rem rgb(38, 151, 222);;
+}
+
+input[type='submit'] {
+	margin: 1rem 0;
+}
