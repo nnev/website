@@ -14,7 +14,7 @@ module Jekyll
 				termine << tuple
 			end
 
-			res = conn.exec('SELECT * FROM vortraege')
+			res = conn.exec('SELECT * FROM vortraege ORDER BY date')
 			vortraege = []
 			res.each do |tuple|
 				vortraege << tuple
