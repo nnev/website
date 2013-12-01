@@ -163,6 +163,10 @@ iframe {
 	z-index: 9000;
 }
 
+table {
+	width: 100%;
+}
+
 th, td {
 	text-align: left;
 	vertical-align: top;
@@ -171,9 +175,10 @@ th, td {
 th:first-child {
 	width: 4rem;
 	padding-right: 1rem;
+	white-space: nowrap;
 }
 
-th:last-child {
+th:last-child, td:last-child {
 	text-align: right;
 }
 
