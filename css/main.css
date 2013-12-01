@@ -168,11 +168,12 @@ th, td {
 	vertical-align: top;
 }
 
-td:first-child {
-	width: 7.5rem;
+th:first-child {
+	width: 4rem;
+	padding-right: 1rem;
 }
 
-td:last-child {
+th:last-child {
 	text-align: right;
 }
 
