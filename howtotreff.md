@@ -4,6 +4,7 @@ title: Was dich bei uns erwartet
 foto: treff
 ---
 
+### Chaos-Treff: Grober Ablauf
 Unsere Treffen haben relativ wenig grundlegende Tagesordnung. Grundsätzlich
 tauscht man sich einfach aus, bastelt gemeinsam an Projekten oder sitzt an
 seinem Laptop. Du kannst einfach Menschen ansprechen und dich mit ihnen
@@ -21,6 +22,8 @@ das Thema muss auch nicht unbedingt etwas mit Technik oder Computern zu tun
 haben. Du kannst dir vergangene Themen anschauen, um einen Eindruck zu
 bekommen.
 
+
+### Essen und Trinken
 Die Treffs sind meistens ziemlich lang. Damit wir dabei nicht verhungern und
 verdursten, haben wir Getränke (vor allem die szenetypische Club Mate und Club
 Mate Cola, aber auch koffeinfreie Alternativen) und bestellen gemeinsam bei
@@ -29,9 +32,16 @@ ein [eigenes Bestellsystem](pizza.html). Wenn das Essen eintrifft,
 hat es sich eingebürgert, auf dem Beamer eine aktuelle Folge irgendeiner Serie
 anzusehen.
 
+### Chaos-Stammtisch
 Jeden ersten Donnerstag im Monat machen wir statt dem normalen Treff einen
 Stammtisch. Dann treffen wir uns nicht in unserem normalen Raum, sondern in
 einem (wechselnden) Restaurant. Die Abwesenheit von Computern soll Konversation
 und Austausch vorantreiben. Der Stammtisch ist von daher wohl die beste
 Gelegenheit, einfach mal zu schauen, ob du mit uns auf einer Wellenlänge
 liegst.
+
+### Anfahrt
+Der Chaos-Treff findet immer im gleichen Raum statt,
+[siehe dazu Anfahrt](anfahrt.html). Zum Stammtich treffen wir uns jedoch in
+wechselnden Gaststätten. Details dazu findest du dann
+[jeweils unter Aktuelles](index.html).
