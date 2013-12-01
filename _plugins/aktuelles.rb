@@ -1,7 +1,6 @@
 # encoding: utf-8
 
 require "pg"
-require "pp"
 
 module Jekyll
 	class Aktuelles < Jekyll::Generator
@@ -32,9 +31,6 @@ module Jekyll
 			res.each do |tuple|
 				vortraege << tuple
 			end
-
-			pp termine
-			pp vortraege
 
 			site.pages.each do |page|
 				page.data['termine'] = termine
