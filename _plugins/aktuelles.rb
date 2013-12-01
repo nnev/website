@@ -26,13 +26,13 @@ module Jekyll
 				termine << tuple
 			end
 
-			res = conn.exec('SELECT * FROM vortraege WHERE date IS NULL OR date >= CURRENT_DATE ORDER BY date')
+			res = conn.exec('SELECT * FROM vortraege WHERE date IS NULL OR date >= CURRENT_DATE ORDER BY date ASC')
 			vortraege_zukunft = []
 			res.each do |tuple|
 				vortraege_zukunft << tuple
 			end
 
-			res = conn.exec('SELECT * FROM vortraege WHERE date < CURRENT_DATE ORDER BY date')
+			res = conn.exec('SELECT * FROM vortraege WHERE date < CURRENT_DATE ORDER BY date DESC')
 			vortraege_vergangenheit = []
 			res.each do |tuple|
 				vortraege_vergangenheit << tuple
