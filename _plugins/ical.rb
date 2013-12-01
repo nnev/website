@@ -4,6 +4,7 @@ require 'pg'
 require 'pp'
 require 'icalendar'
 require 'date'
+require 'fileutils'
 
 include Icalendar
 
@@ -62,6 +63,7 @@ module Jekyll
 
       cal.publish
 
+      FileUtils.mkdir(site.dest)
       File.open(File.join(site.dest, "c14h.ics"), "w") do |f|
         f.write(cal.to_ical)
       end
