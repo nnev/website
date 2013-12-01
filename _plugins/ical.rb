@@ -63,7 +63,7 @@ module Jekyll
 
       cal.publish
 
-      FileUtils.mkdir(site.dest)
+      FileUtils.mkdir_p(site.dest)
       File.open(File.join(site.dest, "c14h.ics"), "w") do |f|
         f.write(cal.to_ical)
       end
