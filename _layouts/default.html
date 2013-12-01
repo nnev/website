@@ -27,16 +27,9 @@
 				</div>
 
 				<div class="main_right">
-					{% for termin in page.termine %}
-					<p>
-						Datum: {{ termin.date }}<br>
-						{% if termin.stammtisch %}
-						Location: {{ termin.location }}
-						{% else %}
-						c¼h: {{ termin.topic }}
-						{% endif %}
-					</p>
-					{% endfor %}
+					<!--{{page.sidebar}} needs newer jekyll -->
+					{% include termine.md %}
+					{% include fotos.md %}
 				</div>
 			</div>
 		</div>

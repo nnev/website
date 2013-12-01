@@ -1,6 +1,7 @@
 ---
 layout: default
 title: NoName e.V.
+sidebar: termine.md
 ---
 
 Was?
