@@ -1,0 +1,55 @@
+{% include header.html %}
+
+<div class="main_left">
+	<h1>{{page.name}}</h1>
+
+	<p><b>{{page.address}}</b>. {{page.address_desc}}</p>
+	<p>
+		{{page.desc}}
+		{% if page.menu_url %}
+			<a href="tel://{{page.menu_url}}"><b>Speisekarte anzeigen</b></a>.
+		{% endif %}
+	</p>
+
+	{{ content }}
+
+	<div id="map"></div>
+	<script>
+	var map = L.map('map').setView([{{page.map_lat}}, {{page.map_lon}}], {{page.map_zoom}});
+	{{site.map_js}}
+
+	L.marker([{{page.lat}}, {{page.lon}}]).addTo(map).bindPopup("<b>{{page.name}}</b>", { "closeButton": false }).openPopup();
+	</script>
+
+	<p>
+		{% if page.gmaps_url %}
+			<a href="{{page.gmaps_url}}">Gaststätte in Google Maps anzeigen</a><br/>
+		{% endif %}
+		{% if page.phone %}
+			<br/>Telefon: <a href="tel://{{page.phone}}">{{page.phone}}</a><br/>
+		{% endif %}
+		{% if page.phone %}
+			Webseite: <a href="{{page.site_url}}">{{page.site_url}}</a><br/>
+		{% endif %}
+	</p>
+</div>
+
+<div class="main_right">
+	<ul>
+	{% for st in site.pages %}
+		{% if st.layout == "stammtisch" %}
+			<li><a href="{{st.url}}">
+				{% if st.url == page.url %}
+					<b>{{st.name}}</b>
+				{% else %}
+					{{st.name}}
+				{% endif %}
+			</a></li>
+		{% endif %}
+	{% endfor %}
+	</ul>
+
+	{% include foto.md %}
+</div>
+
+{% include footer.html %}
