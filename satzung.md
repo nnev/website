@@ -3,8 +3,9 @@ layout: default
 title: Satzung
 ---
 
-Stand: 2013-11-21
+# Satzung
 
+Stand: 2013-11-21
 
 
 # §1 Name, Sitz und Geschäftsjahr
