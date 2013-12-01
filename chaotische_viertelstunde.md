@@ -14,16 +14,17 @@ Programme (sup, notmuch, Ingress, tor, sieve), Hardware (Raspberry Pi, Mifare
 Classic, Human Enhancements), Life Hacking und vieles mehr.
 
 Grundsätzlich gilt: uns gefällt alles! Du musst nicht nachfragen, ob es genug
-Interessenten gibt — trag deinen Vortrag einfach ein.
+Interessenten gibt — <a href="edit_c14.html">trag deinen Vortrag einfach ein</a>.
 
 # Die nächsten Vorträge
 
 <table>
 {% for vortrag in page.vortraege %}
 	<tr>
-		<th>{{ vortrag.date }}</th>
-		<th>{{ vortrag.topic }}</th>
-		<th>{{ vortrag.speaker }}</th>
+		<td>{{ vortrag.date }}</td>
+		<td>{% if vortrag.infourl %}<a href="{{ vortrag.infourl }}">{{ vortrag.topic }}</a>{% else %}{{ vortrag.topic }}{% endif %}</td>
+		<td>{{ vortrag.speaker }}</td>
+		<td><a href="edit_c14.html?id={{ vortrag.id }}">edit</a></td>
 	</tr>
 	<tr class="space">
 		<td colspan="3">{{ vortrag.abstract }}</td>
