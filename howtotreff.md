@@ -24,7 +24,7 @@ Die Treffs sind meistens ziemlich lang. Damit wir dabei nicht verhungern und
 verdursten, haben wir Getränke (vor allem die szenetypische Club Mate und Club
 Mate Cola, aber auch koffeinfreie Alternativen) und bestellen gemeinsam bei
 einem lokalen Pizzadienst Essen. Um die Bestellung zu vereinfachen, haben wir
-ein [eigenes Bestellsystem](http://pizza.nnev.de). Wenn das Essen eintrifft,
+ein [eigenes Bestellsystem](pizza.html). Wenn das Essen eintrifft,
 hat es sich eingebürgert, auf dem Beamer eine aktuelle Folge irgendeiner Serie
 anzusehen.
 

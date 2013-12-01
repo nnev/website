@@ -7,7 +7,7 @@
 	font-family: 'Lato', sans-serif;
 }
 
-body {
+body, iframe {
 	/* bg from http://subtlepatterns.com/ */
 	background: url('/img/bg.png');
 }
@@ -145,4 +145,21 @@ address {
 
 .qrcode img {
 	width: 100%;
+}
+
+
+iframe {
+	position: absolute;
+	top: 0rem;
+	left: 0rem;
+	width: 100%;
+	height: 100%;
+	padding-top: 4.2rem;
+
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	border: 0;
+	z-index: 9000;
+
 }
