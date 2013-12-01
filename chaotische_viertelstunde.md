@@ -23,14 +23,16 @@ Interessenten gibt — trag deinen Vortrag einfach ein.
 		<th>Datum</th>
 		<th>Thema</th>
 		<th>Vortragender</th>
-		<th>Abstract</th>
 	</tr>
 {% for vortrag in page.vortraege %}
 	<tr>
 		<td>{{ vortrag.date }}</td>
 		<td>{{ vortrag.topic }}</td>
 		<td>{{ vortrag.speaker }}</td>
-		<td>{{ vortrag.abstract }}</td>
 	</tr>
+	<tr class="space">
+		<td colspan="3">{{ vortrag.abstract }}</td>
+	</tr>
+
 {% endfor %}
 </table>

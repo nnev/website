@@ -161,5 +161,17 @@ iframe {
 
 	border: 0;
 	z-index: 9000;
+}
 
+th, td {
+	text-align: left;
+	vertical-align: top;
+}
+
+tr.space {
+	margin-bottom: 1rem;
+}
+
+tr.space td {
+	text-align: justify;
 }
