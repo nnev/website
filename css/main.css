@@ -24,7 +24,7 @@ body {
 	background: #403329;
 	position: fixed;
 	top: 0;
-
+	z-index: 9001;
 }
 
 .menu a {
@@ -127,4 +127,22 @@ p {
 address {
 	white-space: pre;
 	margin-top: -1.4rem;
+}
+
+#map {
+	clear: both;
+	height: 400px;
+}
+
+.qrcode {
+	width: 10em;
+	float: right;
+	display: inline-block;
+	text-align: center;
+	margin: 0.7rem;
+	margin-top: -2rem;
+}
+
+.qrcode img {
+	width: 100%;
 }
