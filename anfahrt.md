@@ -27,11 +27,7 @@ Die nächste Haltestelle ist die „Kopfklinik“ (Bus 31, 32). Etwas weiter ent
 <div id="map"></div>
 <script>
 var map = L.map('map').setView([49.41775, 8.67040], 16);
-L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png ', {
-	attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
-	maxZoom: 18
-}).addTo(map);
-
+{{site.map_js}}
 L.marker([49.41765, 8.66831]).addTo(map).bindPopup("<b>Chaos-Treff</b>", { "closeButton": false }).openPopup();
 L.marker([49.41910, 8.66709]).addTo(map).bindPopup("Bushaltestelle: Kopfklinik");
 L.marker([49.41694, 8.67633]).addTo(map).bindPopup("Tramhaltestelle: Bunsengymnasium");
