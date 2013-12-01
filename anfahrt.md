@@ -22,7 +22,7 @@ Im Neuenheimer Feld 368
 69120 Heidelberg
 </address>
 
-Die nächste Haltestelle ist die „Kopfklinik“ (Bus 31, 32). Etwas weiter entfernt die Haltestelle „Bunsengymnasium“ (Tram 21, 24). Parken ist direkt vor dem Gebäude kostenfrei möglich, sofern Platz ist. Ansonsten gibt es genug Plätze auf Otto-Meyerhof-Zentrum Parkplatz (kostenpflichtig).
+Die nächste Haltestelle ist die „Kopfklinik“ (Bus 31, 32). Et&shy;was wei&shy;ter ent&shy;fernt die Hal&shy;te&shy;stel&shy;le „Bun&shy;sen&shy;gym&shy;na&shy;sium“ (Tram 21, 24). Par&shy;ken ist di&shy;rekt vor dem Gebäude kostenfrei möglich, sofern Platz ist. Ansonsten gibt es genug Plätze auf Otto-Meyerhof-Zentrum Parkplatz (kostenpflichtig).
 
 <div id="map"></div>
 <script>
