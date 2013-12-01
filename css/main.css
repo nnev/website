@@ -123,3 +123,8 @@ p {
 .highlight * {
 	font-family: monospace;
 }
+
+address {
+	white-space: pre;
+	margin-top: -1.4rem;
+}

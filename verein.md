@@ -23,7 +23,9 @@ kann via E-Mail erfolgen an die Adresse vorstand AT noname-ev DOT de.
 
 Vorsitzender:
 
-	Michael Stapelberg
-	Neuer Weg 16
-	69118 Heidelberg
-	Tel.: 06221/1871942
+<address>
+Michael Stapelberg
+Neuer Weg 16
+69118 Heidelberg
+Tel.: 06221/1871942
+</address>
