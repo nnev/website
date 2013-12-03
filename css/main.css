@@ -14,18 +14,28 @@ body, iframe {
 
 .menu {
 	border-top: 0.2rem solid #4A3D34;
-	width: 100%;
+	min-width: 100%;
 	height: 4.2rem;
 	padding: 0 4rem;
 	color: #fff;
+	white-space: nowrap;
 	box-sizing: border-box;
 	-moz-box-sizing: border-box;
+}
+
+
+.menu_scroll_wrapper {
+	width: 100%;
+	overflow-y: show;
+	overflow-x: auto;
 	box-shadow: 0 0.1rem 0.3rem #4A3D34;
 	background: #403329;
+	height: 4.2rem;
+	z-index: 9001;
 	position: fixed;
 	top: 0;
-	z-index: 9001;
 }
+
 
 .menu a {
 	display: inline-block;

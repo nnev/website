@@ -7,6 +7,7 @@
 		<meta name="viewport" content="width=device-width">
 		<link rel="stylesheet" href="/css/syntax.css">
 		<link rel="stylesheet" href="/css/main.css">
+		<link rel="stylesheet" media="(max-width: 850px)" href="/css/small.css" />
 		<link rel="stylesheet" href="/css/leaflet.css">
 		<script src="/leaflet/leaflet.js"></script>
 		<script src="/js/turbolinks.js"></script>
@@ -15,13 +16,13 @@
 	<body>
 
 		<div class="site">
-			<div class="menu">
+			<div class="menu_scroll_wrapper"><div class="menu">
 				<a {% if page.url == "/index.html"                    %} class="active" {% endif %} href="/">tl;dr</a>
 				<a {% if page.url == "/howtotreff.html"               %} class="active" {% endif %} href="/howtotreff.html">Treff</a>
 				<a {% if page.url == "/chaotische_viertelstunde.html" %} class="active" {% endif %} href="/chaotische_viertelstunde.html">c¼h</a>
 				<a {% if page.url == "/verein.html"                   %} class="active" {% endif %} href="/verein.html">Verein</a>
 				<a {% if page.url == "/kontakt.html"                  %} class="active" {% endif %} href="/kontakt.html">Kontakt</a>
 				<a href="https://www.noname-ev.de/w/">Wiki</a>
-			</div>
+			</div></div>
 
 			<div class="cont">

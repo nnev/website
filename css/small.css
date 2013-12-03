@@ -1,0 +1,44 @@
+.menu_scroll_wrapper {
+  position: inherit;
+}
+
+.menu {
+  padding: 0 1rem;
+}
+
+.menu a {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+
+}
+
+.cont {
+  margin: 0;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+
+  padding: 0 1rem;
+  padding-bottom: 9rem;
+
+  background: url(/img/noname.svg) bottom center no-repeat;
+  background-size: 22em;
+}
+
+.main_left {
+  padding-right: 0;
+  float: none;
+  padding-bottom: 0.5rem;
+}
+
+.main_right {
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  float: none;
+  width: 100%;
+  position: inherit;
+  padding-top: 0.5rem;
+  background: none;
+}
+
+.main_right img {
+  max-width: 100%;
+}
