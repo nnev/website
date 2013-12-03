@@ -1,6 +1,5 @@
 ---
 layout:   stammtisch
-link:     stammtisch_palmbrau.html
 title:    "Stammtisch: Palmbräu Gasse"
 
 name:         Palmbräugasse

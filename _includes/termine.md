@@ -13,7 +13,7 @@
 				{% continue %}
 			{% endunless %}
 			{% assign done = true %}
-			Location: <a href="{{ st.link }}">{{ termin.location }}</a>
+			Location: <a href="{{ st.url }}">{{ termin.location }}</a>
 		{% endfor %}
 		{% unless done %}
 			Location: <a href="stammtisch.html">{{ termin.location }}</a>

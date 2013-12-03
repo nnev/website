@@ -1,6 +1,5 @@
 ---
 layout:   stammtisch
-link:     stammtisch_mrwu.html
 title:    "Stammtisch: Mr. Wu"
 foto:     mrwu
 

@@ -1,6 +1,5 @@
 ---
 layout:   stammtisch
-link:     stammtisch_schwarzer_peter.html
 title:    "Stammtisch: Schwarzer Peter"
 
 name:         Schwarzer Peter
