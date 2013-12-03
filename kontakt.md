@@ -24,6 +24,8 @@ Falls dir IRC nicht liegt, haben wir auch eine
 [Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/ccchd), bei
 der du dich anmelden kannst.
 
+[Mehr Details finden sich im Wiki](https://www.noname-ev.de/w/Kommunikationskan%C3%A4le).
+
 
 <div style="height: 3em"></div>
 
