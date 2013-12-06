@@ -3,6 +3,7 @@
 --
 
 SET statement_timeout = 0;
+SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
@@ -35,7 +36,6 @@ COPY vortraege (id, date, topic, abstract, speaker, infourl) FROM stdin;
 12	2013-10-24	Amateurfunk		pennylane	
 13	2013-10-17	Simulation einer Virusinfektion		cherti	
 14	2013-10-10	Spezielle Relativitätstheorie		sPhErE	https://www.noname-ev.de/w/File:C14_SRT.pdf
-15	2013-09-26	Merovius		Keysigning-Party mit Einführung	https://www.noname-ev.de/w/Keysigning#Keysigning-Party_am_2013-09-26
 16	2013-09-19	DBus-Einführung		Merovius	https://www.noname-ev.de/wiki/index.php?title=Chaotische_Viertelstunde&action=submit#2013-09-19
 17	2013-09-12	Hacking Yourself, Teil 2: Autosuggestion & Habituierung		Jan	https://www.noname-ev.de/wiki/uploads/6/68/Hacking_Yourself%2C_Teil_2-_Autosuggestion_%26_Habituierung_3.pdf
 18	2013-08-29	Linux Sandboxing-Techniken		Merovius	http://youtu.be/wa4AUnUZ6GU
@@ -156,6 +156,7 @@ COPY vortraege (id, date, topic, abstract, speaker, infourl) FROM stdin;
 131	2005-12-01	Routing-Protokolle im Internet		shl	https://www.noname-ev.de/w/C14h:Routing_Protokolle_im_Internet
 132	2004-06-03	Barrierefreies Webdesign		Alex	https://www.noname-ev.de/w/C14h:Barrierefreies_Webdesign
 133	2004-04-22	(La)TeX-Einführung		sur5r, Matthias	
+15	2013-09-26	Keysigning-Party mit Einführung		Merovius	https://www.noname-ev.de/w/Keysigning#Keysigning-Party_am_2013-09-26
 \.
 
 
