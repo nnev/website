@@ -4,8 +4,8 @@ import (
 	_ "github.com/lib/pq"
 	"database/sql"
 	"errors"
-	"fmt"
 	"time"
+	"log"
 )
 
 var (
@@ -21,7 +21,7 @@ func OpenDB() (err error) {
 }
 
 func (v *Vortrag) Put() (err error) {
-	fmt.Println("Put", v)
+	log.Println("Put", v)
 	var stmt *sql.Stmt
 	if v.Id < 0 {
 		if v.Date.IsZero() {
@@ -70,13 +70,15 @@ func Load(id int) (*Vortrag, error) {
 	}
 
 	vortrag := Vortrag{Id: id}
-	var date time.Time
+	var date *time.Time
 
 	err = rows.Scan(&date, &vortrag.Topic, &vortrag.Abstract, &vortrag.Speaker, &vortrag.InfoURL)
 	if err != nil {
 		return nil, err
 	}
-	vortrag.Date = CustomTime(date)
+	if date != nil {
+		vortrag.Date = CustomTime(*date)
+	}
 
 	if !vortrag.Date.IsZero() {
 		vortrag.HasDate = true
