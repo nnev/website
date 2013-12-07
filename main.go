@@ -4,8 +4,6 @@ import (
 	"flag"
 	"log"
 	"net/http"
-	_ "github.com/lib/pq"
-	"database/sql"
 	"fmt"
 	"regexp"
 	"time"
@@ -19,7 +17,6 @@ var (
 	connect = flag.String("connect", "dbname=nnev host=/var/run/postgresql sslmode=disable", "The connection string to use")
 	gettpl = flag.String("template", "/var/www/www.noname-ev.de/edit_c14.html", "The template to serve for editing c¼")
 
-	db *sql.DB
 	loc *time.Location
 	tpl *template.Template
 	idRe = regexp.MustCompile(`^\d*$`)
@@ -77,7 +74,17 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 	log.Printf("Incoming GET request: id=\"%s\"\n", idStr)
 
 	if idStr == "" {
-		err := tpl.ExecuteTemplate(res, "edit_c14.html", Vortrag{})
+		dateStr := req.FormValue("date")
+		v := Vortrag{}
+		if dateStr != "" {
+			date, err := time.ParseInLocation("2006-01-02", dateStr, loc)
+			if err == nil {
+				v.Date = CustomTime(date)
+				v.HasDate = true
+			}
+		}
+
+		err := tpl.ExecuteTemplate(res, "edit_c14.html", v)
 		if err != nil {
 			log.Println(err)
 			return
@@ -91,28 +98,10 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	rows, err := db.Query("SELECT date, topic, abstract, speaker, infourl FROM vortraege WHERE id = $1", id)
+	vortrag, err := Load(id)
 	if err != nil {
-		writeError(500, res, "Could not query db: %v", err)
-		return
-	}
-
-	if !rows.Next() {
-		writeError(400, res, "No such id", err)
-		return
-	}
-
-	vortrag := Vortrag{Id: id}
-
-	var Date time.Time
-	err = rows.Scan(&Date, &vortrag.Topic, &vortrag.Abstract, &vortrag.Speaker, &vortrag.InfoURL)
-	if err != nil {
-		writeError(500, res, "Could not scan row: %v", err)
-		return
-	}
-	vortrag.Date = CustomTime(Date)
-	if !vortrag.Date.IsZero() {
-		vortrag.HasDate = true
+		log.Printf("Could not read Vortrag %d: %v\n", id, err)
+		writeError(400, res, "Could not load")
 	}
 
 	err = tpl.ExecuteTemplate(res, "edit_c14.html", vortrag)
@@ -139,45 +128,27 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	date, err := time.ParseInLocation("2006-01-02", dateStr, loc)
+	date, _ := time.ParseInLocation("2006-01-02", dateStr, loc)
+
+	id, err := strconv.Atoi(idStr)
 	if err != nil {
-		writeError(400, res, "Could not parse \"%s\" as date (expected Format: YYYY-MM-DD): %v", dateStr, err)
-		return
+		id = -1
 	}
 
-	if idStr == "" {
-		stmt, err := db.Prepare("INSERT INTO vortraege (date, topic, abstract, speaker, infourl) VALUES ($1, $2, $3, $4, $5)")
-		if err != nil {
-			writeError(500, res, "Could not prepare insert statement: %v", err)
-			return
-		}
-
-		_, err = stmt.Exec(date, topic, abstract, speaker, infourl)
-		if err != nil {
-			writeError(500, res, "Could not insert: %v", err)
-			return
-		}
-	} else {
-		stmt, err := db.Prepare("UPDATE vortraege SET date = $1, topic = $2, abstract = $3, speaker = $4, infourl = $5 WHERE id = $6")
-		if err != nil {
-			writeError(500, res, "Could not prepare update statement: %v", err)
-			return
-		}
-
-		_, err = stmt.Exec(date, topic, abstract, speaker, infourl, idStr)
-		if err != nil {
-			writeError(500, res, "Could not update: %v", err)
-			return
-		}
+	vortrag := Vortrag{ id, CustomTime(date), false, topic, abstract, speaker, infourl }
+	err = vortrag.Put()
+	if err != nil {
+		log.Printf("Could not update: %v\n", err)
+		writeError(400, res, "Error")
 	}
+
+	http.Redirect(res, req, "/chaotische_viertelstunde.html", 303)
 }
 
 func main() {
 	flag.Parse()
 
-	var err error
-
-	db, err = sql.Open(*driver, *connect)
+	err := OpenDB()
 	if err != nil {
 		log.Fatal("Could not connect to database:", err)
 	}
