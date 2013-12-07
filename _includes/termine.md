@@ -25,7 +25,7 @@
 			<a href="chaotische_viertelstunde.html#c14h_{{termin.c14h_id}}">{{ termin.topic }}</a>
 		{% else %}
 			noch keine ◉︵◉.<br/>
-			<a href="edit_c14.html">neue c¼h eintragen?</a>
+			<a href="edit_c14.html?date={{termin.date}}">neue c¼h eintragen?</a>
 		{% endif %}
 	{% endif %}
 </p>
