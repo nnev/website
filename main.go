@@ -16,6 +16,7 @@ var (
 	driver = flag.String("driver", "postgres", "The database driver to use")
 	connect = flag.String("connect", "dbname=nnev host=/var/run/postgresql sslmode=disable", "The connection string to use")
 	gettpl = flag.String("template", "/var/www/www.noname-ev.de/edit_c14.html", "The template to serve for editing c¼")
+	hook = flag.String("hook", "", "A hook to run on every change")
 
 	loc *time.Location
 	tpl *template.Template
@@ -141,6 +142,8 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		log.Printf("Could not update: %v\n", err)
 		writeError(400, res, "Error")
 	}
+
+	RunHook()
 
 	http.Redirect(res, req, "/chaotische_viertelstunde.html", 303)
 }
