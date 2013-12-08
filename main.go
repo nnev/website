@@ -76,7 +76,7 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 
 	if idStr == "" {
 		dateStr := req.FormValue("date")
-		v := Vortrag{}
+		v := Vortrag{Id: -1}
 		if dateStr != "" {
 			date, err := time.ParseInLocation("2006-01-02", dateStr, loc)
 			if err == nil {
