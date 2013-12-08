@@ -8,12 +8,5 @@ echo 'GRANT SELECT ON vortraege TO PUBLIC;' | psql nnev
 echo 'GRANT SELECT ON termine TO PUBLIC;' | psql nnev
 echo 'GRANT SELECT ON zusagen TO PUBLIC;' | psql nnev
 
-# for yarpnarp(1)
-echo 'GRANT UPDATE ON zusagen TO nnweb;' | psql nnev
-echo 'GRANT INSERT ON zusagen TO nnweb;' | psql nnev
-echo 'GRANT DELETE ON zusagen TO nnweb;' | psql nnev
-
-# for c14h(1)
-echo 'GRANT UPDATE ON vortraege TO nnweb;' | psql nnev
-echo 'GRANT INSERT ON vortraege TO nnweb;' | psql nnev
-echo 'GRANT DELETE ON vortraege TO nnweb;' | psql nnev
+echo 'GRANT ALL PRIVILEGES ON DATABASE nnev TO nnweb;' | psql nnev
+echo 'GRANT ALL ON ALL SEQUENCES IN SCHEMA PUBLIC TO nnweb;' | psql nnev
