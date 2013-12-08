@@ -3,7 +3,7 @@
 require "pg"
 
 module Jekyll
-	class Aktuelles < Jekyll::Generator
+	class YarpNarp < Jekyll::Generator
 		def generate(site)
 			return real(site) if ENV['DONT_HIDE_FAILURES']
 
