@@ -6,7 +6,7 @@ title: c¼h editieren
 <h1>c¼h bearbeiten/hinzufügen</h1>
 
 <form method="POST" action="edit_c14.html">
-	<input type="hidden" name="id" value="<<.Id>>" />
+	<input type="hidden" name="id" value="<< if .Id ge 0 >><<.Id>><< end >>" />
 
 	<label for="speaker">Vortragender</label>
 	<input type="text" placeholder="(Nick)name" id="speaker"  name="speaker" value="<<.Speaker>>" /><br>
