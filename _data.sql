@@ -3,7 +3,6 @@
 --
 
 SET statement_timeout = 0;
-SET lock_timeout = 0;
 SET client_encoding = 'UTF8';
 SET standard_conforming_strings = on;
 SET check_function_bodies = false;
@@ -15,10 +14,18 @@ SET search_path = public, pg_catalog;
 -- Data for Name: termine; Type: TABLE DATA; Schema: public; Owner: mero
 --
 
-COPY termine (stammtisch, vortrag, override, location, date) FROM stdin;
-f	2	\N	\N	2013-12-12
-f	1	\N	\N	2013-12-19
-t	\N	\N	Mr. Wu	2013-12-05
+COPY termine (stammtisch, vortrag, override, location, date, override_long) FROM stdin;
+f	\N			2013-12-12	
+t	\N		Mr. Wu	2013-12-05	
+f	\N			2013-12-19	
+f	\N			2013-12-26	
+f	\N			2014-01-09	
+f	\N			2014-01-16	
+f	\N			2014-01-23	
+f	\N			2014-01-30	
+t	\N			2014-02-06	
+f	\N			2014-02-13	
+t	\N			2014-01-02	
 \.
 
 
@@ -27,7 +34,13 @@ t	\N	\N	Mr. Wu	2013-12-05
 --
 
 COPY vortraege (id, date, topic, abstract, speaker, infourl) FROM stdin;
-4	\N	Hacking Yourself, Teil 4: Garbage Collection		Jan	
+129	2006-06-29	Toshiba schrauben		Craegga	
+130	2006-06-22	Infon-Spiel von der GPN		Craegga	
+131	2005-12-01	Routing-Protokolle im Internet		shl	https://www.noname-ev.de/w/C14h:Routing_Protokolle_im_Internet
+132	2004-06-03	Barrierefreies Webdesign		Alex	https://www.noname-ev.de/w/C14h:Barrierefreies_Webdesign
+133	2004-04-22	(La)TeX-Einführung		sur5r, Matthias	
+15	2013-09-26	Keysigning-Party mit Einführung		Merovius	https://www.noname-ev.de/w/Keysigning#Keysigning-Party_am_2013-09-26
+4	\N	Hacking Yourself, Teil 4: Garbage Collection		baz	
 5	\N	Agile (Software-)Entwicklung mit Scrum		Hauro	
 6	\N	Clojure		Hauro	
 9	2013-11-28	Hacking Yourself, Teil 3: Atmung		Jan	https://www.noname-ev.de/wiki/uploads/8/84/Hacking_Yourself%2C_Teil_3-_Atmung_3.pdf
@@ -151,12 +164,6 @@ COPY vortraege (id, date, topic, abstract, speaker, infourl) FROM stdin;
 126	2006-07-20	Alex hat spontan was über Lojban erzählt		Alex	
 127	2006-07-06	k1w1 und sur5r erzählen über PICs und was man damit so machen kann.		k1w1, sur5r	
 128	2006-07-06	TrickSTer erzählt kurz was zum Thema Elektronische Gesundheitskarte und den  konkreten Planungen.		TrickSTer	
-129	2006-06-29	Toshiba schrauben		Craegga	
-130	2006-06-22	Infon-Spiel von der GPN		Craegga	
-131	2005-12-01	Routing-Protokolle im Internet		shl	https://www.noname-ev.de/w/C14h:Routing_Protokolle_im_Internet
-132	2004-06-03	Barrierefreies Webdesign		Alex	https://www.noname-ev.de/w/C14h:Barrierefreies_Webdesign
-133	2004-04-22	(La)TeX-Einführung		sur5r, Matthias	
-15	2013-09-26	Keysigning-Party mit Einführung		Merovius	https://www.noname-ev.de/w/Keysigning#Keysigning-Party_am_2013-09-26
 \.
 
 
@@ -165,6 +172,14 @@ COPY vortraege (id, date, topic, abstract, speaker, infourl) FROM stdin;
 --
 
 SELECT pg_catalog.setval('vortraege_id_seq', 133, true);
+
+
+--
+-- Data for Name: zusagen; Type: TABLE DATA; Schema: public; Owner: mero
+--
+
+COPY zusagen (nick, kommt, kommentar) FROM stdin;
+\.
 
 
 --
