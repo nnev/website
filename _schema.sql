@@ -11,7 +11,9 @@ SET client_min_messages = warning;
 SET search_path = public, pg_catalog;
 
 ALTER TABLE ONLY public.vortraege DROP CONSTRAINT vortraege_pkey;
+ALTER TABLE ONLY public.termine DROP CONSTRAINT unique_date;
 ALTER TABLE public.vortraege ALTER COLUMN id DROP DEFAULT;
+DROP TABLE public.zusagen;
 DROP SEQUENCE public.vortraege_id_seq;
 DROP TABLE public.vortraege;
 DROP TABLE public.termine;
@@ -60,9 +62,10 @@ SET default_with_oids = false;
 CREATE TABLE termine (
     stammtisch boolean,
     vortrag integer,
-    override text,
-    location text,
-    date date
+    override text NOT NULL,
+    location text DEFAULT ''::text NOT NULL,
+    date date,
+    override_long text DEFAULT ''::text NOT NULL
 );
 
 
@@ -106,10 +109,31 @@ ALTER SEQUENCE vortraege_id_seq OWNED BY vortraege.id;
 
 
 --
+-- Name: zusagen; Type: TABLE; Schema: public; Owner: mero; Tablespace: 
+--
+
+CREATE TABLE zusagen (
+    nick text,
+    kommt boolean,
+    kommentar text
+);
+
+
+ALTER TABLE public.zusagen OWNER TO mero;
+
+--
 -- Name: id; Type: DEFAULT; Schema: public; Owner: mero
 --
 
 ALTER TABLE ONLY vortraege ALTER COLUMN id SET DEFAULT nextval('vortraege_id_seq'::regclass);
+
+
+--
+-- Name: unique_date; Type: CONSTRAINT; Schema: public; Owner: mero; Tablespace: 
+--
+
+ALTER TABLE ONLY termine
+    ADD CONSTRAINT unique_date UNIQUE (date);
 
 
 --
