@@ -96,8 +96,8 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 
 	RunHook()
 
-	http.SetCookie(res, &http.Cookie{ Name: "nick", Value: nick, Expires: time.Date(2030, 0, 0, 0, 0, 0, 0, time.Local) })
-	http.SetCookie(res, &http.Cookie{ Name: "kommentar", Value: kommentar, Expires: time.Date(2030, 0, 0, 0, 0, 0, 0, time.Local) })
+	http.SetCookie(res, &http.Cookie{Name: "nick", Value: nick, Expires: time.Date(2030, 0, 0, 0, 0, 0, 0, time.Local)})
+	http.SetCookie(res, &http.Cookie{Name: "kommentar", Value: kommentar, Expires: time.Date(2030, 0, 0, 0, 0, 0, 0, time.Local)})
 	http.Redirect(res, req, "/yarpnarp.html", 303)
 }
 
