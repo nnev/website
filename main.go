@@ -33,6 +33,7 @@ type Command struct {
 }
 
 var Commands = []*Command{
+	cmdLocation,
 	cmdNext,
 	cmdHelp,
 }
