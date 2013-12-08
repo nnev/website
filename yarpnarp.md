@@ -23,10 +23,10 @@ Stimme ab, damit ich passend reservieren kann. Danke!
 					{% continue %}
 				{% endunless %}
 				{% assign done = true %}
-				Location: <a href="{{ st.url }}">{{ termin.location }}</a>
+				Location: <a href="{{ st.url }}">{{ termin.location | escape }}</a>
 			{% endfor %}
 			{% unless done %}
-				Location: <a href="stammtisch.html">{{ termin.location }}</a>
+				Location: <a href="stammtisch.html">{{ termin.location | escape }}</a>
 			{% endunless %}
 		{% else %}
 			Location: TBA
@@ -69,7 +69,7 @@ Stimme ab, damit ich passend reservieren kann. Danke!
 		{% for yarp in page.stammtischYarp %}
 			<tr>
 				<td>{{yarp.nick | escape}}</td>
-				<td title="{{yarp.kommentar}}">{{yarp.kommentar}}</td>
+				<td title="{{yarp.kommentar | escape}}">{{yarp.kommentar | escape}}</td>
 			</tr>
 		{% endfor %}
 	{% endif %}
@@ -79,7 +79,7 @@ Stimme ab, damit ich passend reservieren kann. Danke!
 		{% for narp in page.stammtischNarp %}
 			<tr>
 				<td>{{narp.nick | escape}}</td>
-				<td title="{{narp.kommentar}}">{{narp.kommentar}}</td>
+				<td title="{{narp.kommentar | escape}}">{{narp.kommentar | escape}}</td>
 			</tr>
 		{% endfor %}
 	{% endif %}

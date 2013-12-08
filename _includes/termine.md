@@ -2,9 +2,9 @@
 <p {% if notfirst %}class="dim"{% endif %}>
 	{% assign notfirst = true %}
 
-	<b>Datum: {{ termin.date }}</b><br>
+	<b>Datum: {{ termin.date | escape }}</b><br>
 	{% if termin.override != "" %}
-		{{ termin.override }}
+		{{ termin.override | escape }}
 	{% elsif termin.stammtisch %}
 		Stammtisch<br/>
 		{% if termin.location != "" %}
@@ -16,10 +16,10 @@
 					{% continue %}
 				{% endunless %}
 				{% assign done = true %}
-				Location: <a href="{{ st.url }}">{{ termin.location }}</a>
+				Location: <a href="{{ st.url }}">{{ termin.location | escape }}</a>
 			{% endfor %}
 			{% unless done %}
-				Location: <a href="stammtisch.html">{{ termin.location }}</a>
+				Location: <a href="stammtisch.html">{{ termin.location | escape }}</a>
 			{% endunless %}
 		{% else %}
 			Location: TBA
@@ -28,10 +28,10 @@
 		Chaos-Treff (<a href="anfahrt.html">Anfahrt?</a>)<br>
 		c¼h:
 		{% if termin.topic %}
-			<a href="chaotische_viertelstunde.html#c14h_{{termin.c14h_id}}">{{ termin.topic }}</a>
+			<a href="chaotische_viertelstunde.html#c14h_{{termin.c14h_id}}">{{ termin.topic | escape }}</a>
 		{% else %}
 			noch keine ◉︵◉.<br/>
-			<a href="edit_c14.html?date={{termin.date}}">neue c¼h eintragen?</a>
+			<a href="edit_c14.html?date={{termin.date | escape}}">neue c¼h eintragen?</a>
 		{% endif %}
 	{% endif %}
 </p>

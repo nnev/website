@@ -1,23 +1,23 @@
 <table>
 {% for vortrag in vortraege %}
     <tr>
-        <th>{% if vortrag.date %}{{ vortrag.date }}{% else %}TBA{% endif %}</th>
-        <th colspan="2">{{ vortrag.topic }}</th>
+        <th>{% if vortrag.date %}{{ vortrag.date | escape }}{% else %}TBA{% endif %}</th>
+        <th colspan="2">{{ vortrag.topic | escape }}</th>
     </tr>
-    <tr><td></td><td class="dim" colspan="2">von {{ vortrag.speaker }}</td></tr>
+    <tr><td></td><td class="dim" colspan="2">von {{ vortrag.speaker | escape }}</td></tr>
     <tr>
         <td></td>
-        <td class="just" colspan="2">{{ vortrag.abstract | newline_to_br }}</td>
+        <td class="just" colspan="2">{{ vortrag.abstract | escape | newline_to_br }}</td>
     </tr>
     <tr class="space">
         <td></td>
         <td>
             {% if vortrag.infourl != '' %}
-                <a href="{{ vortrag.infourl }}"><b>Details / Folien aufrufen</b></a>
+                <a href="{{ vortrag.infourl | escape }}"><b>Details / Folien aufrufen</b></a>
             {% endif %}
         </td>
         <td>
-            <a href="edit_c14.html?id={{ vortrag.id }}">Eintrag bearbeiten</a>
+            <a href="edit_c14.html?id={{ vortrag.id | escape }}">Eintrag bearbeiten</a>
         </td>
     </tr>
 

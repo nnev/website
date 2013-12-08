@@ -25,7 +25,7 @@ Nächstes Treffen
 {% assign termin = page.termine | first %}
 
 <p>
-  <b>{{ termin.date }}</b> um 19 Uhr<br/>
+  <b>{{ termin.date | escape }}</b> um 19 Uhr<br/>
   {% if termin.stammtisch %}
     <b>Stammtisch</b> bei
     {% for st in site.pages %}
@@ -36,10 +36,10 @@ Nächstes Treffen
         {% continue %}
       {% endunless %}
       {% assign done = true %}
-      <a href="{{ st.url }}">{{ termin.location }}</a>
+      <a href="{{ st.url | escape }}">{{ termin.location | escape }}</a>
     {% endfor %}
     {% unless done %}
-      <a href="stammtisch.html">{{ termin.location }}</a>
+      <a href="stammtisch.html">{{ termin.location | escape }}</a>
     {% endunless %}
     <br>
     <a href="FIXME">Zwecks Reservierung bitte zu/absagen</a>
@@ -47,7 +47,7 @@ Nächstes Treffen
     <b>Chaos-Treff</b> <a href="anfahrt.html">(Anfahrt)</a><br/>
     c¼h:
     {% if termin.topic %}
-      <a href="chaotische_viertelstunde.html#c14h_{{termin.c14h_id}}">{{ termin.topic }}</a>
+      <a href="chaotische_viertelstunde.html#c14h_{{termin.c14h_id}}">{{ termin.topic | escape }}</a>
     {% else %}
       noch keine ◉︵◉
     {% endif %}
