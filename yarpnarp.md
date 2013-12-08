@@ -68,7 +68,7 @@ Stimme ab, damit ich passend reservieren kann. Danke!
 		<tr class="header"><th>Yarp</th><td>{{page.stammtischYarpCount}} Zusagen</td></tr>
 		{% for yarp in page.stammtischYarp %}
 			<tr>
-				<td>{{yarp.nick}}</td>
+				<td>{{yarp.nick | escape}}</td>
 				<td title="{{yarp.kommentar}}">{{yarp.kommentar}}</td>
 			</tr>
 		{% endfor %}
@@ -78,7 +78,7 @@ Stimme ab, damit ich passend reservieren kann. Danke!
 		<tr class="header"><th>Narp</th><td>{{page.stammtischNarpCount}} Absagen</td></tr>
 		{% for narp in page.stammtischNarp %}
 			<tr>
-				<td>{{narp.nick}}</td>
+				<td>{{narp.nick | escape}}</td>
 				<td title="{{narp.kommentar}}">{{narp.kommentar}}</td>
 			</tr>
 		{% endfor %}
