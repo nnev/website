@@ -3,7 +3,9 @@
 	{% assign notfirst = true %}
 
 	<b>Datum: {{ termin.date }}</b><br>
-	{% if termin.stammtisch %}
+	{% if termin.override != "" %}
+		{{ termin.override }}
+	{% elsif termin.stammtisch %}
 		Stammtisch<br/>
 		{% if termin.location != "" %}
 			{% for st in site.pages %}
