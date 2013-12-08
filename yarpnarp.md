@@ -51,17 +51,19 @@ Stimme ab, damit ich passend reservieren kann. Danke!
 
 ### Status
 
-{% if HasKommt %}
-	{% if Kommt %}
+<div>
+<< if .HasKommt >>
+	<< if .Kommt >>
 		<div class="yarpnarpstatus yarp">
 			<b>Dein Status:</b> Du kommst (ツ)
 		</div>
-	{% else %}
+	<< else >>
 		<div class="yarpnarpstatus narp">
 			<b>Dein Status:</b> Du kommst nicht (⊙︿⊙)
 		</div>
-	{% endif %}
-{% endif %}
+	<< end >>
+<< end >>
+</div>
 
 <table class="yarpnarp">
 	{% if page.stammtischYarpCount != 0 %}
