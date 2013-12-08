@@ -15,7 +15,7 @@ func OpenDB() (err error) {
 	if err != nil {
 		return err
 	}
-	_, err := db.Exec("SELECT 1")
+	_, err = db.Exec("SELECT 1")
 	if err != nil {
 		return err
 	}
