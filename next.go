@@ -15,7 +15,9 @@ var cmdNext = &Command{
 
 Stammtische werden jeweils am ersten Donnerstag eines Monats ohne Ort angelegt,
 alle anderen Termine werden ohne Stammtisch oder chaotische Viertelstunde
-angelegt`,
+angelegt. Existente Termine werden nicht geändert.
+
+Bei Erfolg gibt der Befehl nichts aus`,
 	NeedsDB: true,
 }
 
@@ -60,21 +62,16 @@ func RunTest() {
 		fmt.Println("SQL-Fehler:", err)
 		return
 	}
-	num := int64(0)
 	for _, d := range getNextThursdays(n) {
-		result, err := tx.Exec("INSERT INTO termine (stammtisch, date) SELECT $2, $1 WHERE NOT EXISTS (SELECT 1 FROM termine WHERE date = $1)", d, d.Day() < 8)
+		_, err := tx.Exec("INSERT INTO termine (stammtisch, date) SELECT $2, $1 WHERE NOT EXISTS (SELECT 1 FROM termine WHERE date = $1)", d, d.Day() < 8)
 		if err != nil {
 			fmt.Println("SQL-Fehler:", err)
 			tx.Rollback()
 			return
 		}
-		m, _ := result.RowsAffected()
-		num += m
 	}
 	err = tx.Commit()
 	if err != nil {
 		fmt.Println("SQL-Fehler:", err)
-		return
 	}
-	fmt.Printf("%d neue Termine eingefügt\n", num)
 }
