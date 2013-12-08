@@ -140,7 +140,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	err = vortrag.Put()
 	if err != nil {
 		log.Printf("Could not update: %v\n", err)
-		writeError(400, res, "Error")
+		writeError(400, res, "Error: %v", err)
 	}
 
 	RunHook()
