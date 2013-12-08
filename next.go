@@ -23,7 +23,7 @@ Bei Erfolg gibt der Befehl nichts aus`,
 
 func init() {
 	cmdNext.Flag = flag.NewFlagSet("next", flag.ExitOnError)
-	cmdNext.Run = RunTest
+	cmdNext.Run = RunNext
 }
 
 func getNextThursdays(n int) (next []time.Time) {
@@ -45,7 +45,7 @@ func getNextThursdays(n int) (next []time.Time) {
 	return next
 }
 
-func RunTest() {
+func RunNext() {
 	if cmdNext.Flag.NArg() < 1 {
 		fmt.Printf("Nicht genug Argumente. Siehe %s help next\n", os.Args[0])
 		return
