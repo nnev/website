@@ -35,6 +35,7 @@ type Command struct {
 var Commands = []*Command{
 	cmdLocation,
 	cmdNext,
+	cmdClear,
 	cmdOverride,
 	cmdHelp,
 }
@@ -51,6 +52,7 @@ func (cmd *Command) Name() string {
 func main() {
 	flag.Parse()
 	if flag.NArg() < 1 {
+
 		fmt.Printf("Usage: %s [flags] cmd [args]\n", os.Args[0])
 		os.Exit(1)
 	}
