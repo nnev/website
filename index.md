@@ -42,7 +42,7 @@ Nächstes Treffen
       <a href="stammtisch.html">{{ termin.location | escape }}</a>
     {% endunless %}
     <br>
-    <a href="FIXME">Zwecks Reservierung bitte zu/absagen</a>
+    <a href="yarpnarp.html">Zwecks Reservierung bitte zu/absagen</a>
   {% else %}
     <b>Chaos-Treff</b> <a href="anfahrt.html">(Anfahrt)</a><br/>
     c¼h:
