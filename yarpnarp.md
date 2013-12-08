@@ -39,10 +39,10 @@ Stimme ab, damit ich passend reservieren kann. Danke!
 
 <form method="POST">
 	<label for="nick">Dein Nick</label>
-	<input type="text" placeholder="Dein Nick" id="nick" name="nick" value="<<.Nick>>" /><br>
+	<input type="text" placeholder="Dein Nick" id="nick" name="nick" value="<<.Nick>>" required="required"/><br>
 
 	<label for="kommentar">Kommentar</label>
-	<input type="text" placeholder="Kommentar" id="kommentar" name="" value="<<.Kommentar>>" /><br>
+	<input type="text" placeholder="Kommentar (Optional)" id="kommentar" name="kommentar" value="<<.Kommentar>>" /><br>
 
 	<input type="submit" value="Yarp" name="kommt"/>
 	<input type="submit" value="Narp" name="kommt"/>
@@ -50,3 +50,20 @@ Stimme ab, damit ich passend reservieren kann. Danke!
 
 
 ### Status
+<table>
+	<tr><th>Yarp</th><td>{{page.stammtischYarpCount}} Zusagen</td></tr>
+	{% for yarp in page.stammtischYarp %}
+		<tr>
+			<td>{{yarp.nick}}</td>
+			<td title="{{yarp.kommentar}}">{{yarp.kommentar}}</td>
+		</tr>
+	{% endfor %}
+
+	<tr><th>Narp</th><td>{{page.stammtischNarpCount}} Absagen</td></tr>
+	{% for narp in page.stammtischNarp %}
+		<tr>
+			<td>{{narp.nick}}</td>
+			<td title="{{narp.kommentar}}">{{narp.kommentar}}</td>
+		</tr>
+	{% endfor %}
+</table>
