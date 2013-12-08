@@ -1,13 +1,13 @@
 {% include header.html %}
 
 <div class="main_left">
-	<h1>{{page.name}}</h1>
+	<h1>{{page.name | escape}}</h1>
 
-	<p><b>{{page.address}}</b>. {{page.address_desc}}</p>
+	<p><b>{{page.address | escape}}</b>. {{page.address_desc | escape}}</p>
 	<p>
-		{{page.desc}}
+		{{page.desc | escape}}
 		{% if page.menu_url %}
-			<a href="{{page.menu_url}}"><b>Speisekarte anzeigen</b></a>.
+			<a href="{{page.menu_url | escape}}"><b>Speisekarte anzeigen</b></a>.
 		{% endif %}
 	</p>
 
@@ -18,18 +18,18 @@
 	var map = L.map('map').setView([{{page.map_lat}}, {{page.map_lon}}], {{page.map_zoom}});
 	{{site.map_js}}
 
-	L.marker([{{page.lat}}, {{page.lon}}]).addTo(map).bindPopup("<b>{{page.name}}</b>", { "closeButton": false }).openPopup();
+	L.marker([{{page.lat}}, {{page.lon}}]).addTo(map).bindPopup("<b>{{page.name | escape}}</b>", { "closeButton": false }).openPopup();
 	</script>
 
 	<p>
 		{% if page.gmaps_url %}
-			<a href="{{page.gmaps_url}}">Gaststätte in Google Maps anzeigen</a><br/>
+			<a href="{{page.gmaps_url | escape}}">Gaststätte in Google Maps anzeigen</a><br/>
 		{% endif %}
 		{% if page.phone %}
-			<br/>Telefon: <a href="tel://{{page.phone}}">{{page.phone}}</a><br/>
+			<br/>Telefon: <a href="tel://{{page.phone | escape}}">{{page.phone | escape}}</a><br/>
 		{% endif %}
 		{% if page.site_url %}
-			Webseite: <a href="{{page.site_url}}">{{page.site_url}}</a><br/>
+			Webseite: <a href="{{page.site_url | escape}}">{{page.site_url | escape}}</a><br/>
 		{% endif %}
 	</p>
 </div>
