@@ -8,7 +8,7 @@ title: Zu-/Absagen für den Chaos-Stammtisch
 Erscheinst Du zum nächsten Stammtisch? Gib hier bitte Deine ja/nein
 Stimme ab, damit ich passend reservieren kann. Danke!
 
-### Zu-/Absagen für Chaos-Stammtisch
+### Zu-/Absagen
 
 <p>
 {% for termin in page.termine %}
@@ -50,20 +50,37 @@ Stimme ab, damit ich passend reservieren kann. Danke!
 
 
 ### Status
-<table>
-	<tr><th>Yarp</th><td>{{page.stammtischYarpCount}} Zusagen</td></tr>
-	{% for yarp in page.stammtischYarp %}
-		<tr>
-			<td>{{yarp.nick}}</td>
-			<td title="{{yarp.kommentar}}">{{yarp.kommentar}}</td>
-		</tr>
-	{% endfor %}
 
-	<tr><th>Narp</th><td>{{page.stammtischNarpCount}} Absagen</td></tr>
-	{% for narp in page.stammtischNarp %}
-		<tr>
-			<td>{{narp.nick}}</td>
-			<td title="{{narp.kommentar}}">{{narp.kommentar}}</td>
-		</tr>
-	{% endfor %}
+{% if HasKommt %}
+	{% if Kommt %}
+		<div class="yarpnarpstatus yarp">
+			<b>Dein Status:</b> Du kommst (ツ)
+		</div>
+	{% else %}
+		<div class="yarpnarpstatus narp">
+			<b>Dein Status:</b> Du kommst nicht (⊙︿⊙)
+		</div>
+	{% endif %}
+{% endif %}
+
+<table class="yarpnarp">
+	{% if page.stammtischYarpCount != 0 %}
+		<tr class="header"><th>Yarp</th><td>{{page.stammtischYarpCount}} Zusagen</td></tr>
+		{% for yarp in page.stammtischYarp %}
+			<tr>
+				<td>{{yarp.nick}}</td>
+				<td title="{{yarp.kommentar}}">{{yarp.kommentar}}</td>
+			</tr>
+		{% endfor %}
+	{% endif %}
+
+	{% if page.stammtischNarpCount != 0 %}
+		<tr class="header"><th>Narp</th><td>{{page.stammtischNarpCount}} Absagen</td></tr>
+		{% for narp in page.stammtischNarp %}
+			<tr>
+				<td>{{narp.nick}}</td>
+				<td title="{{narp.kommentar}}">{{narp.kommentar}}</td>
+			</tr>
+		{% endfor %}
+	{% endif %}
 </table>

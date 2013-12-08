@@ -238,4 +238,52 @@ input:focus, textarea:focus {
 
 input[type='submit'] {
 	margin: 1rem 0;
+	min-width: 8rem;
+}
+
+table, td, th, tr {
+	margin: 0;
+	padding: 0;
+	border-collapse:collapse;
+}
+
+.yarpnarp {
+	margin-top: 0.5rem;
+}
+
+.yarpnarp td, .yarpnarp th {
+	text-align: left;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	padding: 0.4rem;
+}
+
+.yarpnarp td:nth-child(odd) {
+	width: 35%;
+}
+
+.yarpnarp td:nth-child(even) {
+	width: 65%;
+	color: #666;
+	text-align: right;
+}
+
+.yarpnarp .header {
+	background: rgba(0,0,0, 0.05);
+	border-bottom: 0.1rem solid rgba(0,0,0, 0.2);
+}
+
+.yarpnarpstatus {
+	display: none;
+	margin-bottom: 1rem;
+	padding: 0.5rem;
+}
+
+.yarpnarpstatus.yarp {
+	background: rgba(0, 100, 0, 0.2);
+}
+
+.yarpnarpstatus.narp {
+	background: rgba(100, 0, 0, 0.2);
 }
