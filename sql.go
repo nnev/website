@@ -1,11 +1,11 @@
 package main
 
 import (
-	_ "github.com/lib/pq"
 	"database/sql"
 	"errors"
-	"time"
+	_ "github.com/lib/pq"
 	"log"
+	"time"
 )
 
 var (

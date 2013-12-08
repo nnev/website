@@ -2,35 +2,35 @@ package main
 
 import (
 	"flag"
+	"fmt"
+	"html/template"
 	"log"
 	"net/http"
-	"fmt"
 	"regexp"
-	"time"
-	"html/template"
 	"strconv"
+	"time"
 )
 
 var (
-	addr = flag.String("listen", "0.0.0.0:6725", "The address to listen on")
-	driver = flag.String("driver", "postgres", "The database driver to use")
+	addr    = flag.String("listen", "0.0.0.0:6725", "The address to listen on")
+	driver  = flag.String("driver", "postgres", "The database driver to use")
 	connect = flag.String("connect", "dbname=nnev host=/var/run/postgresql sslmode=disable", "The connection string to use")
-	gettpl = flag.String("template", "/var/www/www.noname-ev.de/edit_c14.html", "The template to serve for editing c¼")
-	hook = flag.String("hook", "", "A hook to run on every change")
+	gettpl  = flag.String("template", "/var/www/www.noname-ev.de/edit_c14.html", "The template to serve for editing c¼")
+	hook    = flag.String("hook", "", "A hook to run on every change")
 
-	loc *time.Location
-	tpl *template.Template
+	loc  *time.Location
+	tpl  *template.Template
 	idRe = regexp.MustCompile(`^\d*$`)
 )
 
 type Vortrag struct {
-	Id int
-	Date CustomTime
-	HasDate bool
-	Topic string
+	Id       int
+	Date     CustomTime
+	HasDate  bool
+	Topic    string
 	Abstract string
-	Speaker string
-	InfoURL string
+	Speaker  string
+	InfoURL  string
 }
 
 type CustomTime time.Time
@@ -43,7 +43,7 @@ func (t CustomTime) IsZero() bool {
 	return time.Time(t).IsZero()
 }
 
-func writeError(errno int, res http.ResponseWriter, format string, args... interface{}) {
+func writeError(errno int, res http.ResponseWriter, format string, args ...interface{}) {
 	res.WriteHeader(errno)
 	fmt.Fprintf(res, format, args...)
 }
@@ -136,7 +136,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		id = -1
 	}
 
-	vortrag := Vortrag{ id, CustomTime(date), false, topic, abstract, speaker, infourl }
+	vortrag := Vortrag{id, CustomTime(date), false, topic, abstract, speaker, infourl}
 	err = vortrag.Put()
 	if err != nil {
 		log.Printf("Could not update: %v\n", err)
