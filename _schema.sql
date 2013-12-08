@@ -11,6 +11,7 @@ SET client_min_messages = warning;
 SET search_path = public, pg_catalog;
 
 ALTER TABLE ONLY public.vortraege DROP CONSTRAINT vortraege_pkey;
+ALTER TABLE ONLY public.zusagen DROP CONSTRAINT unique_nick;
 ALTER TABLE ONLY public.termine DROP CONSTRAINT unique_date;
 ALTER TABLE public.vortraege ALTER COLUMN id DROP DEFAULT;
 DROP TABLE public.zusagen;
@@ -114,8 +115,8 @@ ALTER SEQUENCE vortraege_id_seq OWNED BY vortraege.id;
 
 CREATE TABLE zusagen (
     nick text,
-    kommt boolean,
-    kommentar text
+    kommt boolean DEFAULT false NOT NULL,
+    kommentar text DEFAULT ''::text NOT NULL
 );
 
 
@@ -134,6 +135,14 @@ ALTER TABLE ONLY vortraege ALTER COLUMN id SET DEFAULT nextval('vortraege_id_seq
 
 ALTER TABLE ONLY termine
     ADD CONSTRAINT unique_date UNIQUE (date);
+
+
+--
+-- Name: unique_nick; Type: CONSTRAINT; Schema: public; Owner: mero; Tablespace: 
+--
+
+ALTER TABLE ONLY zusagen
+    ADD CONSTRAINT unique_nick UNIQUE (nick);
 
 
 --
