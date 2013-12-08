@@ -20,10 +20,7 @@ func OpenDB() (err error) {
 
 func (z *Zusage) Put() (err error) {
 	log.Println("Put", z)
-	_, err = db.Exec("DELETE FROM zusagen WHERE nick = $1", z.Nick)
-	if err != nil {
-		return err
-	}
+	_, _ = db.Exec("DELETE FROM zusagen WHERE nick = $1", z.Nick)
 	_, err = db.Exec("INSERT INTO zusagen (nick, kommt, kommentar) VALUES ($1, $2, $3)", z.Nick, z.Kommt, z.Kommentar)
 	if err != nil {
 		return err
