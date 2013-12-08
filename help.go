@@ -56,4 +56,6 @@ func RunHelp() {
 			return
 		}
 	}
+
+	fmt.Printf("Unbekannter Befehl \"%s\"\n", cmdHelp.Flag.Arg(0))
 }
