@@ -5,19 +5,23 @@
 	<b>Datum: {{ termin.date }}</b><br>
 	{% if termin.stammtisch %}
 		Stammtisch<br/>
-		{% for st in site.pages %}
-			{% unless st.layout == "stammtisch" %}
-				{% continue %}
+		{% if termin.location != "" %}
+			{% for st in site.pages %}
+				{% unless st.layout == "stammtisch" %}
+					{% continue %}
+				{% endunless %}
+				{% unless st.name == termin.location %}
+					{% continue %}
+				{% endunless %}
+				{% assign done = true %}
+				Location: <a href="{{ st.url }}">{{ termin.location }}</a>
+			{% endfor %}
+			{% unless done %}
+				Location: <a href="stammtisch.html">{{ termin.location }}</a>
 			{% endunless %}
-			{% unless st.name == termin.location %}
-				{% continue %}
-			{% endunless %}
-			{% assign done = true %}
-			Location: <a href="{{ st.url }}">{{ termin.location }}</a>
-		{% endfor %}
-		{% unless done %}
-			Location: <a href="stammtisch.html">{{ termin.location }}</a>
-		{% endunless %}
+		{% else %}
+			Location: TBA
+		{% endif %}
 	{% else %}
 		Chaos-Treff (<a href="anfahrt.html">Anfahrt?</a>)<br>
 		c¼h:
