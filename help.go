@@ -4,6 +4,7 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"text/tabwriter"
 )
 
 var cmdHelp = &Command{
@@ -19,7 +20,7 @@ func init() {
 
 func showCmdHelp(cmd *Command) {
 	fmt.Println("Nutzung:\n")
-	fmt.Println("\t", cmd.UsageLine, "\n")
+	fmt.Println("    ", cmd.UsageLine, "\n")
 	fmt.Println(cmd.Long)
 }
 
@@ -29,13 +30,17 @@ func showGlobalHelp() {
 	fmt.Printf("    %s [flags] befehl [argumente]\n\n", os.Args[0])
 	fmt.Println("Die vorhandenen Befehle sind:\n")
 
+	w := tabwriter.NewWriter(os.Stdout, 8, 4, 2, ' ', 0)
+
 	for _, cmd := range Commands {
 		if cmd.Name() == "help" {
 			continue
 		}
 
-		fmt.Printf("  %s\t%s\n", cmd.Name(), cmd.Short)
+		fmt.Fprintf(w, "    %s\t%s\n", cmd.Name(), cmd.Short)
 	}
+
+	w.Flush()
 
 	fmt.Printf("\nDie Benutzung eines Befehls zeigt dir \"%s help [befehl]\" an.\n", os.Args[0])
 }
