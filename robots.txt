@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /pizza.html
+Disallow: /edit_c14h.html
+Disallow: /yarpnarp.html
