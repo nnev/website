@@ -15,7 +15,7 @@ title: c¼h editieren
 	<input type="text" placeholder="Thema" id="topic" name="topic" value="<<.Topic>>" required="required" /><br>
 
 	<label for="date">Datum</label>
-	<input type="date" placeholder="Datum (YYYY-MM-DD)" id="date" name="date" value="<<if .HasDate >><< .Date >><<end>>" /><br>
+	<input type="date" placeholder="Datum (YYYY-MM-DD)" id="date" name="date" value="<<if .HasDate >><< .Date >><<end>>"  required="required"/><br>
 
 	<label for="abstract">Zusammenfassung</label>
 	<textarea id="abstract" name="abstract" placeholder="Zusammenfassung" rows="10" cols="60"><<.Abstract>></textarea><br>
