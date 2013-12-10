@@ -1,6 +1,6 @@
 <table>
 {% for vortrag in vortraege %}
-    <tr>
+    <tr id="c14h_{{ vortrag.id | escape }}">
         <th>{% if vortrag.date %}{{ vortrag.date | escape }}{% else %}TBA{% endif %}</th>
         <th colspan="2">{{ vortrag.topic | escape }}</th>
     </tr>
