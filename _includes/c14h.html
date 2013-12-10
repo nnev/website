@@ -1,7 +1,10 @@
 <table>
 {% for vortrag in vortraege %}
-    <tr id="c14h_{{ vortrag.id | escape }}">
-        <th>{% if vortrag.date %}{{ vortrag.date | escape }}{% else %}TBA{% endif %}</th>
+    <tr>
+        <th>
+        	<a id="c14h_{{vortrag.id | escape }}" class="anchorhack"></a>
+        	{% if vortrag.date %}{{ vortrag.date | escape }}{% else %}TBA{% endif %}
+        </th>
         <th colspan="2">{{ vortrag.topic | escape }}</th>
     </tr>
     <tr><td></td><td class="dim" colspan="2">von {{ vortrag.speaker | escape }}</td></tr>
