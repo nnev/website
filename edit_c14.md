@@ -9,10 +9,10 @@ title: c¼h editieren
 	<input type="hidden" name="id" value="<< if ge .Id 0 >><<.Id>><< end >>" />
 
 	<label for="speaker">Vortragender</label>
-	<input type="text" placeholder="(Nick)name" id="speaker"  name="speaker" value="<<.Speaker>>" /><br>
+	<input type="text" placeholder="(Nick)name" id="speaker"  name="speaker" value="<<.Speaker>>" required="required"/><br>
 
 	<label for="topic">Thema</label>
-	<input type="text" placeholder="Thema" id="topic" name="topic" value="<<.Topic>>" /><br>
+	<input type="text" placeholder="Thema" id="topic" name="topic" value="<<.Topic>>" required="required" /><br>
 
 	<label for="date">Datum</label>
 	<input type="date" placeholder="Datum (YYYY-MM-DD)" id="date" name="date" value="<<if .HasDate >><< .Date >><<end>>" /><br>
