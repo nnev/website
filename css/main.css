@@ -9,7 +9,7 @@
 
 body, iframe {
 	/* bg from http://subtlepatterns.com/ */
-	background: url('/img/bg.png');
+	background: url('/img/bg.png') #EBE9E3;
 }
 
 .menu {
