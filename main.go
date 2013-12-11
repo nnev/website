@@ -103,6 +103,7 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		log.Printf("Could not read Vortrag %d: %v\n", id, err)
 		writeError(400, res, "Could not load")
+		return
 	}
 
 	err = tpl.ExecuteTemplate(res, "edit_c14.html", vortrag)
