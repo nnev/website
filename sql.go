@@ -68,6 +68,7 @@ func Load(id int) (*Vortrag, error) {
 	if err != nil {
 		return nil, err
 	}
+	defer rows.Close()
 
 	if !rows.Next() {
 		return nil, errors.New("No such id")
