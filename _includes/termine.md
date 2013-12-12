@@ -6,7 +6,7 @@
 	{% if termin.override != "" %}
 		{{ termin.override | escape }}
 	{% elsif termin.stammtisch %}
-		Stammtisch<br/>
+		<a href="stammtisch.html">Stammtisch</a><br/>
 		<a href="yarpnarp.html">bitte zu/absagen</a><br/>
 		{% if termin.location != "" %}
 			{% for st in site.pages %}

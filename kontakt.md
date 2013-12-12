@@ -24,7 +24,7 @@ Falls dir IRC nicht liegt, haben wir auch eine
 [Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/ccchd), bei
 der du dich anmelden kannst.
 
-[Mehr Details finden sich im Wiki](https://www.noname-ev.de/w/Kommunikationskan%C3%A4le).
+<a data-no-turbolink href="https://www.noname-ev.de/w/Kommunikationskan%C3%A4le">Mehr Details finden sich im Wiki</a>.
 
 
 <div style="height: 3em"></div>
@@ -38,11 +38,12 @@ der du dich anmelden kannst.
 Verantwortlicher Dienstebetreiber:
 
 <address>
+NoName e.V.
 Michael Stapelberg
 Neuer Weg 16
 69118 Heidelberg
 E-Mail: <img src="/img/michael_stapelberg.png"/>
-Telefon: +49 6221 1871942
+Telefon: [+49 6221 1871942](tel:004962211871942)
 </address>
 
 ##### Haftung für Inhalte
