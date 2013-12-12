@@ -38,11 +38,12 @@ der du dich anmelden kannst.
 Verantwortlicher Dienstebetreiber:
 
 <address>
+NoName e.V.
 Michael Stapelberg
 Neuer Weg 16
 69118 Heidelberg
 E-Mail: <img src="/img/michael_stapelberg.png"/>
-Telefon: +49 6221 1871942
+Telefon: [+49 6221 1871942](tel:004962211871942)
 </address>
 
 ##### Haftung für Inhalte
