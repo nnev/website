@@ -43,6 +43,6 @@ liegst.
 
 ### Anfahrt
 Der Chaos-Treff findet immer im gleichen Raum statt,
-[siehe dazu Anfahrt](anfahrt.html). Zum Stammtich treffen wir uns jedoch in
+[siehe dazu Anfahrt](anfahrt.html). Zum Stammtisch treffen wir uns jedoch in
 wechselnden Gaststätten. Details dazu findest du dann
 [jeweils unter Aktuelles](index.html).
