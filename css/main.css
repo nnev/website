@@ -7,6 +7,10 @@
 	font-family: 'Lato', sans-serif;
 }
 
+body {
+	overflow-y: scroll;
+}
+
 body, iframe {
 	/* bg from http://subtlepatterns.com/ */
 	background: url('/img/bg.png') #EBE9E3;
