@@ -5,7 +5,6 @@ foto:     mrwu
 
 name:         Mr. Wu
 phone:        06221 9852018
-desc:         Bietet original chinesische Speisen, aber auch auf den deutschen Geschmack angepasste Gerichte. Das Restaurant hat leider nur bis 23:00 geöffnet, daher beginnt der Treff pünktlich um 19 Uhr.
 site_url:     http://www.mr-wu-restaurant.de/
 menu_url:     http://www.mr-wu-restaurant.de/speisekarte.html
 
@@ -19,3 +18,6 @@ map_lon:      8.690633
 map_zoom:     16
 gmaps_url:    https://maps.google.de/maps?q=mr.%20wu%20heidelberg
 ---
+Bietet original chinesische Speisen, aber auch auf den deutschen Geschmack
+angepasste Gerichte. Das Restaurant hat leider nur bis 23:00 geöffnet, daher
+beginnt der Treff pünktlich um 19 Uhr.

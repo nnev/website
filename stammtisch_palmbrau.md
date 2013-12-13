@@ -4,7 +4,6 @@ title:    "Stammtisch: Palmbräu Gasse"
 
 name:         Palmbräugasse
 phone:        06221 28536
-desc:         Richtung ist klar deutsch bei großer Auswahl. Mein Eindruck war, dass die Essenspreise zwar hoch, dafür die Portionen aber auch groß sind.
 site_url:     http://www.palmbräu-gasse.de
 menu_url:     http://www.palmbräu-gasse.de/DE/speisen_getraenke.html
 
@@ -18,3 +17,5 @@ map_lon:      8.709
 map_zoom:     16
 gmaps_url:    https://maps.google.de/maps?q=Palmbr%C3%A4u%20Gasse%20Heidelberg
 ---
+Richtung ist klar deutsch bei großer Auswahl. Mein Eindruck war, dass die
+Essenspreise zwar hoch, dafür die Portionen aber auch groß sind.

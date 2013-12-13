@@ -5,13 +5,11 @@
 
 	<p><b>{{page.address | escape}}</b>. {{page.address_desc | escape}}</p>
 	<p>
-		{{page.desc | escape}}
+		{{content}}
 		{% if page.menu_url %}
 			<a href="{{page.menu_url | escape}}"><b>Speisekarte anzeigen</b></a>.
 		{% endif %}
 	</p>
-
-	{{ content }}
 
 	<div id="map"></div>
 	<script>
