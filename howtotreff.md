@@ -4,7 +4,10 @@ title: Was dich bei uns erwartet
 foto: treff
 ---
 
-### Chaos-Treff: Grober Ablauf
+Chaos-Treff
+===========
+
+### Grober Ablauf
 Unsere Treffen haben relativ wenig grundlegende Tagesordnung. Grundsätzlich
 tauscht man sich einfach aus, bastelt gemeinsam an Projekten oder sitzt an
 seinem Laptop. Du kannst einfach Menschen ansprechen und dich mit ihnen
