@@ -1,6 +1,6 @@
 {% include header.html %}
 
-<div class="main_left" itemprop="location" itemscope itemtype="http://schema.org/Organization">
+<div class="main_left" itemprop="location" itemscope itemtype="http://data-vocabulary.org/Organization">
 	<h1 itemProp="name">{{page.name | escape}}</h1>
 
 	<p><b itemprop="address">{{page.address | escape}}</b>. {{page.address_desc | escape}}</p>
@@ -31,7 +31,7 @@
 		{% endif %}
 	</p>
 
-	<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+	<span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
 		<meta itemprop="latitude" content="{{page.lat}}" />
 		<meta itemprop="longitude" content="{{page.lon}}" />
 	</span>

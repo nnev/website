@@ -24,7 +24,7 @@ Nächstes Treffen
 
 {% assign termin = page.termine | first %}
 
-<p itemscope itemtype="http://schema.org/Event">
+<p itemscope itemtype="http://data-vocabulary.org/Event">
 	<time itemprop="startDate" datetime="{{termin.date}}T19:00"><b>{{ termin.date | escape }}</b> um 19 Uhr</time><br/>
 	{% if termin.stammtisch %}
 		<b itemprop="summary">Chaos-Stammtisch</b> bei
@@ -37,7 +37,7 @@ Nächstes Treffen
 			{% endunless %}
 			{% assign done = true %}
 			<a href="{{ st.url | escape }}" itemprop="location">{{ termin.location | escape }}</a>
-			<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+			<span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
 				<meta itemprop="latitude" content="{{st.lat}}" />
 				<meta itemprop="longitude" content="{{st.lon}}" />
 			</span>
@@ -49,7 +49,7 @@ Nächstes Treffen
 		<a href="yarpnarp.html" itemprop="url">Zwecks Reservierung bitte zu/absagen</a>
 	{% else %}
 		<b itemprop="summary">Chaos-Treff</b> <a href="anfahrt.html">(Anfahrt)</a><br/>
-    <span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
+    <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
       <meta itemprop="latitude" content="{{site.treff_lat}}" />
       <meta itemprop="longitude" content="{{site.treff_lon}}" />
     </span>

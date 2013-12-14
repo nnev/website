@@ -7,7 +7,7 @@ title: Chaos-Stammtisch
 
 Der Chaos-Stammtisch findet in wechselnden Lokalen statt. Wir reservieren nach Bedarf, bitte nutze daher das [Anmeldesystem](yarpnarp.html). Der Treffpunkt steht üblicherweise eine Woche im Voraus fest, ab dann kannst Du Dich auch ins System eintragen.
 
-<div itemscope itemtype="http://schema.org/Event">
+<div itemscope itemtype="http://data-vocabulary.org/Event">
 <h3>Nächster <span itemprop="summary">Chaos-Stammtisch</span></h3>
 
 {% for termin in page.termine %}
@@ -27,10 +27,10 @@ Der Chaos-Stammtisch findet in wechselnden Lokalen statt. Wir reservieren nach B
 				{% endunless %}
 				{% assign done = true %}
 				Location: <a href="{{ st.url }}" itemprop="location">{{ termin.location | escape }}</a>
-				<span itemprop="geo" itemscope itemtype="http://schema.org/GeoCoordinates">
-					<meta itemprop="latitude" content="{{st.lat}}" />
-					<meta itemprop="longitude" content="{{st.lon}}" />
-				</span>
+        <span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
+          <meta itemprop="latitude" content="{{st.lat}}" />
+          <meta itemprop="longitude" content="{{st.lon}}" />
+        </span>
 			{% endfor %}
 			{% unless done %}
 				Location: <a href="stammtisch.html">{{ termin.location | escape }}</a>
