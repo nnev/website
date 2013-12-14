@@ -1,9 +1,9 @@
 {% include header.html %}
 
-<div class="main_left">
-	<h1>{{page.name | escape}}</h1>
+<div class="main_left" itemprop="location" itemscope itemtype="http://data-vocabulary.org/Organization">
+	<h1 itemProp="name">{{page.name | escape}}</h1>
 
-	<p><b>{{page.address | escape}}</b>. {{page.address_desc | escape}}</p>
+	<p><b itemprop="address">{{page.address | escape}}</b>. {{page.address_desc | escape}}</p>
 	<p>
 		{{content}}
 		{% if page.menu_url %}
@@ -24,12 +24,17 @@
 			<a href="{{page.gmaps_url | escape}}">Gaststätte in Google Maps anzeigen</a><br/>
 		{% endif %}
 		{% if page.phone %}
-			<br/>Telefon: <a href="tel://{{page.phone | escape}}">{{page.phone | escape}}</a><br/>
+			<br/>Telefon: <a href="tel://{{page.phone | escape}}" itemprop="tel">{{page.phone | escape}}</a><br/>
 		{% endif %}
 		{% if page.site_url %}
-			Webseite: <a href="{{page.site_url | escape}}">{{page.site_url | escape}}</a><br/>
+			Webseite: <a href="{{page.site_url | escape}}" itemprop="url">{{page.site_url | escape}}</a><br/>
 		{% endif %}
 	</p>
+
+	<span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
+		<meta itemprop="latitude" content="{{page.lat}}" />
+		<meta itemprop="longitude" content="{{page.lon}}" />
+	</span>
 </div>
 
 <div class="main_right">
