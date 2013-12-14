@@ -2,6 +2,9 @@ name: Your New Jekyll Site
 markdown: redcarpet
 pygments: true
 
+treff_lat: 49.41765
+treff_lon: 8.66831
+
 map_js: |
   L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
