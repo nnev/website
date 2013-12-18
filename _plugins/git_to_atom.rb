@@ -1,8 +1,6 @@
 # encoding: utf-8
 
 module Jekyll
-	GIT_DIR = '/srv/git/website.git'
-
 	class GitToRssFile < StaticFile
 		def write(dest)
 			super(dest) rescue ArgumentError
@@ -56,25 +54,25 @@ module Jekyll
 		end
 
 		def repo_path
-			`cd #{GIT_DIR} && git rev-parse --show-toplevel`.chomp
+			`git rev-parse --show-toplevel`.chomp
 		end
 
 		def repo_last_change
-			Time.rfc2822(`cd #{GIT_DIR} && git log -1 --format=%aD`)
+			Time.rfc2822(`git log -1 --format=%aD`)
 		end
 
 		def repo_first_change
-			Time.rfc2822(`cd #{GIT_DIR} && git log --format=%aD | tail -n1`)
+			Time.rfc2822(`git log --format=%aD | tail -n1`)
 		end
 
 		def repo_recent_commits
-			guids        = `cd #{GIT_DIR} && git log --max-count=10 --format=%H`.split("\n")
-			author_names = `cd #{GIT_DIR} && git log --max-count=10 --format=%aN`.split("\n")
-			author_mails = `cd #{GIT_DIR} && git log --max-count=10 --format=%aE`.split("\n")
-			dates        = `cd #{GIT_DIR} && git log --max-count=10 --format=%aD`.split("\n")
-			subjects     = `cd #{GIT_DIR} && git log --max-count=10 --format=%s`.split("\n")
-			bodies       = `cd #{GIT_DIR} && git log --max-count=10 --format=%x00%b`.split("\0")
-			files        = `cd #{GIT_DIR} && git log --max-count=10 --name-status --format=%x00`.split("\0")
+			guids        = `git log --max-count=10 --format=%H`.split("\n")
+			author_names = `git log --max-count=10 --format=%aN`.split("\n")
+			author_mails = `git log --max-count=10 --format=%aE`.split("\n")
+			dates        = `git log --max-count=10 --format=%aD`.split("\n")
+			subjects     = `git log --max-count=10 --format=%s`.split("\n")
+			bodies       = `git log --max-count=10 --format=%x00%b`.split("\0")
+			files        = `git log --max-count=10 --name-status --format=%x00`.split("\0")
 
 			(0...guids.size).map do |i|
 				{
@@ -84,7 +82,7 @@ module Jekyll
 					subject: subjects[i],
 					body:		bodies[i].strip,
 					files:	 files[i].strip,
-					#changes: `cd #{GIT_DIR} && git diff HEAD~#{i+1} HEAD~#{i} || echo ""`
+					#changes: `git diff HEAD~#{i+1} HEAD~#{i} || echo ""`
 				}
 			end
 		end
