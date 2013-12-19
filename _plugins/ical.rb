@@ -56,16 +56,18 @@ module Jekyll
 					details = stammtischs.find { |s| s.data['name'] == tuple["location"] }
 
 					topic    = "Chaos-Stammtisch"
-					topic   << ": #{tuple["location"]}" if tuple["location"]
+					topic   << ": #{tuple["location"]}" unless tuple["location"].empty?
 
 					if details
 						desc     = "#{details.content}\n\n"
-						desc    << "#{details.data[:menu_url]}\n#{details.data[:site_url]}}"
-						desc    << "\n\n#{details.data[:phone]}}"
+						desc    << "#{details.data['menu_url']}\n#{details.data['site_url']}"
+						desc    << "\n\n#{details.data['phone']}"
+						desc    << "\n\n#{details.data['address']}\n#{details.data['address_desc']}"
 					end
-					location = tuple['location'].empty? ? "TBA" : tuple['location']
+					location  = tuple['location'].empty? ? "TBA" : tuple['location']
+					location << ", #{details.data['address']}" if details && !details.data['address'].empty?
 
-					coords   = "#{details.data[:lat]};#{details.data[:lon]}" if details
+					coords   = "#{details.data['lat']};#{details.data['lon']}" if details
 					url      = "#{site.config['url']}/yarpnarp.html"
 				else
 					topic    = "Chaos-Treff"
