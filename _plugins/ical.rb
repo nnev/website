@@ -53,30 +53,32 @@ module Jekyll
 				stammtisch = tuple['stammtisch'] == 't'
 				desc = ""
 				if stammtisch
+					url      = "#{site.config['url']}/yarpnarp.html"
+
 					details = stammtischs.find { |s| s.data['name'] == tuple["location"] }
 
 					topic    = "Chaos-Stammtisch"
 					topic   << ": #{tuple["location"]}" unless tuple["location"].empty?
 
+					desc << "=====\nbitte zu/absagen: #{url}\n=====\n\n"
 					if details
-						desc     = "#{details.content}\n\n"
+						desc    << "#{details.content}\n\n"
 						desc    << "#{details.data['menu_url']}\n#{details.data['site_url']}"
 						desc    << "\n\n#{details.data['phone']}"
 						desc    << "\n\n#{details.data['address']}\n#{details.data['address_desc']}"
+						desc    << "\nhttp://www.openstreetmap.org/?mlat=#{details.data['lat']}&mlon=#{details.data['lon']}"
+						desc    << "\n#{details.data['gmaps_url']}"
 					end
 					location  = tuple['location'].empty? ? "TBA" : tuple['location']
 					location << ", #{details.data['address']}" if details && !details.data['address'].empty?
-
-					coords   = "#{details.data['lat']};#{details.data['lon']}" if details
-					url      = "#{site.config['url']}/yarpnarp.html"
 				else
 					topic    = "Chaos-Treff"
 					topic   << ": #{tuple['topic']}" if tuple['topic']
 
 					desc     = "#{tuple['topic']}\n\n#{tuple['abstract']}"
+					desc    << "\n\nhttp://www.openstreetmap.org/?mlat=#{site.config['treff_lat']}&mlon=#{site.config['treff_lon']}"
 
 					location = 'Im Neuenheimer Feld 368, Heidelberg'
-					coords   = "#{site.config['treff_lat']};#{site.config['treff_lon']}"
 					url      = "#{site.config['url']}/anfahrt.html"
 				end
 
@@ -87,7 +89,6 @@ module Jekyll
 					description desc.strip
 					organizer   'ccchd@ccchd.de'
 					location    location
-					geo         coords
 				end
 			end
 
