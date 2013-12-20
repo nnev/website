@@ -52,7 +52,10 @@ module Jekyll
 			res.each do |tuple|
 				stammtisch = tuple['stammtisch'] == 't'
 				desc = ""
-				if stammtisch
+				if tuple['override'] != ""
+					topic    = "NoName e.V.: #{tuple['override']}"
+					desc     = tuple['override_long'] || ""
+				elsif stammtisch
 					url      = "#{site.config['url']}/yarpnarp.html"
 
 					details = stammtischs.find { |s| s.data['name'] == tuple["location"] }
