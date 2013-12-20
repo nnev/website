@@ -10,6 +10,7 @@ import (
 var (
 	driver  = flag.String("driver", "postgres", "The SQL-driver to use")
 	connect = flag.String("connect", "dbname=nnev user=anon host=/var/run/postgresql sslmode=disable", "The connection string to use")
+	_       = flag.Bool("help", false, "Show help")
 )
 
 type Command struct {
