@@ -52,9 +52,11 @@ module Jekyll
 			res.each do |tuple|
 				stammtisch = tuple['stammtisch'] == 't'
 				desc = ""
+				status = "TENTATIVE"
 				if tuple['override'] != ""
 					topic    = "NoName e.V.: #{tuple['override']}"
 					desc     = tuple['override_long'] || ""
+					status   = "CANCELLED"
 				elsif stammtisch
 					url      = "#{site.config['url']}/yarpnarp.html"
 
@@ -71,12 +73,14 @@ module Jekyll
 						desc    << "\n\n#{details.data['address']}\n#{details.data['address_desc']}"
 						desc    << "\nhttp://www.openstreetmap.org/?mlat=#{details.data['lat']}&mlon=#{details.data['lon']}"
 						desc    << "\n#{details.data['gmaps_url']}"
+						status   = "CONFIRMED"
 					end
 					location  = tuple['location'].empty? ? "TBA" : tuple['location']
 					location << ", #{details.data['address']}" if details && !details.data['address'].empty?
 				else
 					topic    = "Chaos-Treff"
 					topic   << ": #{tuple['topic']}" if tuple['topic']
+					status   = "CONFIRMED" if tuple['topic']
 
 					desc     = "#{tuple['topic']}\n\n#{tuple['abstract']}"
 					desc    << "\n\nhttp://www.openstreetmap.org/?mlat=#{site.config['treff_lat']}&mlon=#{site.config['treff_lon']}"
@@ -92,6 +96,7 @@ module Jekyll
 					description desc.strip
 					organizer   'ccchd@ccchd.de'
 					location    location
+					status      status
 				end
 			end
 
