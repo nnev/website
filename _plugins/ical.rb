@@ -105,6 +105,7 @@ module Jekyll
 					organizer   'ccchd@ccchd.de'
 					location    location
 					status      status
+					uid         "chaos-#{tuple['date']}@noname-ev.de"
 				end
 			end
 
