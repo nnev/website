@@ -16,8 +16,8 @@ Jeden Donnerstag ab 19 Uhr.
 Wo?
 ===
 
-Meistens [Im Neuenheimer Feld 368, Raum 432](anfahrt.html). Jeden ersten Donnerstag
-im Monat ist [Stammtisch](stammtisch.html) (abwechselnde Gaststätte).
+Meistens [Im Neuenheimer Feld 368, Raum 432](anfahrt.html).<br/>
+Jeden ersten Donnerstag im Monat ist [Stammtisch](stammtisch.html) (abwechselnde Gaststätte).
 
 Nächstes Treffen
 ===
