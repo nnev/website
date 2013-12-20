@@ -45,7 +45,15 @@ module Jekyll
 			end
 
 			conn = PGconn.open(:dbname => 'nnev')
-			res = conn.exec('SELECT stammtisch, override, override_long, location, termine.date AS date, topic, abstract, vortraege.id AS c14h_id FROM termine LEFT JOIN vortraege ON termine.date = vortraege.date')
+			res = conn.exec(
+				<<-SQL
+				SELECT stammtisch, override, override_long, location, termine.date AS date, topic, abstract, vortraege.id AS c14h_id
+				FROM termine
+				LEFT JOIN vortraege
+				ON termine.date = vortraege.date
+				WHERE termine.date > now() - '1 years'::interval
+				SQL
+			)
 
 			stammtischs = site.pages.reject { |p| p.data['layout'] != "stammtisch" }
 
