@@ -43,7 +43,7 @@ Johannes Visintini
 Ringstraße 39
 69115 Heidelberg
 E-Mail: noname@joker234.de
-Telefon: [+49 6221 7276066](tel:004962217276066])
+Telefon: [+49 6221 7276066](tel:004962217276066)
 </address>
 
 ##### Haftung für Inhalte
