@@ -47,31 +47,31 @@ func getNextThursdays(n int) (next []time.Time) {
 
 func RunNext() {
 	if cmdNext.Flag.NArg() < 1 {
-		fmt.Printf("Nicht genug Argumente. Siehe %s help next\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "Nicht genug Argumente. Siehe %s help next\n", os.Args[0])
 		return
 	}
 
 	n, err := strconv.Atoi(cmdNext.Flag.Arg(0))
 	if err != nil {
-		fmt.Printf("Kann \"%s\" nicht als Nummer parsen. Siehe %s help next\n", cmdNext.Flag.Arg(0), os.Args[0])
+		fmt.Fprintf(os.Stderr, "Kann \"%s\" nicht als Nummer parsen. Siehe %s help next\n", cmdNext.Flag.Arg(0), os.Args[0])
 		return
 	}
 
 	tx, err := db.Begin()
 	if err != nil {
-		fmt.Println("SQL-Fehler:", err)
+		fmt.Fprintln(os.Stderr, "SQL-Fehler:", err)
 		return
 	}
 	for _, d := range getNextThursdays(n) {
 		_, err := tx.Exec("INSERT INTO termine (stammtisch, date) SELECT $2, $1 WHERE NOT EXISTS (SELECT 1 FROM termine WHERE date = $1)", d, d.Day() < 8)
 		if err != nil {
-			fmt.Println("SQL-Fehler:", err)
+			fmt.Fprintln(os.Stderr, "SQL-Fehler:", err)
 			tx.Rollback()
 			return
 		}
 	}
 	err = tx.Commit()
 	if err != nil {
-		fmt.Println("SQL-Fehler:", err)
+		fmt.Fprintln(os.Stderr, "SQL-Fehler:", err)
 	}
 }

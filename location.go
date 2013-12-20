@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"os"
 	"time"
 )
 
@@ -54,19 +55,19 @@ func RunLocation() {
 	if cmdLocation.Flag.NArg() == 0 {
 		loc, err := getLocation(stammtisch)
 		if err != nil {
-			fmt.Println("Kann Location nicht auslesen:", err)
+			fmt.Fprintln(os.Stderr, "Kann Location nicht auslesen:", err)
 			return
 		}
 		fmt.Println(loc)
 	} else {
 		updated, err := setLocation(stammtisch, cmdLocation.Flag.Arg(0))
 		if err != nil {
-			fmt.Println("Kann Location nicht setzen:", err)
+			fmt.Fprintln(os.Stderr, "Kann Location nicht setzen:", err)
 			return
 		}
 		if !updated {
-			fmt.Println("Termin noch nicht vorhanden.")
-			fmt.Println("Füge ihn erst mittels next hinzu.")
+			fmt.Fprintln(os.Stderr, "Termin noch nicht vorhanden.")
+			fmt.Fprintln(os.Stderr, "Füge ihn erst mittels next hinzu.")
 		}
 	}
 }

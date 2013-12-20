@@ -32,30 +32,30 @@ func init() {
 
 func RunOverride() {
 	if cmdOverride.Flag.NArg() < 2 {
-		fmt.Printf("Nicht genug Argumente. Siehe %s help override\n", os.Args[0])
+		fmt.Fprintf(os.Stderr, "Nicht genug Argumente. Siehe %s help override\n", os.Args[0])
 		return
 	}
 
 	date, err := time.ParseInLocation("2006-01-02", cmdOverride.Flag.Arg(0), time.Local)
 	if err != nil {
-		fmt.Printf("Kann \"%s\" nicht als Datum parsen. Siehe %s help override\n", cmdNext.Flag.Arg(0), os.Args[0])
+		fmt.Fprintf(os.Stderr, "Kann \"%s\" nicht als Datum parsen. Siehe %s help override\n", cmdNext.Flag.Arg(0), os.Args[0])
 		return
 	}
 
 	override_long, err := ioutil.ReadAll(os.Stdin)
 	if err != nil {
-		fmt.Println("Kann nicht von stdin lesen:", err)
+		fmt.Fprintln(os.Stderr, "Kann nicht von stdin lesen:", err)
 		return
 	}
 
 	result, err := db.Exec("UPDATE termine SET override = $2, override_long = $3 WHERE date = $1", date, cmdOverride.Flag.Arg(1), string(override_long))
 	if err != nil {
-		fmt.Println("Kann Eintrag nicht ändern:", err)
+		fmt.Fprintln(os.Stderr, "Kann Eintrag nicht ändern:", err)
 		return
 	}
 
 	if n, err := result.RowsAffected(); err != nil && n == 0 {
-		fmt.Println("Termin noch nicht vorhanden.")
-		fmt.Println("Füge ihn erst mittels next hinzu.")
+		fmt.Fprintln(os.Stderr, "Termin noch nicht vorhanden.")
+		fmt.Fprintln(os.Stderr, "Füge ihn erst mittels next hinzu.")
 	}
 }

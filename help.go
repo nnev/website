@@ -19,18 +19,18 @@ func init() {
 }
 
 func showCmdHelp(cmd *Command) {
-	fmt.Println("Nutzung:\n")
-	fmt.Println("    ", cmd.UsageLine, "\n")
-	fmt.Println(cmd.Long)
+	fmt.Fprintln(os.Stderr, "Nutzung:\n")
+	fmt.Fprintln(os.Stderr, "    ", cmd.UsageLine, "\n")
+	fmt.Fprintln(os.Stderr, cmd.Long)
 }
 
 func showGlobalHelp() {
-	fmt.Println("Tool zum Bearbeiten der nnev-Termin Datenbank\n")
-	fmt.Println("Nutzung:\n")
-	fmt.Printf("    %s [flags] befehl [argumente]\n\n", os.Args[0])
-	fmt.Println("Die vorhandenen Befehle sind:\n")
+	fmt.Fprintln(os.Stderr, "Tool zum Bearbeiten der nnev-Termin Datenbank\n")
+	fmt.Fprintln(os.Stderr, "Nutzung:\n")
+	fmt.Fprintf(os.Stderr, "    %s [flags] befehl [argumente]\n\n", os.Args[0])
+	fmt.Fprintln(os.Stderr, "Die vorhandenen Befehle sind:\n")
 
-	w := tabwriter.NewWriter(os.Stdout, 8, 4, 2, ' ', 0)
+	w := tabwriter.NewWriter(os.Stderr, 8, 4, 2, ' ', 0)
 
 	for _, cmd := range Commands {
 		if cmd.Name() == "help" {
@@ -42,7 +42,11 @@ func showGlobalHelp() {
 
 	w.Flush()
 
-	fmt.Printf("\nDie Benutzung eines Befehls zeigt dir \"%s help [befehl]\" an.\n", os.Args[0])
+	fmt.Fprintf(os.Stderr, "\nDie Benutzung eines Befehls zeigt dir \"%s help [befehl]\" an.\n", os.Args[0])
+
+	fmt.Fprintln(os.Stderr, "\nFlags:\n")
+
+	flag.PrintDefaults()
 }
 
 func RunHelp() {
@@ -62,5 +66,5 @@ func RunHelp() {
 		}
 	}
 
-	fmt.Printf("Unbekannter Befehl \"%s\"\n", cmdHelp.Flag.Arg(0))
+	fmt.Fprintf(os.Stderr, "Unbekannter Befehl \"%s\"\n", cmdHelp.Flag.Arg(0))
 }

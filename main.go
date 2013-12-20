@@ -8,9 +8,9 @@ import (
 )
 
 var (
-	driver  = flag.String("driver", "postgres", "The SQL-driver to use")
-	connect = flag.String("connect", "dbname=nnev user=anon host=/var/run/postgresql sslmode=disable", "The connection string to use")
-	_       = flag.Bool("help", false, "Show help")
+	driver  = flag.String("driver", "postgres", "Der benutzte sql-Treiber")
+	connect = flag.String("connect", "dbname=nnev user=anon host=/var/run/postgresql sslmode=disable", "Die Verbindusgsspezifikation")
+	_       = flag.Bool("help", false, "Zeige Hilfe")
 )
 
 type Command struct {
@@ -57,7 +57,7 @@ func (cmd *Command) parseAndRun() {
 	if cmd.NeedsDB {
 		err := OpenDB()
 		if err != nil {
-			fmt.Println("Fehler beim Verbinden zur Datenbank:", err)
+			fmt.Fprintln(os.Stderr, "Fehler beim Verbinden zur Datenbank:", err)
 			return
 		}
 	}
