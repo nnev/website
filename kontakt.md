@@ -39,11 +39,11 @@ Verantwortlicher Dienstebetreiber:
 
 <address>
 NoName e.V. (VR 3127)
-Michael Stapelberg
-Neuer Weg 16
-69118 Heidelberg
-E-Mail: <img src="/img/michael_stapelberg.png"/>
-Telefon: [+49 6221 1871942](tel:004962211871942)
+Johannes Visintini
+Ringstraße 39
+69115 Heidelberg
+E-Mail: noname@joker234.de
+Telefon: [+49 6221 7276066](tel:004962217276066])
 </address>
 
 ##### Haftung für Inhalte
