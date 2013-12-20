@@ -7,6 +7,8 @@ title: Chaos-Stammtisch
 
 Der Chaos-Stammtisch findet in wechselnden Lokalen statt. Wir reservieren nach Bedarf, bitte nutze daher das [Anmeldesystem](yarpnarp.html). Der Treffpunkt steht üblicherweise eine Woche im Voraus fest, ab dann kannst Du Dich auch ins System eintragen.
 
+Du willst nichts verpassen? [Abonniere den ICS-Kalender](c14h.ics).
+
 <div itemscope itemtype="http://data-vocabulary.org/Event">
 <h3>Nächster <span itemprop="summary">Chaos-Stammtisch</span></h3>
 
