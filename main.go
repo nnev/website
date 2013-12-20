@@ -49,11 +49,25 @@ func (cmd *Command) Name() string {
 	return name
 }
 
+func (cmd *Command) parseAndRun() {
+	args := flag.Args()
+	cmd.Flag.Parse(args[1:])
+
+	if cmd.NeedsDB {
+		err := OpenDB()
+		if err != nil {
+			fmt.Println("Fehler beim Verbinden zur Datenbank:", err)
+			return
+		}
+	}
+
+	cmd.Run()
+}
+
 func main() {
 	flag.Parse()
 	if flag.NArg() < 1 {
-
-		fmt.Printf("Usage: %s [flags] cmd [args]\n", os.Args[0])
+		cmdHelp.Run()
 		os.Exit(1)
 	}
 
@@ -62,21 +76,10 @@ func main() {
 			continue
 		}
 
-		args := flag.Args()
-		cmd.Flag.Parse(args[1:])
-
-		if cmd.NeedsDB {
-			err := OpenDB()
-			if err != nil {
-				fmt.Println("Fehler beim Verbinden zur Datenbank:", err)
-				return
-			}
-		}
-
-		cmd.Run()
+		cmd.parseAndRun()
 		return
 	}
 
-	fmt.Printf("Unknown command \"%s\"\n", flag.Arg(0))
+	cmdHelp.parseAndRun()
 	os.Exit(1)
 }
