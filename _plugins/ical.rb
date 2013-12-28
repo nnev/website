@@ -8,6 +8,8 @@ require 'fileutils'
 
 include Icalendar
 
+# enable unicode for icalendar.
+#$KCODE = 'u'
 
 def parse_into_utc(datetime)
 	DateTime.parse(datetime).new_offset(Rational(0, 24))
@@ -106,6 +108,7 @@ module Jekyll
 					location    location
 					status      status
 					uid         "chaos-#{tuple['date']}@noname-ev.de"
+					url         url
 				end
 			end
 
