@@ -15,7 +15,7 @@ Programme (sup, notmuch, Ingress, tor, sieve), Hardware (Raspberry Pi, Mifare
 Classic, Human Enhancements), Life Hacking und vieles mehr.
 
 Grundsätzlich gilt: uns gefällt alles! Du musst nicht nachfragen, ob es genug
-Interessenten gibt — [trag deinen Vortrag einfach ein](edit_14.html).
+Interessenten gibt — [trag deinen Vortrag einfach ein](edit_c14.html).
 
 Du willst nichts verpassen? [Abonniere den ICS-Kalender](c14h.ics).
 
