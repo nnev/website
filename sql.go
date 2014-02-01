@@ -34,7 +34,7 @@ func (v *Vortrag) Put() (err error) {
 				return err
 			}
 
-			_, err = stmt.Exec(v.Topic, v.Abstract, v.Speaker, v.InfoURL, time.Time(v.Date))
+			_, err = stmt.Exec(v.Topic, v.Abstract, v.Speaker, v.InfoURL)
 		} else {
 			stmt, err = db.Prepare("INSERT INTO vortraege (topic, abstract, speaker, infourl, date) VALUES ($1, $2, $3, $4, $5)")
 			if err != nil {
