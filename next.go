@@ -63,7 +63,7 @@ func RunNext() {
 		return
 	}
 	for _, d := range getNextThursdays(n) {
-		_, err := tx.Exec("INSERT INTO termine (stammtisch, date) SELECT $2, $1 WHERE NOT EXISTS (SELECT 1 FROM termine WHERE date = $1)", d, d.Day() < 8)
+		_, err := tx.Exec("INSERT INTO termine (stammtisch, date, override, location, override_long) SELECT $2, $1, '', '', '' WHERE NOT EXISTS (SELECT 1 FROM termine WHERE date = $1)", d, d.Day() < 8)
 		if err != nil {
 			fmt.Fprintln(os.Stderr, "SQL-Fehler:", err)
 			tx.Rollback()
