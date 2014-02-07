@@ -42,7 +42,7 @@ NoName e.V. (VR 3127)
 Johannes Visintini
 Ringstraße 39
 69115 Heidelberg
-E-Mail: noname@joker234.de
+E-Mail: <img src="img/vorstand_mail.png" title="noname at joker234 dot de" style="vertical-align: text-bottom">
 Telefon: [+49 6221 7276066](tel:004962217276066)
 </address>
 
