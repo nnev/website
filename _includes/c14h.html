@@ -3,7 +3,7 @@
     <tr>
         <th>
         	<a id="c14h_{{vortrag.id | escape }}" class="anchorhack"></a>
-        	{% if vortrag.date %}{{ vortrag.date | escape }}{% else %}TBA{% endif %}
+        	<a href="#c14h_{{vortrag.id | escap }}">{% if vortrag.date %}{{ vortrag.date | escape }}{% else %}TBA{% endif %}</a>
         </th>
         <th colspan="2">{{ vortrag.topic | escape }}</th>
     </tr>
