@@ -3,6 +3,13 @@ layout: default
 title: Pizza-Bestellsystem
 ---
 
+<script>
+var isMobileBrowser = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+if(isMobileBrowser) {
+  window.location.href = window.location.protocol + "//pizza.nnev.de";
+}
+</script>
+
 <style>
 iframe {
   margin-top: -13px;
