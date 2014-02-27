@@ -4,7 +4,7 @@ title: Pizza-Bestellsystem
 ---
 
 <script>
-var isMobileBrowser = (/chrome|android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+var isMobileBrowser = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
 if(isMobileBrowser) {
   window.location.href = window.location.protocol + "//pizza.noname-ev.de";
 }
