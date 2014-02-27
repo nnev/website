@@ -4,9 +4,9 @@ title: Pizza-Bestellsystem
 ---
 
 <script>
-var isMobileBrowser = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+var isMobileBrowser = (/chrome|android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
 if(isMobileBrowser) {
-  window.location.href = window.location.protocol + "//pizza.nnev.de";
+  window.location.href = window.location.protocol + "//pizza.noname-ev.de";
 }
 </script>
 
@@ -20,4 +20,4 @@ iframe {
 }
 </style>
 
-<iframe src="//pizza.nnev.de">Hi NoScript User. Du brauchst Iframes und JS für <b>pizzatest.nnev.de</b> und <b>pizza.de</b></iframe>
+<iframe src="//pizza.noname-ev.de">Hi NoScript User. Du brauchst Iframes und JS für <b>pizza.noname-ev.de</b> und <b>pizza.de</b></iframe>
