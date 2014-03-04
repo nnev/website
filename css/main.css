@@ -195,7 +195,7 @@ th, td {
 }
 
 th:first-child {
-	width: 4rem;
+	width: 5.5rem;
 	padding-right: 1rem;
 	white-space: nowrap;
 }
