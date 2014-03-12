@@ -93,7 +93,7 @@ module Jekyll
 					status   = "CONFIRMED" if tuple['topic']
 
 					desc     = "#{tuple['topic']}\n\n#{tuple['abstract']}"
-					desc    << "\n\nVortragende/r: #{tuple['speaker']}" unless tuple['speaker'].empty?
+					desc    << "\n\nVortragende/r: #{tuple['speaker']}" unless tuple['speaker'].nil? || tuple['speaker'].empty?
 					desc    << "\n\nhttp://www.openstreetmap.org/?mlat=#{site.config['treff_lat']}&mlon=#{site.config['treff_lon']}"
 
 					location = 'Im Neuenheimer Feld 368, Heidelberg'
