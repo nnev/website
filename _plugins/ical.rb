@@ -49,7 +49,7 @@ module Jekyll
 			conn = PGconn.open(:dbname => 'nnev')
 			res = conn.exec(
 				<<-SQL
-				SELECT stammtisch, override, override_long, location, termine.date AS date, topic, abstract, vortraege.id AS c14h_id
+				SELECT stammtisch, override, override_long, location, termine.date AS date, topic, abstract, vortraege.id, speaker AS c14h_id
 				FROM termine
 				LEFT JOIN vortraege
 				ON termine.date = vortraege.date
@@ -93,6 +93,7 @@ module Jekyll
 					status   = "CONFIRMED" if tuple['topic']
 
 					desc     = "#{tuple['topic']}\n\n#{tuple['abstract']}"
+					desc    << "\n\nVortragende/r: #{tuple['speaker']}" unless tuple['speaker'].empty?
 					desc    << "\n\nhttp://www.openstreetmap.org/?mlat=#{site.config['treff_lat']}&mlon=#{site.config['treff_lon']}"
 
 					location = 'Im Neuenheimer Feld 368, Heidelberg'
