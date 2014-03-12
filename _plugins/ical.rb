@@ -49,7 +49,7 @@ module Jekyll
 			conn = PGconn.open(:dbname => 'nnev')
 			res = conn.exec(
 				<<-SQL
-				SELECT stammtisch, override, override_long, location, termine.date AS date, topic, abstract, vortraege.id, speaker AS c14h_id
+				SELECT stammtisch, override, override_long, location, termine.date AS date, topic, abstract, speaker, vortraege.id AS c14h_id
 				FROM termine
 				LEFT JOIN vortraege
 				ON termine.date = vortraege.date
