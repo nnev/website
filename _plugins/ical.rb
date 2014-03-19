@@ -33,14 +33,6 @@ module Jekyll
 		end
 
 		def real(site)
-			# Regardless of the time zone in which the host machine is running,
-			# Chaostreffs always take place in Europe/Berlin time, so temporarily
-			# switch to that to get the correct offset.
-			prev_tv = ENV['TZ']
-			ENV['TZ'] = 'Europe/Berlin'
-			offset = DateTime.now.strftime('%z')
-			ENV['TZ'] = prev_tv
-
 			cal = Calendar.new
 			cal.timezone do
 				timezone_id 'UTC'
@@ -100,6 +92,14 @@ module Jekyll
 					location = 'Im Neuenheimer Feld 368, Heidelberg'
 					url      = "#{site.config['url']}/anfahrt.html"
 				end
+
+				# Regardless of the time zone in which the host machine is running,
+				# Chaostreffs always take place in Europe/Berlin time, so temporarily
+				# switch to that to get the correct offset.
+				prev_tv = ENV['TZ']
+				ENV['TZ'] = 'Europe/Berlin'
+				offset = DateTime.parse(tuple['date']).to_time.strftime('%z')
+				ENV['TZ'] = prev_tv
 
 				cal.event do
 					dtstart     parse_into_utc(tuple['date'] + ' 19:00'+offset)
