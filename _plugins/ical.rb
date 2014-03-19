@@ -54,6 +54,7 @@ module Jekyll
 				LEFT JOIN vortraege
 				ON termine.date = vortraege.date
 				WHERE termine.date > now() - '1 years'::interval
+				ORDER BY termine.date ASC
 				SQL
 			)
 
