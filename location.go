@@ -15,8 +15,9 @@ Schreibweise muss mit Feld 'name' in YAML-Frontmatter der entsprechenden
 Stammtischseite übereinstimmen!
 
 Bei Erfolg gibt der Befehl nichts aus`,
-	Flag:    flag.NewFlagSet("location", flag.ExitOnError),
-	NeedsDB: true,
+	Flag:         flag.NewFlagSet("location", flag.ExitOnError),
+	NeedsDB:      true,
+	RegenWebsite: true,
 }
 
 func init() {

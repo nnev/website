@@ -18,7 +18,8 @@ alle anderen Termine werden ohne Stammtisch oder chaotische Viertelstunde
 angelegt. Existente Termine werden nicht geändert.
 
 Bei Erfolg gibt der Befehl nichts aus`,
-	NeedsDB: true,
+	NeedsDB:      true,
+	RegenWebsite: true,
 }
 
 func init() {

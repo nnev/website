@@ -22,8 +22,9 @@ beides der leere String sein.
 Das Datum muss im Format 2006-02-28 angegeben werden.
 
 Bei Erfolg wird nichts zurück gegeben`,
-	Flag:    flag.NewFlagSet("override", flag.ExitOnError),
-	NeedsDB: true,
+	Flag:         flag.NewFlagSet("override", flag.ExitOnError),
+	NeedsDB:      true,
+	RegenWebsite: true,
 }
 
 func init() {

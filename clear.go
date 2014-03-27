@@ -13,8 +13,9 @@ var cmdClear = &Command{
 Stammtisch um für den nächsten Stammtisch die Zusagen zu managen.
 
 Bei Erfolg gibt der Befehl nichts aus`,
-	Flag:    flag.NewFlagSet("clear", flag.ExitOnError),
-	NeedsDB: true,
+	Flag:         flag.NewFlagSet("clear", flag.ExitOnError),
+	NeedsDB:      true,
+	RegenWebsite: false,
 }
 
 func init() {

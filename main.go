@@ -4,13 +4,15 @@ import (
 	"flag"
 	"fmt"
 	"os"
+	"os/exec"
 	"strings"
 )
 
 var (
-	driver  = flag.String("driver", "postgres", "Der benutzte sql-Treiber")
-	connect = flag.String("connect", "dbname=nnev user=anon host=/var/run/postgresql sslmode=disable", "Die Verbindusgsspezifikation")
-	_       = flag.Bool("help", false, "Zeige Hilfe")
+	driver      = flag.String("driver", "postgres", "Der benutzte sql-Treiber")
+	connect     = flag.String("connect", "dbname=nnev user=anon host=/var/run/postgresql sslmode=disable", "Die Verbindusgsspezifikation")
+	websitehook = flag.String("hook", "/srv/git/website.git/hooks/post-update", "Hook zum neu Bauen der Website")
+	_           = flag.Bool("help", false, "Zeige Hilfe")
 )
 
 type Command struct {
@@ -31,6 +33,9 @@ type Command struct {
 
 	// NeedsDB is true, if the command needs to connect to the database
 	NeedsDB bool
+
+	// RegenWebsite is true, if the website needs to be rebuild after the command
+	RegenWebsite bool
 }
 
 var Commands = []*Command{
@@ -63,6 +68,16 @@ func (cmd *Command) parseAndRun() {
 	}
 
 	cmd.Run()
+
+	if cmd.RegenWebsite {
+		cmd := exec.Command(*websitehook)
+		output, err := cmd.CombinedOutput()
+		if err != nil {
+			fmt.Fprintln(os.Stderr, "Hook fehlgeschlagen:", err)
+			fmt.Fprintln(os.Stderr, "Output:")
+			fmt.Fprint(os.Stderr, string(output))
+		}
+	}
 }
 
 func main() {
