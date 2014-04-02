@@ -46,6 +46,10 @@ E-Mail: <img src="img/vorstand_mail.png" title="noname at joker234 dot de" style
 Telefon: [+49 6221 7276066](tel:004962217276066)
 </address>
 
+(Bitte die obige Mail-Adresse nur für Fragen zum Verein und der Webseite
+verwenden. Für alle andere Fragen (wie zum Beispiel zum Treff) gibt es die
+[Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/ccchd).)
+
 ##### Haftung für Inhalte
 
 Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt. Für die
