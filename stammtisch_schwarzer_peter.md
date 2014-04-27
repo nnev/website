@@ -1,6 +1,7 @@
 ---
 layout:   stammtisch
 title:    "Stammtisch: Schwarzer Peter"
+foto:     schwarzer_peter
 
 name:         Schwarzer Peter
 phone:        06221 21215

@@ -1,6 +1,7 @@
 ---
 layout:   stammtisch
 title:    "Stammtisch: Palmbräu Gasse"
+foto:     palmbrau
 
 name:         Palmbräugasse
 phone:        06221 28536

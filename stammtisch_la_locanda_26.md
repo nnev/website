@@ -1,6 +1,7 @@
 ---
 layout:   stammtisch
 title:    "Stammtisch: La Locanda 26"
+foto:     la_locanda_26
 
 name:         La Locanda 26
 phone:        06221 7268922

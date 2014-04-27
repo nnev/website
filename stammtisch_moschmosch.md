@@ -1,6 +1,7 @@
 ---
 layout:   stammtisch
 title:    "Stammtisch: MoschMosch"
+foto:     moschmosch
 
 name:         MoschMosch
 phone:        06221 6509077

@@ -1,6 +1,7 @@
 ---
 layout:   stammtisch
 title:    "Stammtisch: La Vite"
+foto:     la_vite
 
 name:         La Vite
 phone:        06221 21413
