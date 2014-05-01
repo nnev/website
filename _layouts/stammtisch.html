@@ -23,8 +23,9 @@
 		{% if page.gmaps_url %}
 			<a href="{{page.gmaps_url | escape}}">Gaststätte in Google Maps anzeigen</a><br/>
 		{% endif %}
+		<br/><a href="http://fahrplanauskunft.vrn.de/vrn/XSLT_TRIP_REQUEST2?language=de&sessionID=0&name_destination={{page.address}}&type_destination=any&anyObjFilter_destination=8&locationServerActive=1">ÖPNV-Fahrplanauskunft</a><br/>
 		{% if page.phone %}
-			<br/>Telefon: <a href="tel://{{page.phone | escape}}" itemprop="tel">{{page.phone | escape}}</a><br/>
+			Telefon: <a href="tel://{{page.phone | escape}}" itemprop="tel">{{page.phone | escape}}</a><br/>
 		{% endif %}
 		{% if page.site_url %}
 			Webseite: <a href="{{page.site_url | escape}}" itemprop="url">{{page.site_url | escape}}</a><br/>
