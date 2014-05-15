@@ -7,6 +7,7 @@ title: c¼h editieren
 
 <form method="POST" action="edit_c14.html">
 	<input type="hidden" name="id" value="<< if ge .Id 0 >><<.Id>><< end >>" />
+	<input type="hidden" name="password" value="<< .Password.String >>" />
 
 	<label for="speaker">Vortragender</label>
 	<input type="text" placeholder="(Nick)name" id="speaker"  name="speaker" value="<<.Speaker>>" required="required"/><br>
