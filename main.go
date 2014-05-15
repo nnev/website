@@ -43,6 +43,7 @@ var Commands = []*Command{
 	cmdNext,
 	cmdClear,
 	cmdOverride,
+	cmdPassword,
 	cmdHelp,
 }
 
