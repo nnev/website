@@ -101,9 +101,9 @@ func C14Handler(res http.ResponseWriter, req *http.Request) {
 
 func handleGet(res http.ResponseWriter, req *http.Request) {
 	idStr := req.FormValue("id")
-	pw := req.FormValue("password")
+	pw := req.FormValue("pw")
 
-	log.Printf("Incoming GET request: id=\"%s\" password=\"%s\"\n", idStr, pw)
+	log.Printf("Incoming GET request: id=\"%s\" pw=\"%s\"\n", idStr, pw)
 
 	if idStr == "" {
 		dateStr := req.FormValue("date")
@@ -163,9 +163,9 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	abstract := req.PostFormValue("abstract")
 	speaker := req.PostFormValue("speaker")
 	infourl := req.PostFormValue("infourl")
-	pw := req.PostFormValue("password")
+	pw := req.PostFormValue("pw")
 
-	log.Printf("Incoming POST request: id=\"%s\", password=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", infourl=\"%s\"\n", idStr, pw, dateStr, topic, abstract, speaker, infourl)
+	log.Printf("Incoming POST request: id=\"%s\", pw=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", infourl=\"%s\"\n", idStr, pw, dateStr, topic, abstract, speaker, infourl)
 
 	if topic == "" || speaker == "" {
 		writeError(400, res, "You need to supply at least a speaker and a topic")
@@ -223,7 +223,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 
 	RunHook()
 
-	url := fmt.Sprintf("/edit_c14.html?id=%d&password=%s", vortrag.Id, vortrag.Password.String)
+	url := fmt.Sprintf("/edit_c14.html?id=%d&pw=%s", vortrag.Id, vortrag.Password.String)
 
 	fmt.Println("Redirecting:", url)
 
