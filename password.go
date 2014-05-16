@@ -37,7 +37,7 @@ func RunPassword() {
 
 	var pw sql.NullString
 
-	err = db.QueryRow("SELECT password FROM vortraege WHERE id = $", id).Scan(&pw)
+	err = db.QueryRow("SELECT password FROM vortraege WHERE id = $1", id).Scan(&pw)
 	if err == sql.ErrNoRows {
 		fmt.Fprintln(os.Stderr, "Vortrag existiert nicht")
 		return
@@ -49,5 +49,5 @@ func RunPassword() {
 	}
 
 	fmt.Println("Passwort:", pw.String)
-	fmt.Printf("Link: https://www.noname-ev.de/edit_c14.html?id=%d&password=%s\n", id, pw.String)
+	fmt.Printf("Link: https://www.noname-ev.de/edit_c14.html?id=%d&pw=%s\n", id, pw.String)
 }
