@@ -82,7 +82,8 @@ CREATE TABLE vortraege (
     topic text DEFAULT ''::text NOT NULL,
     abstract text DEFAULT ''::text NOT NULL,
     speaker text DEFAULT ''::text NOT NULL,
-    infourl text DEFAULT ''::text NOT NULL
+    infourl text DEFAULT ''::text NOT NULL,
+	password text
 );
 
 
