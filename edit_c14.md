@@ -5,24 +5,32 @@ title: c¼h editieren
 
 <h1>c¼h bearbeiten/hinzufügen</h1>
 
+(( if ge .Id 0 ))
+<p>
+	Bitte speichere folgenden Link. Du brauchst ihn, wenn du in Zukunft deinen
+	Eintrag editieren willst:<br />
+	<a href="/edit_c14.html?id=(( .Id ))&password=(( .Password.String ))">http://www.noname-ev.de/edit_c14.html?id=(( .Id ))&password=(( .Password.String ))</a>
+</p>
+(( end ))
+
 <form method="POST" action="edit_c14.html">
-	<input type="hidden" name="id" value="<< if ge .Id 0 >><<.Id>><< end >>" />
-	<input type="hidden" name="password" value="<< .Password.String >>" />
+	<input type="hidden" name="id" value="(( if ge .Id 0 ))((.Id))(( end ))" />
+	<input type="hidden" name="password" value="(( .Password.String ))" />
 
 	<label for="speaker">Vortragender</label>
-	<input type="text" placeholder="(Nick)name" id="speaker"  name="speaker" value="<<.Speaker>>" required="required"/><br>
+	<input type="text" placeholder="(Nick)name" id="speaker"  name="speaker" value="((.Speaker))" required="required"/><br>
 
 	<label for="topic">Thema</label>
-	<input type="text" placeholder="Thema" id="topic" name="topic" value="<<.Topic>>" required="required" /><br>
+	<input type="text" placeholder="Thema" id="topic" name="topic" value="((.Topic))" required="required" /><br>
 
 	<label for="date">Datum</label>
-	<input type="date" placeholder="Datum (YYYY-MM-DD)" id="date" name="date" value="<<if .HasDate >><< .Date >><<end>>" /><br>
+	<input type="date" placeholder="Datum (YYYY-MM-DD)" id="date" name="date" value="((if .HasDate ))(( .Date ))((end))" /><br>
 
 	<label for="abstract">Zusammenfassung</label>
-	<textarea id="abstract" name="abstract" placeholder="Zusammenfassung" rows="10" cols="60"><<.Abstract>></textarea><br>
+	<textarea id="abstract" name="abstract" placeholder="Zusammenfassung" rows="10" cols="60">((.Abstract))</textarea><br>
 
 	<label for="infourl">Folien/Weitere Infos</label>
-	<input type="text" placeholder="http//example.com/folien.pdf" id="infourl" name="infourl" value="<< .InfoURL >>" /><br>
+	<input type="text" placeholder="http//example.com/folien.pdf" id="infourl" name="infourl" value="(( .InfoURL ))" /><br>
 
 	<input type="submit" value="c¼h speichern"></input>
 
