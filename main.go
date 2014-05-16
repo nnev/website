@@ -1,6 +1,10 @@
 package main
 
 import (
+	"crypto/rand"
+	"crypto/subtle"
+	"database/sql"
+	"encoding/base64"
 	"flag"
 	"fmt"
 	"html/template"
@@ -34,6 +38,7 @@ type Vortrag struct {
 	Abstract string
 	Speaker  string
 	InfoURL  string
+	Password sql.NullString
 }
 
 type CustomTime time.Time
@@ -51,9 +56,31 @@ func writeError(errno int, res http.ResponseWriter, format string, args ...inter
 	fmt.Fprintf(res, format, args...)
 }
 
+func genPassword() (string, error) {
+	// 120 bits of entropy should be enough for a password
+	buf := make([]byte, 15)
+	_, err := rand.Read(buf)
+	if err != nil {
+		return "", err
+	}
+	pw := base64.URLEncoding.EncodeToString(buf)
+	log.Println("Generated password:", pw)
+	return pw, nil
+}
+
+func verifyPassword(a, b string) bool {
+	// Since our passwords all have the same length, this does not actually
+	// leak any information
+	if len(a) != len(b) {
+		return false
+	}
+
+	return subtle.ConstantTimeCompare([]byte(a), []byte(b)) == 1
+}
+
 func C14Handler(res http.ResponseWriter, req *http.Request) {
 	var err error
-	tpl, err = template.New("").Delims("<<", ">>").ParseFiles(*gettpl)
+	tpl, err = template.New("").Delims("((", "))").ParseFiles(*gettpl)
 	if err != nil {
 		log.Fatal("Could not parse template:", err)
 	}
@@ -74,8 +101,9 @@ func C14Handler(res http.ResponseWriter, req *http.Request) {
 
 func handleGet(res http.ResponseWriter, req *http.Request) {
 	idStr := req.FormValue("id")
+	pw := req.FormValue("password")
 
-	log.Printf("Incoming GET request: id=\"%s\"\n", idStr)
+	log.Printf("Incoming GET request: id=\"%s\" password=\"%s\"\n", idStr, pw)
 
 	if idStr == "" {
 		dateStr := req.FormValue("date")
@@ -101,11 +129,21 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 		writeError(400, res, "Could not parse \"%d\" as int", idStr)
 		return
 	}
+	if id <= 0 {
+		writeError(400, res, "Invalid id")
+		return
+	}
 
 	vortrag, err := Load(id)
 	if err != nil {
 		log.Printf("Could not read Vortrag %d: %v\n", id, err)
 		writeError(400, res, "Could not load")
+		return
+	}
+
+	if vortrag.Password.Valid && !verifyPassword(vortrag.Password.String, pw) {
+		log.Println("Unauthorized edit")
+		writeError(401, res, "Unauthorized")
 		return
 	}
 
@@ -125,8 +163,9 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	abstract := req.PostFormValue("abstract")
 	speaker := req.PostFormValue("speaker")
 	infourl := req.PostFormValue("infourl")
+	pw := req.PostFormValue("password")
 
-	log.Printf("Incoming POST request: id=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", infourl=\"%s\"\n", idStr, dateStr, topic, abstract, speaker, infourl)
+	log.Printf("Incoming POST request: id=\"%s\", password=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", infourl=\"%s\"\n", idStr, pw, dateStr, topic, abstract, speaker, infourl)
 
 	if topic == "" || speaker == "" {
 		writeError(400, res, "You need to supply at least a speaker and a topic")
@@ -140,7 +179,42 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		id = -1
 	}
 
-	vortrag := Vortrag{id, CustomTime(date), false, topic, abstract, speaker, infourl}
+	var vortrag Vortrag
+
+	if id != -1 {
+		vortrag, err := Load(id)
+		if err != nil {
+			log.Printf("Could not read Vortrag %d: %v\n", id, err)
+			writeError(400, res, "Could not load")
+			return
+		}
+
+		if vortrag.Password.Valid && !verifyPassword(vortrag.Password.String, pw) {
+			log.Println("Unauthorized edit")
+			writeError(401, res, "Unauthorized")
+			return
+		}
+	} else {
+		vortrag = Vortrag{
+			Id:       id,
+			Date:     CustomTime(date),
+			HasDate:  false,
+			Topic:    topic,
+			Abstract: abstract,
+			Speaker:  speaker,
+			InfoURL:  infourl,
+		}
+
+		newPw, err := genPassword()
+		if err != nil {
+			log.Println("Could not generate password:", err)
+			writeError(500, res, "Could not generate password")
+			return
+		}
+
+		vortrag.Password = sql.NullString{newPw, true}
+	}
+
 	err = vortrag.Put()
 	if err != nil {
 		log.Printf("Could not update: %v\n", err)
@@ -149,7 +223,11 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 
 	RunHook()
 
-	http.Redirect(res, req, "/chaotische_viertelstunde.html", 303)
+	url := fmt.Sprintf("/edit_c14.html?id=%d&password=%s", vortrag.Id, vortrag.Password.String)
+
+	fmt.Println("Redirecting:", url)
+
+	http.Redirect(res, req, url, 303)
 }
 
 func main() {
