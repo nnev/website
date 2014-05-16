@@ -83,7 +83,7 @@ CREATE TABLE vortraege (
     abstract text DEFAULT ''::text NOT NULL,
     speaker text DEFAULT ''::text NOT NULL,
     infourl text DEFAULT ''::text NOT NULL,
-	password text
+    password text DEFAULT '':text NOT NULL
 );
 
 
