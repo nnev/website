@@ -9,13 +9,13 @@ title: c¼h editieren
 <p>
 	Bitte speichere folgenden Link. Du brauchst ihn, wenn du in Zukunft deinen
 	Eintrag editieren willst:<br />
-	<a href="/edit_c14.html?id=(( .Id ))&password=(( .Password.String ))">http://www.noname-ev.de/edit_c14.html?id=(( .Id ))&password=(( .Password.String ))</a>
+	<a href="/edit_c14.html?id=(( .Id ))&pw=(( .Password.String ))">http://www.noname-ev.de/edit_c14.html?id=(( .Id ))&pw=(( .Password.String ))</a>
 </p>
 (( end ))
 
 <form method="POST" action="edit_c14.html">
 	<input type="hidden" name="id" value="(( if ge .Id 0 ))((.Id))(( end ))" />
-	<input type="hidden" name="password" value="(( .Password.String ))" />
+	<input type="hidden" name="pw" value="(( .Password.String ))" />
 
 	<label for="speaker">Vortragender</label>
 	<input type="text" placeholder="(Nick)name" id="speaker"  name="speaker" value="((.Speaker))" required="required"/><br>
