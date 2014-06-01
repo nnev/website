@@ -36,7 +36,7 @@ func (v *Vortrag) Put() (err error) {
 				return err
 			}
 
-			_, err = stmt.Exec(v.Topic, v.Abstract, v.Speaker, v.InfoURL, v.Password)
+			err = stmt.QueryRow(v.Topic, v.Abstract, v.Speaker, v.InfoURL, v.Password).Scan(&v.Id)
 		} else {
 			stmt, err = tx.Prepare("INSERT INTO vortraege (topic, abstract, speaker, infourl, password, date) VALUES ($1, $2, $3, $4, $5, $6) RETURNING id")
 			if err != nil {
