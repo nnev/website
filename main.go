@@ -179,10 +179,10 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		id = -1
 	}
 
-	var vortrag Vortrag
+	var vortrag *Vortrag
 
 	if id != -1 {
-		vortrag, err := Load(id)
+		vortrag, err = Load(id)
 		if err != nil {
 			log.Printf("Could not read Vortrag %d: %v\n", id, err)
 			writeError(400, res, "Could not load")
@@ -195,7 +195,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 			return
 		}
 	} else {
-		vortrag = Vortrag{
+		vortrag = &Vortrag{
 			Id:       id,
 			Date:     CustomTime(date),
 			HasDate:  false,
