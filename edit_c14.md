@@ -30,7 +30,7 @@ title: c¼h editieren
 	<textarea id="abstract" name="abstract" placeholder="Zusammenfassung" rows="10" cols="60">((.Abstract))</textarea><br>
 
 	<label for="infourl">Folien/Weitere Infos</label>
-	<input type="text" placeholder="http//example.com/folien.pdf" id="infourl" name="infourl" value="(( .InfoURL ))" /><br>
+	<input type="text" placeholder="http://example.com/folien.pdf" id="infourl" name="infourl" value="(( .InfoURL ))" /><br>
 
 	<input type="submit" value="c¼h speichern"></input>
 
