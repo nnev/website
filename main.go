@@ -179,32 +179,34 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		id = -1
 	}
 
-	var vortrag *Vortrag
+	vortrag := &Vortrag{
+		Id:       id,
+		Date:     CustomTime(date),
+		HasDate:  false,
+		Topic:    topic,
+		Abstract: abstract,
+		Speaker:  speaker,
+		InfoURL:  infourl,
+	}
 
 	if id != -1 {
-		vortrag, err = Load(id)
+		// We need to verify the password, therefore we load the talk from the
+		// db. But we don't want to overwrite anything else, so we use a new variable
+		v, err := Load(id)
 		if err != nil {
 			log.Printf("Could not read Vortrag %d: %v\n", id, err)
 			writeError(400, res, "Could not load")
 			return
 		}
 
-		if vortrag.Password.Valid && !verifyPassword(vortrag.Password.String, pw) {
+		if v.Password.Valid && !verifyPassword(v.Password.String, pw) {
 			log.Println("Unauthorized edit")
 			writeError(401, res, "Unauthorized")
 			return
 		}
-	} else {
-		vortrag = &Vortrag{
-			Id:       id,
-			Date:     CustomTime(date),
-			HasDate:  false,
-			Topic:    topic,
-			Abstract: abstract,
-			Speaker:  speaker,
-			InfoURL:  infourl,
-		}
 
+		vortrag.Password = v.Password
+	} else {
 		newPw, err := genPassword()
 		if err != nil {
 			log.Println("Could not generate password:", err)
@@ -219,6 +221,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		log.Printf("Could not update: %v\n", err)
 		writeError(400, res, "Error: %v", err)
+		return
 	}
 
 	RunHook()
