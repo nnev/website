@@ -34,8 +34,8 @@ module Jekyll
 
 		def real(site)
 			cal = Calendar.new
-			cal.timezone do
-				timezone_id 'UTC'
+			cal.timezone do |t|
+				t.tzid = 'UTC'
 			end
 
 			conn = PGconn.open(:dbname => 'nnev')
@@ -101,16 +101,16 @@ module Jekyll
 				offset = DateTime.parse(tuple['date']).to_time.strftime('%z')
 				ENV['TZ'] = prev_tv
 
-				cal.event do
-					dtstart     parse_into_utc(tuple['date'] + ' 19:00'+offset)
-					dtend       parse_into_utc(tuple['date'] + ' 23:59'+offset)
-					summary     topic
-					description desc.strip
-					organizer   'ccchd@ccchd.de'
-					location    location
-					status      status
-					uid         "chaos-#{tuple['date']}@noname-ev.de"
-					url         url
+				cal.event do |e|
+					e.dtstart     = parse_into_utc(tuple['date'] + ' 19:00'+offset)
+					e.dtend       = parse_into_utc(tuple['date'] + ' 23:59'+offset)
+					e.summary     = topic
+					e.description = desc.strip
+					e.organizer   = 'ccchd@ccchd.de'
+					e.location    = location
+					e.status      = status
+					e.uid         = "chaos-#{tuple['date']}@noname-ev.de"
+					e.url         = url
 				end
 			end
 
