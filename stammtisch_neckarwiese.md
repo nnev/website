@@ -5,8 +5,8 @@ foto:     neckarwiese
 
 name:         Neckarwiese
 phone:
-site_url:	  Wir grillen an einer der Grillstellen
-menu_url:     Was immer ihr euch zum Grillen mitbringt
+site_url:
+menu_url:
 
 address:      Am Neckar, Heidelberg
 address_desc: "Haltestellen: Bismarckplatz, Brückenstraße"
@@ -23,4 +23,6 @@ Lokalen rumzutreiben, grillen wir auf der Neckarwiese.  Da brauchen wir nicht
 zu reservieren, sitzen voll im Nichtraucherbereich und sind nicht an
 finanzielle Vorgaben kapitalistischer Konsumkrieger gebunden.  Sollte das
 Wetter spontan gegen unser Vorgehen sein, wird es natürlich eine Alternative
-geben.
+geben.  Wir treffen uns an der Grillstelle, an der am meisten von uns
+rumhängen. Zum Essen und Trinken gibt es, was immer ihr im Laden eurer Wahl
+organisiert.
