@@ -8,7 +8,7 @@ phone:
 site_url:
 menu_url:
 
-address:      Am Neckar, Heidelberg
+address:      Uferstraße 32, Heidelberg
 address_desc: "Haltestellen: Bismarckplatz (Linien 5, 21, 22, 23, 26, 29, 31, 32, 33, 34, 35, 39, 720, 735, 752, 754, 755, 1004 und 1007), Brückenstraße (Linien 5, 23 und 31), Jahnstraße (Linien 21, 24, 32, 721 und 724)"
 
 lat:          49.41246
