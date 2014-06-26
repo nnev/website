@@ -16,7 +16,7 @@
         <td></td>
         <td>
             {% if vortrag.infourl != '' %}
-                <a href="{{ vortrag.infourl | escape }}"><b>Details / Folien aufrufen</b></a>
+                <a href="{{ vortrag.infourl | escape }}" data-no-turbolink><b>Details / Folien aufrufen</b></a>
             {% endif %}
         </td>
         <td>
