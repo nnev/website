@@ -1,6 +1,6 @@
 ---
 layout:   stammtisch
-title:    "Stammtisch: Neckarwiese"
+title:    "Stammtisch: Neckarwiese: Grillieren"
 foto:     neckarwiese
 
 name:         Neckarwiese
