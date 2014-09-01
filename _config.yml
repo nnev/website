@@ -1,6 +1,6 @@
 name: Your New Jekyll Site
 markdown: redcarpet
-pygments: true
+highlighter: pygments
 
 url: "https://www.noname-ev.de"
 

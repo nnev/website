@@ -38,7 +38,7 @@ der du dich anmelden kannst.
 Verantwortlicher Dienstebetreiber:
 
 <address>
-NoName e.V. (VR 3127)
+NoName e.V. (VR 333127, Amtsgericht Mannheim)
 Johannes Visintini
 Ringstraße 39
 69115 Heidelberg
