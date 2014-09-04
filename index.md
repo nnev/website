@@ -34,7 +34,7 @@ Nächstes Treffen
 			{% unless st.layout == "stammtisch" %}
 				{% continue %}
 			{% endunless %}
-			{% unless st.name == termin.location %}
+			{% unless st.title == termin.location %}
 				{% continue %}
 			{% endunless %}
 			{% assign done = true %}
