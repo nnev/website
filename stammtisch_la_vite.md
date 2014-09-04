@@ -3,7 +3,7 @@ layout:   stammtisch
 title:    "Stammtisch: La Vite"
 foto:     la_vite
 
-name:         La Vite
+title:         La Vite
 phone:        06221 21413
 site_url:     http://www.la-vite-heidelberg.de/
 menu_url:     http://www.la-vite-heidelberg.de/index.php/speisekarte 

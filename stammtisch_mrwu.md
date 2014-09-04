@@ -3,7 +3,7 @@ layout:   stammtisch
 title:    "Stammtisch: Mr. Wu"
 foto:     mrwu
 
-name:         Mr. Wu
+title:         Mr. Wu
 phone:        06221 9852018
 site_url:     http://www.mr-wu-restaurant.de/
 menu_url:     http://www.mr-wu-restaurant.de/speisekarte.html
