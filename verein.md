@@ -4,9 +4,9 @@ title: Über den Verein
 ---
 
 # Verein
-Der NoName e.V. ist ein eingetragener Verein in Heidelberg (Nummer VR 3127).
-Wir haben eine [Satzung](satzung.html) und eine
-[Beitragsordnung](beitragsordnung.html).
+Der NoName e.V. ist ein beim Amtsgericht Mannheim eingetragener Verein mit Sitz
+in Heidelberg (Nummer VR 333127). Wir haben eine [Satzung](satzung.html) und
+eine [Beitragsordnung](beitragsordnung.html).
 
 Jeglicher schriftliche Kontakt mit dem Verein (z.B. für Austrittserklärungen)
 kann via E-Mail erfolgen an die Adresse vorstand AT noname-ev DOT de.
