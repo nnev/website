@@ -3,9 +3,9 @@
   {% if st.layout == "stammtisch" %}
     <li><a href="{{st.url | escape}}">
       {% if st.url == page.url %}
-        <b>{{st.name | escape}}</b>
+        <b>{{st.title | escape}}</b>
       {% else %}
-        {{st.name | escape}}
+        {{st.title | escape}}
       {% endif %}
     </a></li>
   {% endif %}

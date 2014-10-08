@@ -27,6 +27,11 @@ der du dich anmelden kannst.
 <a data-no-turbolink href="https://www.noname-ev.de/w/Kommunikationskan%C3%A4le">Mehr Details finden sich im Wiki</a>.
 
 
+
+<span style="float: left; width: 7rem; font-size: 2rem;text-align: center; vertical-align: middle; line-height: 2rem; margin-right: 1rem">&#9742;</span>
+Während dem Chaostreff haben wir auch ein Handy, unter dem du uns erreichen kannst (vor allem wenn die Tür zu ist): [+49&nbsp;1579&nbsp;2307561](tel:004915792307561)
+
+
 <div style="height: 3em"></div>
 
 
@@ -46,9 +51,10 @@ E-Mail: <img src="img/vorstand_mail.png" title="noname at joker234 dot de" style
 Telefon: [+49 6221 7276066](tel:004962217276066)
 </address>
 
-(Bitte die obige Mail-Adresse nur für Fragen zum Verein und der Webseite
-verwenden. Für alle andere Fragen (wie zum Beispiel zum Treff) gibt es die
-[Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/ccchd).)
+(Bitte die obige Mail-Adresse und Telefonnummer nur für Fragen zum Verein und
+der Webseite verwenden. Für alle andere Fragen (wie zum Beispiel zum Treff)
+gibt es die [Mailingliste]
+(https://eris.noname-ev.de/cgi-bin/mailman/listinfo/ccchd).)
 
 ##### Haftung für Inhalte
 

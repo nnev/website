@@ -1,7 +1,7 @@
 {% include header.html %}
 
 <div class="main_left" itemprop="location" itemscope itemtype="http://data-vocabulary.org/Organization">
-	<h1 itemProp="name">{{page.name | escape}}</h1>
+	<h1 itemProp="name">{{page.title | escape}}</h1>
 
 	<p><b itemprop="address">{{page.address | escape}}</b>. {{page.address_desc | escape}}</p>
 	<p>
@@ -16,7 +16,7 @@
 	var map = L.map('map').setView([{{page.map_lat}}, {{page.map_lon}}], {{page.map_zoom}});
 	{{site.map_js}}
 
-	L.marker([{{page.lat}}, {{page.lon}}]).addTo(map).bindPopup("<b>{{page.name | escape}}</b>", { "closeButton": false }).openPopup();
+	L.marker([{{page.lat}}, {{page.lon}}]).addTo(map).bindPopup("<b>{{page.title | escape}}</b>", { "closeButton": false }).openPopup();
 	</script>
 
 	<p>
