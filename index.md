@@ -62,6 +62,6 @@ Nächstes Treffen
 			noch keine ◉︵◉
 		{% endif %}
 		<br>
-		<a href="pizza.html">Möchtest Du Pizza mitbestellen?</a>. Hinweis: Diesen Donnerstag (30.10.) ist die Pizza-Bestellung <b>nur bis 17 Uhr</b> offen und wird gegen 19 Uhr erwartet, damit die anschließende Mitgliederversammlung reibungsfrei ablaufen kann.
+		<a href="pizza.html">Möchtest Du Pizza mitbestellen?</a><br>Hinweis: Diesen Donnerstag (30.10.) ist die Pizza-Bestellung <b>nur bis 17 Uhr</b> offen und wird gegen 19 Uhr erwartet, damit die anschließende Mitgliederversammlung reibungsfrei ablaufen kann.
 	{% endif %}
 </p>
