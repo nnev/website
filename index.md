@@ -19,6 +19,11 @@ Wo?
 Meistens [Im Neuenheimer Feld 368, Raum 432](anfahrt.html).<br/>
 Jeden ersten Donnerstag im Monat ist [Stammtisch](stammtisch.html) (abwechselnde Gaststätte).
 
+rgb2r?
+===
+
+Am kommenden Wochenende (2014-10-31 - 2014-11-02) findet die „rgb2r – roots go back to the roots“, unser Retro-Gaming-Event statt. Die Anmeldung ist zwar schon geschlossen aber du kannst einfach vorbei kommen. [Alle Einzelheiten dazu findest du auf der rgb2r Seite](http://rgb2r.noname-ev.de/).
+
 Nächstes Treffen
 ===
 
