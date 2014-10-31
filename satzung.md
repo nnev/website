@@ -5,7 +5,7 @@ title: Satzung
 
 # Satzung
 
-Stand: 2013-11-21, siehe auch [Beitragsordnung](beitragsordnung.html)
+Stand: 2014-10-30, siehe auch [Beitragsordnung](beitragsordnung.html)
 
 
 # §1 Name, Sitz und Geschäftsjahr
@@ -13,7 +13,7 @@ Stand: 2013-11-21, siehe auch [Beitragsordnung](beitragsordnung.html)
 1.	Der Verein führt den Namen „NoName e.V.“ - im folgenden „Verein“ genannt.
 
 2.	Der Verein hat seinen Sitz in Heidelberg und ist im Vereinsregister beim
-	Amtsgericht Heidelberg eingetragen.
+	Amtsgericht Mannheim eingetragen.
 
 3.	Das Geschäftsjahr ist das Kalenderjahr.
 
@@ -288,7 +288,7 @@ vor seiner Amtsausscheidung zu entlasten.
 # §12 Auflösung des Vereins
 
 1.	Bei Auflösung oder Aufhebung des Vereins ist das Vereinsvermögen dem Verein
-	FoeBud e.V. mit Sitz in Bielefeld zuzuführen.
+	digitalcourage e.V. mit Sitz in Bielefeld zuzuführen.
 
 2.	Als Liquidatoren werden die im Amt befindlichen vertretungsberechtigten
 	Vorstandsmitglieder bestimmt, soweit die Mitgliederversammlung nichts anderes
