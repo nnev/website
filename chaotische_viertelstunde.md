@@ -5,7 +5,7 @@ foto: c14h
 ---
 
 Seit knapp 2 Jahren findet bei jedem Treff ein Kurzvortrag statt, die so
-gennante Chaotische Viertelstunde. Dabei gibt es wenige Regeln, aber
+genannte Chaotische Viertelstunde. Dabei gibt es wenige Regeln, aber
 idealerweise geht der Vortrag ca. 15 Minuten. Ob du frei vorträgst, dein
 Notebook oder die Tafel benutzt, bleibt dir überlassen.
 
