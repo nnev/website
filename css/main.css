@@ -97,7 +97,7 @@ body, iframe {
 	float: right;
 	display: block;
 
-	background: url(/img/noname.svg) top center no-repeat;
+	background: url(/img/noname.svg) top center no-repeat local;
 	background-size: 22em;
 	padding-top: 8rem;
 
@@ -106,6 +106,8 @@ body, iframe {
 	right: 2rem;
 
 	position: fixed;
+	overflow-y: auto;
+	max-height: calc(100% - 15.5rem);
 }
 
 
