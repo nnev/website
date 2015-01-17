@@ -106,8 +106,9 @@ body, iframe {
 	right: 2rem;
 
 	position: fixed;
+	overflow-x: hidden;
 	overflow-y: auto;
-	max-height: calc(100% - 15.5rem);
+	max-height: calc(100% - 14.5rem);
 }
 
 
