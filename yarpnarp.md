@@ -6,7 +6,7 @@ title: Zu-/Absagen für den Chaos-Stammtisch
 # Chaos-Stammtisch
 
 Erscheinst Du zum nächsten Stammtisch? Gib hier bitte Deine ja/nein
-Stimme ab, damit ich passend reservieren kann. Danke!
+Stimme ab, damit wir passend reservieren können. Danke!
 
 ### Zu-/Absagen
 
