@@ -47,7 +47,7 @@ func (v *Vortrag) Put() (err error) {
 		}
 	} else {
 		if v.Date.IsZero() {
-			stmt, err = tx.Prepare("UPDATE vortraege SET topic = $1, abstract = $2, speaker = $3, infourl = $4 WHERE id = $5")
+			stmt, err = tx.Prepare("UPDATE vortraege SET topic = $1, abstract = $2, speaker = $3, infourl = $4, date = NULL WHERE id = $5")
 			if err != nil {
 				return err
 			}
