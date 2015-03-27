@@ -164,8 +164,9 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	speaker := req.PostFormValue("speaker")
 	infourl := req.PostFormValue("infourl")
 	pw := req.PostFormValue("pw")
+	del := req.PostFormValue("delete")
 
-	log.Printf("Incoming POST request: id=\"%s\", pw=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", infourl=\"%s\"\n", idStr, pw, dateStr, topic, abstract, speaker, infourl)
+	log.Printf("Incoming POST request: id=\"%s\", pw=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", infourl=\"%s\", delete=\"%s\"\n", idStr, pw, dateStr, topic, abstract, speaker, infourl, del)
 
 	if topic == "" || speaker == "" {
 		writeError(400, res, "You need to supply at least a speaker and a topic")
@@ -206,6 +207,19 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		}
 
 		vortrag.Password = v.Password
+
+		if del == "true" {
+			err = Delete(id)
+			if err != nil {
+				log.Printf("Could not delete Vortrag %d: %v\n", id, err)
+				writeError(500, res, "Could not delete Vortrag")
+				return
+			}
+			log.Println("Deleted Vortrag %d", id)
+			return
+
+		}
+
 	} else {
 		newPw, err := genPassword()
 		if err != nil {
