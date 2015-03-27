@@ -99,3 +99,11 @@ func Load(id int) (*Vortrag, error) {
 
 	return &vortrag, nil
 }
+
+func Delete(id int) error {
+	_, err := db.Exec("DELETE FROM vortraege WHERE id=$1", id)
+	if err != nil {
+		return err
+	}
+	return nil
+}
