@@ -33,7 +33,7 @@ title: c¼h editieren
 	<input type="text" placeholder="http://example.com/folien.pdf" id="infourl" name="infourl" value="(( .InfoURL ))" /><br>
 
 	<input type="submit" value="c¼h speichern"></input>
-	((if ne .Password.String ""))
+	((if ge .Id 0))
 	<input type="submit" name="delete" value="c¼h löschen">
 	((end))
 </form>
