@@ -12,8 +12,9 @@ title: Kontakt
 
 Der direkteste Weg, uns online zu erreichen, ist unser
 [IRC](http://de.wikipedia.org/wiki/Internet_Relay_Chat)-Channel:
-[#chaos-hd auf irc.twice-irc.de](ircs://irc.twice-irc.de/chaos-hd). Rechne
-nicht unbedingt sofort mit einer Antwort, aber wenn du ein paar Minuten
+[#chaos-hd auf robustirc.net](ircs://legacy-irc.robustirc.net/chaos-hd) (siehe
+[robustirc.net](http://robustirc.net/) für eine Anleitung zum Verbinden).
+Rechne nicht unbedingt sofort mit einer Antwort, aber wenn du ein paar Minuten
 wartest, findet sich üblicherweise ein Gesprächspartner, der dir weiterhelfen
 kann.<br style="clear:both"/><br/>
 
