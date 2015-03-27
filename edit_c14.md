@@ -35,3 +35,15 @@ title: c¼h editieren
 	<input type="submit" value="c¼h speichern"></input>
 
 </form>
+
+((if ne .Password.String ""))
+<form method="POST" action="edit_c14.html">
+	<input type="hidden" name="delete" value="true">
+	<input type="hidden" name="id" value="(( if ge .Id 0))((.Id))(( end))" />
+	<input type="hidden" name="pw" value="(( .Password.String ))" />
+    <input type="hidden" name="speaker" value="((.Speaker))" required="required"/>
+    <input type="hidden" name="topic" value="((.Topic))" required="required" />
+    <input type="submit" value="c14h löschen">
+</form>
+((end))
+
