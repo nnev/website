@@ -208,9 +208,8 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 
 		vortrag.Password = v.Password
 
-		if del == "true" {
-			err = Delete(id)
-			if err != nil {
+		if del != "" {
+			if err = Delete(id); err != nil {
 				log.Printf("Could not delete Vortrag %d: %v\n", id, err)
 				writeError(500, res, "Could not delete Vortrag")
 				return
