@@ -215,8 +215,11 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 				return
 			}
 			log.Println("Deleted Vortrag %d", id)
-			return
 
+			RunHook()
+			url := fmt.Sprintf("/chaotische_viertelstunde.html?ts=%d", time.Now().UnixNano())
+			http.Redirect(res, req, url, http.StatusSeeOther)
+			return
 		}
 
 	} else {
