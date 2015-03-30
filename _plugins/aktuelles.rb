@@ -30,10 +30,13 @@ module Jekyll
 
 			vortraege_vergangenheit = conn.exec('SELECT * FROM vortraege WHERE date < CURRENT_DATE ORDER BY date DESC').to_a
 
+			latest = conn.exec('SELECT id FROM vortraege ORDER BY id DESC LIMIT 1')
+
 			site.pages.each do |page|
 				page.data['termine'] = termine
 				page.data['vortraege_zukunft'] = vortraege_zukunft
 				page.data['vortraege_vergangenheit'] = vortraege_vergangenheit
+				page.data['vortraege_latest'] = latest.getvalue(0, 0)
 			end
 		end
 	end
