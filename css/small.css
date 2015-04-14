@@ -24,6 +24,10 @@
   background-size: 22em;
 }
 
+@media print {
+  .cont { background: transparent; }
+}
+
 .main_left {
   padding-right: 0;
   float: none;
