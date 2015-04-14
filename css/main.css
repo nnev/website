@@ -111,6 +111,10 @@ body, iframe {
 	max-height: calc(100% - 14.5rem);
 }
 
+@media print {
+	.main_right { display: none }
+}
+
 
 h1 {
 	font-size: 1.7em;
