@@ -112,7 +112,7 @@ body, iframe {
 }
 
 @media print {
-	.main_right { display: none }
+	.main_right { display: none; background: transparent; }
 }
 
 
