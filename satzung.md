@@ -41,8 +41,7 @@ Stand: 2014-10-30, siehe auch [Beitragsordnung](beitragsordnung.html)
 
 3.	Mittel des Vereins dürfen nur für satzungsgemäße Zwecke verwendet werden. Die
 	Mitglieder des Vereins erhalten in ihrer Eigenschaft als Mitglieder keine
-	Zuwendungen aus Mitteln des Vereins, außer auf einstimmigen Beschluss des
-	Vorstandes.
+	Zuwendungen aus Mitteln des Vereins.
 
 4.	Es darf keine Person durch Ausgaben, die dem Zweck des Vereins fremd sind,
 	oder durch unverhältnismäßig hohe Vergütungen begünstigt werden.
@@ -287,8 +286,11 @@ vor seiner Amtsausscheidung zu entlasten.
 
 # §12 Auflösung des Vereins
 
-1.	Bei Auflösung oder Aufhebung des Vereins ist das Vereinsvermögen dem Verein
-	digitalcourage e.V. mit Sitz in Bielefeld zuzuführen.
+1.	Bei Auflösung des Vereins oder bei Wegfall der steuerbegünstigten Zwecke
+	fällt das Vermögen des Vereins an den Verein „digitalcourage e.V.“ mit Sitz
+	in Bielefeld, der es unmittelbar und ausschließlich für steuerbegünstigte
+	Zwecke zu verwenden hat.
+
 
 2.	Als Liquidatoren werden die im Amt befindlichen vertretungsberechtigten
 	Vorstandsmitglieder bestimmt, soweit die Mitgliederversammlung nichts anderes
