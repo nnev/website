@@ -5,7 +5,7 @@ title: Satzung
 
 # Satzung
 
-Stand: 2014-10-30, siehe auch [Beitragsordnung](beitragsordnung.html)
+Stand: 2015-05-07, siehe auch [Beitragsordnung](beitragsordnung.html)
 
 
 # §1 Name, Sitz und Geschäftsjahr
