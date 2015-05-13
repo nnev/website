@@ -295,3 +295,23 @@ table, td, th, tr {
 .yarpnarpstatus.narp {
 	background: rgba(100, 0, 0, 0.2);
 }
+
+#vortraege_tba {
+	display: none;
+}
+
+a.button {
+	text-decoration: none;
+	color: black;
+	border: 1px solid black;
+	padding: 0.5em 1em;
+	border-radius: 0.3em;
+	background: #cccac5;
+}
+
+a.button:hover {
+	text-decoration: none;
+	color: black;
+	background: #CCBD8F;
+	cursor: pointer;
+}
