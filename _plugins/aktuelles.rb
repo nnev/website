@@ -26,7 +26,9 @@ module Jekyll
 				termine << tuple
 			end
 
-			vortraege_zukunft = conn.exec('SELECT * FROM vortraege WHERE date IS NULL OR date >= CURRENT_DATE ORDER BY date ASC').to_a
+			vortraege_zukunft = conn.exec('SELECT * FROM vortraege WHERE date >= CURRENT_DATE ORDER BY date ASC').to_a
+
+			vortraege_tba = conn.exec('SELECT * FROM vortraege WHERE date IS NULL ORDER BY id ASC').to_a
 
 			vortraege_vergangenheit = conn.exec('SELECT * FROM vortraege WHERE date < CURRENT_DATE ORDER BY date DESC').to_a
 
@@ -35,6 +37,7 @@ module Jekyll
 			site.pages.each do |page|
 				page.data['termine'] = termine
 				page.data['vortraege_zukunft'] = vortraege_zukunft
+				page.data['vortraege_tba'] = vortraege_tba
 				page.data['vortraege_vergangenheit'] = vortraege_vergangenheit
 				page.data['vortraege_latest'] = latest.getvalue(0, 0)
 			end
