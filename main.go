@@ -37,8 +37,13 @@ type Vortrag struct {
 	Topic    string
 	Abstract string
 	Speaker  string
-	InfoURL  string
+	Links    []Link
 	Password sql.NullString
+}
+
+type Link struct {
+	Kind string
+	Url  string
 }
 
 type CustomTime time.Time
@@ -157,16 +162,33 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 }
 
 func handlePost(res http.ResponseWriter, req *http.Request) {
+	//16 KB
+	err := req.ParseMultipartForm(1 << 14)
+	//TODO: handle error
+	if err != nil {
+	}
+
 	idStr := req.PostFormValue("id")
 	dateStr := req.PostFormValue("date")
 	topic := req.PostFormValue("topic")
 	abstract := req.PostFormValue("abstract")
 	speaker := req.PostFormValue("speaker")
-	infourl := req.PostFormValue("infourl")
 	pw := req.PostFormValue("pw")
 	del := req.PostFormValue("delete")
+	kinds := req.Form["kind"]
+	urls := req.Form["url"]
 
-	log.Printf("Incoming POST request: id=\"%s\", pw=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", infourl=\"%s\", delete=\"%s\"\n", idStr, pw, dateStr, topic, abstract, speaker, infourl, del)
+	fmt.Println(kinds, urls)
+
+	var links []Link
+	for i := range kinds {
+		links = append(links, Link{
+			Kind: kinds[i],
+			Url:  urls[i],
+		})
+	}
+
+	log.Printf("Incoming POST request: id=\"%s\", pw=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", links=\"%+v\", delete=\"%s\"\n", idStr, pw, dateStr, topic, abstract, speaker, links, del)
 
 	if topic == "" || speaker == "" {
 		writeError(400, res, "You need to supply at least a speaker and a topic")
@@ -187,7 +209,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		Topic:    topic,
 		Abstract: abstract,
 		Speaker:  speaker,
-		InfoURL:  infourl,
+		Links:    links,
 	}
 
 	if id != -1 {
