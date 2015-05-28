@@ -29,12 +29,32 @@ title: c¼h editieren
 	<label for="abstract">Zusammenfassung</label>
 	<textarea id="abstract" name="abstract" placeholder="Zusammenfassung" rows="10" cols="60">((.Abstract))</textarea><br>
 
-	<label for="infourl">Details / Folien / Aufzeichnung</label>
-	<input type="text" placeholder="http://example.com/folien.pdf" id="infourl" name="infourl" value="(( .InfoURL ))" /><br>
+<script>
+function addField() {
+	document.getElementById("links").innerHTML +=
+	'<label for="kind">Art</label>' +
+	'<input type="text" placeholder="Art" id="kind" name="kind" value="foo" /><br>' +
+	'<label for="url">Url</label>' +
+	'<input type="text" placeholder="http://example.com/folien.pdf" id="url" name="url" value="" /><br>';
+}
+</script>
 
-	<input type="submit" value="c¼h speichern"></input>
+<a class="button" onclick="addField()" > Informationen/Links hinzufügen</a>
+
+	<label for="links">Informationen/Links </label>
+
+	<div id="links">
+	(( range .Links ))
+	<label for="kind">Art</label>
+	<input type="text" placeholder="Art" id="kind" name="kind" value="((.Kind))" /><br>
+	<label for="url">Url</label>
+	<input type="text" placeholder="http://example.com/folien.pdf" id="url" name="url" value="((.Url))" /><br>
+	(( end ))
+	</div>
+
+	<input type="submit" value="c¼h speichern" />
 	((if ge .Id 0))
-	<input type="submit" name="delete" value="c¼h löschen">
+	<input type="submit" name="delete" value="c¼h löschen" />
 	((end))
 </form>
 
