@@ -246,7 +246,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 				writeError(500, res, "Could not delete Vortrag")
 				return
 			}
-			log.Println("Deleted Vortrag %d", id)
+			log.Printf("Deleted Vortrag %d", id)
 			return
 
 		}
