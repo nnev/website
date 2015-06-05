@@ -1,6 +1,8 @@
 package main
 
 import (
+	"encoding/base64"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"html/template"
@@ -99,8 +101,23 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 
 	RunHook()
 
-	http.SetCookie(res, &http.Cookie{Name: "nick", Value: nick, Expires: time.Date(2030, 0, 0, 0, 0, 0, 0, time.Local)})
-	http.SetCookie(res, &http.Cookie{Name: "kommentar", Value: kommentar, Expires: time.Date(2030, 0, 0, 0, 0, 0, 0, time.Local)})
+	keks := struct {
+		Nick      string
+		Kommentar string
+	}{
+		nick,
+		kommentar,
+	}
+
+	cookie, err := json.Marshal(keks)
+	if err != nil {
+		log.Printf("Could not marshal: %v\n", err)
+		writeError(400, res, "Error: %v", err)
+	}
+
+	c := base64.StdEncoding.EncodeToString(cookie)
+	http.SetCookie(res, &http.Cookie{Name: "yarpnarp", Value: c, Expires: time.Date(2030, 0, 0, 0, 0, 0, 0, time.Local)})
+
 	http.Redirect(res, req, "/yarpnarp.html", 303)
 }
 
