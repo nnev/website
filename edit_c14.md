@@ -36,12 +36,14 @@ title: c¼h editieren
 		url.placeholder = "http://example.com/folien.pdf";
 		url.id = "url";
 		url.name = "url";
+		url.value = "";
 
 		var kind = document.createElement("input");
 		kind.type = "text";
 		kind.placeholder = "Art";
 		kind.id = "kind";
 		kind.name = "kind";
+		kind.value = "";
 
 		document.getElementById("links").appendChild(kind);
 		document.getElementById("links").appendChild(url);
