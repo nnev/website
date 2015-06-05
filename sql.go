@@ -135,8 +135,7 @@ func (v *Vortrag) Put() (err error) {
 		}
 	}
 
-	err = tx.Commit()
-	return err
+	return tx.Commit()
 }
 
 func Load(id int) (*Vortrag, error) {
