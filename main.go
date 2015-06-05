@@ -162,8 +162,7 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 }
 
 func handlePost(res http.ResponseWriter, req *http.Request) {
-	//16 KB
-	err := req.ParseMultipartForm(1 << 14)
+	err := req.ParseForm()
 	if err != nil {
 		// Not sure what to do, so we just return 400
 		log.Printf("ParseMultipartForm returned %v", err)
@@ -192,6 +191,12 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	var links []Link
 
 	for i := range kinds {
+		if urls[i] == "" {
+			continue
+		}
+		if kinds[i] == "" {
+			kinds[i] = "Sonstiges"
+		}
 		links = append(links, Link{
 			Kind: kinds[i],
 			Url:  urls[i],
