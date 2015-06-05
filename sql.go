@@ -135,11 +135,7 @@ func (v *Vortrag) Put() (err error) {
 		}
 	}
 
-	if err != nil {
-		tx.Rollback()
-	} else {
-		tx.Commit()
-	}
+	err = tx.Commit()
 	return err
 }
 
