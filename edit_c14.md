@@ -29,17 +29,17 @@ title: c¼h editieren
 	<label for="abstract">Zusammenfassung</label>
 	<textarea id="abstract" name="abstract" placeholder="Zusammenfassung" rows="10" cols="60">((.Abstract))</textarea><br>
 
-<script>
-function addField() {
-	document.getElementById("links").innerHTML +=
-	'<label for="kind">Art</label>' +
-	'<input type="text" placeholder="Art" id="kind" name="kind" value="foo" /><br>' +
-	'<label for="url">Url</label>' +
-	'<input type="text" placeholder="http://example.com/folien.pdf" id="url" name="url" value="" /><br>';
-}
-</script>
+	<script>
+	function addField() {
+		document.getElementById("links").innerHTML +=
+		'<label for="kind">Art</label>' +
+		'<input type="text" placeholder="Art" id="kind" name="kind" value="" /><br>' +
+		'<label for="url">Url</label>' +
+		'<input type="text" placeholder="http://example.com/folien.pdf" id="url" name="url" value="" /><br>';
+	}
+	</script>
 
-<a class="button" onclick="addField()" > Informationen/Links hinzufügen</a>
+	<a class="button" onclick="addField()" > Informationen/Links hinzufügen</a>
 
 	<label for="links">Informationen/Links </label>
 
