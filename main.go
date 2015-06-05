@@ -164,8 +164,10 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 func handlePost(res http.ResponseWriter, req *http.Request) {
 	//16 KB
 	err := req.ParseMultipartForm(1 << 14)
-	//TODO: handle error
 	if err != nil {
+		//Not sure what to do, so we just return 400
+		log.Printf("ParseMultipartForm returned %v", err)
+		writeError(400, res, "Bad request.")
 	}
 
 	idStr := req.PostFormValue("id")
@@ -178,9 +180,17 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	kinds := req.Form["kind"]
 	urls := req.Form["url"]
 
-	fmt.Println(kinds, urls)
+	if len(kinds) != len(urls) {
+		if len(kinds) < len(urls) {
+			urls = urls[:len(kinds)]
+		} else {
+			kinds = kinds[:len(urls)]
+		}
+
+	}
 
 	var links []Link
+
 	for i := range kinds {
 		links = append(links, Link{
 			Kind: kinds[i],
