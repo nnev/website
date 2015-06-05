@@ -31,23 +31,31 @@ title: c¼h editieren
 
 	<script>
 	function addField() {
-		document.getElementById("links").innerHTML +=
-		'<label for="kind">Art</label>' +
-		'<input type="text" placeholder="Art" id="kind" name="kind" value="" /><br>' +
-		'<label for="url">Url</label>' +
-		'<input type="text" placeholder="http://example.com/folien.pdf" id="url" name="url" value="" /><br>';
-	}
+		var url = document.createElement("input");
+		url.type = "text";
+		url.placeholder = "http://example.com/folien.pdf";
+		url.id = "url";
+		url.name = "url";
+
+		var kind = document.createElement("input");
+		kind.type = "text";
+		kind.placeholder = "Art";
+		kind.id = "kind";
+		kind.name = "kind";
+
+		document.getElementById("links").appendChild(kind);
+		document.getElementById("links").appendChild(url);
+		document.getElementById("links").appendChild(document.createElement("br"));
+ 	}
 	</script>
 
 	<a class="button" onclick="addField()" > Informationen/Links hinzufügen</a>
-
+	<br>
 	<label for="links">Informationen/Links </label>
 
 	<div id="links">
 	(( range .Links ))
-	<label for="kind">Art</label>
-	<input type="text" placeholder="Art" id="kind" name="kind" value="((.Kind))" /><br>
-	<label for="url">Url</label>
+	<input type="text" placeholder="Art" id="kind" name="kind" value="((.Kind))" />
 	<input type="text" placeholder="http://example.com/folien.pdf" id="url" name="url" value="((.Url))" /><br>
 	(( end ))
 	</div>
