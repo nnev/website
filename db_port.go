@@ -1,7 +1,10 @@
+// +build ignore
+
 package main
 
 import (
 	"database/sql"
+	"flag"
 	"fmt"
 	"log"
 	"strings"
@@ -9,8 +12,14 @@ import (
 	_ "github.com/lib/pq"
 )
 
+var (
+	db      *sql.DB
+	driver  = flag.String("driver", "postgres", "The database driver to use")
+	connect = flag.String("connect", "dbname=nnev host=/var/run/postgresql sslmode=disable", "The connection string to use")
+)
+
 func openDB() (err error) {
-	db, err = sql.Open("postgres", "dbname=c14h host=/var/run/postgresql sslmode=disable")
+	db, err = sql.Open(*driver, *connect)
 	if err != nil {
 		return err
 	}
@@ -41,7 +50,9 @@ func guessKind(infourl string) string {
 	return "Sonstiges"
 }
 
-func portDB() {
+func main() {
+	flag.Parse()
+
 	err := openDB()
 	if err != nil {
 		log.Fatal("Could not connect to database:", err)
@@ -67,7 +78,7 @@ func portDB() {
 			log.Fatal(err)
 		}
 
-		if !infourl.Valid {
+		if infourl.String == "" {
 			continue
 		}
 
