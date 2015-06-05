@@ -23,7 +23,7 @@ func openDB() (err error) {
 }
 
 func guessKind(infourl string) string {
-	if strings.Contains(infourl, "pdf") {
+	if strings.HasSuffix(infourl, ".pdf") {
 		fmt.Println("Guessing kind 'Folien' for", infourl)
 		return "Folien"
 	}
