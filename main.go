@@ -62,12 +62,30 @@ func YarpNarpHandler(res http.ResponseWriter, req *http.Request) {
 
 func handleGet(res http.ResponseWriter, req *http.Request) {
 	z := Zusage{}
-	if cookie, _ := req.Cookie("nick"); cookie != nil {
-		z.Nick = cookie.Value
-	}
-	z = GetZusage(z.Nick)
-	if cookie, _ := req.Cookie("kommentar"); cookie != nil {
-		z.Kommentar = cookie.Value
+
+	if c, _ := req.Cookie("yarpnarp"); c != nil {
+		keks, err := base64.StdEncoding.DecodeString(c.Value)
+		if err != nil {
+			log.Println(err)
+			return
+		}
+
+		cookie := struct {
+			Nick      string
+			Kommentar string
+		}{
+			nick,
+			kommentar,
+		}
+		if err = json.Unmarshal(keks, cookie); err != nil {
+			log.Println(err)
+			return err
+		}
+		z.Nick = cookie.Nick
+		z = GetZusage(z.Nick)
+		if cookie.Kommentar != "" {
+			z.Kommentar = cookie.Kommentar
+		}
 	}
 
 	err := tpl.ExecuteTemplate(res, "yarpnarp.html", z)
