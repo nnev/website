@@ -34,6 +34,11 @@ type Zusage struct {
 	HasKommt  bool
 }
 
+type Cookie struct {
+	Nick      string
+	Kommentar string
+}
+
 func writeError(errno int, res http.ResponseWriter, format string, args ...interface{}) {
 	res.WriteHeader(errno)
 	fmt.Fprintf(res, format, args...)
@@ -67,19 +72,16 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 		keks, err := base64.StdEncoding.DecodeString(c.Value)
 		if err != nil {
 			log.Println(err)
+			writeError(500, res, "Something went wrong")
 			return
 		}
 
-		cookie := struct {
-			Nick      string
-			Kommentar string
-		}{
-			nick,
-			kommentar,
-		}
-		if err = json.Unmarshal(keks, cookie); err != nil {
+		cookie := Cookie{}
+
+		if err = json.Unmarshal(keks, &cookie); err != nil {
 			log.Println(err)
-			return err
+			writeError(500, res, "Something went wrong")
+			return
 		}
 		z.Nick = cookie.Nick
 		z = GetZusage(z.Nick)
@@ -114,23 +116,16 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	err := zusage.Put()
 	if err != nil {
 		log.Printf("Could not update: %v\n", err)
-		writeError(400, res, "Error: %v", err)
+		writeError(400, res, "An error occurred.")
 	}
 
 	RunHook()
 
-	keks := struct {
-		Nick      string
-		Kommentar string
-	}{
-		nick,
-		kommentar,
-	}
-
-	cookie, err := json.Marshal(keks)
+	cookie, err := json.Marshal(Cookie{Nick: nick, Kommentar: kommentar})
 	if err != nil {
 		log.Printf("Could not marshal: %v\n", err)
-		writeError(400, res, "Error: %v", err)
+		writeError(400, res, "An error occurred.")
+		return
 	}
 
 	c := base64.StdEncoding.EncodeToString(cookie)
