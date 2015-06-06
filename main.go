@@ -1,6 +1,8 @@
 package main
 
 import (
+	"encoding/base64"
+	"encoding/json"
 	"flag"
 	"fmt"
 	"html/template"
@@ -32,6 +34,11 @@ type Zusage struct {
 	HasKommt  bool
 }
 
+type Cookie struct {
+	Nick      string
+	Kommentar string
+}
+
 func writeError(errno int, res http.ResponseWriter, format string, args ...interface{}) {
 	res.WriteHeader(errno)
 	fmt.Fprintf(res, format, args...)
@@ -60,12 +67,27 @@ func YarpNarpHandler(res http.ResponseWriter, req *http.Request) {
 
 func handleGet(res http.ResponseWriter, req *http.Request) {
 	z := Zusage{}
-	if cookie, _ := req.Cookie("nick"); cookie != nil {
-		z.Nick = cookie.Value
-	}
-	z = GetZusage(z.Nick)
-	if cookie, _ := req.Cookie("kommentar"); cookie != nil {
-		z.Kommentar = cookie.Value
+
+	if c, _ := req.Cookie("yarpnarp"); c != nil {
+		keks, err := base64.StdEncoding.DecodeString(c.Value)
+		if err != nil {
+			log.Println(err)
+			writeError(500, res, "Something went wrong")
+			return
+		}
+
+		cookie := Cookie{}
+
+		if err = json.Unmarshal(keks, &cookie); err != nil {
+			log.Println(err)
+			writeError(500, res, "Something went wrong")
+			return
+		}
+		z.Nick = cookie.Nick
+		z = GetZusage(z.Nick)
+		if cookie.Kommentar != "" {
+			z.Kommentar = cookie.Kommentar
+		}
 	}
 
 	err := tpl.ExecuteTemplate(res, "yarpnarp.html", z)
@@ -94,13 +116,21 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	err := zusage.Put()
 	if err != nil {
 		log.Printf("Could not update: %v\n", err)
-		writeError(400, res, "Error: %v", err)
+		writeError(400, res, "An error occurred.")
 	}
 
 	RunHook()
 
-	http.SetCookie(res, &http.Cookie{Name: "nick", Value: nick, Expires: time.Date(2030, 0, 0, 0, 0, 0, 0, time.Local)})
-	http.SetCookie(res, &http.Cookie{Name: "kommentar", Value: kommentar, Expires: time.Date(2030, 0, 0, 0, 0, 0, 0, time.Local)})
+	cookie, err := json.Marshal(Cookie{Nick: nick, Kommentar: kommentar})
+	if err != nil {
+		log.Printf("Could not marshal: %v\n", err)
+		writeError(400, res, "An error occurred.")
+		return
+	}
+
+	c := base64.StdEncoding.EncodeToString(cookie)
+	http.SetCookie(res, &http.Cookie{Name: "yarpnarp", Value: c, Expires: time.Date(2030, 0, 0, 0, 0, 0, 0, time.Local)})
+
 	http.Redirect(res, req, "/yarpnarp.html", 303)
 }
 
