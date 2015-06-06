@@ -182,9 +182,23 @@ func Load(id int) (*Vortrag, error) {
 }
 
 func Delete(id int) error {
-	_, err := db.Exec("DELETE FROM vortraege WHERE id=$1", id)
+	tx, err := db.Begin()
 	if err != nil {
 		return err
 	}
+	defer tx.Rollback()
+
+	_, err = db.Exec("DELETE FROM vortrag_links WHERE vortrag = $1", id)
+	if err != nil {
+		return err
+	}
+
+	_, err = db.Exec("DELETE FROM vortraege WHERE id=$1", id)
+	if err != nil {
+		return err
+	}
+
+	tx.Commit()
+
 	return nil
 }
