@@ -37,8 +37,13 @@ type Vortrag struct {
 	Topic    string
 	Abstract string
 	Speaker  string
-	InfoURL  string
+	Links    []Link
 	Password sql.NullString
+}
+
+type Link struct {
+	Kind string
+	Url  string
 }
 
 type CustomTime time.Time
@@ -157,16 +162,48 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 }
 
 func handlePost(res http.ResponseWriter, req *http.Request) {
+	err := req.ParseForm()
+	if err != nil {
+		// Not sure what to do, so we just return 400
+		log.Printf("ParseMultipartForm returned %v", err)
+		writeError(400, res, "Bad request.")
+	}
+
 	idStr := req.PostFormValue("id")
 	dateStr := req.PostFormValue("date")
 	topic := req.PostFormValue("topic")
 	abstract := req.PostFormValue("abstract")
 	speaker := req.PostFormValue("speaker")
-	infourl := req.PostFormValue("infourl")
 	pw := req.PostFormValue("pw")
 	del := req.PostFormValue("delete")
+	kinds := req.Form["kind"]
+	urls := req.Form["url"]
 
-	log.Printf("Incoming POST request: id=\"%s\", pw=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", infourl=\"%s\", delete=\"%s\"\n", idStr, pw, dateStr, topic, abstract, speaker, infourl, del)
+	if len(kinds) != len(urls) {
+		log.Printf("Got different numbers of kinds (%d) and urls (%d)", len(kinds), len(urls))
+		if len(kinds) < len(urls) {
+			urls = urls[:len(kinds)]
+		} else {
+			kinds = kinds[:len(urls)]
+		}
+	}
+
+	var links []Link
+
+	for i := range kinds {
+		if urls[i] == "" {
+			continue
+		}
+		if kinds[i] == "" {
+			kinds[i] = "Sonstiges"
+		}
+		links = append(links, Link{
+			Kind: kinds[i],
+			Url:  urls[i],
+		})
+	}
+
+	log.Printf("Incoming POST request: id=\"%s\", pw=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", links=\"%+v\", delete=\"%s\"\n", idStr, pw, dateStr, topic, abstract, speaker, links, del)
 
 	if topic == "" || speaker == "" {
 		writeError(400, res, "You need to supply at least a speaker and a topic")
@@ -187,7 +224,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		Topic:    topic,
 		Abstract: abstract,
 		Speaker:  speaker,
-		InfoURL:  infourl,
+		Links:    links,
 	}
 
 	if id != -1 {
@@ -214,7 +251,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 				writeError(500, res, "Could not delete Vortrag")
 				return
 			}
-			log.Println("Deleted Vortrag %d", id)
+			log.Printf("Deleted Vortrag %d", id)
 
 			RunHook()
 			url := fmt.Sprintf("/chaotische_viertelstunde.html?ts=%d", time.Now().UnixNano())
