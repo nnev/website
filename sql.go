@@ -27,25 +27,29 @@ func OpenDB() (err error) {
 func (z *Zusage) Put() (err error) {
 	log.Println("Put", z)
 
+	tx, err := db.Begin()
+	if err != nil {
+		return err
+	}
+	defer tx.Rollback()
+
 	old := Zusage{}
-	err = db.QueryRow("SELECT nick, kommt, kommentar FROM zusagen WHERE nick = $1", z.Nick).Scan(&old)
+	err = tx.QueryRow("SELECT nick, kommt, kommentar FROM zusagen WHERE nick = $1", z.Nick).Scan(&old)
 
 	switch {
 	case err == sql.ErrNoRows:
-		_, err = db.Exec("INSERT INTO zusagen (nick, kommt, kommentar, registered) VALUES ($1, $2, $3, NOW())", z.Nick, z.Kommt, z.Kommentar)
-		if err != nil {
-			return err
-		}
-		return nil
+		_, err = tx.Exec("INSERT INTO zusagen (nick, kommt, kommentar, registered) VALUES ($1, $2, $3, NOW())", z.Nick, z.Kommt, z.Kommentar)
 	case err != nil:
 		return err
 	default:
-		_, err = db.Exec("UPDATE zusagen SET kommt = $2, kommentar = $3 WHERE nick = $1 ", z.Nick, z.Kommt, z.Kommentar)
-		if err != nil {
-			return err
-		}
-		return nil
+		_, err = tx.Exec("UPDATE zusagen SET kommt = $2, kommentar = $3 WHERE nick = $1 ", z.Nick, z.Kommt, z.Kommentar)
 	}
+
+	if err != nil {
+		return err
+	}
+
+	return tx.Commit()
 }
 
 func GetZusage(nick string) (z Zusage) {
