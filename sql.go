@@ -2,8 +2,9 @@ package main
 
 import (
 	"database/sql"
-	_ "github.com/lib/pq"
 	"log"
+
+	_ "github.com/lib/pq"
 )
 
 var (
@@ -25,12 +26,26 @@ func OpenDB() (err error) {
 
 func (z *Zusage) Put() (err error) {
 	log.Println("Put", z)
-	_, _ = db.Exec("DELETE FROM zusagen WHERE nick = $1", z.Nick)
-	_, err = db.Exec("INSERT INTO zusagen (nick, kommt, kommentar) VALUES ($1, $2, $3)", z.Nick, z.Kommt, z.Kommentar)
-	if err != nil {
+
+	old := Zusage{}
+	err = db.QueryRow("SELECT nick, kommt, kommentar FROM zusagen WHERE nick = $1", z.Nick).Scan(&old)
+
+	switch {
+	case err == sql.ErrNoRows:
+		_, err = db.Exec("INSERT INTO zusagen (nick, kommt, kommentar, registered) VALUES ($1, $2, $3, NOW())", z.Nick, z.Kommt, z.Kommentar)
+		if err != nil {
+			return err
+		}
+		return nil
+	case err != nil:
 		return err
+	default:
+		_, err = db.Exec("UPDATE zusagen SET kommt = $2, kommentar = $3 WHERE nick = $1 ", z.Nick, z.Kommt, z.Kommentar)
+		if err != nil {
+			return err
+		}
+		return nil
 	}
-	return nil
 }
 
 func GetZusage(nick string) (z Zusage) {
