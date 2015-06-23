@@ -5,7 +5,7 @@ foto:     weiszer_stein
 
 title:         "Weißer Stein"
 phone:        06221 6597366 
-site_url:     http://weisserstein.net
+site_url:     http://www.weisser-stein.de/
 
 address:      Handschuhsheimer Landstr. 84, 69121 Heidelberg
 address_desc: "Haltestelle: Kapellenweg (23, 5) bzw. Hans-Thoma-Platz (24)"
