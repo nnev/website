@@ -32,6 +32,22 @@ module Jekyll
 
 			vortraege_vergangenheit = conn.exec('SELECT * FROM vortraege WHERE date < CURRENT_DATE ORDER BY date DESC').to_a
 
+			vortraege_vergangenheit.each do | vortrag |
+				linklist = conn.exec('SELECT kind, url FROM vortrag_links WHERE vortrag = %s' % vortrag["id"]).to_a
+				vortrag["links"] = linklist
+			end
+
+			vortraege_zukunft.each do | vortrag |
+				linklist = conn.exec('SELECT kind, url FROM vortrag_links WHERE vortrag = %s' % vortrag["id"]).to_a
+				vortrag["links"] = linklist
+			end
+
+			vortraege_tba.each do | vortrag |
+				linklist = conn.exec('SELECT kind, url FROM vortrag_links WHERE vortrag = %s' % vortrag["id"]).to_a
+				vortrag["links"] = linklist
+			end
+
+
 			latest = conn.exec('SELECT id FROM vortraege ORDER BY id DESC LIMIT 1')
 
 			site.pages.each do |page|

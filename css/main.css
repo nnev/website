@@ -214,10 +214,6 @@ tr.space td {
 	padding-bottom: 2rem;
 }
 
-tr.space td:last-child {
-	text-align: right;
-}
-
 .dim {
 	color: #888;
 }
