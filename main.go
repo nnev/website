@@ -44,6 +44,7 @@ var Commands = []*Command{
 	cmdClear,
 	cmdOverride,
 	cmdPassword,
+	cmdYarpNarp,
 	cmdHelp,
 }
 
