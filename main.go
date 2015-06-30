@@ -172,6 +172,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		// Not sure what to do, so we just return 400
 		log.Printf("ParseMultipartForm returned %v", err)
 		writeError(400, res, "Bad request.")
+		return
 	}
 
 	idStr := req.PostFormValue("id")
