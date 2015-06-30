@@ -83,6 +83,11 @@ func verifyPassword(a, b string) bool {
 	return subtle.ConstantTimeCompare([]byte(a), []byte(b)) == 1
 }
 
+func verifyCaptcha(req *http.Request) bool {
+	log.Printf("Entered as captcha: %q", req.FormValue("captcha"))
+	return req.FormValue("captcha") == "NoName e.V."
+}
+
 func C14Handler(res http.ResponseWriter, req *http.Request) {
 	var err error
 	tpl, err = template.New("").Delims("((", "))").ParseFiles(*gettpl)
@@ -204,6 +209,11 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	}
 
 	log.Printf("Incoming POST request: id=\"%s\", pw=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", links=\"%+v\", delete=\"%s\"\n", idStr, pw, dateStr, topic, abstract, speaker, links, del)
+
+	if !verifyCaptcha(req) {
+		writeError(400, res, "Bitte fülle das CAPTCHA korrekt aus.")
+		return
+	}
 
 	if topic == "" || speaker == "" {
 		writeError(400, res, "You need to supply at least a speaker and a topic")
