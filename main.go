@@ -11,6 +11,7 @@ import (
 	"os"
 	"os/signal"
 	"regexp"
+	"strings"
 	"syscall"
 	"time"
 )
@@ -83,7 +84,7 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 			writeError(500, res, "Something went wrong")
 			return
 		}
-		z.Nick = cookie.Nick
+		z.Nick = strings.TrimSpace(cookie.Nick)
 		z = GetZusage(z.Nick)
 		if cookie.Kommentar != "" {
 			z.Kommentar = cookie.Kommentar
@@ -100,7 +101,7 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 }
 
 func handlePost(res http.ResponseWriter, req *http.Request) {
-	nick := req.FormValue("nick")
+	nick := strings.TrimSpace(req.FormValue("nick"))
 	kommt := (req.FormValue("kommt") == "Yarp")
 	kommentar := req.FormValue("kommentar")
 
