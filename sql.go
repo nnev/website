@@ -41,6 +41,8 @@ func (z *Zusage) Put() (err error) {
 		_, err = tx.Exec("INSERT INTO zusagen (nick, kommt, kommentar, registered) VALUES ($1, $2, $3, NOW())", z.Nick, z.Kommt, z.Kommentar)
 	case err != nil:
 		return err
+	case old.Kommt != z.Kommt:
+		_, err = tx.Exec("UPDATE zusagen SET kommt = $2, kommentar = $3, registered = NOW() WHERE nick = $1 ", z.Nick, z.Kommt, z.Kommentar)
 	default:
 		_, err = tx.Exec("UPDATE zusagen SET kommt = $2, kommentar = $3 WHERE nick = $1 ", z.Nick, z.Kommt, z.Kommentar)
 	}
