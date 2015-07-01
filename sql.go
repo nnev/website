@@ -34,7 +34,7 @@ func (z *Zusage) Put() (err error) {
 	defer tx.Rollback()
 
 	old := Zusage{}
-	err = tx.QueryRow("SELECT nick, kommt, kommentar FROM zusagen WHERE nick = $1", z.Nick).Scan(&old)
+	err = tx.QueryRow("SELECT nick, kommt, kommentar FROM zusagen WHERE nick = $1", z.Nick).Scan(&old.Nick, &old.Kommt, &old.Kommentar)
 
 	switch {
 	case err == sql.ErrNoRows:
