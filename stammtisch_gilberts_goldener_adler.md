@@ -2,7 +2,7 @@
 layout:   stammtisch
 title:    "Stammtisch: Gilbert’s Goldener Adler"
 
-title:         Gilbert’s Goldener Adler
+title:        Gilbert’s Goldener Adler
 phone:        06221 413888
 site_url:     https://gilbertsgoldeneradler.wordpress.com/
 menu_url:     https://www.noname-ev.de/wiki/uploads/3/3f/Gilbert.jpg
@@ -15,7 +15,7 @@ lon:          8.689018785953522
 map_lat:      49.426
 map_lon:      8.68857353925705
 map_zoom:     16
-gmaps_url:    https://maps.google.de/maps?q=Palmbr%C3%A4u%20Gasse%20Heidelberg
+gmaps_url:    https://maps.google.de/maps?q=Handschuhsheimer+Landstraße+96,+69121+Heidelberg
 ---
 Laut Selbstbeschreibung „gut bürgerliche Küche“. Haben ziemlich geilen
 Nachtisch-Flammkuchen und angeblich bis 1 Uhr offen.
