@@ -223,6 +223,11 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 
 	date, _ := time.ParseInLocation("2006-01-02", dateStr, loc)
 
+	if !date.IsZero() && date.Weekday() != time.Thursday {
+		writeError(400, res, "The date is not a thursday, we currently (and for the forseeable future) don't have talks on non-thursdays.")
+		return
+	}
+
 	id, err := strconv.Atoi(idStr)
 	if err != nil {
 		id = -1
