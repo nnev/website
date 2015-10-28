@@ -105,7 +105,7 @@ func C14Handler(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	writeError(405, res, "")
+	writeError(http.StatusMethodNotAllowed, res, "")
 	return
 }
 
@@ -136,24 +136,24 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 
 	id, err := strconv.Atoi(idStr)
 	if err != nil {
-		writeError(400, res, "Could not parse \"%d\" as int", idStr)
+		writeError(http.StatusBadRequest, res, "Could not parse \"%d\" as int", idStr)
 		return
 	}
 	if id <= 0 {
-		writeError(400, res, "Invalid id")
+		writeError(http.StatusBadRequest, res, "Invalid id")
 		return
 	}
 
 	vortrag, err := Load(id)
 	if err != nil {
 		log.Printf("Could not read Vortrag %d: %v\n", id, err)
-		writeError(400, res, "Could not load")
+		writeError(http.StatusBadRequest, res, "Could not load")
 		return
 	}
 
 	if vortrag.Password.Valid && !verifyPassword(vortrag.Password.String, pw) {
 		log.Println("Unauthorized edit")
-		writeError(401, res, "Unauthorized")
+		writeError(http.StatusUnauthorized, res, "Unauthorized")
 		return
 	}
 
@@ -171,7 +171,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		// Not sure what to do, so we just return 400
 		log.Printf("ParseMultipartForm returned %v", err)
-		writeError(400, res, "Bad request.")
+		writeError(http.StatusBadRequest, res, "Bad request.")
 		return
 	}
 
@@ -212,12 +212,12 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	log.Printf("Incoming POST request: id=\"%s\", pw=\"%s\", date=\"%s\", topic=\"%s\", abstract=\"%s\", speaker=\"%s\", links=\"%+v\", delete=\"%s\"\n", idStr, pw, dateStr, topic, abstract, speaker, links, del)
 
 	if !verifyCaptcha(req) {
-		writeError(400, res, "Bitte fülle das CAPTCHA korrekt aus.")
+		writeError(http.StatusBadRequest, res, "Bitte fülle das CAPTCHA korrekt aus.")
 		return
 	}
 
 	if topic == "" || speaker == "" {
-		writeError(400, res, "You need to supply at least a speaker and a topic")
+		writeError(http.StatusBadRequest, res, "You need to supply at least a speaker and a topic")
 		return
 	}
 
@@ -249,13 +249,13 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		v, err := Load(id)
 		if err != nil {
 			log.Printf("Could not read Vortrag %d: %v\n", id, err)
-			writeError(400, res, "Could not load")
+			writeError(http.StatusBadRequest, res, "Could not load")
 			return
 		}
 
 		if v.Password.Valid && !verifyPassword(v.Password.String, pw) {
 			log.Println("Unauthorized edit")
-			writeError(401, res, "Unauthorized")
+			writeError(http.StatusUnauthorized, res, "Unauthorized")
 			return
 		}
 
@@ -264,7 +264,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		if del != "" {
 			if err = Delete(id); err != nil {
 				log.Printf("Could not delete Vortrag %d: %v\n", id, err)
-				writeError(500, res, "Could not delete Vortrag")
+				writeError(http.StatusInternalServerError, res, "Could not delete Vortrag")
 				return
 			}
 			log.Printf("Deleted Vortrag %d", id)
@@ -279,7 +279,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		newPw, err := genPassword()
 		if err != nil {
 			log.Println("Could not generate password:", err)
-			writeError(500, res, "Could not generate password")
+			writeError(http.StatusInternalServerError, res, "Could not generate password")
 			return
 		}
 
@@ -289,7 +289,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	err = vortrag.Put()
 	if err != nil {
 		log.Printf("Could not update: %v\n", err)
-		writeError(400, res, "Error: %v", err)
+		writeError(http.StatusBadRequest, res, "Error: %v", err)
 		return
 	}
 
