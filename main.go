@@ -62,7 +62,7 @@ func YarpNarpHandler(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	writeError(405, res, "")
+	writeError(http.StatusMethodNotAllowed, res, "")
 	return
 }
 
@@ -73,7 +73,7 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 		keks, err := base64.StdEncoding.DecodeString(c.Value)
 		if err != nil {
 			log.Println(err)
-			writeError(500, res, "Something went wrong")
+			writeError(http.StatusInternalServerError, res, "Something went wrong")
 			return
 		}
 
@@ -81,7 +81,7 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 
 		if err = json.Unmarshal(keks, &cookie); err != nil {
 			log.Println(err)
-			writeError(500, res, "Something went wrong")
+			writeError(http.StatusInternalServerError, res, "Something went wrong")
 			return
 		}
 		z.Nick = strings.TrimSpace(cookie.Nick)
@@ -106,7 +106,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	kommentar := req.FormValue("kommentar")
 
 	if nick == "" {
-		writeError(400, res, "Nick darf nicht leer sein")
+		writeError(http.StatusBadRequest, res, "Nick darf nicht leer sein")
 		return
 	}
 
@@ -117,7 +117,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	err := zusage.Put()
 	if err != nil {
 		log.Printf("Could not update: %v\n", err)
-		writeError(400, res, "An error occurred.")
+		writeError(http.StatusBadRequest, res, "An error occurred.")
 	}
 
 	RunHook()
@@ -125,7 +125,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	cookie, err := json.Marshal(Cookie{Nick: nick, Kommentar: kommentar})
 	if err != nil {
 		log.Printf("Could not marshal: %v\n", err)
-		writeError(400, res, "An error occurred.")
+		writeError(http.StatusBadRequest, res, "An error occurred.")
 		return
 	}
 
