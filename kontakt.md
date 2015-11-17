@@ -49,7 +49,7 @@ Johannes Visintini
 Ringstraße 39
 69115 Heidelberg
 E-Mail: <img src="img/vorstand_mail.png" title="noname at joker234 dot de" style="vertical-align: text-bottom">
-Telefon: [+49 6221 7276066](tel:004962217276066)
+Telefon: <a href="tel:004962217276066">+49 6221 7276066</a>
 </address>
 
 (Bitte die obige Mail-Adresse und Telefonnummer nur für Fragen zum Verein und
