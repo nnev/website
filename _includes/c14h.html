@@ -3,7 +3,7 @@
     <tr>
         <th>
         	<a id="c14h_{{vortrag.id | escape }}" class="anchorhack"></a>
-        	<a href="#c14h_{{vortrag.id | escap }}">{% if vortrag.date %}{{ vortrag.date | escape }}{% else %}TBA{% endif %}</a>
+        	<a href="#c14h_{{vortrag.id | escape }}">{% if vortrag.date %}{{ vortrag.date | escape }}{% else %}TBA{% endif %}</a>
         </th>
         <th colspan="2">{{ vortrag.topic | escape }}</th>
     </tr>
@@ -12,16 +12,20 @@
         <td></td>
         <td class="just" colspan="2">{{ vortrag.abstract | escape | newline_to_br }}</td>
     </tr>
-    <tr class="space">
-        <td></td>
-        <td>
-            {% if vortrag.infourl != '' %}
-                <a href="{{ vortrag.infourl | escape }}" data-no-turbolink rel="nofollow"><b>Details / Folien / Aufzeichnung aufrufen</b></a>
-            {% endif %}
-        </td>
-        <td>
-        </td>
-    </tr>
+		{% for link in vortrag.links %}
+		<tr colspan="2">
+			<td></td>
+			<td>
+			<a href="{{ link.url | escape }}" data-no-turbolink rel="nofollow"><b>{{ link.kind | escape}}</b></a>
+			</td>
+			<td>
+			</td>
+	    </tr>
+		{% endfor %}
+		<tr class="space" colspan="3">
+			<td>
+			</td>
+		</tr>
 
 {% endfor %}
 </table>

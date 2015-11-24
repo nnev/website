@@ -125,7 +125,8 @@ ALTER SEQUENCE vortrag_links_id_seq OWNED BY vortrag_links.id;
 CREATE TABLE zusagen (
     nick text,
     kommt boolean DEFAULT false NOT NULL,
-    kommentar text DEFAULT ''::text NOT NULL
+    kommentar text DEFAULT ''::text NOT NULL,
+    registered timestamp with time zone
 );
 
 

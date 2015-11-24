@@ -62,6 +62,9 @@ title: c¼h editieren
 	(( end ))
 	</div>
 
+	<p>Captcha: Gebe hier "NoName e.V." ein:<br>
+	<input type="text" placeholder="NoName e.V." id="captcha" name="captcha" required="required" /></p>
+
 	<input type="submit" value="c¼h speichern" />
 	((if ge .Id 0))
 	<input type="submit" name="delete" value="c¼h löschen" />
