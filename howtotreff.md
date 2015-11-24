@@ -32,9 +32,7 @@ verdursten, haben wir Getränke – vor allem die szenetypische Club Mate und
 Club Mate Cola, aber auch koffeinfreie Alternativen <a href="verbrauch.html"
 data-no-turbolink>(Verbrauch anzeigen)</a> – und bestellen gemeinsam bei
 einem lokalen Pizzadienst Essen. Um die Bestellung zu vereinfachen, haben
-wir ein [eigenes Bestellsystem](pizza.html). Wenn das Essen eintrifft, hat
-es sich eingebürgert, auf dem Beamer eine aktuelle Folge irgendeiner Serie
-anzusehen.
+wir ein [eigenes Bestellsystem](pizza.html).
 
 ### Chaos-Stammtisch
 Jeden ersten Donnerstag im Monat machen wir statt dem normalen Treff einen
