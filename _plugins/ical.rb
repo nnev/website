@@ -11,10 +11,6 @@ include Icalendar
 # enable unicode for icalendar.
 #$KCODE = 'u'
 
-def parse_into_utc(datetime)
-	DateTime.parse(datetime).new_offset(Rational(0, 24))
-end
-
 module Jekyll
 	class C14h < Generator
 		priority :low
@@ -35,7 +31,7 @@ module Jekyll
 		def real(site)
 			cal = Calendar.new
 			cal.timezone do |t|
-				t.tzid = 'UTC'
+				t.tzid = 'Europe/Berlin'
 			end
 
 			conn = PGconn.open(:dbname => 'nnev')
@@ -93,17 +89,9 @@ module Jekyll
 					url      = "#{site.config['url']}/anfahrt.html"
 				end
 
-				# Regardless of the time zone in which the host machine is running,
-				# Chaostreffs always take place in Europe/Berlin time, so temporarily
-				# switch to that to get the correct offset.
-				prev_tv = ENV['TZ']
-				ENV['TZ'] = 'Europe/Berlin'
-				offset = DateTime.parse(tuple['date']).to_time.strftime('%z')
-				ENV['TZ'] = prev_tv
-
 				cal.event do |e|
-					e.dtstart     = parse_into_utc(tuple['date'] + ' 19:00'+offset)
-					e.dtend       = parse_into_utc(tuple['date'] + ' 23:59'+offset)
+					e.dtstart     = DateTime.parse(tuple['date'] + ' 19:00')
+					e.dtend       = DateTime.parse(tuple['date'] + ' 23:00')
 					e.summary     = topic
 					e.description = desc.strip
 					e.organizer   = 'ccchd@ccchd.de'
