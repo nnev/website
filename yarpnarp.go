@@ -61,12 +61,37 @@ func (z Zusagen) Less(i, j int) bool {
 	return false
 }
 
+func (z Zusagen) minWidth() int {
+	var nick int
+	for _, zusage := range z {
+		if len(zusage.Nick) > nick {
+			nick = len(zusage.Nick)
+		}
+	}
+	// nick + padding + Kommt + Date
+	return nick + 1 + 6 + 20
+}
+
 func formatBool(b bool) string {
 	if b {
 		return "Ja"
-	} else {
-		return "Nein"
 	}
+	return "Nein"
+}
+
+func maybeTruncate(s string, width int, truncate bool) string {
+	if !truncate {
+		return s
+	}
+
+	if width <= 0 {
+		return "…"
+	}
+
+	if len(s) > width {
+		return s[:width-1] + "…"
+	}
+	return s
 }
 
 func RunYarpNarp() {
@@ -80,10 +105,14 @@ func RunYarpNarp() {
 
 	sort.Sort(zusagen)
 
+	width, trunc := TermWidth()
+
+	width -= zusagen.minWidth()
+
 	w := tabwriter.NewWriter(os.Stdout, 0, 4, 1, ' ', tabwriter.DiscardEmptyColumns)
-	fmt.Fprintf(w, "Nick\tKommt\tLetzte Änderung\n")
+	fmt.Fprintf(w, "Nick\tKommt\tLetzte Änderung\t%s\n", maybeTruncate("Kommentar", width, trunc))
 	for _, z := range zusagen {
-		fmt.Fprintf(w, "%s\t%v\t%s\n", z.Nick, formatBool(z.Kommt), z.Registered.In(time.Local).Format("2006-01-02 15:04:05"))
+		fmt.Fprintf(w, "%s\t%v\t%s\t%s\n", z.Nick, formatBool(z.Kommt), z.Registered.In(time.Local).Format("2006-01-02 15:04:05"), maybeTruncate(z.Kommentar, width, trunc))
 	}
 	w.Flush()
 }
