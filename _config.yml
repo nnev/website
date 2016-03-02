@@ -4,8 +4,8 @@ highlighter: pygments
 
 url: "https://www.noname-ev.de"
 
-treff_lat: 49.41765
-treff_lon: 8.66831
+treff_lat: 49.417433
+treff_lon: 8.675255
 
 map_js: |
   L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
