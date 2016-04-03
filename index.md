@@ -3,11 +3,6 @@ layout: default
 title: NoName e.V.
 ---
 
-Aktuell
-===
-
-Ab sofort haben wir einen **neuen Treffpunkt**. Weitere Informationen in der [Ankündigung](/w/Umzug_ins_Mathematikon) oder der [Anfahrtsbeschreibung](anfahrt.html).
-
 Was?
 ===
 
