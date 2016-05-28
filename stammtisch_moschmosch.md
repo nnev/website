@@ -3,7 +3,7 @@ layout:   stammtisch
 title:    "Stammtisch: MoschMosch"
 foto:     moschmosch
 
-title:         MoschMosch
+locname:      MoschMosch
 phone:        06221 6509077
 site_url:     http://www.moschmosch.com/filiale/heidelberg-hauptstrasse
 menu_url:     http://www.moschmosch.com/sites/default/files/moschmosch_heidelberg_speisekarte_herbst.pdf

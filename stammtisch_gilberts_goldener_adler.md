@@ -2,7 +2,7 @@
 layout:   stammtisch
 title:    "Stammtisch: Gilbert’s Goldener Adler"
 
-title:        Gilbert’s Goldener Adler
+locname:        Gilbert’s Goldener Adler
 phone:        06221 413888
 site_url:     https://gilbertsgoldeneradler.wordpress.com/
 menu_url:     https://www.noname-ev.de/wiki/uploads/3/3f/Gilbert.jpg

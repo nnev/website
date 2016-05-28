@@ -3,7 +3,7 @@ layout:   stammtisch
 title:    "Stammtisch: Neckarwiese: Grillieren"
 foto:     neckarwiese
 
-title:         Neckarwiese - Grillieren
+locname:      Neckarwiese - Grillieren
 phone:
 site_url:
 menu_url:

@@ -3,7 +3,7 @@ layout:   stammtisch
 title:    "Stammtisch: Red"
 foto:     red
 
-title:        Red - die grüne Küche
+locname:      Red - die grüne Küche
 phone:        06220 9145206
 site_url:     http://www.red-diegruenekueche.com/
 menu_url:     http://www.red-diegruenekueche.com/kategorie/wochenkarte/

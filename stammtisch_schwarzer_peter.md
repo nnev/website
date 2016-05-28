@@ -3,7 +3,7 @@ layout:   stammtisch
 title:    "Stammtisch: Schwarzer Peter"
 foto:     schwarzer_peter
 
-title:         Schwarzer Peter
+locname:      Schwarzer Peter
 phone:        06221 21215
 
 address:      Römerstraße 34, 69115 Heidelberg

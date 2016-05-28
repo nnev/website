@@ -24,7 +24,7 @@ Du willst nichts verpassen? [Abonniere den ICS-Kalender](c14h.ics).
 				{% unless st.layout == "stammtisch" %}
 					{% continue %}
 				{% endunless %}
-				{% unless st.title == termin.location %}
+				{% unless st.locname == termin.location %}
 					{% continue %}
 				{% endunless %}
 				{% assign done = true %}

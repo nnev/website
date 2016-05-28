@@ -3,7 +3,7 @@ layout:   stammtisch
 title:    "Stammtisch: Palmbräu Gasse"
 foto:     palmbrau
 
-title:         Palmbräugasse
+locname:      Palmbräugasse
 phone:        06221 28536
 site_url:     http://www.palmbräu-gasse.de
 menu_url:     http://www.palmbräu-gasse.de/DE/speisen_getraenke.html

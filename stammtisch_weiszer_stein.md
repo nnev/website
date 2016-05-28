@@ -3,7 +3,7 @@ layout:   stammtisch
 title:    "Stammtisch: Weißer Stein"
 foto:     weiszer_stein
 
-title:         "Weißer Stein"
+locname:      "Weißer Stein"
 phone:        06221 6597366 
 site_url:     http://www.weisser-stein.de/
 
