@@ -46,6 +46,7 @@ var Commands = []*Command{
 	cmdPassword,
 	cmdYarpNarp,
 	cmdHelp,
+	cmdAnnounce,
 }
 
 func (cmd *Command) Name() string {
