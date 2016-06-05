@@ -1,0 +1,12 @@
+[Unit]
+Description=c14h (noname-ev.de)
+
+[Service]
+User=nnweb
+ExecStart=/usr/bin/c14h \
+  -template=/var/www/www.noname-ev.de/_site/edit_c14.html \
+  -listen=localhost:6725 \
+  -hook=/srv/git/website.git/hooks/post-update
+
+[Install]
+WantedBy=multi-user.target
