@@ -1,0 +1,46 @@
+{% include header.html %}
+
+<div class="main_left" itemprop="location" itemscope itemtype="http://data-vocabulary.org/Organization">
+	<h1 itemProp="name">{{page.title | escape}}</h1>
+
+	<p><b itemprop="address">{{page.address | escape}}</b>. {{page.address_desc | escape}}</p>
+	<p>
+		{{content}}
+		{% if page.menu_url %}
+			<a href="{{page.menu_url | escape}}"><b>Speisekarte anzeigen</b></a>.
+		{% endif %}
+	</p>
+
+	<div id="map"></div>
+	<script>
+	var map = L.map('map').setView([{{page.map_lat}}, {{page.map_lon}}], {{page.map_zoom}});
+	{{site.map_js}}
+
+	L.marker([{{page.lat}}, {{page.lon}}]).addTo(map).bindPopup("<b>{{page.title | escape}}</b>", { "closeButton": false }).openPopup();
+	</script>
+
+	<p>
+		{% if page.gmaps_url %}
+			<a href="{{page.gmaps_url | escape}}">Gaststätte in Google Maps anzeigen</a><br/>
+		{% endif %}
+		<br/><a href="http://fahrplanauskunft.vrn.de/vrn/XSLT_TRIP_REQUEST2?language=de&sessionID=0&name_destination={{page.address}}&type_destination=any&anyObjFilter_destination=8&locationServerActive=1">ÖPNV-Fahrplanauskunft</a><br/>
+		{% if page.phone %}
+			Telefon: <a href="tel://{{page.phone | escape}}" itemprop="tel">{{page.phone | escape}}</a><br/>
+		{% endif %}
+		{% if page.site_url %}
+			Webseite: <a href="{{page.site_url | escape}}" itemprop="url">{{page.site_url | escape}}</a><br/>
+		{% endif %}
+	</p>
+
+	<span itemprop="geo" itemscope itemtype="http://data-vocabulary.org/Geo">
+		<meta itemprop="latitude" content="{{page.lat}}" />
+		<meta itemprop="longitude" content="{{page.lon}}" />
+	</span>
+</div>
+
+<div class="main_right">
+	{% include stammtisch_liste.md %}
+	{% include foto.md %}
+</div>
+
+{% include footer.html %}
