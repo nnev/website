@@ -8,13 +8,13 @@ import (
 )
 
 var cmdLocation = &Command{
-	UsageLine: "location [name]",
+	UsageLine: "location [locname]",
 	Short:     "Zeigt oder ändert Location des nächsten Stammtisches",
 	Long: `Zeigt oder ändert die Location des nächsten Stammtisches.
-Schreibweise muss mit Feld 'name' in YAML-Frontmatter der entsprechenden
-Stammtischseite übereinstimmen!
+Schreibweise muss mit Feld 'locname' im stammtisch_*.md der entsprechenden
+Stammtischseite im website-git übereinstimmen!
 
-Bei Erfolg gibt der Befehl nichts aus`,
+Bei Erfolg gibt der Befehl nichts aus.`,
 	Flag:         flag.NewFlagSet("location", flag.ExitOnError),
 	NeedsDB:      true,
 	RegenWebsite: true,
