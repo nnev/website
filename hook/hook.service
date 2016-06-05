@@ -1,0 +1,12 @@
+[Unit]
+Description=Website webhook (noname-ev.de)
+
+[Service]
+User=nnweb
+ExecStart=/usr/bin/hook \
+  -listen=localhost:5221 \
+  -hook=/srv/git/website.git/hooks/post-update
+EnvironmentFile=/etc/webhook_secret
+
+[Install]
+WantedBy=multi-user.target
