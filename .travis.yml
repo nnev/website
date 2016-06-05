@@ -7,6 +7,7 @@ go:
 install:
     - go get -v github.com/nnev/website/termine
     - go get -v github.com/nnev/website/c14h
+    - go get -v github.com/nnev/website/yarpnarp
 
 script:
     - go test ./...

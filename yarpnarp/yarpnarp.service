@@ -1,0 +1,12 @@
+[Unit]
+Description=yarpnarp (noname-ev.de)
+
+[Service]
+User=nnweb
+ExecStart=/usr/bin/yarpnarp \
+  -template=/var/www/www.noname-ev.de/_site/yarpnarp.html \
+  -listen=localhost:5417 \
+  -hook=/srv/git/website.git/hooks/post-update
+
+[Install]
+WantedBy=multi-user.target
