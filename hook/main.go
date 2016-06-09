@@ -158,7 +158,7 @@ func HandleHook(r http.ResponseWriter, req *http.Request) {
 	l.Printf("Done")
 }
 
-func Build(ch chan event) {
+func Build(ch <-chan event) {
 	for range ch {
 		stdout := new(bytes.Buffer)
 
