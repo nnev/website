@@ -174,6 +174,7 @@ func Build(ch chan event) {
 		mail := strings.NewReader(fmt.Sprintf(`To: root
 From: webmaster@eris.noname-ev.de
 Subject: Failed website build
+Content-Type: text/plain; charset=UTF-8
 
 The website failed to build in response to a github hook: %v
 
