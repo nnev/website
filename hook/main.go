@@ -173,8 +173,7 @@ func Build(ch <-chan event) {
 		}
 		log.Printf("Building website failed: %v", err)
 
-		output := mime.QEncoding.Encode("utf-8", stdout.String())
-		contentType := mime.FormatMediaType("text/plain", map[string]string{"charset", "utf-8"})
+		contentType := mime.FormatMediaType("text/plain", map[string]string{"charset": "utf-8"})
 
 		mail := new(bytes.Buffer)
 		fmt.Fprintf(mail, "To: root\r\n")
@@ -183,12 +182,12 @@ func Build(ch <-chan event) {
 		fmt.Fprintf(mail, "Content-Type: %s\r\n", contentType)
 		fmt.Fprintf(mail, "Content-Transfer-Encoding: quoted-printable\r\n")
 		fmt.Fprintf(mail, "\r\n")
-		fmt.Fprintf(mail, "The website failed to build in response to a github hook:\r\n")
-		fmt.Fprintf(mail, "%v\r\n", err)
-		fmt.Fprintf(mail, "\r\n")
-		w := quotedprintable.NewWriter(mail)
-		io.Copy(w, stdout)
-		w.Close()
+
+		body := quotedprintable.NewWriter(mail)
+		fmt.Fprintf(body, "The website failed to build in response to a github hook:\n")
+		fmt.Fprintf(body, "%v\n\n", err)
+		io.Copy(body, stdout)
+		body.Close()
 
 		cmd = exec.Command("/usr/sbin/sendmail", "-t")
 		cmd.Stdin = mail
