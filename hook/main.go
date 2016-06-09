@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bytes"
 	"crypto/hmac"
 	"crypto/sha1"
 	"encoding/hex"
@@ -34,6 +35,8 @@ var (
 	ref    = flag.String("ref", "refs/heads/master", "Only rebuild on push to this ref")
 
 	secret []byte
+
+	events chan<- event
 )
 
 type id uint64
@@ -81,6 +84,16 @@ func (v *verifier) Verify() bool {
 	return hmac.Equal(v.h.Sum(nil), v.sig)
 }
 
+type event struct {
+	Ref        string
+	Head       string
+	Before     string
+	Size       int
+	Repository struct {
+		FullName string `json:"full_name"`
+	}
+}
+
 func HandleHook(r http.ResponseWriter, req *http.Request) {
 	rid := reqId.Next()
 	l := log.New(os.Stderr, rid.String()+": ", log.LstdFlags)
@@ -113,15 +126,7 @@ func HandleHook(r http.ResponseWriter, req *http.Request) {
 	// to prevent DoS.
 	body := http.MaxBytesReader(r, v, 5*(1<<20))
 
-	var ev struct {
-		Ref        string
-		Head       string
-		Before     string
-		Size       int
-		Repository struct {
-			FullName string `json:"full_name"`
-		}
-	}
+	var ev event
 
 	dec := json.NewDecoder(body)
 	if err := dec.Decode(&ev); err != nil {
@@ -148,22 +153,41 @@ func HandleHook(r http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	if err := RunHook(); err != nil {
-		l.Printf("Could not run hook: %v", err)
-		http.Error(r, "internal server error", http.StatusInternalServerError)
-		return
-	}
+	l.Printf("Dispatching event")
+	events <- ev
 	l.Printf("Done")
 }
 
-func RunHook() error {
-	mtx.Lock()
-	defer mtx.Unlock()
+func Build(ch chan event) {
+	for range ch {
+		stdout := new(bytes.Buffer)
 
-	cmd := exec.Command(*hook)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	return cmd.Run()
+		cmd := exec.Command(*hook)
+		cmd.Stdout = stdout
+		cmd.Stderr = stdout
+		err := cmd.Run()
+		if err == nil {
+			continue
+		}
+		log.Printf("Building website failed: %v", err)
+
+		mail := strings.NewReader(fmt.Sprintf(`To: root
+From: webmaster@eris.noname-ev.de
+Subject: Failed website build
+
+The website failed to build in response to a github hook: %v
+
+%s`, err, stdout.String()))
+
+		cmd = exec.Command("/usr/sbin/sendmail", "-t")
+		cmd.Stdin = mail
+		cmd.Stdout = os.Stdout
+		cmd.Stderr = os.Stderr
+
+		if err := cmd.Run(); err != nil {
+			log.Printf("Could not send failure mail: %v", err)
+		}
+	}
 }
 
 func main() {
@@ -174,6 +198,10 @@ func main() {
 	} else {
 		secret = []byte(s)
 	}
+
+	ch := make(chan event, 100)
+	events = ch
+	go Build(ch)
 
 	http.HandleFunc("/", HandleHook)
 	if err := http.ListenAndServe(*listen, nil); err != nil {
