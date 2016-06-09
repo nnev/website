@@ -155,8 +155,19 @@ func HandleHook(r http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	l.Printf("Dispatching event")
-	events <- ev
+	// The events channels contains a one-element buffer and we drop events
+	// that don't fit into that. The buffer of one guarantees, that if we have
+	// multiple updates in quick succession, there will always be another
+	// hook-run scheduled. We don't need more than one buffered event, because
+	// the next run of the hook will pull *all* updates, not just the one this
+	// event was for, so one run is enough.
+	select {
+	case events <- ev:
+		l.Printf("Dispatched event")
+	default:
+		l.Printf("Buffer is full, dropped update")
+	}
+
 	l.Printf("Done")
 }
 
@@ -209,7 +220,7 @@ func main() {
 		secret = []byte(s)
 	}
 
-	ch := make(chan event, 100)
+	ch := make(chan event, 1)
 	events = ch
 	go Build(ch)
 
