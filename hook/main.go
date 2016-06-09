@@ -12,6 +12,8 @@ import (
 	"hash"
 	"io"
 	"log"
+	"mime"
+	"mime/quotedprintable"
 	"net/http"
 	"os"
 	"os/exec"
@@ -171,14 +173,22 @@ func Build(ch <-chan event) {
 		}
 		log.Printf("Building website failed: %v", err)
 
-		mail := strings.NewReader(fmt.Sprintf(`To: root
-From: webmaster@eris.noname-ev.de
-Subject: Failed website build
-Content-Type: text/plain; charset=UTF-8
+		output := mime.QEncoding.Encode("utf-8", stdout.String())
+		contentType := mime.FormatMediaType("text/plain", map[string]string{"charset", "utf-8"})
 
-The website failed to build in response to a github hook: %v
-
-%s`, err, stdout.String()))
+		mail := new(bytes.Buffer)
+		fmt.Fprintf(mail, "To: root\r\n")
+		fmt.Fprintf(mail, "From: webmaster@eris.noname-ev.de\r\n")
+		fmt.Fprintf(mail, "Subject: Failed website build\r\n")
+		fmt.Fprintf(mail, "Content-Type: %s\r\n", contentType)
+		fmt.Fprintf(mail, "Content-Transfer-Encoding: quoted-printable\r\n")
+		fmt.Fprintf(mail, "\r\n")
+		fmt.Fprintf(mail, "The website failed to build in response to a github hook:\r\n")
+		fmt.Fprintf(mail, "%v\r\n", err)
+		fmt.Fprintf(mail, "\r\n")
+		w := quotedprintable.NewWriter(mail)
+		io.Copy(w, stdout)
+		w.Close()
 
 		cmd = exec.Command("/usr/sbin/sendmail", "-t")
 		cmd.Stdin = mail
