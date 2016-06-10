@@ -6,6 +6,8 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"mime"
+	"mime/quotedprintable"
 	"os"
 	"os/exec"
 	"text/template"
@@ -119,16 +121,21 @@ Wer mehr Informationen möchte:
 }
 
 func sendAnnouncement(subject string, msg []byte) {
-	fullmail := new(bytes.Buffer)
-	fmt.Fprintf(fullmail, `From: frank@noname-ev.de
-To: %s
-Subject: %s
+	mail := new(bytes.Buffer)
+	fmt.Fprintf(mail, "From: frank@noname-ev.de\r\n")
+	fmt.Fprintf(mail, "To: %s\r\n", mime.QEncoding.Encode(*targetmailaddr))
+	fmt.Fprintf(mail, "Subject: %s\r\n", mime.QEncoding.Encode(subject))
+	fmt.Fprintf(mail, "Content-Type: %s\r\n", mime.FormatMediaType("text/plain", map[string]string{"charset": "utf-8"}))
+	fmt.Fprintf(mail, "Content-Transfer-Encoding: quoted-printable\r\n")
+	fmt.Fprintf(mail, "\r\n")
 
-%s`, *targetmailaddr, subject, msg)
+	body := quotedprintable.NewWriter(mail)
+	body.Write(msg)
+	body.Close()
 
 	cmd := exec.Command("/usr/sbin/sendmail", "-t")
 
-	cmd.Stdin = fullmail
+	cmd.Stdin = mail
 
 	stdout := new(bytes.Buffer)
 	cmd.Stdout = stdout
