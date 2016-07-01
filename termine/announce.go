@@ -123,8 +123,8 @@ Wer mehr Informationen möchte:
 func sendAnnouncement(subject string, msg []byte) {
 	mail := new(bytes.Buffer)
 	fmt.Fprintf(mail, "From: frank@noname-ev.de\r\n")
-	fmt.Fprintf(mail, "To: %s\r\n", mime.QEncoding.Encode(*targetmailaddr))
-	fmt.Fprintf(mail, "Subject: %s\r\n", mime.QEncoding.Encode(subject))
+	fmt.Fprintf(mail, "To: %s\r\n", mime.QEncoding.Encode("utf-8", *targetmailaddr))
+	fmt.Fprintf(mail, "Subject: %s\r\n", mime.QEncoding.Encode("utf-8", subject))
 	fmt.Fprintf(mail, "Content-Type: %s\r\n", mime.FormatMediaType("text/plain", map[string]string{"charset": "utf-8"}))
 	fmt.Fprintf(mail, "Content-Transfer-Encoding: quoted-printable\r\n")
 	fmt.Fprintf(mail, "\r\n")
