@@ -17,7 +17,6 @@ map_lon:      8.68857353925705
 map_zoom:     16
 gmaps_url:    https://maps.google.de/maps?q=weißer%20stein%20heidelberg
 ---
-Der Weiße Stein kombiniert Gerichte aus der ganzen Welt mit Zutaten
-aus der ganzen Region. Das rustikale Ambiente wird durch alte iMacs 
-(die mit farbigem Gehäuse und CRT) aufgehipstert. Im Sommer gibt es 
-auch einen kleinen Biergarten im Hinterhof.
+Der Weiße Stein bietet im Winter im Haus und im Sommer im Hinterhof
+eine gemütliche Location für den Stammtisch. Die Küche bietet größtenteils
+gutbürgerliche Gerichte, aber auch gute Burger werden angeboten.
