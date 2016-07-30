@@ -56,7 +56,7 @@ Damit wir passend reservieren können, tragt bitte bis Dienstag Abend,
 }
 
 func announceC14(t *data.Termin) error {
-	v, err := t.GetVortrag(cmdAnnounce.Tx)
+	vortrag, err := t.GetVortrag(cmdAnnounce.Tx)
 	if err == sql.ErrNoRows {
 		fmt.Println("Es gibt nächsten Donnerstag noch keine c¼h. :(")
 		return nil
@@ -83,11 +83,11 @@ Wer mehr Informationen möchte:
 
 	mailtmpl := template.Must(template.New("maildraft").Parse(maildraft))
 	mailbuf := new(bytes.Buffer)
-	if err := mailtmpl.Execute(mailbuf, v); err != nil {
+	if err := mailtmpl.Execute(mailbuf, vortrag); err != nil {
 		return fmt.Errorf("Fehler beim Füllen des Templates: %v", err)
 	}
 	mail := mailbuf.Bytes()
-	return sendAnnouncement(v.Topic, mail)
+	return sendAnnouncement(vortrag.Topic, mail)
 }
 
 func sendAnnouncement(subject string, msg []byte) error {
