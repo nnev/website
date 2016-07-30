@@ -112,9 +112,8 @@ func sendAnnouncement(subject string, msg []byte) error {
 	cmd.Stderr = stdout
 
 	if err := cmd.Run(); err != nil {
-		log.Println("Fehler beim Senden der Mail: ", err)
-		log.Println("Output von Sendmail:")
 		io.Copy(os.Stderr, stdout)
+		return fmt.Errorf("Fehler beim Senden der Mail: %v", err)
 	}
 	return nil
 }
