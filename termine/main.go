@@ -158,6 +158,6 @@ func main() {
 	}
 	log.Printf("Unbekannter Befehl %q", flag.Arg(0))
 
-	cmdHelp.parseAndRun(*websitehook)
+	showGlobalHelp()
 	os.Exit(2)
 }

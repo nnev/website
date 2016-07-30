@@ -25,6 +25,7 @@ func showCmdHelp(cmd *Command) {
 	log.Println("    ", os.Args[0], cmd.UsageLine)
 	log.Println()
 	log.Println(cmd.Long)
+	cmd.Flag.PrintDefaults()
 }
 
 func showGlobalHelp() {
