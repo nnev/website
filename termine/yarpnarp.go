@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"os"
 	"sort"
 	"text/tabwriter"
@@ -99,7 +100,7 @@ func RunYarpNarp() {
 	dbx := sqlx.NewDb(db, *driver)
 
 	if err := sqlx.Select(dbx, &zusagen, "SELECT nick, kommt, kommentar, registered FROM zusagen"); err != nil {
-		fmt.Fprintln(os.Stderr, "Datenbankfehler:", err)
+		log.Println("Datenbankfehler:", err)
 		return
 	}
 

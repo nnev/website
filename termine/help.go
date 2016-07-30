@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"log"
 	"os"
 	"text/tabwriter"
 )
@@ -19,16 +20,16 @@ func init() {
 }
 
 func showCmdHelp(cmd *Command) {
-	fmt.Fprintln(os.Stderr, "Nutzung:\n")
-	fmt.Fprintln(os.Stderr, "    ", cmd.UsageLine, "\n")
-	fmt.Fprintln(os.Stderr, cmd.Long)
+	log.Println("Nutzung:\n")
+	log.Println("    ", cmd.UsageLine, "\n")
+	log.Println(cmd.Long)
 }
 
 func showGlobalHelp() {
-	fmt.Fprintln(os.Stderr, "Tool zum Bearbeiten der nnev-Termin Datenbank\n")
-	fmt.Fprintln(os.Stderr, "Nutzung:\n")
-	fmt.Fprintf(os.Stderr, "    %s [flags] befehl [argumente]\n\n", os.Args[0])
-	fmt.Fprintln(os.Stderr, "Die vorhandenen Befehle sind:\n")
+	log.Println("Tool zum Bearbeiten der nnev-Termin Datenbank\n")
+	log.Println("Nutzung:\n")
+	log.Printf("    %s [flags] befehl [argumente]\n\n", os.Args[0])
+	log.Println("Die vorhandenen Befehle sind:\n")
 
 	w := tabwriter.NewWriter(os.Stderr, 8, 4, 2, ' ', 0)
 
@@ -42,9 +43,9 @@ func showGlobalHelp() {
 
 	w.Flush()
 
-	fmt.Fprintf(os.Stderr, "\nDie Benutzung eines Befehls zeigt dir \"%s help [befehl]\" an.\n", os.Args[0])
+	log.Printf("\nDie Benutzung eines Befehls zeigt dir \"%s help [befehl]\" an.\n", os.Args[0])
 
-	fmt.Fprintln(os.Stderr, "\nFlags:\n")
+	log.Println("\nFlags:\n")
 
 	flag.PrintDefaults()
 }
@@ -66,5 +67,5 @@ func RunHelp() {
 		}
 	}
 
-	fmt.Fprintf(os.Stderr, "Unbekannter Befehl \"%s\"\n", cmdHelp.Flag.Arg(0))
+	log.Printf("Unbekannter Befehl \"%s\"\n", cmdHelp.Flag.Arg(0))
 }

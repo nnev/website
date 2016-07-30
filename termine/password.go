@@ -4,6 +4,7 @@ import (
 	"database/sql"
 	"flag"
 	"fmt"
+	"log"
 	"os"
 	"strconv"
 )
@@ -25,13 +26,13 @@ func init() {
 
 func RunPassword() {
 	if cmdPassword.Flag.NArg() < 1 {
-		fmt.Fprintf(os.Stderr, "Nicht genug Argumente. Siehe %s help password\n", os.Args[0])
+		log.Printf("Nicht genug Argumente. Siehe %s help password\n", os.Args[0])
 		return
 	}
 
 	id, err := strconv.Atoi(cmdPassword.Flag.Arg(0))
 	if err != nil {
-		fmt.Fprintf(os.Stderr, "Kann \"%s\" nicht als Nummer parsen. Siehe %s help password\n", cmdPassword.Flag.Arg(0), os.Args[0])
+		log.Printf("Kann \"%s\" nicht als Nummer parsen. Siehe %s help password\n", cmdPassword.Flag.Arg(0), os.Args[0])
 		return
 	}
 
@@ -39,12 +40,12 @@ func RunPassword() {
 
 	err = db.QueryRow("SELECT password FROM vortraege WHERE id = $1", id).Scan(&pw)
 	if err == sql.ErrNoRows {
-		fmt.Fprintln(os.Stderr, "Vortrag existiert nicht")
+		log.Println("Vortrag existiert nicht")
 		return
 	}
 
 	if !pw.Valid {
-		fmt.Fprintln(os.Stderr, "Kein Passwort gesetzt")
+		log.Println("Kein Passwort gesetzt")
 		return
 	}
 

@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"fmt"
+	"log"
 	"os"
 	"os/exec"
 	"strings"
@@ -65,7 +65,7 @@ func (cmd *Command) parseAndRun() {
 	if cmd.NeedsDB {
 		err := OpenDB()
 		if err != nil {
-			fmt.Fprintln(os.Stderr, "Fehler beim Verbinden zur Datenbank:", err)
+			log.Println("Fehler beim Verbinden zur Datenbank:", err)
 			return
 		}
 	}
@@ -76,14 +76,16 @@ func (cmd *Command) parseAndRun() {
 		cmd := exec.Command(*websitehook)
 		output, err := cmd.CombinedOutput()
 		if err != nil {
-			fmt.Fprintln(os.Stderr, "Hook fehlgeschlagen:", err)
-			fmt.Fprintln(os.Stderr, "Output:")
-			fmt.Fprint(os.Stderr, string(output))
+			log.Println("Hook fehlgeschlagen:", err)
+			log.Println("Output:")
+			log.Print(string(output))
 		}
 	}
 }
 
 func main() {
+	log.SetFlags(0)
+
 	flag.Parse()
 	if flag.NArg() < 1 {
 		cmdHelp.Run()

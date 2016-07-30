@@ -6,6 +6,7 @@ import (
 	"flag"
 	"fmt"
 	"io"
+	"log"
 	"mime"
 	"mime/quotedprintable"
 	"os"
@@ -38,7 +39,7 @@ func isStammtisch(date time.Time) (stammt bool, err error) {
 func announceStammtisch(date time.Time) {
 	loc, err := getLocation(date)
 	if err != nil {
-		fmt.Fprintln(os.Stderr, "Kann Location nicht auslesen:", err)
+		log.Println("Kann Location nicht auslesen:", err)
 		return
 	}
 
@@ -59,7 +60,7 @@ Damit wir passend reservieren können, tragt bitte bis Dienstag Abend,
 		Location string
 	}
 	if err = mailtmpl.Execute(mailbuf, data{loc}); err != nil {
-		fmt.Fprintln(os.Stderr, "Fehler beim Füllen des Templates:", err)
+		log.Println("Fehler beim Füllen des Templates:", err)
 		return
 	}
 	mail := mailbuf.Bytes()
@@ -80,17 +81,17 @@ func announceC14(date time.Time) {
 			return
 		}
 
-		fmt.Fprintln(os.Stderr, "Kann topic nicht auslesen:", err)
+		log.Println("Kann topic nicht auslesen:", err)
 		return
 	}
 
 	if err := db.QueryRow("SELECT abstract FROM vortraege WHERE date = $1", date).Scan(&data.Abstract); err != nil {
-		fmt.Fprintln(os.Stderr, "Kann abstract nicht auslesen:", err)
+		log.Println("Kann abstract nicht auslesen:", err)
 		return
 	}
 
 	if err := db.QueryRow("SELECT speaker FROM vortraege WHERE date = $1", date).Scan(&data.Speaker); err != nil {
-		fmt.Fprintln(os.Stderr, "Kann speaker nicht auslesen:", err)
+		log.Println("Kann speaker nicht auslesen:", err)
 		return
 	}
 
@@ -113,7 +114,7 @@ Wer mehr Informationen möchte:
 	mailtmpl := template.Must(template.New("maildraft").Parse(maildraft))
 	mailbuf := new(bytes.Buffer)
 	if err := mailtmpl.Execute(mailbuf, data); err != nil {
-		fmt.Fprintln(os.Stderr, "Fehler beim Füllen des Templates:", err)
+		log.Println("Fehler beim Füllen des Templates:", err)
 		return
 	}
 	mail := mailbuf.Bytes()
@@ -142,8 +143,8 @@ func sendAnnouncement(subject string, msg []byte) {
 	cmd.Stderr = stdout
 
 	if err := cmd.Run(); err != nil {
-		fmt.Fprintln(os.Stderr, "Fehler beim Senden der Mail: ", err)
-		fmt.Fprintln(os.Stderr, "Output von Sendmail:")
+		log.Println("Fehler beim Senden der Mail: ", err)
+		log.Println("Output von Sendmail:")
 		io.Copy(os.Stderr, stdout)
 	}
 }
@@ -152,13 +153,13 @@ func RunAnnounce() {
 	var nextRelevantDate time.Time
 
 	if err := db.QueryRow("SELECT date FROM termine WHERE date > NOW() AND override = '' ORDER BY date ASC LIMIT 1").Scan(&nextRelevantDate); err != nil {
-		fmt.Fprintln(os.Stderr, "Kann nächsten Termin nicht auslesen:", err)
+		log.Println("Kann nächsten Termin nicht auslesen:", err)
 		return
 	}
 
 	isStm, err := isStammtisch(nextRelevantDate)
 	if err != nil {
-		fmt.Fprintln(os.Stderr, "Kann stammtischiness nicht auslesen:", err)
+		log.Println("Kann stammtischiness nicht auslesen:", err)
 		return
 	}
 

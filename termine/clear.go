@@ -2,8 +2,7 @@ package main
 
 import (
 	"flag"
-	"fmt"
-	"os"
+	"log"
 )
 
 var cmdClear = &Command{
@@ -25,6 +24,6 @@ func init() {
 func RunClear() {
 	_, err := db.Exec("DELETE FROM zusagen")
 	if err != nil {
-		fmt.Fprintln(os.Stderr, "Kann Tabelle nicht leeren:", err)
+		log.Println("Kann Tabelle nicht leeren:", err)
 	}
 }
