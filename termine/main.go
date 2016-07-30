@@ -16,9 +16,7 @@ import (
 )
 
 var (
-	websitehook = flag.String("hook", "/usr/bin/update-website", "Hook zum neu Bauen der Website")
-	_           = flag.Bool("help", false, "Zeige Hilfe")
-	ErrUsage    = errors.New("wrong usage")
+	ErrUsage = errors.New("wrong usage")
 )
 
 type Command struct {
@@ -68,9 +66,16 @@ func (cmd *Command) Name() string {
 	return name
 }
 
-func (cmd *Command) parseAndRun() (err error) {
+func (cmd *Command) parseAndRun(hook string) (err error) {
 	args := flag.Args()
+	helpShort := cmd.Flag.Bool("h", false, "")
+	help := cmd.Flag.Bool("help", false, "Zeige diese Hilfe")
 	cmd.Flag.Parse(args[1:])
+
+	if *help || *helpShort {
+		showCmdHelp(cmd)
+		return nil
+	}
 
 	if cmd.NeedsDB {
 		db, err := data.OpenDB()
@@ -98,7 +103,7 @@ func (cmd *Command) parseAndRun() (err error) {
 	}
 
 	if cmd.RegenWebsite {
-		cmd := exec.Command(*websitehook)
+		cmd := exec.Command(hook)
 		output, err := cmd.CombinedOutput()
 		if err != nil {
 			log.Println("Hook fehlgeschlagen:", err)
@@ -122,10 +127,14 @@ func ExpectNArg(fs *flag.FlagSet, n int) error {
 }
 
 func main() {
+	websitehook := flag.String("hook", "/usr/bin/update-website", "Hook zum neu Bauen der Website")
+	helpShort := flag.Bool("h", false, "")
+	help := flag.Bool("help", false, "Zeige Hilfe")
+
 	log.SetFlags(0)
 
 	flag.Parse()
-	if flag.NArg() < 1 {
+	if *help || *helpShort || flag.NArg() < 1 {
 		cmdHelp.Run()
 		os.Exit(1)
 	}
@@ -135,7 +144,7 @@ func main() {
 			continue
 		}
 
-		if err := cmd.parseAndRun(); err != nil {
+		if err := cmd.parseAndRun(*websitehook); err != nil {
 			if err == ErrUsage {
 				if cmd != cmdHelp {
 					showCmdHelp(cmd)
@@ -147,7 +156,8 @@ func main() {
 		}
 		return
 	}
+	log.Printf("Unbekannter Befehl %q", flag.Arg(0))
 
-	cmdHelp.parseAndRun()
+	cmdHelp.parseAndRun(*websitehook)
 	os.Exit(2)
 }

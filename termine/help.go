@@ -22,7 +22,7 @@ func init() {
 func showCmdHelp(cmd *Command) {
 	log.Println("Nutzung:")
 	log.Println()
-	log.Println("    ", cmd.UsageLine)
+	log.Println("    ", os.Args[0], cmd.UsageLine)
 	log.Println()
 	log.Println(cmd.Long)
 }
@@ -51,7 +51,7 @@ func showGlobalHelp() {
 	log.Printf("\nDie Benutzung eines Befehls zeigt dir \"%s help [befehl]\" an.\n", os.Args[0])
 
 	log.Println()
-	log.Println("Flags:")
+	log.Println("Globale flags:")
 	log.Println()
 
 	flag.PrintDefaults()

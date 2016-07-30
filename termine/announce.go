@@ -20,17 +20,19 @@ import (
 var cmdAnnounce = &Command{
 	UsageLine: "announce",
 	Short:     "Kündigt nächsten Stammtisch oder nächste c¼h an",
-	Long: `Kündigt den nächsten Stammtisch oder die nächste c¼h an,
+	Long: `Kündigt den nächsten Stammtisch oder die nächste c¼h per E-Mail an,
 je nachdem, was am nächsten Donnerstag ist.`,
 	Flag:         flag.NewFlagSet("announce", flag.ExitOnError),
 	NeedsDB:      true,
 	RegenWebsite: false,
 }
 
-var targetmailaddr = flag.String("announceAddress", "ccchd@ccchd.de", "Mailadresse, an die Ankündigungen gehen sollen.")
+var targetmailaddr string
 
 func init() {
 	cmdAnnounce.Run = RunAnnounce
+	cmdAnnounce.Flag.StringVar(&targetmailaddr, "announceAddress", "ccchd@ccchd.de", "Mailadresse, an die Ankündigungen gehen sollen.")
+
 }
 
 func announceStammtisch(t *data.Termin) error {
@@ -93,7 +95,7 @@ Wer mehr Informationen möchte:
 func sendAnnouncement(subject string, msg []byte) error {
 	mail := new(bytes.Buffer)
 	fmt.Fprintf(mail, "From: frank@noname-ev.de\r\n")
-	fmt.Fprintf(mail, "To: %s\r\n", mime.QEncoding.Encode("utf-8", *targetmailaddr))
+	fmt.Fprintf(mail, "To: %s\r\n", mime.QEncoding.Encode("utf-8", targetmailaddr))
 	fmt.Fprintf(mail, "Subject: %s\r\n", mime.QEncoding.Encode("utf-8", subject))
 	fmt.Fprintf(mail, "Content-Type: %s\r\n", mime.FormatMediaType("text/plain", map[string]string{"charset": "utf-8"}))
 	fmt.Fprintf(mail, "Content-Transfer-Encoding: quoted-printable\r\n")
