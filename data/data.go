@@ -101,7 +101,7 @@ type TerminIterator struct {
 	t    *Termin
 }
 
-// Next returns whether there is another element.
+// Next advances to the next element. It returns false if there is none.
 func (it *TerminIterator) Next() bool {
 	if it.err != nil {
 		return false
@@ -379,7 +379,7 @@ type ZusagenIterator struct {
 	z    *Zusage
 }
 
-// Next returns whether there is another element.
+// Next advances to the next element. It returns false if there is none.
 func (it *ZusagenIterator) Next() bool {
 	if it.err != nil {
 		return false
