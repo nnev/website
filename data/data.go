@@ -236,7 +236,7 @@ func (t *Termin) Update(e Execer) error {
 
 	add := func(k string, v interface{}) {
 		values = append(values, v)
-		fields = append(fields, fmt.Sprintf("%s = $%d", len(values)))
+		fields = append(fields, fmt.Sprintf("%s = $%d", k, len(values)))
 	}
 
 	if t.Stammtisch.Valid {

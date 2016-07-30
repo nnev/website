@@ -20,16 +20,21 @@ func init() {
 }
 
 func showCmdHelp(cmd *Command) {
-	log.Println("Nutzung:\n")
-	log.Println("    ", cmd.UsageLine, "\n")
+	log.Println("Nutzung:")
+	log.Println()
+	log.Println("    ", cmd.UsageLine)
+	log.Println()
 	log.Println(cmd.Long)
 }
 
 func showGlobalHelp() {
-	log.Println("Tool zum Bearbeiten der nnev-Termin Datenbank\n")
-	log.Println("Nutzung:\n")
+	log.Println("Tool zum Bearbeiten der nnev-Termin Datenbank.")
+	log.Println()
+	log.Println("Nutzung:")
+	log.Println()
 	log.Printf("    %s [flags] befehl [argumente]\n\n", os.Args[0])
-	log.Println("Die vorhandenen Befehle sind:\n")
+	log.Println("Die vorhandenen Befehle sind:")
+	log.Println()
 
 	w := tabwriter.NewWriter(os.Stderr, 8, 4, 2, ' ', 0)
 
@@ -45,7 +50,9 @@ func showGlobalHelp() {
 
 	log.Printf("\nDie Benutzung eines Befehls zeigt dir \"%s help [befehl]\" an.\n", os.Args[0])
 
-	log.Println("\nFlags:\n")
+	log.Printlnr()
+	log.Println("Flags:")
+	log.Println()
 
 	flag.PrintDefaults()
 }

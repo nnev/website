@@ -42,7 +42,7 @@ func RunPassword() error {
 		return errors.New("Vortrag existiert nicht")
 	}
 	if err != nil {
-		return fmt.Errorf("Kann Vortrag nicht lesen:", err)
+		return fmt.Errorf("Kann Vortrag nicht lesen: %v", err)
 	}
 
 	if v.Password == "" {

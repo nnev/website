@@ -58,7 +58,7 @@ func RunOverride() error {
 		return errors.New("Termin nicht vorhanden. Füge ihn erst mittels next hinzu.")
 	}
 	if err != nil {
-		return fmt.Errorf("Kann Termin nicht lesen:", err)
+		return fmt.Errorf("Kann Termin nicht lesen: %v", err)
 	}
 
 	t.Override = cmdOverride.Flag.Arg(1)
