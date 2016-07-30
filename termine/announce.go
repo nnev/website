@@ -12,6 +12,7 @@ import (
 	"mime/quotedprintable"
 	"os"
 	"os/exec"
+	"strings"
 	"text/template"
 
 	"github.com/nnev/website/data"
@@ -27,12 +28,15 @@ je nachdem, was am nächsten Donnerstag ist.`,
 	RegenWebsite: false,
 }
 
-var targetmailaddr string
+var (
+	targetmailaddr  string
+	confirmAnnounce bool
+)
 
 func init() {
 	cmdAnnounce.Run = RunAnnounce
-	cmdAnnounce.Flag.StringVar(&targetmailaddr, "announceAddress", "ccchd@ccchd.de", "Mailadresse, an die Ankündigungen gehen sollen.")
-
+	cmdAnnounce.Flag.StringVar(&targetmailaddr, "address", "ccchd@ccchd.de", "Mailadresse, an die Ankündigungen gehen sollen.")
+	cmdAnnounce.Flag.BoolVar(&confirmAnnounce, "confirm", false, "Frage nach Bestätigung bevor die Mail gesendet wird")
 }
 
 func announceStammtisch(t *data.Termin) error {
@@ -105,7 +109,13 @@ func sendAnnouncement(subject string, msg []byte) error {
 	body.Write(msg)
 	body.Close()
 
-	cmd := exec.Command("/usr/sbin/sendmail", "-t")
+	ok, err := getConfirmation(mail.Bytes())
+	if !ok || err != nil {
+		log.Println("Abgebrochen")
+		return err
+	}
+
+	cmd := exec.Command("/bin/true", "-t")
 
 	cmd.Stdin = mail
 
@@ -118,6 +128,22 @@ func sendAnnouncement(subject string, msg []byte) error {
 		return fmt.Errorf("Fehler beim Senden der Mail: %v", err)
 	}
 	return nil
+}
+
+func getConfirmation(mail []byte) (ok bool, err error) {
+	if !confirmAnnounce {
+		return true, nil
+	}
+	fmt.Println("Folgende E-Mail wird versendet:")
+	os.Stdout.Write(mail)
+	fmt.Println()
+	fmt.Print("Senden? [j/N] ")
+	var answer string
+	if _, err = fmt.Scan(&answer); err != nil {
+		return false, err
+	}
+	answer = strings.ToLower(answer)
+	return (strings.HasPrefix(answer, "j") || strings.HasPrefix(answer, "y")), nil
 }
 
 func RunAnnounce() error {
