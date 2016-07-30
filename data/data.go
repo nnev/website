@@ -78,7 +78,7 @@ type scanner interface {
 }
 
 // row is an abstraction over the data elements to share code.
-type row interface {
+type item interface {
 	// selectFragment returns an SQL query fragment of the form "SELECT field1,
 	// field2,... " with all columns for this type.
 	selectFragment() string
@@ -89,7 +89,7 @@ type row interface {
 }
 
 // queryRow is a convenience function to get a single data row.
-func queryRow(q Querier, r row, constrict string, args ...interface{}) error {
+func queryRow(q Querier, r item, constrict string, args ...interface{}) error {
 	row := q.QueryRow(r.selectFragment()+constrict, args...)
 	return r.scanFrom(row)
 }
