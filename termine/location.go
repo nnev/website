@@ -1,10 +1,14 @@
 package main
 
 import (
+	"database/sql"
+	"errors"
 	"flag"
 	"fmt"
-	"log"
+	"os"
 	"time"
+
+	"github.com/nnev/website/data"
 )
 
 var cmdLocation = &Command{
@@ -24,51 +28,26 @@ func init() {
 	cmdLocation.Run = RunLocation
 }
 
-func getLocation(date time.Time) (location string, err error) {
-	err = db.QueryRow("SELECT location FROM termine WHERE date = $1", date).Scan(&location)
-	return
-}
+func RunLocation() error {
+	if cmdLocation.Flag.NArg() > 1 {
+		showCmdHelp(cmdLocation)
+		os.Exit(1)
+	}
 
-func setLocation(date time.Time, location string) (updated bool, err error) {
-	result, err := db.Exec("UPDATE termine SET location = $2 WHERE date = $1", date, location)
+	t, err := data.QueryTermine(cmdLocation.Tx, "WHERE date >= $1 AND stammtisch = true", time.Now()).First()
+	if err == sql.ErrNoRows {
+		return errors.New("Termin muss erst mittels next hinzugefügt werden.")
+	}
 	if err != nil {
-		return false, err
+		return fmt.Errorf("Kann Termin nicht lesen: %v", err)
 	}
-	n, err := result.RowsAffected()
-	if err != nil {
-		return false, err
-	}
-
-	return n > 0, nil
-}
-
-func RunLocation() {
-	// Wir holen uns die nächsten 5 Donnerstage -- darunter muss ein Stammtisch
-	// sein
-	var stammtisch time.Time
-	for _, d := range getNextThursdays(5) {
-		if d.Day() < 8 {
-			stammtisch = d
-			break
-		}
-	}
-
 	if cmdLocation.Flag.NArg() == 0 {
-		loc, err := getLocation(stammtisch)
-		if err != nil {
-			log.Println("Kann Location nicht auslesen:", err)
-			return
-		}
-		fmt.Println(loc)
-	} else {
-		updated, err := setLocation(stammtisch, cmdLocation.Flag.Arg(0))
-		if err != nil {
-			log.Println("Kann Location nicht setzen:", err)
-			return
-		}
-		if !updated {
-			log.Println("Termin noch nicht vorhanden.")
-			log.Println("Füge ihn erst mittels next hinzu.")
-		}
+		fmt.Println(t.Location)
+		return nil
 	}
+	t.Location = cmdLocation.Flag.Arg(1)
+	if err = t.Update(cmdLocation.Tx); err != nil {
+		return fmt.Errorf("Kann Location nicht setzen: %v", err)
+	}
+	return nil
 }

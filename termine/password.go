@@ -2,11 +2,13 @@ package main
 
 import (
 	"database/sql"
+	"errors"
 	"flag"
 	"fmt"
 	"log"
-	"os"
 	"strconv"
+
+	"github.com/nnev/website/data"
 )
 
 var cmdPassword = &Command{
@@ -24,31 +26,30 @@ func init() {
 	cmdPassword.Run = RunPassword
 }
 
-func RunPassword() {
-	if cmdPassword.Flag.NArg() < 1 {
-		log.Printf("Nicht genug Argumente. Siehe %s help password\n", os.Args[0])
-		return
+func RunPassword() error {
+	if err := ExpectNArg(cmdPassword.Flag, 1); err != nil {
+		return err
 	}
 
 	id, err := strconv.Atoi(cmdPassword.Flag.Arg(0))
 	if err != nil {
-		log.Printf("Kann \"%s\" nicht als Nummer parsen. Siehe %s help password\n", cmdPassword.Flag.Arg(0), os.Args[0])
-		return
+		log.Printf("Kann %q nicht als Nummer parsen.", cmdPassword.Flag.Arg(0))
+		return ErrUsage
 	}
 
-	var pw sql.NullString
-
-	err = db.QueryRow("SELECT password FROM vortraege WHERE id = $1", id).Scan(&pw)
+	v, err := data.GetVortrag(cmdPassword.Tx, id)
 	if err == sql.ErrNoRows {
-		log.Println("Vortrag existiert nicht")
-		return
+		return errors.New("Vortrag existiert nicht")
+	}
+	if err != nil {
+		return fmt.Errorf("Kann Vortrag nicht lesen: %v", err)
 	}
 
-	if !pw.Valid {
-		log.Println("Kein Passwort gesetzt")
-		return
+	if v.Password == "" {
+		fmt.Println("Kein Password gesetzt")
+		return nil
 	}
-
-	fmt.Println("Passwort:", pw.String)
-	fmt.Printf("Link: https://www.noname-ev.de/edit_c14.html?id=%d&pw=%s\n", id, pw.String)
+	fmt.Println("Passwort:", v.Password)
+	fmt.Printf("Link: https://www.noname-ev.de/edit_c14.html?id=%d&pw=%s\n", id, v.Password)
+	return nil
 }

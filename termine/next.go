@@ -1,11 +1,14 @@
 package main
 
 import (
+	"database/sql"
 	"flag"
+	"fmt"
 	"log"
-	"os"
 	"strconv"
 	"time"
+
+	"github.com/nnev/website/data"
 )
 
 var cmdNext = &Command{
@@ -46,33 +49,30 @@ func getNextThursdays(n int) (next []time.Time) {
 	return next
 }
 
-func RunNext() {
+func RunNext() error {
 	if cmdNext.Flag.NArg() < 1 {
-		log.Printf("Nicht genug Argumente. Siehe %s help next\n", os.Args[0])
-		return
+		return ErrUsage
 	}
 
 	n, err := strconv.Atoi(cmdNext.Flag.Arg(0))
 	if err != nil {
-		log.Printf("Kann \"%s\" nicht als Nummer parsen. Siehe %s help next\n", cmdNext.Flag.Arg(0), os.Args[0])
-		return
+		log.Printf("Kann %q nicht als Nummer parsen.\n", cmdNext.Flag.Arg(0))
+		return ErrUsage
 	}
 
-	tx, err := db.Begin()
-	if err != nil {
-		log.Println("SQL-Fehler:", err)
-		return
-	}
 	for _, d := range getNextThursdays(n) {
-		_, err := tx.Exec("INSERT INTO termine (stammtisch, date, override, location, override_long) SELECT $2, $1, '', '', '' WHERE NOT EXISTS (SELECT 1 FROM termine WHERE date = $1)", d, d.Day() < 8)
-		if err != nil {
-			log.Println("SQL-Fehler:", err)
-			tx.Rollback()
-			return
+		var t data.Termin
+		t.Date = data.NullTime{
+			Valid: true,
+			Time:  d,
+		}
+		t.Stammtisch = sql.NullBool{
+			Valid: true,
+			Bool:  d.Day() < 8,
+		}
+		if err := t.Insert(cmdNext.Tx); err != nil {
+			return fmt.Errorf("Kann termin für %v nicht einfügen: %v", d, err)
 		}
 	}
-	err = tx.Commit()
-	if err != nil {
-		log.Println("SQL-Fehler:", err)
-	}
+	return nil
 }

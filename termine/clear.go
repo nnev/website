@@ -2,7 +2,7 @@ package main
 
 import (
 	"flag"
-	"log"
+	"fmt"
 )
 
 var cmdClear = &Command{
@@ -21,9 +21,10 @@ func init() {
 	cmdClear.Run = RunClear
 }
 
-func RunClear() {
-	_, err := db.Exec("DELETE FROM zusagen")
+func RunClear() error {
+	_, err := cmdClear.Tx.Exec("DELETE FROM zusagen")
 	if err != nil {
-		log.Println("Kann Tabelle nicht leeren:", err)
+		return fmt.Errorf("Kann Tabelle nicht leeren: %v", err)
 	}
+	return nil
 }
