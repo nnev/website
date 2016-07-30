@@ -11,7 +11,7 @@ import (
 var (
 	driver      = flag.String("driver", "postgres", "Der benutzte sql-Treiber")
 	connect     = flag.String("connect", "dbname=nnev user=anon host=/var/run/postgresql sslmode=disable", "Die Verbindusgsspezifikation")
-	websitehook = flag.String("hook", "/srv/git/website.git/hooks/post-update", "Hook zum neu Bauen der Website")
+	websitehook = flag.String("hook", "/usr/bin/update-website", "Hook zum neu Bauen der Website")
 	_           = flag.Bool("help", false, "Zeige Hilfe")
 )
 
