@@ -120,10 +120,12 @@ func (it *TerminIterator) Val() *Termin {
 	return it.t
 }
 
-// Err returns the last error that occured when reading. It must be called
-// after being done with the iterator.
-func (it *TerminIterator) Err() error {
+// Close closes the iterator and returns the last error that occured when
+// reading. It must be called after being done with the iterator. No other
+// methods may be called after Close.
+func (it *TerminIterator) Close() error {
 	err := it.rows.Close()
+	it.rows = nil
 	if it.err == nil {
 		it.err = err
 	}
@@ -398,10 +400,12 @@ func (it *ZusagenIterator) Val() *Zusage {
 	return it.z
 }
 
-// Err returns the last error that occured when reading. It must be called
-// after being done with the iterator.
-func (it *ZusagenIterator) Err() error {
+// Close closes the iterator and returns the last error that occured when
+// reading. It must be called after being done with the iterator. No other
+// methods may be called after Close.
+func (it *ZusagenIterator) Close() error {
 	err := it.rows.Close()
+	it.rows = nil
 	if it.err == nil {
 		it.err = err
 	}

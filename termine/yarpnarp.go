@@ -97,7 +97,7 @@ func RunYarpNarp() error {
 	for it.Next() {
 		zusagen = append(zusagen, it.Val())
 	}
-	if err := it.Err(); err != nil {
+	if err := it.Close(); err != nil {
 		return err
 	}
 

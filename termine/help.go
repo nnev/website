@@ -50,7 +50,7 @@ func showGlobalHelp() {
 
 	log.Printf("\nDie Benutzung eines Befehls zeigt dir \"%s help [befehl]\" an.\n", os.Args[0])
 
-	log.Printlnr()
+	log.Println()
 	log.Println("Flags:")
 	log.Println()
 
