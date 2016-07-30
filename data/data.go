@@ -58,11 +58,12 @@ func (n *NullTime) Scan(value interface{}) error {
 		return nil
 	}
 	n.Valid = true
-	if t, ok := value.(time.Time); !ok {
+
+	t, ok := value.(time.Time)
+	if !ok {
 		return fmt.Errorf("can't save %T as time.Time", value)
-	} else {
-		n.Time = t
 	}
+	n.Time = t
 	return nil
 }
 
