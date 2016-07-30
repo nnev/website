@@ -59,7 +59,7 @@ func (n *NullTime) Scan(value interface{}) error {
 	}
 	n.Valid = true
 	if t, ok := value.(time.Time); !ok {
-		return fmt.Errorf("can't save %T as time.Time")
+		return fmt.Errorf("can't save %T as time.Time", value)
 	} else {
 		n.Time = t
 	}
