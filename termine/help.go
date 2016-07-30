@@ -50,22 +50,18 @@ func showGlobalHelp() {
 	flag.PrintDefaults()
 }
 
-func RunHelp() {
+func RunHelp() error {
 	if cmdHelp.Flag.NArg() < 1 {
 		showGlobalHelp()
-		return
+		return nil
 	}
 
 	for _, cmd := range Commands {
-		if cmd.Name() == "help" {
-			continue
-		}
-
 		if cmd.Name() == cmdHelp.Flag.Arg(0) {
 			showCmdHelp(cmd)
-			return
+			return nil
 		}
 	}
 
-	log.Printf("Unbekannter Befehl \"%s\"\n", cmdHelp.Flag.Arg(0))
+	return fmt.Errorf("Unbekannter Befehl \"%s\"\n", cmdHelp.Flag.Arg(0))
 }

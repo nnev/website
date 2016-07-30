@@ -1,11 +1,16 @@
 package main
 
 import (
+	"database/sql"
+	"errors"
 	"flag"
+	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
 	"time"
+
+	"github.com/nnev/website/data"
 )
 
 var cmdOverride = &Command{
@@ -31,32 +36,32 @@ func init() {
 	cmdOverride.Run = RunOverride
 }
 
-func RunOverride() {
-	if cmdOverride.Flag.NArg() < 2 {
-		log.Printf("Nicht genug Argumente. Siehe %s help override\n", os.Args[0])
-		return
+func RunOverride() error {
+	if cmdOverride.Flag.NArg() != 2 {
+		log.Printf("Falsche Anzahl an Argumenten.")
+		return ErrUsage
 	}
 
 	date, err := time.ParseInLocation("2006-01-02", cmdOverride.Flag.Arg(0), time.Local)
 	if err != nil {
-		log.Printf("Kann \"%s\" nicht als Datum parsen. Siehe %s help override\n", cmdNext.Flag.Arg(0), os.Args[0])
-		return
+		log.Printf("Kann \"%s\" nicht als Datum parsen.", cmdNext.Flag.Arg(0))
+		return ErrUsage
 	}
 
 	override_long, err := ioutil.ReadAll(os.Stdin)
 	if err != nil {
-		log.Println("Kann nicht von stdin lesen:", err)
-		return
+		return fmt.Errorf("Kann nicht von stdin lesen: %v", err)
 	}
 
-	result, err := db.Exec("UPDATE termine SET override = $2, override_long = $3 WHERE date = $1", date, cmdOverride.Flag.Arg(1), string(override_long))
+	t, err := data.GetTermin(cmdOverride.Tx, date)
+	if err == sql.ErrNoRows {
+		return errors.New("Termin nicht vorhanden. Füge ihn erst mittels next hinzu.")
+	}
 	if err != nil {
-		log.Println("Kann Eintrag nicht ändern:", err)
-		return
+		return fmt.Errorf("Kann Termin nicht lesen:", err)
 	}
 
-	if n, err := result.RowsAffected(); err != nil && n == 0 {
-		log.Println("Termin noch nicht vorhanden.")
-		log.Println("Füge ihn erst mittels next hinzu.")
-	}
+	t.Override = cmdOverride.Flag.Arg(1)
+	t.OverrideLong = string(override_long)
+	return t.Update(cmdOverride.Tx)
 }

@@ -1,23 +1,29 @@
 package main
 
 import (
+	"database/sql"
+	"errors"
 	"flag"
+	"fmt"
 	"log"
 	"os"
 	"os/exec"
 	"strings"
+
+	_ "github.com/lib/pq"
+
+	"github.com/nnev/website/data"
 )
 
 var (
-	driver      = flag.String("driver", "postgres", "Der benutzte sql-Treiber")
-	connect     = flag.String("connect", "dbname=nnev user=anon host=/var/run/postgresql sslmode=disable", "Die Verbindusgsspezifikation")
 	websitehook = flag.String("hook", "/usr/bin/update-website", "Hook zum neu Bauen der Website")
 	_           = flag.Bool("help", false, "Zeige Hilfe")
+	ErrUsage    = errors.New("wrong usage")
 )
 
 type Command struct {
 	// Run runs the command.
-	Run func()
+	Run func() error
 
 	// UsageLine is the one-line usage message.
 	// The first word in the line is taken to be the command name.
@@ -33,6 +39,10 @@ type Command struct {
 
 	// NeedsDB is true, if the command needs to connect to the database
 	NeedsDB bool
+
+	// Tx will be set to a transaction that should be used for all database
+	// accesses, if NeedsDB is true.
+	Tx *sql.Tx
 
 	// RegenWebsite is true, if the website needs to be rebuild after the command
 	RegenWebsite bool
@@ -58,19 +68,34 @@ func (cmd *Command) Name() string {
 	return name
 }
 
-func (cmd *Command) parseAndRun() {
+func (cmd *Command) parseAndRun() (err error) {
 	args := flag.Args()
 	cmd.Flag.Parse(args[1:])
 
 	if cmd.NeedsDB {
-		err := OpenDB()
+		db, err := data.OpenDB()
 		if err != nil {
-			log.Println("Fehler beim Verbinden zur Datenbank:", err)
-			return
+			return fmt.Errorf("Fehler beim Verbinden zur Datenbank: %v", err)
 		}
+		defer db.Close()
+
+		cmd.Tx, err = db.Begin()
+		if err != nil {
+			return fmt.Errorf("Kann keine Transaktion starten: %v", err)
+		}
+		defer func() {
+			if err != nil {
+				cmd.Tx.Rollback()
+			}
+			if err = cmd.Tx.Commit(); err != nil {
+				err = fmt.Errorf("Kann Transaktion nicht committen: %v", err)
+			}
+		}()
 	}
 
-	cmd.Run()
+	if err := cmd.Run(); err != nil {
+		return err
+	}
 
 	if cmd.RegenWebsite {
 		cmd := exec.Command(*websitehook)
@@ -78,9 +103,22 @@ func (cmd *Command) parseAndRun() {
 		if err != nil {
 			log.Println("Hook fehlgeschlagen:", err)
 			log.Println("Output:")
-			log.Print(string(output))
+			log.Fatal(string(output))
 		}
 	}
+	return nil
+}
+
+func ExpectNArg(fs *flag.FlagSet, n int) error {
+	if fs.NArg() < n {
+		log.Printf("Nicht genug Argumente.")
+		return ErrUsage
+	}
+	if fs.NArg() > n {
+		log.Printf("Zu viele Argumente.")
+		return ErrUsage
+	}
+	return nil
 }
 
 func main() {
@@ -97,10 +135,19 @@ func main() {
 			continue
 		}
 
-		cmd.parseAndRun()
+		if err := cmd.parseAndRun(); err != nil {
+			if err == ErrUsage {
+				if cmd != cmdHelp {
+					showCmdHelp(cmd)
+					return
+				}
+				os.Exit(2)
+			}
+			log.Fatal(err)
+		}
 		return
 	}
 
 	cmdHelp.parseAndRun()
-	os.Exit(1)
+	os.Exit(2)
 }

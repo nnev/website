@@ -3,13 +3,12 @@ package main
 import (
 	"flag"
 	"fmt"
-	"log"
 	"os"
 	"sort"
 	"text/tabwriter"
 	"time"
 
-	"github.com/jmoiron/sqlx"
+	"github.com/nnev/website/data"
 )
 
 var cmdYarpNarp = &Command{
@@ -25,14 +24,7 @@ func init() {
 	cmdYarpNarp.Run = RunYarpNarp
 }
 
-type Zusage struct {
-	Nick       string
-	Kommt      bool
-	Kommentar  string
-	Registered time.Time
-}
-
-type Zusagen []Zusage
+type Zusagen []*data.Zusage
 
 func (z Zusagen) Len() int {
 	return len(z)
@@ -49,13 +41,16 @@ func (z Zusagen) Less(i, j int) bool {
 		return false
 	}
 
-	if z[i].Registered.Before(z[j].Registered) {
+	// If one or both registered fields are NULL, just treat them as the zero
+	// time (so they sort before all other values)
+	if z[i].Registered.Time.Before(z[j].Registered.Time) {
 		return true
-	} else if z[j].Registered.Before(z[i].Registered) {
+	} else if z[j].Registered.Time.Before(z[i].Registered.Time) {
 		return false
 	}
 
-	if z[i].Nick < z[j].Nick {
+	// If one or both nick fields are NULL, just tream them as the empty string
+	if z[i].Nick.String < z[j].Nick.String {
 		return true
 	}
 
@@ -65,8 +60,8 @@ func (z Zusagen) Less(i, j int) bool {
 func (z Zusagen) minWidth() int {
 	var nick int
 	for _, zusage := range z {
-		if len(zusage.Nick) > nick {
-			nick = len(zusage.Nick)
+		if len(zusage.Nick.String) > nick {
+			nick = len(zusage.Nick.String)
 		}
 	}
 	// nick + padding + Kommt + Date
@@ -95,13 +90,15 @@ func maybeTruncate(s string, width int, truncate bool) string {
 	return s
 }
 
-func RunYarpNarp() {
+func RunYarpNarp() error {
 	var zusagen Zusagen
-	dbx := sqlx.NewDb(db, *driver)
 
-	if err := sqlx.Select(dbx, &zusagen, "SELECT nick, kommt, kommentar, registered FROM zusagen"); err != nil {
-		log.Println("Datenbankfehler:", err)
-		return
+	it := data.Zusagen(cmdYarpNarp.Tx)
+	for it.Next() {
+		zusagen = append(zusagen, it.Val())
+	}
+	if err := it.Err(); err != nil {
+		return err
 	}
 
 	sort.Sort(zusagen)
@@ -113,7 +110,8 @@ func RunYarpNarp() {
 	w := tabwriter.NewWriter(os.Stdout, 0, 4, 1, ' ', tabwriter.DiscardEmptyColumns)
 	fmt.Fprintf(w, "Nick\tKommt\tLetzte Änderung\t%s\n", maybeTruncate("Kommentar", width, trunc))
 	for _, z := range zusagen {
-		fmt.Fprintf(w, "%s\t%v\t%s\t%s\n", z.Nick, formatBool(z.Kommt), z.Registered.In(time.Local).Format("2006-01-02 15:04:05"), maybeTruncate(z.Kommentar, width, trunc))
+		fmt.Fprintf(w, "%s\t%v\t%s\t%s\n", z.Nick, formatBool(z.Kommt), z.Registered.Time.In(time.Local).Format("2006-01-02 15:04:05"), maybeTruncate(z.Kommentar, width, trunc))
 	}
 	w.Flush()
+	return nil
 }

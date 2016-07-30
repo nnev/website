@@ -3,6 +3,7 @@ package main
 import (
 	"bytes"
 	"database/sql"
+	"errors"
 	"flag"
 	"fmt"
 	"io"
@@ -12,7 +13,8 @@ import (
 	"os"
 	"os/exec"
 	"text/template"
-	"time"
+
+	"github.com/nnev/website/data"
 )
 
 var cmdAnnounce = &Command{
@@ -31,18 +33,7 @@ func init() {
 	cmdAnnounce.Run = RunAnnounce
 }
 
-func isStammtisch(date time.Time) (stammt bool, err error) {
-	err = db.QueryRow("SELECT stammtisch FROM termine WHERE date = $1", date).Scan(&stammt)
-	return
-}
-
-func announceStammtisch(date time.Time) {
-	loc, err := getLocation(date)
-	if err != nil {
-		log.Println("Kann Location nicht auslesen:", err)
-		return
-	}
-
+func announceStammtisch(t *data.Termin) error {
 	maildraft := `Liebe Treffler,
 
 am kommenden Donnerstag ist wieder Stammtisch. Diesmal sind wir bei {{.Location}}.
@@ -56,43 +47,22 @@ Damit wir passend reservieren können, tragt bitte bis Dienstag Abend,
 
 	mailtmpl := template.Must(template.New("maildraft").Parse(maildraft))
 	mailbuf := new(bytes.Buffer)
-	type data struct {
-		Location string
-	}
-	if err = mailtmpl.Execute(mailbuf, data{loc}); err != nil {
-		log.Println("Fehler beim Füllen des Templates:", err)
-		return
+	if err := mailtmpl.Execute(mailbuf, t); err != nil {
+		return fmt.Errorf("Fehler beim Füllen des Templates: %v", err)
 	}
 	mail := mailbuf.Bytes()
 
-	sendAnnouncement("Bitte für Stammtisch eintragen", mail)
+	return sendAnnouncement("Bitte für Stammtisch eintragen", mail)
 }
 
-func announceC14(date time.Time) {
-	var data struct {
-		Topic,
-		Abstract,
-		Speaker string
+func announceC14(t *data.Termin) error {
+	v, err := t.GetVortrag(cmdAnnounce.Tx)
+	if err == sql.ErrNoRows {
+		fmt.Println("Es gibt nächsten Donnerstag noch keine c¼h. :(")
+		return nil
 	}
-
-	if err := db.QueryRow("SELECT topic FROM vortraege WHERE date = $1", date).Scan(&data.Topic); err != nil {
-		if err == sql.ErrNoRows {
-			fmt.Println("Es gibt nächsten Donnerstag noch keine c¼h. :(")
-			return
-		}
-
-		log.Println("Kann topic nicht auslesen:", err)
-		return
-	}
-
-	if err := db.QueryRow("SELECT abstract FROM vortraege WHERE date = $1", date).Scan(&data.Abstract); err != nil {
-		log.Println("Kann abstract nicht auslesen:", err)
-		return
-	}
-
-	if err := db.QueryRow("SELECT speaker FROM vortraege WHERE date = $1", date).Scan(&data.Speaker); err != nil {
-		log.Println("Kann speaker nicht auslesen:", err)
-		return
+	if err != nil {
+		log.Fatal("Kann vortrag nicht lesen:", err)
 	}
 
 	maildraft := `Liebe Treffler,
@@ -113,15 +83,14 @@ Wer mehr Informationen möchte:
 
 	mailtmpl := template.Must(template.New("maildraft").Parse(maildraft))
 	mailbuf := new(bytes.Buffer)
-	if err := mailtmpl.Execute(mailbuf, data); err != nil {
-		log.Println("Fehler beim Füllen des Templates:", err)
-		return
+	if err := mailtmpl.Execute(mailbuf, v); err != nil {
+		return fmt.Errorf("Fehler beim Füllen des Templates: %v", err)
 	}
 	mail := mailbuf.Bytes()
-	sendAnnouncement(data.Topic, mail)
+	return sendAnnouncement(v.Topic, mail)
 }
 
-func sendAnnouncement(subject string, msg []byte) {
+func sendAnnouncement(subject string, msg []byte) error {
 	mail := new(bytes.Buffer)
 	fmt.Fprintf(mail, "From: frank@noname-ev.de\r\n")
 	fmt.Fprintf(mail, "To: %s\r\n", mime.QEncoding.Encode("utf-8", *targetmailaddr))
@@ -147,25 +116,20 @@ func sendAnnouncement(subject string, msg []byte) {
 		log.Println("Output von Sendmail:")
 		io.Copy(os.Stderr, stdout)
 	}
+	return nil
 }
 
-func RunAnnounce() {
-	var nextRelevantDate time.Time
-
-	if err := db.QueryRow("SELECT date FROM termine WHERE date > NOW() AND override = '' ORDER BY date ASC LIMIT 1").Scan(&nextRelevantDate); err != nil {
-		log.Println("Kann nächsten Termin nicht auslesen:", err)
-		return
+func RunAnnounce() error {
+	t, err := data.FutureTermine(cmdAnnounce.Tx).First()
+	if err == sql.ErrNoRows {
+		return errors.New("Keine termine gefunden")
 	}
-
-	isStm, err := isStammtisch(nextRelevantDate)
 	if err != nil {
-		log.Println("Kann stammtischiness nicht auslesen:", err)
-		return
+		return fmt.Errorf("Kann nächsten Termin nicht auslesen: %v", err)
 	}
 
-	if isStm {
-		announceStammtisch(nextRelevantDate)
-	} else {
-		announceC14(nextRelevantDate)
+	if t.Stammtisch.Bool {
+		return announceStammtisch(t)
 	}
+	return announceC14(t)
 }
