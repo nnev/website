@@ -110,7 +110,7 @@ func RunYarpNarp() error {
 	w := tabwriter.NewWriter(os.Stdout, 0, 4, 1, ' ', tabwriter.DiscardEmptyColumns)
 	fmt.Fprintf(w, "Nick\tKommt\tLetzte Änderung\t%s\n", maybeTruncate("Kommentar", width, trunc))
 	for _, z := range zusagen {
-		fmt.Fprintf(w, "%s\t%v\t%s\t%s\n", z.Nick, formatBool(z.Kommt), z.Registered.Time.In(time.Local).Format("2006-01-02 15:04:05"), maybeTruncate(z.Kommentar, width, trunc))
+		fmt.Fprintf(w, "%s\t%v\t%s\t%s\n", z.Nick.String, formatBool(z.Kommt), z.Registered.Time.In(time.Local).Format("2006-01-02 15:04:05"), maybeTruncate(z.Kommentar, width, trunc))
 	}
 	w.Flush()
 	return nil
