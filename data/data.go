@@ -404,17 +404,19 @@ func (it *ZusagenIterator) Val() *Zusage {
 // reading. It must be called after being done with the iterator. No other
 // methods may be called after Close.
 func (it *ZusagenIterator) Close() error {
-	err := it.rows.Close()
-	it.rows = nil
-	if it.err == nil {
-		it.err = err
+	if it.rows != nil {
+		err := it.rows.Close()
+		it.rows = nil
+		if it.err == nil {
+			it.err = err
+		}
 	}
 	return it.err
 }
 
 // Zusagen returns all rows of the zusagen table in unspecified order.
 func Zusagen(q Querier) *ZusagenIterator {
-	return QueryZusagen(q, "", nil)
+	return QueryZusagen(q, "")
 }
 
 // QueryZusagen queries the zusagen table for all rows where cond is true. cond
