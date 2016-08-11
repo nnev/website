@@ -322,7 +322,7 @@ type Vortrag struct {
 }
 
 func (v *Vortrag) selectFragment() string {
-	return "SELECT id, date, topic, abstract, speaker, info_url, password FROM votraege "
+	return "SELECT id, date, topic, abstract, speaker, info_url, password FROM vortraege "
 }
 
 func (v *Vortrag) scanFrom(s scanner) error {
