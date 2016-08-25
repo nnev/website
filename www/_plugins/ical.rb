@@ -59,7 +59,7 @@ module Jekyll
 				elsif stammtisch
 					url      = "#{site.config['url']}/yarpnarp.html"
 
-					details = stammtischs.find { |s| s.data['title'] == tuple["location"] }
+					details = stammtischs.find { |s| s.data['locname'] == tuple["location"] }
 
 					topic    = "Chaos-Stammtisch"
 					topic   << ": #{tuple["location"]}" unless tuple["location"].empty?

@@ -16,7 +16,7 @@
 	var map = L.map('map').setView([{{page.map_lat}}, {{page.map_lon}}], {{page.map_zoom}});
 	{{site.map_js}}
 
-	L.marker([{{page.lat}}, {{page.lon}}]).addTo(map).bindPopup("<b>{{page.title | escape}}</b>", { "closeButton": false }).openPopup();
+	L.marker([{{page.lat}}, {{page.lon}}]).addTo(map).bindPopup("<b>{{page.locname | escape}}</b>", { "closeButton": false }).openPopup();
 	</script>
 
 	<p>

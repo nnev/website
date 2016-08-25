@@ -19,7 +19,7 @@ Stimme ab, damit wir passend reservieren können. Danke!
 				{% unless st.layout == "stammtisch" %}
 					{% continue %}
 				{% endunless %}
-				{% unless st.title == termin.location %}
+				{% unless st.locname == termin.location %}
 					{% continue %}
 				{% endunless %}
 				{% assign done = true %}

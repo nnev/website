@@ -13,7 +13,7 @@
 				{% unless st.layout == "stammtisch" %}
 					{% continue %}
 				{% endunless %}
-				{% unless st.title == termin.location %}
+				{% unless st.locname == termin.location %}
 					{% continue %}
 				{% endunless %}
 				{% assign done = true %}
