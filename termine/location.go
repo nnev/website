@@ -45,7 +45,7 @@ func RunLocation() error {
 		fmt.Println(t.Location)
 		return nil
 	}
-	t.Location = cmdLocation.Flag.Arg(1)
+	t.Location = cmdLocation.Flag.Arg(0)
 	if err = t.Update(cmdLocation.Tx); err != nil {
 		return fmt.Errorf("Kann Location nicht setzen: %v", err)
 	}
