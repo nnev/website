@@ -34,7 +34,7 @@ func RunLocation() error {
 		os.Exit(1)
 	}
 
-	t, err := data.QueryTermine(cmdLocation.Tx, "WHERE date >= $1 AND stammtisch = true", time.Now()).First()
+	t, err := data.QueryTermine(cmdLocation.Tx, "WHERE date >= $1 AND stammtisch = true ORDER BY date ASC", time.Now()).First()
 	if err == sql.ErrNoRows {
 		return errors.New("Termin muss erst mittels next hinzugefügt werden.")
 	}
