@@ -8,7 +8,7 @@ treff_lat: 49.417433
 treff_lon: 8.675255
 
 map_js: |
-  L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors',
   maxZoom: 18,
   detectRetina: true
