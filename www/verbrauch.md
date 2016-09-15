@@ -22,7 +22,7 @@ Wir erfassen unseren Getränke-Verbrauch digital. So richtig wissen wir noch nic
   function drawChart() {
 var data = google.visualization.arrayToDataTable(nonamedrinkstats);
     // Set chart options
-    var options = {'title':'Getraenkeverbrauch',
+    var options = {'title':'Getränkeverbrauch',
                    'width': "100%",
                    'height':400,
        'curveType':'function'};
