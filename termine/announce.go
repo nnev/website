@@ -42,11 +42,9 @@ func init() {
 func announceStammtisch(t *data.Termin) error {
 	maildraft := `Liebe Treffler,
 
-am kommenden Donnerstag ist wieder Stammtisch. Diesmal sind wir bei
-{{.Location}}.
+am kommenden Donnerstag ist wieder Stammtisch. Diesmal sind wir bei {{.Location}}.
 
-Damit wir passend reservieren können, tragt bitte bis Dienstag Abend, 18:00 Uhr
-unter [0] ein, ob ihr kommt oder nicht.
+Damit wir passend reservieren können, tragt bitte bis Dienstag Abend, 18:00 Uhr unter [0] ein, ob ihr kommt oder nicht.
 
 
 [0] https://www.noname-ev.de/yarpnarp.html
@@ -116,7 +114,7 @@ func sendAnnouncement(subject string, msg []byte) error {
 		return err
 	}
 
-	cmd := exec.Command("/usr/sbin/sendmail", "-t")
+	cmd := exec.Command("/usr/sbin/sendmail", "-t", "-i")
 
 	cmd.Stdin = mail
 
