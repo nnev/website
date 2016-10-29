@@ -326,7 +326,7 @@ func (v *Vortrag) selectFragment() string {
 }
 
 func (v *Vortrag) scanFrom(s scanner) error {
-	return s.Scan(&v.ID, &v.Date, &v.Topic, &v.Speaker, &v.InfoURL, &v.Password)
+	return s.Scan(&v.ID, &v.Date, &v.Topic, &v.Abstract, &v.Speaker, &v.InfoURL, &v.Password)
 }
 
 // GetVortrag returns the talk with the given id.
