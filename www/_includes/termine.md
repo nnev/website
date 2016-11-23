@@ -2,7 +2,7 @@
 <p {% if notfirst %}class="dim"{% endif %}>
 	{% assign notfirst = true %}
 
-	<b>Datum: {{ termin.date | escape }}</b><br>
+	<b>Datum: {{ termin.date | escape }}</b> um 19 Uhr<br>
 	{% if termin.override != "" %}
 		{{ termin.override | escape }}
 	{% elsif termin.stammtisch %}
