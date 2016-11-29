@@ -4,7 +4,7 @@ title:    "Stammtisch: Red"
 foto:     red
 
 locname:      Red - die grüne Küche
-phone:        06220 9145206
+phone:        06221 9145206
 site_url:     http://www.red-diegruenekueche.com/
 menu_url:     http://www.red-diegruenekueche.com/kategorie/wochenkarte/
 
