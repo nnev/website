@@ -25,6 +25,14 @@ zukommen lässt. Das kannst du per Mail tun, oder einfach persönlich auf dem
 Treff. Dort haben wir auch immer ein paar ausgedruckte Exemplare herumliegen,
 du kannst also auch einfach dort fragen und wir machen das direkt.
 
+# Projekt: Cryptoparties
+
+Seit 2014 veranstalten wir regelmäßig Cryptoparties. Das sind Workshops, auf denen 
+wir allen Interessierten erklären, wie man sich mit einfachen technischen Mitteln vor 
+Überwachung schützen kann. Begleitend veranstalten wir in Kooperation mit anderen
+Gruppen Diskussionsabende zu entsprechenden Themen.
+[Alle Einzelheiten dazu findest du auf der Cryptoparty-Seite](/cryptoparty.html).
+
 # Projekt: rgb2r
 
 Einmal im Jahr veranstalten wir die „rgb2r – roots go back to the roots“, ein
