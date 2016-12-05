@@ -14,7 +14,7 @@ import (
 
 var (
 	driver  = flag.String("driver", "postgres", "Der benutzte sql-Treiber")
-	connect = flag.String("connect", "dbname=nnev user=anon host=/var/run/postgresql sslmode=disable", "Die Verbindusgsspezifikation")
+	connect = flag.String("connect", "dbname=nnev user=anon host=/var/run/postgresql sslmode=disable", "Die Verbindungsspezifikation")
 )
 
 // OpenDB opens a connection to the database with parameters derived from flags.

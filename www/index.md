@@ -19,11 +19,6 @@ Wo?
 Meistens [Mathematikon, Im Neuenheimer Feld 205, Seminarraum A](anfahrt.html).<br/>
 Jeden ersten Donnerstag im Monat ist [Stammtisch](stammtisch.html) (abwechselnde Gaststätte).
 
-rgb2r?
-===
-
-Am kommenden Wochenende (2016-10-28 - 2016-11-01) findet die „rgb2r – roots go back to the roots“, unser Retro-Gaming-Event statt. Die Anmeldung ist zwar schon geschlossen aber du kannst einfach vorbei kommen. [Alle Einzelheiten dazu findest du auf der rgb2r Seite](http://rgb2r.noname-ev.de/).
-
 Nächstes Treffen
 ===
 
