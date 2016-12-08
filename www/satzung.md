@@ -119,9 +119,13 @@ Stand: 2015-05-07, siehe auch [Beitragsordnung](beitragsordnung.html)
 	Anspruch des Vereins auf rückständige Beitragsforderungen bleibt hiervon
 	unberührt.
 
-6.	Sofern ein ordentliches Mitglied länger als 200 Kalendertage nicht zu den
-	Treffen/Veranstaltungen des Vereins erscheint und keine Mitgliedsbeiträge
-	zahlt, endet die Mitgliedschaft.
+6.	Der Vorstand kann die Mitgliedschaft eines Mitglieds jederzeit per
+	Beschluss ruhen lassen, sofern dieses Mitglied mit der Zahlung fälliger
+	Mitgliedsbeiträge im Rückstand ist. Während des Ruhens der Mitgliedschaft
+	entfallen alle Rechte, die sich aus der Mitgliedschaft ergeben und es
+	fallen keine weiteren Mitgliedsbeiträge an. Die ruhende Mitgliedschaft geht
+	zum Ende des Quartals wieder in eine aktive über, in dem alle Schulden
+	gegenüber dem Verein beglichen wurden.
 
 
 
@@ -201,15 +205,15 @@ Organe des Vereins sind:
 	Vereinsmitglieder schriftlich unter Angabe des Zwecks und der Gründe vom
 	Vorstand verlangt wird.
 
-6.	Der Vorsitzende oder sein Stellvertreter leitet die Mitgliederversammlung.
-	Auf Vorschlag des/der Vorsitzenden kann die Mitgliederversammlung einen
-	besonderen Versammlungsleiter bestimmen.
+6.	Der/die Vorsitzende oder einer seiner/ihrer Stellvertreter leiten die
+	Mitgliederversammlung. Auf Vorschlag des/der Vorsitzenden oder bei
+	Abwesenheit des/der Vorsitzenden kann die Mitgliederversammlung eine(n)
+	besondere(n) VersammlungsleiterIn bestimmen.
 
-7.	Beschlüsse der Mitgliederversammlung werden in einem Protokoll innerhalb von
-	zwei Wochen nach der Mitgliederversammlung niedergelegt und von zwei
-	Vorstandsmitgliedern unterzeichnet. Das Protokoll kann von jedem Mitglied auf
-	der Geschäftsstelle oder einem dafür vorgesehenen Bereich - insbesondere
-	innerhalb der Webseite eingesehen werden.
+7.	Beschlüsse der Mitgliederversammlung werden in einem Protokoll niedergelegt
+	und vom Versammlungsleiter und Protokollant unterzeichnet. Das Protokoll
+	kann von jedem Mitglied beim Vorstand oder auf digitalem Weg eingesehen
+	werden.
 
 
 
@@ -238,9 +242,8 @@ Organe des Vereins sind:
 
 1.	Der Vorstand setzt sich wie folgt zusammen:
 	- ein Vorsitzender
-	- ein stellvertretender Vorsitzender
+	- zwei stellvertretende Vorsitzende
 	- ein Kassenwart
-	- ein Schriftführer
 
 	Sie werden von der Mitgliederversammlung für die Dauer von einem Jahr gewählt.
 	Die unbegrenzte Wiederwahl von Vorstandsmitgliedern ist zulässig. Nach
@@ -254,6 +257,11 @@ Organe des Vereins sind:
 3.	Vorstand im Sinne des §26 BGB sind der/die erste Vorsitzende, der/die
 	stellvertretende Vorsitzende, der/die KassenwartIn und der/die SchriftführerIn.
 	Ein Vorstandsmitglied vertritt den Verein gerichtlich und außergerichtlich.
+
+3.	Vorstand im Sinne des §26 BGB sind der/die erste Vorsitzende, die
+	stellvertretenden Vorsitzenden und der/die KassenwartIn. Jedes
+	Vorstandsmitglied ist alleine berechtigt den Verein gerichtlich und
+	außergerichtlich zu vertreten.
 
 4.	(aufgehoben)
 
