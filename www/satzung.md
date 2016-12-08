@@ -254,10 +254,6 @@ Organe des Vereins sind:
 	Geschäftsordnung geben und kann besondere Aufgaben unter seinen Mitglieder
 	verteilen oder Ausschüsse für deren Bearbeitung oder Vorbereitung einsetzen.
 
-3.	Vorstand im Sinne des §26 BGB sind der/die erste Vorsitzende, der/die
-	stellvertretende Vorsitzende, der/die KassenwartIn und der/die SchriftführerIn.
-	Ein Vorstandsmitglied vertritt den Verein gerichtlich und außergerichtlich.
-
 3.	Vorstand im Sinne des §26 BGB sind der/die erste Vorsitzende, die
 	stellvertretenden Vorsitzenden und der/die KassenwartIn. Jedes
 	Vorstandsmitglied ist alleine berechtigt den Verein gerichtlich und
