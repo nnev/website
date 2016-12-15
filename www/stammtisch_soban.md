@@ -17,3 +17,4 @@ map_zoom:     17
 gmaps_url:    https://maps.google.com/maps?q=Soban,%20Zwingerstra%C3%9Fe,%20Heidelberg
 ---
 Gute, traditionell koreanische Küche. Sehr klein, daher nur für kleine Stammtischtreffen geeignet.
+Macht schon um 22:00 zu.
