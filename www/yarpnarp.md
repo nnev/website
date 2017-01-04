@@ -8,6 +8,10 @@ title: Zu-/Absagen für den Chaos-Stammtisch
 Erscheinst Du zum nächsten Stammtisch? Gib hier bitte Deine ja/nein
 Stimme ab, damit wir passend reservieren können. Danke!
 
+<strong>Aufgepasst:</strong> Manchmal müssen wir den Stammtisch spontan in ein anderes
+Lokal verlegen, weil im geplanten nicht genug Platz für uns ist. Bitte schau daher 
+nochmal hier auf diese Seite, bevor du zu Hause losläufst!
+
 ### Zu-/Absagen
 
 <p>
