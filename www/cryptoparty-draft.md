@@ -6,7 +6,8 @@ title: Cryptopartys des NoName e.V.
 # Schütz Deine Privatsphäre - Cryptoparty Heidelberg
 ## Digitale Selbstverteidigung
 
-Der NoName e. V. organisiert im Mai 2017 wieder Themen­abende zu Privatsphäre und digitaler Selbstbestimmung. Jeder, der regelmäßig einen Computer benutzt, ist dazu eingeladen. Wir erklären, auf welchem Weg und wo persönliche Daten anfallen. Wir zeigen, wie man die Kontrolle über Datenflüsse erhalten und mit einfachen Werkzeugen seine Schutzschilde gegen Datenkraken, Computerkriminelle und übergriffige Geheimdienste hochfah­ren kann. Wir erläutern Hintergründe, geben praktische Tipps und gehen auf gesellschaftliche Aspekte ein.
+Der NoName e. V. organisiert im Mai 2017 wieder Themen­abende zu Privatsphäre und digitaler Selbstbestimmung. Wir erklären, auf welchem Weg und wo persönliche Daten anfallen. Wir zeigen, wie man die Kontrolle über Datenflüsse erhalten und mit einfachen Werkzeugen seine Schutzschilde gegen Datenkraken, Computerkriminelle und übergriffige Geheimdienste hochfah­ren kann. Wir erläutern Hintergründe, geben praktische Tipps und gehen auf gesellschaftliche Aspekte ein.
+Die Veranstaltungen sind kostenfrei und stehen jedem offen.
 
 
 ## Termine Mai 2017
@@ -37,12 +38,17 @@ Wir diskutieren mit euch über aktuelle Themen, z. B. Netzneutralität, Datensch
 
 ## Noch Fragen?
 
-Mit Fragen zu den Themen digitaler Selbstverteidigung oder zur Veranstaltung erreichst du uns unter [crypto@noname-ev.de](mailto:crypto@noname-ev.de).
+Mit Fragen zu den Themen digitaler Selbstverteidigung oder zur Veranstaltung selbst erreichst Du uns unter [crypto@noname-ev.de](mailto:crypto@noname-ev.de).
+
+
+## Unterstützer
+
+Bei der Durchführung der Veranstaltungen unterstützen uns freundlicherweise die [HGS MathComp](http://www.mathcomp.uni-heidelberg.de/), die [AG Netzpolitik](https://www.uni-heidelberg.de/politikwissenschaften/forschung/netzpolitik/ag/index.html) des Instituts für Politikwissenschaften sowie das [Psychologische Institut](http://www.psychologie.uni-heidelberg.de/) der Universität Heidelberg. Vielen Dank!
 
 
 ## Ähnliche Veranstaltungen in der Region
 
-Außer uns veranstaltet in der Rhein-Neckar-Region der Chaos Computer Club Mannheim regelmäßige Cryptoparties.
+Außer uns veranstaltet in der Rhein-Neckar-Region der [Chaos Computer Club Mannheim](https://www.ccc-mannheim.de) regelmäßige [Cryptoparties](https://www.ccc-mannheim.de/wiki/Cryptoparty).
 
-In unregelmäßigen Abständen gibt es außerdem Cryptoparties im RaumZeitLabor in Mannheim.
+In unregelmäßigen Abständen gibt es außerdem Cryptopartys im [RaumZeitLabor](https://raumzeitlabor.de/) in Mannheim.
 
