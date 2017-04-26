@@ -3,8 +3,8 @@ layout: default
 title: Cryptopartys des NoName e.V.
 ---
 
-# Schütz Deine Privatsphäre - Cryptoparty Heidelberg
-## Digitale Selbstverteidigung
+# Digitale Selbstverteidigung
+## Schütz Deine Privatsphäre - Cryptoparty Heidelberg
 
 Der NoName e. V. organisiert im Mai 2017 wieder Themen­abende zu Privatsphäre und digitaler Selbstbestimmung. Wir erklären, auf welchem Weg und wo persönliche Daten anfallen. Wir zeigen, wie man die Kontrolle über Datenflüsse erhalten und mit einfachen Werkzeugen seine Schutzschilde gegen Datenkraken, Computerkriminelle und übergriffige Geheimdienste hochfah­ren kann. Wir erläutern Hintergründe, geben praktische Tipps und gehen auf gesellschaftliche Aspekte ein.
 Die Veranstaltungen sind kostenfrei und stehen jedem offen.
@@ -36,7 +36,7 @@ Wir diskutieren mit euch über aktuelle Themen, z. B. Netzneutralität, Datensch
 
 ## Noch Fragen?
 
-Mit Fragen zu den Themen digitaler Selbstverteidigung oder zur Veranstaltung selbst erreichst Du uns unter [crypto@noname-ev.de](mailto:crypto@noname-ev.de).
+Mit Fragen zur Veranstaltung erreichst Du uns unter [crypto@noname-ev.de](mailto:crypto@noname-ev.de).
 
 
 ## Unterstützer
