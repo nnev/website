@@ -36,7 +36,7 @@ Wir diskutieren mit euch über aktuelle Themen, z. B. Netzneutralität, Datensch
 
 ## Noch Fragen?
 
-Mit Fragen zu den Themen digitaler Selbstverteidigung oder zur Veranstaltung selbst erreichst Du uns unter [crypto@noname-ev.de](mailto:crypto@noname-ev.de).
+Mit Fragen zur Veranstaltung erreichst Du uns unter [crypto@noname-ev.de](mailto:crypto@noname-ev.de).
 
 
 ## Unterstützer
