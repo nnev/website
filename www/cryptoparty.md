@@ -33,6 +33,20 @@ Wir sprechen über Verschlüsselung eigener Dateien und mehr über Privatsphäre
 Mo., 22.05., 18:30 Uhr, [Psychologisches Institut, Übungsraum B, Brunnengasse 1](https://www.openstreetmap.org/way/35692886)<br>
 Wir diskutieren mit euch über aktuelle Themen, z. B. Netzneutralität, Datenschutz und Meinungsfreiheit im Netz.
 
+## Wegbeschreibungen
+
+* **Psychologie Seminarräume B**<br>
+Der Raum befindet sich im mittleren Gebäude, hinter dem Gebäude an der Hauptstraße. Von der Brunnengasse geht durch den Innenhof mit den Fahrradstellplätzen in das dem Neckar zugewandte Gebäude. Der Seminarraum ist im Erdgeschoss rechts. Die nächsten Straßenbahn-Haltestellen sind St. Vincentius Krankenhaus und Bismarckplatz.
+
+* **DAI**<br>
+Der Eingang zum DAI ist seitlich im Hof (auf der Nordseite des DAI), gegenüber der Packstation. Der Makerspace befindet sich im Keller. Die nächsten Straßenbahn-Haltestellen sind Bismarckplatz und Seegarten.
+
+* **Dezernat 16**<br>
+Der Seminarraum befindet sich im 1. Stock direkt über dem Café Leitstelle. Der Eingang ist seitlich am Gebäude, von vor der Leitstelle aus gesehen rechts, d. h. von Norden. Die nächsten Straßenbahn-Haltestellen sind Czernybrücke, Betriebshof und Hauptbahnhof.
+
+
+* **Mathematikon**<br>
+Der Konferenzraum befindet sich im 5. Stock im vorderen (südlichen) Teil von Gebäudeteil A am Klaus-Tschira-Platz, senkrecht oberhalb des Eingangsbereichs. Die nächste Straßenbahn-Haltestelle ist Bunsengymnasium.
 
 ## Noch Fragen?
 
