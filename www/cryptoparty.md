@@ -48,6 +48,11 @@ Der Seminarraum befindet sich im 1. Stock direkt über dem Café Leitstelle. Der
 Der Konferenzraum befindet sich im 5. Stock im vorderen (südlichen) Teil von Gebäudeteil A am Klaus-Tschira-Platz, senkrecht oberhalb des Eingangsbereichs. Die nächste Straßenbahn-Haltestelle ist Bunsengymnasium. → [Karte](https://www.openstreetmap.org/relation/5762624).
 
 
+## Unser Material
+
+* Spuren im Netz, 08.05. und 10.05.2017: Handout zu [Spurenvermeidung im Browser](spurenvermeidung_browser.pdf) (PDF, 517 KiB)
+
+
 ## Noch Fragen?
 
 Mit Fragen zur Veranstaltung erreichst Du uns unter [crypto@noname-ev.de](mailto:crypto@noname-ev.de).
