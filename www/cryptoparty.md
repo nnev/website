@@ -4,13 +4,13 @@ title: Cryptopartys des NoName e.V.
 ---
 
 # Digitale Selbstverteidigung
-## Schütz Deine Privatsphäre - Cryptoparty Heidelberg
+## Schütz Deine Privatsphäre – Cryptoparty Heidelberg
 
 Der NoName e. V. organisiert im Mai 2017 wieder Themen­abende zu Privatsphäre und digitaler Selbstbestimmung. Wir erklären, auf welchem Weg und wo persönliche Daten anfallen. Wir zeigen, wie man die Kontrolle über Datenflüsse erhalten und mit einfachen Werkzeugen seine Schutzschilde gegen Datenkraken, Computerkriminelle und übergriffige Geheimdienste hochfah­ren kann. Wir erläutern Hintergründe, geben praktische Tipps und gehen auf gesellschaftliche Aspekte ein.
 Die Veranstaltungen sind kostenfrei und stehen jedem offen.
 
 
-## Termine Mai 2017
+## Termine im Mai 2017
 
 * **Das Passwort-ABC**<br>
 Mi., 03.05., 18:30 Uhr, [Psychologisches Institut, Übungsraum B, Brunnengasse 1](https://www.openstreetmap.org/way/35692886)<br>
@@ -27,26 +27,31 @@ E-Mails sind wie Postkarten. Wir erklären, wie ihr Mails wirksam verschlüsselt
 
 * **Privatsphäre schützen**<br>
 Mi. 17.05., 18:30 Uhr, [Mathematikon, Konferenzraum 5/104, Im Neuenheimer Feld 205](https://www.openstreetmap.org/relation/5762624)<br>
-Wir sprechen über Verschlüsselung eigener Dateien und mehr über Privatsphäre-Einstellungen im Browser.
+Wir sprechen über Verschlüsselung eigener Dateien, Echtheitsprüfung von Software aus dem Netz und mehr über Privatsphäre-Einstellungen im Browser.
 
 * **Diskussionsrunde: Was ist Netzpolitik?**<br>
-Mo., 22.05., 18:30 Uhr, [Psychologisches Institut, Übungsraum B, Brunnengasse 1](https://www.openstreetmap.org/way/35692886)<br>
+Mo., 22.05., 18:30 Uhr, [Psychologisches Institut, Übungsraum C, Brunnengasse 1](https://www.openstreetmap.org/way/35692886)<br>
 Wir diskutieren mit euch über aktuelle Themen, z. B. Netzneutralität, Datenschutz und Meinungsfreiheit im Netz.
 
 ## Wegbeschreibungen
 
-* **Psychologie Seminarräume B**<br>
-Der Raum befindet sich im mittleren Gebäude, hinter dem Gebäude an der Hauptstraße. Von der Brunnengasse geht durch den Innenhof mit den Fahrradstellplätzen in das dem Neckar zugewandte Gebäude. Der Seminarraum ist im Erdgeschoss rechts. Die nächsten Straßenbahn-Haltestellen sind St. Vincentius Krankenhaus und Bismarckplatz.
+* **Psychologisches Institut, Übungsräume B und C**<br>
+Die Räume befinden sich im mittleren Gebäude, hinter dem Gebäude an der Hauptstraße. Von der Brunnengasse geht man durch den Innenhof mit den Fahrradstellplätzen in das dem Neckar zugewandte Gebäude. Der Seminarraum ist im Erdgeschoss rechts. Die nächsten Bus- bzw. Straßenbahn-Haltestellen sind St. Vincentius Krankenhaus und Bismarckplatz. → [Karte](https://www.openstreetmap.org/way/35692886).
 
-* **DAI**<br>
-Der Eingang zum DAI ist seitlich im Hof (auf der Nordseite des DAI), gegenüber der Packstation. Der Makerspace befindet sich im Keller. Die nächsten Straßenbahn-Haltestellen sind Bismarckplatz und Seegarten.
+* **Makerspace im DAI**<br>
+Der Eingang zum DAI ist seitlich im Hof (auf der Nordseite des DAI), gegenüber der Packstation. Der Makerspace befindet sich im Keller. Die nächsten Straßenbahn-Haltestellen sind Bismarckplatz und Seegarten. → [Karte](https://www.openstreetmap.org/way/140116664).
 
 * **Dezernat 16**<br>
-Der Seminarraum befindet sich im 1. Stock direkt über dem Café Leitstelle. Der Eingang ist seitlich am Gebäude, von vor der Leitstelle aus gesehen rechts, d. h. von Norden. Die nächsten Straßenbahn-Haltestellen sind Czernybrücke, Betriebshof und Hauptbahnhof.
-
+Der Seminarraum befindet sich im 1. Stock direkt über dem Café Leitstelle. Der Eingang ist seitlich am Gebäude, von vor der Leitstelle aus gesehen rechts, d. h. von Norden. Die nächsten Straßenbahn-Haltestellen sind Czernybrücke, Betriebshof und Hauptbahnhof. → [Karte](https://www.openstreetmap.org/way/232688044).
 
 * **Mathematikon**<br>
-Der Konferenzraum befindet sich im 5. Stock im vorderen (südlichen) Teil von Gebäudeteil A am Klaus-Tschira-Platz, senkrecht oberhalb des Eingangsbereichs. Die nächste Straßenbahn-Haltestelle ist Bunsengymnasium.
+Der Konferenzraum befindet sich im 5. Stock im vorderen (südlichen) Teil von Gebäudeteil A am Klaus-Tschira-Platz, senkrecht oberhalb des Eingangsbereichs. Die nächste Straßenbahn-Haltestelle ist Bunsengymnasium. → [Karte](https://www.openstreetmap.org/relation/5762624).
+
+
+## Unser Material
+
+* Spuren im Netz, 08.05. und 10.05.2017: Handout zu [Spurenvermeidung im Browser](spurenvermeidung_browser.pdf) (PDF, 517 KiB)
+
 
 ## Noch Fragen?
 
