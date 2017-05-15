@@ -65,9 +65,3 @@ Nächstes Treffen
 		<a href="pizza.html">Möchtest Du Pizza mitbestellen?</a>
 	{% endif %}
 </p>
-
-
-Aktuelle Veranstaltungsreihe
-============================
-
-[Digitale Selbstverteidigung](/cryptoparty.html): Schütz Deine Privatsphäre – Cryptoparty Heidelberg
