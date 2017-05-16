@@ -29,8 +29,7 @@ bekommen.
 ### Essen und Trinken
 Die Treffs sind meistens ziemlich lang. Damit wir dabei nicht verhungern und
 verdursten, haben wir Getränke – vor allem die szenetypische Club Mate und
-Club Mate Cola, aber auch koffeinfreie Alternativen <a href="verbrauch.html"
-data-no-turbolink>(Verbrauch anzeigen)</a> – und bestellen gemeinsam bei
+Club Mate Cola, aber auch koffeinfreie Alternativen – und bestellen gemeinsam bei
 einem lokalen Pizzadienst Essen. Um die Bestellung zu vereinfachen, haben
 wir ein [eigenes Bestellsystem](pizza.html).
 
