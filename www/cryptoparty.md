@@ -51,8 +51,8 @@ Der Konferenzraum befindet sich im 5. Stock im vorderen (südlichen) Teil von Ge
 ## Unser Material
 
 ### Spuren im Netz, 08.05. und 10.05.2017
-* Handout zu [Spurenvermeidung im Browser](cparty/spurenvermeidung_browser.pdf)
-* Handout zu [Alternative Dienste](cparty/alternative_dienste.pdf)
+* Handout zu [Spurenvermeidung im Browser](cryptoparty/spurenvermeidung_browser.pdf)
+* Handout zu [Alternative Dienste](cryptoparty/alternative_dienste.pdf)
 
 
 ## Noch Fragen?
