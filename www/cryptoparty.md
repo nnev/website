@@ -4,6 +4,12 @@ title: Cryptopartys des NoName e.V.
 foto: cryptoparty
 ---
 
+<style>
+li {
+	list-style: none;
+}
+</style>
+
 # Digitale Selbstverteidigung
 ## Schütz Deine Privatsphäre – Cryptoparty Heidelberg
 
@@ -11,7 +17,7 @@ Der NoName e. V. organisiert im Mai 2017 wieder Themen­abende zu Privatsphäre 
 Die Veranstaltungen sind kostenfrei und stehen jedem offen.
 
 
-## Termine im Mai 2017
+# Termine im Mai 2017
 
 * **Das Passwort-ABC**<br>
 Mi., 03.05., 18:30 Uhr, [Psychologisches Institut, Übungsraum B, Brunnengasse 1](https://www.openstreetmap.org/way/35692886)<br>
@@ -34,7 +40,7 @@ Wir sprechen über Verschlüsselung eigener Dateien, Echtheitsprüfung von Softw
 Mo., 22.05., 18:30 Uhr, [Psychologisches Institut, Übungsraum C, Brunnengasse 1](https://www.openstreetmap.org/way/35692886)<br>
 Wir diskutieren mit euch über aktuelle Themen, z. B. Netzneutralität, Datenschutz und Meinungsfreiheit im Netz.
 
-## Wegbeschreibungen
+# Wegbeschreibungen
 
 * **Psychologisches Institut, Übungsräume B und C**<br>
 Die Räume befinden sich im mittleren Gebäude, hinter dem Gebäude an der Hauptstraße. Von der Brunnengasse geht man durch den Innenhof mit den Fahrradstellplätzen in das dem Neckar zugewandte Gebäude. Der Seminarraum ist im Erdgeschoss rechts. Die nächsten Bus- bzw. Straßenbahn-Haltestellen sind St. Vincentius Krankenhaus und Bismarckplatz. → [Karte](https://www.openstreetmap.org/way/35692886).
@@ -49,24 +55,24 @@ Der Seminarraum befindet sich im 1. Stock direkt über dem Café Leitstelle. Der
 Der Konferenzraum befindet sich im 5. Stock im vorderen (südlichen) Teil von Gebäudeteil A am Klaus-Tschira-Platz, senkrecht oberhalb des Eingangsbereichs. Die nächste Straßenbahn-Haltestelle ist Bunsengymnasium. → [Karte](https://www.openstreetmap.org/relation/5762624).
 
 
-## Unser Material
+# Unser Material
 
-### Spuren im Netz, 08.05. und 10.05.2017
+## Spuren im Netz, 08.05. und 10.05.2017
 * Handout zu [Spurenvermeidung im Browser](cryptoparty/spurenvermeidung_browser.pdf)
 * Handout zu [Alternative Dienste](cryptoparty/alternative_dienste.pdf)
 
 
-## Noch Fragen?
+# Noch Fragen?
 
 Mit Fragen zur Veranstaltung erreichst Du uns unter [crypto@noname-ev.de](mailto:crypto@noname-ev.de).
 
 
-## Unterstützer
+# Unterstützer
 
 Bei der Durchführung der Veranstaltungen unterstützen uns freundlicherweise die [HGS MathComp](http://www.mathcomp.uni-heidelberg.de/), die [AG Netzpolitik](https://www.uni-heidelberg.de/politikwissenschaften/forschung/netzpolitik/ag/index.html) des Instituts für Politikwissenschaften sowie das [Psychologische Institut](http://www.psychologie.uni-heidelberg.de/) der Universität Heidelberg. Vielen Dank!
 
 
-## Ähnliche Veranstaltungen in der Region
+# Ähnliche Veranstaltungen in der Region
 
 Außer uns veranstaltet in der Rhein-Neckar-Region der [Chaos Computer Club Mannheim](https://www.ccc-mannheim.de) regelmäßige [Cryptoparties](https://www.ccc-mannheim.de/wiki/Cryptoparty).
 
