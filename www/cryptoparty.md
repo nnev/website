@@ -1,6 +1,7 @@
 ---
 layout: default
 title: Cryptopartys des NoName e.V.
+foto: cryptoparty
 ---
 
 # Digitale Selbstverteidigung
