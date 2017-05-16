@@ -46,6 +46,7 @@ am kommenden Donnerstag ist wieder Stammtisch. Diesmal sind wir bei {{.Location}
 
 Damit wir passend reservieren können, tragt bitte bis Dienstag Abend, 18:00 Uhr unter [0] ein, ob ihr kommt oder nicht.
 
+Bitte schaut noch einmal auf die Website, bevor ihr los fahrt, falls wir den Ort kurzfristig ändern müssen.
 
 [0] https://www.noname-ev.de/yarpnarp.html
 	`
