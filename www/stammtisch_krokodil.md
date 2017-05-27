@@ -4,7 +4,7 @@ title:    "Stammtisch: Krokodil"
 foto:     krokodil
 
 locname:      Krokodil
-phone:        Telefon : +49 6221 739297-77
+phone:        06221 7392 9777
 site_url:     http://www.restaurant-krokodil.de/
 menu_url:     http://www.restaurant-krokodil.de/speisekarte
 
