@@ -6,7 +6,11 @@
 
 <div class="main_right">
 	{% include foto.md %}
-	{% include termine.md %}
+	{% if page.lang == "en" %}
+	  {% include termine_en.md %}
+	{% else %}
+	  {% include termine.md %}
+	{% endif %}
 </div>
 
 {% include footer.html %}
