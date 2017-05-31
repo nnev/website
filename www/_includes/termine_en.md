@@ -27,7 +27,7 @@
 		{% endif %}
 	{% else %}
 		regular meeting (<a href="anfahrt.html">Route?</a>)<br>
-		lightning talk:
+		(short) talk:
 		{% if termin.topic %}
 			<a href="chaotische_viertelstunde.html#c14h_{{termin.c14h_id}}">{{ termin.topic | escape }}</a>
 		{% else %}

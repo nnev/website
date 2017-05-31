@@ -18,7 +18,7 @@ Every first Thursday of a month we [meet in a random restaurant](stammtisch.html
 („Stammtisch“). [Please RSVP](yarpnarp.html) a couple of days in advance, so
 that we can book a suitable table. It’s pretty simple, just enter your nick
 and click “yarp”. Be sure to check the site again before you go, sometimes we
-need to choose a different place if there's too many people.
+need to choose a different place if there are too many people.
 
 You can join either – both are suitable for newcomers.
 
