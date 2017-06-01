@@ -12,7 +12,7 @@
 		<script src="/leaflet/leaflet.js"></script>
 		<script src="/js/turbolinks.js"></script>
 		<link rel="shortcut icon" href="/img/favicon.ico">
-		{% assign base = '' %}
+		{% assign base = '/' %}
 		{% if page.lang != "de" %}
 			{% assign base = "/" | append: page.lang | append: "/" %}
 		{% endif %}
@@ -28,11 +28,6 @@
 				<a {% if page.url == "{{base}}kontakt.html"                  %} class="active" {% endif %} href="{{base}}kontakt.html">Kontakt</a>
 				<a data-no-turbolink href="https://www.noname-ev.de/w/">Wiki</a>
 				<a {% if page.url == "{{base}}cryptoparty.html"              %} class="active" {% endif %} href="{{base}}cryptoparty.html">Cryptoparty</a>
-				{% if page.lang == "de" %}
-					<a href="{{ 'en/' | append: page.url | replace: '//','/' }}" lang="en">English</a>
-				{% else %}
-					<a href="{{ page.url | replace: 'en/','' }}" lang="de">Deutsch</a>
-				{% endif %}
 			</div></div>
 
 			<div class="cont">

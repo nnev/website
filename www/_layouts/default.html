@@ -5,12 +5,13 @@
 </div>
 
 <div class="main_right">
-	{% include foto.md %}
-	{% if page.lang == "en" %}
-	  {% include termine_en.md %}
-	{% else %}
-	  {% include termine.md %}
-	{% endif %}
+  {% include lang_switcher.md %}
+  {% include foto.md %}
+  {% if page.lang == "en" %}
+    {% include termine_en.md %}
+  {% else %}
+    {% include termine.md %}
+  {% endif %}
 </div>
 
 {% include footer.html %}
