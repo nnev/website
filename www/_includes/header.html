@@ -12,19 +12,27 @@
 		<script src="/leaflet/leaflet.js"></script>
 		<script src="/js/turbolinks.js"></script>
 		<link rel="shortcut icon" href="/img/favicon.ico">
+		{% assign base = '' %}
+		{% if page.lang != "de" %}
+			{% assign base = "/" | append: page.lang | append: "/" %}
+		{% endif %}
 	</head>
 	<body lang="de">
 
 		<div class="site">
 			<div class="menu_scroll_wrapper"><div class="menu">
-				<a {% if page.url == "/index.html"                    %} class="active" {% endif %} href="/">tl;dr</a>
-				<a {% if page.url == "/howtotreff.html"               %} class="active" {% endif %} href="/howtotreff.html">Treff</a>
-				<a {% if page.url == "/chaotische_viertelstunde.html" %} class="active" {% endif %} href="/chaotische_viertelstunde.html?latest={{ page.vortraege_latest }}">c¼h</a>
-				<a {% if page.url == "/verein.html"                   %} class="active" {% endif %} href="/verein.html">Verein</a>
-				<a {% if page.url == "/kontakt.html"                  %} class="active" {% endif %} href="/kontakt.html">Kontakt</a>
+				<a {% if page.url == "{{base}}index.html"                    %} class="active" {% endif %} href="{{base}}index.html">tl;dr</a>
+				<a {% if page.url == "{{base}}howtotreff.html"               %} class="active" {% endif %} href="{{base}}howtotreff.html">Treff</a>
+				<a {% if page.url == "{{base}}chaotische_viertelstunde.html" %} class="active" {% endif %} href="{{base}}chaotische_viertelstunde.html?latest={{ page.vortraege_latest }}">c¼h</a>
+				<a {% if page.url == "{{base}}verein.html"                   %} class="active" {% endif %} href="{{base}}verein.html">Verein</a>
+				<a {% if page.url == "{{base}}kontakt.html"                  %} class="active" {% endif %} href="{{base}}kontakt.html">Kontakt</a>
 				<a data-no-turbolink href="https://www.noname-ev.de/w/">Wiki</a>
-				<a {% if page.url == "/cryptoparty.html"              %} class="active" {% endif %} href="/cryptoparty.html">Cryptoparty</a>
-				<a {% if page.url == "/en/intro.html"                 %} class="active" {% endif %} href="/en/intro.html" lang="en">English</a>
+				<a {% if page.url == "{{base}}cryptoparty.html"              %} class="active" {% endif %} href="{{base}}cryptoparty.html">Cryptoparty</a>
+				{% if page.lang == "de" %}
+					<a href="{{ 'en/' | append: page.url | replace: '//','/' }}" lang="en">English</a>
+				{% else %}
+					<a href="{{ page.url | replace: 'en/','' }}" lang="de">Deutsch</a>
+				{% endif %}
 			</div></div>
 
 			<div class="cont">
