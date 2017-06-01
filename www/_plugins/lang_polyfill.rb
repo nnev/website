@@ -12,10 +12,12 @@ module Jekyll
 				next if File.exist?("en/#{p.name}")
 
 				copy = p.dup
+				copy.data = p.data.dup
+
 				copy.data['lang'] = 'en'
 				copy.process("en/#{copy.name}")
-				copy.data['title'] << " (untranslated, sorry)"
 
+				copy.data['title'] << " (untranslated, sorry)"
 				notice = <<~NOTICE
 				# Translation missing
 
