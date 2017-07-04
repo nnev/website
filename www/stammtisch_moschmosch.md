@@ -5,8 +5,8 @@ foto:     moschmosch
 
 locname:      MoschMosch
 phone:        06221 6509077
-site_url:     http://www.moschmosch.com/filiale/heidelberg-hauptstrasse
-menu_url:     http://www.moschmosch.com/sites/default/files/moschmosch_heidelberg_herbst_speisekarte_2016.pdf
+site_url:     http://www.moschmosch.com/restaurants-heidelberg.php
+menu_url:     http://www.moschmosch.com/speisekarte.php
 
 address:      Hauptstraße 136, 69117 Heidelberg
 address_desc: "(eins weiter als der Uniplatz)."
