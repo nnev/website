@@ -15,8 +15,8 @@ var cmdLocation = &Command{
 	UsageLine: "location [locname]",
 	Short:     "Zeigt oder ändert Location des nächsten Stammtisches",
 	Long: `Zeigt oder ändert die Location des nächsten Stammtisches.
-Schreibweise muss mit Feld 'locname' im stammtisch_*.md der entsprechenden
-Stammtischseite im website-git übereinstimmen!
+Schreibweise muss mit Feld 'locname' aus dem Header der entsprechenden
+stammtisch_*.md-Datei aus website.git/www übereinstimmen!
 
 Bei Erfolg gibt der Befehl nichts aus.`,
 	Flag:         flag.NewFlagSet("location", flag.ExitOnError),
