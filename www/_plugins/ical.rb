@@ -94,7 +94,7 @@ module Jekyll
 					e.dtend       = DateTime.parse(tuple['date'] + ' 23:00')
 					e.summary     = topic
 					e.description = desc.strip
-					e.organizer   = 'ccchd@ccchd.de'
+					e.organizer   = 'treff@noname-ev.de'
 					e.location    = location
 					e.status      = status
 					e.uid         = "chaos-#{tuple['date']}@noname-ev.de"
