@@ -22,7 +22,7 @@ kann.<br style="clear:both"/><br/>
 
 <span style="float: left; width: 7rem; font-size: 2rem;text-align: center; vertical-align: middle; line-height: 2rem; margin-right: 1rem">✉</span>
 Falls dir IRC nicht liegt, haben wir auch eine
-[Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/ccchd), bei
+[Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/treff), bei
 der du dich anmelden kannst.
 
 <a data-no-turbolink href="https://www.noname-ev.de/w/Kommunikationskan%C3%A4le">Mehr Details finden sich im Wiki</a>.
@@ -55,7 +55,7 @@ Telefon: <a href="tel:004962217276066">+49 6221 7276066</a>
 (Bitte die obige Mail-Adresse und Telefonnummer nur für Fragen zum Verein und
 der Webseite verwenden. Für alle andere Fragen (wie zum Beispiel zum Treff)
 gibt es die [Mailingliste]
-(https://eris.noname-ev.de/cgi-bin/mailman/listinfo/ccchd).)
+(https://eris.noname-ev.de/cgi-bin/mailman/listinfo/treff).)
 
 ##### Haftung für Inhalte
 
