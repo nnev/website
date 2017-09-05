@@ -35,7 +35,7 @@ var (
 
 func init() {
 	cmdAnnounce.Run = RunAnnounce
-	cmdAnnounce.Flag.StringVar(&targetmailaddr, "address", "ccchd@ccchd.de", "Mailadresse, an die Ankündigungen gehen sollen.")
+	cmdAnnounce.Flag.StringVar(&targetmailaddr, "address", "treff@noname-ev.de", "Mailadresse, an die Ankündigungen gehen sollen.")
 	cmdAnnounce.Flag.BoolVar(&confirmAnnounce, "confirm", false, "Frage nach Bestätigung bevor die Mail gesendet wird")
 }
 
