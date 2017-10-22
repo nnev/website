@@ -1,7 +1,7 @@
 ## Setup
 
 ### install docker
-Installation instructions for [debian/linux](https://docs.docker.com/engine/installation/linux/docker-ce/debian/), [macOS](https://docs.docker.com/docker-for-mac/install/) and [windows](https://docs.docker.com/docker-for-windows/install/) can be found on the docker website. For arch/linux, use `pacman -S docker`.
+Installation instructions for [debian/linux](https://docs.docker.com/engine/installation/linux/docker-ce/debian/), [macOS](https://docs.docker.com/docker-for-mac/install/) and [windows](https://docs.docker.com/docker-for-windows/install/) can be found on the docker website. For Arch Linux, use `pacman -S docker`.
 
 ### start postgresql
 ```
