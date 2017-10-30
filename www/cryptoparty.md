@@ -74,7 +74,7 @@ Bei der Durchführung der Veranstaltungen unterstützen uns freundlicherweise di
 
 # Ähnliche Veranstaltungen in der Region
 
-Außer uns veranstaltet in der Rhein-Neckar-Region der [Chaos Computer Club Mannheim](https://www.ccc-mannheim.de) regelmäßige [Cryptoparties](https://www.ccc-mannheim.de/wiki/Cryptoparty).
+Außer uns veranstaltet in der Rhein-Neckar-Region der [Chaos Computer Club Mannheim](https://www.ccc-mannheim.de) regelmäßige [Cryptopartys](https://www.ccc-mannheim.de/wiki/Cryptoparty).
 
 In unregelmäßigen Abständen gibt es außerdem Cryptopartys im [RaumZeitLabor](https://raumzeitlabor.de/) in Mannheim.
 
