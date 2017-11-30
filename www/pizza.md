@@ -20,4 +20,4 @@ iframe {
 }
 </style>
 
-<iframe src="//pizza.noname-ev.de">Hi NoScript User. Du brauchst Iframes und JS für <b>pizza.noname-ev.de</b> und <b>pizza.de</b></iframe>
+<iframe src="//pizza.noname-ev.de">Hi NoScript User. Du brauchst Iframes und JS für <b>pizza.noname-ev.de</b>.</iframe>
