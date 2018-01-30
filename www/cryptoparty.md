@@ -18,11 +18,6 @@ Die Veranstaltungen sind kostenfrei und stehen jedem offen.
 Ebenfalls können Sie uns gerne ansprechen, wenn Sie eine Hörerschaft haben, die eines der unten aufgeführten Themen interessiert. Wir können schauen, ob wir einen entsprechenden Themenabend zusammen mit Ihnen veranstalten können.
 
 
-# nächste Termine
-
-Gegenwärtig sind von unserer Seite leider keine Termine in der nahen Zukunft geplant. Schauen Sie einfach später wieder vorbei, sobald wir von uns aus neue Termine veranstalten, werden diese hier veröffentlicht.
-
-
 # Unsere Themen
 
 * **Wie funktioniert das Internet?**<br>
@@ -45,6 +40,11 @@ Wir helfen bei der Einrichtung auf den Laptops und Smartphones der Teilnehmer. N
 
 * **Privatsphäre schützen**<br>
 Wir sprechen über Verschlüsselung eigener Dateien, Echtheitsprüfung von Software aus dem Netz und mehr über Privatsphäre-Einstellungen im Browser.
+
+
+# nächste Termine
+
+Gegenwärtig sind von unserer Seite leider keine Termine in der nahen Zukunft geplant. Schauen Sie einfach später wieder vorbei, sobald wir von uns aus neue Termine veranstalten, werden diese hier veröffentlicht.
 
 
 # Unser Material
