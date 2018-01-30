@@ -15,30 +15,37 @@ li {
 
 Der NoName e. V. organisiert im Mai 2017 wieder Themen­abende zu Privatsphäre und digitaler Selbstbestimmung. Wir erklären, auf welchem Weg und wo persönliche Daten anfallen. Wir zeigen, wie man die Kontrolle über Datenflüsse erhalten und mit einfachen Werkzeugen seine Schutzschilde gegen Datenkraken, Computerkriminelle und übergriffige Geheimdienste hochfah­ren kann. Wir erläutern Hintergründe, geben praktische Tipps und gehen auf gesellschaftliche Aspekte ein.
 Die Veranstaltungen sind kostenfrei und stehen jedem offen.
+Ebenfalls können Sie uns gerne ansprechen, wenn Sie eine Hörerschaft haben, die eines der unten aufgeführten Themen interessiert. Wir können schauen, ob wir einen entsprechenden Themenabend zusammen mit Ihnen veranstalten können.
 
 
-# Termine im Mai 2017
+# nächste Termine
+
+Gegenwärtig sind von unserer Seite leider keine Termine in der nahen Zukunft geplant. Schauen Sie einfach später wieder vorbei, sobald wir von uns aus neue Termine veranstalten, werden diese hier veröffentlicht.
+
+
+# Unsere Themen
+
+* **Wie funktioniert das Internet?**<br>
+Wir erklären in allgemeinverständlicher Form den technischen Unterbau, der das Internet zu dem macht, wie wir es heute erleben, von "Da fällt Internet aus der Steckdose" bis zum Unterbau der großen Internetdienste. Es sind keinerlei Vorkenntnisse erforderlich.
 
 * **Das Passwort-ABC**<br>
-Mi., 03.05., 18:30 Uhr, [Psychologisches Institut, Übungsraum B, Brunnengasse 1](https://www.openstreetmap.org/way/35692886)<br>
 Wir erklären, worauf es bei Passworten ankommt und wie man sie ohne Stress verwaltet.
 
+* **Datensicherung leicht gemacht**<br>
+Backups schützen vor Datenverlust, sei es durch Erpressungstrojaner, Hardwaredefekt oder Diebstahl.
+Wir zeigen Strategien, Daten zu sichern, damit im Fall der Fälle die Daten nicht mit weg sind.
+
 * **Spuren im Netz**<br>
-Mo., 08.05., 18:30 Uhr, [Makerspace im DAI, Sofienstr. 12](https://www.openstreetmap.org/way/140116664)<br>
-Mi., 10.05., 18:30 Uhr, [Dezernat 16, Seminarraum, Emil-Maier-Str. 16](https://www.openstreetmap.org/way/232688044)<br>
-Wir zeigen, wie unser Verhalten verfolgt wird und was man dagegen tun kann. Wir erklären in Kleingruppen und demonstrieren an unseren Computern.
+Wir zeigen, wie unser Verhalten im Internet verfolgt wird, was man dagegen tun kann und wie man einen Teil seiner Anonymität im Internet doch bewahren kann.
+Wir erklären in Kleingruppen und demonstrieren an unseren Computern.
 
 * **E-Mail-Verschlüsselung**<br>
-Mo., 15.05., 18:30 Uhr, [Mathematikon, Konferenzraum 5/104, Im Neuenheimer Feld 205](https://www.openstreetmap.org/relation/5762624)<br>
-E-Mails sind wie Postkarten. Wir erklären, wie ihr Mails wirksam verschlüsselt und helfen bei der Einrichtung auf euren Laptops und Smartphones. Workshop. Wenn möglich, Laptop mitbringen.
+E-Mails sind wie Postkarten. Wir erklären, wie man Mails wirksam verschlüsselt, sodass wirklich nur noch die Leute sie lesen, die sie auch lesen sollen.
+Wir helfen bei der Einrichtung auf den Laptops und Smartphones der Teilnehmer. Normalerweise im Workshop-Format, wenn möglich sollen die Teilnehmer daher Laptops mitbringen.
 
 * **Privatsphäre schützen**<br>
-Mi. 17.05., 18:30 Uhr, [Mathematikon, Konferenzraum 5/104, Im Neuenheimer Feld 205](https://www.openstreetmap.org/relation/5762624)<br>
 Wir sprechen über Verschlüsselung eigener Dateien, Echtheitsprüfung von Software aus dem Netz und mehr über Privatsphäre-Einstellungen im Browser.
 
-* **Diskussionsrunde: Was ist Netzpolitik?**<br>
-Mo., 22.05., 18:30 Uhr, [Psychologisches Institut, Übungsraum C, Brunnengasse 1](https://www.openstreetmap.org/way/35692886)<br>
-Wir diskutieren mit euch über aktuelle Themen, z. B. Netzneutralität, Datenschutz und Meinungsfreiheit im Netz.
 
 # Wegbeschreibungen
 
