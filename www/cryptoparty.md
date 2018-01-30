@@ -47,24 +47,9 @@ Wir helfen bei der Einrichtung auf den Laptops und Smartphones der Teilnehmer. N
 Wir sprechen über Verschlüsselung eigener Dateien, Echtheitsprüfung von Software aus dem Netz und mehr über Privatsphäre-Einstellungen im Browser.
 
 
-# Wegbeschreibungen
-
-* **Psychologisches Institut, Übungsräume B und C**<br>
-Die Räume befinden sich im mittleren Gebäude, hinter dem Gebäude an der Hauptstraße. Von der Brunnengasse geht man durch den Innenhof mit den Fahrradstellplätzen in das dem Neckar zugewandte Gebäude. Der Seminarraum ist im Erdgeschoss rechts. Die nächsten Bus- bzw. Straßenbahn-Haltestellen sind St. Vincentius Krankenhaus und Bismarckplatz. → [Karte](https://www.openstreetmap.org/way/35692886).
-
-* **Makerspace im DAI**<br>
-Der Eingang zum DAI ist seitlich im Hof (auf der Nordseite des DAI), gegenüber der Packstation. Der Makerspace befindet sich im Keller. Die nächsten Straßenbahn-Haltestellen sind Bismarckplatz und Seegarten. → [Karte](https://www.openstreetmap.org/way/140116664).
-
-* **Dezernat 16**<br>
-Der Seminarraum befindet sich im 1. Stock direkt über dem Café Leitstelle. Der Eingang ist seitlich am Gebäude, von vor der Leitstelle aus gesehen rechts, d. h. von Norden. Die nächsten Straßenbahn-Haltestellen sind Czernybrücke, Betriebshof und Hauptbahnhof. → [Karte](https://www.openstreetmap.org/way/232688044).
-
-* **Mathematikon**<br>
-Der Konferenzraum befindet sich im 5. Stock im vorderen (südlichen) Teil von Gebäudeteil A am Klaus-Tschira-Platz, senkrecht oberhalb des Eingangsbereichs. Die nächste Straßenbahn-Haltestelle ist Bunsengymnasium. → [Karte](https://www.openstreetmap.org/relation/5762624).
-
-
 # Unser Material
 
-## Spuren im Netz, 08.05. und 10.05.2017
+## Spuren im Netz
 * Handout zu [Spurenvermeidung im Browser](cryptoparty/spurenvermeidung_browser.pdf)
 * Handout zu [Alternative Dienste](cryptoparty/alternative_dienste.pdf)
 
