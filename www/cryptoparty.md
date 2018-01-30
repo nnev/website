@@ -61,7 +61,7 @@ Mit Fragen zur Veranstaltung erreichst Du uns unter [crypto@noname-ev.de](mailto
 
 # Unterstützer
 
-Bei der Durchführung der Veranstaltungen unterstützen uns freundlicherweise die [HGS MathComp](http://www.mathcomp.uni-heidelberg.de/), die [AG Netzpolitik](https://www.uni-heidelberg.de/politikwissenschaften/forschung/netzpolitik/ag/index.html) des Instituts für Politikwissenschaften sowie das [Psychologische Institut](http://www.psychologie.uni-heidelberg.de/) der Universität Heidelberg. Vielen Dank!
+Bei der Durchführung der Veranstaltungen unterstützen und unterstützten uns in Vergangenheit und Gegenwart freundlicherweise die [HGS MathComp](http://www.mathcomp.uni-heidelberg.de/), die [AG Netzpolitik](https://www.uni-heidelberg.de/politikwissenschaften/forschung/netzpolitik/ag/index.html) des Instituts für Politikwissenschaften sowie das [Psychologische Institut](http://www.psychologie.uni-heidelberg.de/) sowie das [Kirchhoff-Institut für Physik](https://kip.uni-heidelberg.de) der Universität Heidelberg. Vielen Dank!
 
 
 # Ähnliche Veranstaltungen in der Region
