@@ -13,7 +13,7 @@ li {
 # Digitale Selbstverteidigung
 ## Schütz Deine Privatsphäre – Cryptoparty Heidelberg
 
-Der NoName e. V. organisiert im Mai 2017 wieder Themen­abende zu Privatsphäre und digitaler Selbstbestimmung. Wir erklären, auf welchem Weg und wo persönliche Daten anfallen. Wir zeigen, wie man die Kontrolle über Datenflüsse erhalten und mit einfachen Werkzeugen seine Schutzschilde gegen Datenkraken, Computerkriminelle und übergriffige Geheimdienste hochfah­ren kann. Wir erläutern Hintergründe, geben praktische Tipps und gehen auf gesellschaftliche Aspekte ein.
+Der NoName e. V. organisiert regelmäßig Themen­abende zu Privatsphäre und digitaler Selbstbestimmung. Wir erklären, auf welchem Weg und wo persönliche Daten anfallen. Wir zeigen, wie man die Kontrolle über Datenflüsse erhalten und mit einfachen Werkzeugen seine Schutzschilde gegen Datenkraken, Computerkriminelle und übergriffige Geheimdienste hochfah­ren kann. Wir erläutern Hintergründe, geben praktische Tipps und gehen auf gesellschaftliche Aspekte ein.
 Die Veranstaltungen sind kostenfrei und stehen jedem offen.
 Ebenfalls können Sie uns gerne ansprechen, wenn Sie eine Hörerschaft haben, die eines der unten aufgeführten Themen interessiert. Wir können schauen, ob wir einen entsprechenden Themenabend zusammen mit Ihnen veranstalten können.
 
