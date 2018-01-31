@@ -45,17 +45,15 @@ Verantwortlicher Dienstebetreiber:
 
 <address>
 NoName e.V. (VR 333127, Amtsgericht Mannheim)
-Johannes Visintini
-Ringstraße 39
-69115 Heidelberg
+c/o Johannes Visintini
+Heinrich-Fuchs-Straße 108
+69126 Heidelberg
 E-Mail: <img src="img/vorstand_mail.png" title="noname at joker234 dot de" style="vertical-align: text-bottom">
-Telefon: <a href="tel:004962217276066">+49 6221 7276066</a>
 </address>
 
-(Bitte die obige Mail-Adresse und Telefonnummer nur für Fragen zum Verein und
-der Webseite verwenden. Für alle andere Fragen (wie zum Beispiel zum Treff)
-gibt es die [Mailingliste]
-(https://eris.noname-ev.de/cgi-bin/mailman/listinfo/treff).)
+(Bitte die obige Mail-Adresse nur für Fragen zum Verein und der Webseite
+verwenden. Für alle andere Fragen (wie zum Beispiel zum Treff) gibt es die
+[Mailingliste] (https://eris.noname-ev.de/cgi-bin/mailman/listinfo/treff).)
 
 ##### Haftung für Inhalte
 
