@@ -15,7 +15,7 @@ li {
 
 Der NoName e. V. organisiert regelmäßig Themen­abende zu Privatsphäre und digitaler Selbstbestimmung. Wir erklären, auf welchem Weg und wo persönliche Daten anfallen. Wir zeigen, wie man die Kontrolle über Datenflüsse erhalten und mit einfachen Werkzeugen seine Schutzschilde gegen Datenkraken, Computerkriminelle und übergriffige Geheimdienste hochfah­ren kann. Wir erläutern Hintergründe, geben praktische Tipps und gehen auf gesellschaftliche Aspekte ein.
 Die Veranstaltungen sind kostenfrei und stehen jedem offen.
-Ebenfalls können Sie uns gerne ansprechen, wenn Sie eine Hörerschaft haben, die eines der unten aufgeführten Themen interessiert. Wir können schauen, ob wir einen entsprechenden Themenabend zusammen mit Ihnen veranstalten können.
+Ebenfalls kannst Du uns gerne ansprechen, wenn Du eine Hörerschaft hast, die eines der unten aufgeführten Themen interessiert. Wir können schauen, ob wir einen entsprechenden Themenabend zusammen mit Euch veranstalten können.
 
 
 # Unsere Themen
@@ -42,7 +42,7 @@ Wir helfen bei der Einrichtung auf den Laptops und Smartphones der Teilnehmer. N
 Wir sprechen über Verschlüsselung eigener Dateien, Echtheitsprüfung von Software aus dem Netz und mehr über Privatsphäre-Einstellungen im Browser.
 
 
-# nächste Termine
+# Nächste Termine
 
 Gegenwärtig sind von unserer Seite leider keine Termine in der nahen Zukunft geplant. Schauen Sie einfach später wieder vorbei, sobald wir von uns aus neue Termine veranstalten, werden diese hier veröffentlicht.
 
@@ -50,8 +50,8 @@ Gegenwärtig sind von unserer Seite leider keine Termine in der nahen Zukunft ge
 # Unser Material
 
 ## Spuren im Netz
-* Handout zu [Spurenvermeidung im Browser](cryptoparty/spurenvermeidung_browser.pdf)
-* Handout zu [Alternative Dienste](cryptoparty/alternative_dienste.pdf)
+* Handout zur [Spurenvermeidung im Browser](cryptoparty/spurenvermeidung_browser.pdf)
+* Handout zu [alternativen Diensten](cryptoparty/alternative_dienste.pdf)
 
 
 # Noch Fragen?
