@@ -44,7 +44,7 @@ Wir sprechen über Verschlüsselung eigener Dateien, Echtheitsprüfung von Softw
 
 # Nächste Termine
 
-Gegenwärtig sind von unserer Seite leider keine Termine in der nahen Zukunft geplant. Schauen Sie einfach später wieder vorbei, sobald wir von uns aus neue Termine veranstalten, werden diese hier veröffentlicht.
+Gegenwärtig sind von unserer Seite leider keine Termine in der nahen Zukunft geplant. Schau einfach später wieder vorbei, sobald wir von uns aus neue Termine veranstalten, werden diese hier veröffentlicht.
 
 
 # Unser Material
