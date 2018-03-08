@@ -19,6 +19,11 @@ Wo?
 Meistens [Mathematikon, Im Neuenheimer Feld 205, Seminarraum A](anfahrt.html).<br/>
 Jeden ersten Donnerstag im Monat ist [Stammtisch](stammtisch.html) (abwechselnde Gaststätte).
 
+Neugierig?
+===
+
+Komm einfach vorbei! Der Treff ist offen für alle, neue Gesichter sind immer gerne gesehen.
+
 Nächstes Treffen
 ===
 
