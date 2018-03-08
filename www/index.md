@@ -24,6 +24,11 @@ Nächstes Treffen
 
 {% assign termin = page.termine | first %}
 
+Neugierig?
+===
+
+Komm einfach vorbei, der Treff ist offen für alle, neue Gesichter sind immer gerne gesehen!
+
 <p itemscope itemtype="http://data-vocabulary.org/Event">
 	<time itemprop="startDate" datetime="{{termin.date}}T19:00"><b>{{ termin.date | escape }}</b> um 19 Uhr</time><br/>
 	{% if termin.override != "" %}
