@@ -53,7 +53,7 @@ Sicherstellung der Sicherheit unserer informationstechnischen Systeme.
 
 ### Dauer der Speicherung
 Die Daten werden gelöscht, sobald sie für die Erreichung des Zweckes ihrer
-Erhebung nicht mehr erforderrlich sind. Im Falle der Erfassung der Daten zur
+Erhebung nicht mehr erforderlich sind. Im Falle der Erfassung der Daten zur
 Bereitstellung der Website ist dies der Fall, wenn die jeweilige Sitzung
 beendet ist.
 
@@ -61,11 +61,11 @@ Im Fall der Speicherung der Daten in Logfiles ist dies nach spätestens sieben
 Tagen der Fall. Eine darüberhinausgehende Speicherung findet nicht statt.
 
 ### Betroffenenrechte
-Nach Maßgabe von Art. 15 DSGVO haben Sie das Recht, Auskunft über die zu Ihrere
+Nach Maßgabe von Art. 15 DSGVO haben Sie das Recht, Auskunft über die zu Ihrer
 Person gespeicherten Daten einschließlich eventueller Empfänger und der
 geplanten Speicherdauer zu erhalten. Sollten unrichtige personenbezogene Daten
 verarbeitet werden, steht Ihnen gemäß Art. 16 DSGVO ein Recht auf Berichtigung
-zu. Liegen die gesetzlichen Voraussetzungen vor, so können Sie die Löschung
+zu. Liegen die gesetzlichen Voraussetzungen vor, können Sie die Löschung
 oder Einschränkung der Verarbeitung verlangen sowie Widerspruch gegen die
 Verarbeitung einlegen (Art. 17, 18 und 21 DSGVO).
 
