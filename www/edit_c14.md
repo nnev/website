@@ -48,7 +48,7 @@ title: c¼h editieren
 		document.getElementById("links").appendChild(kind);
 		document.getElementById("links").appendChild(url);
 		document.getElementById("links").appendChild(document.createElement("br"));
- 	}
+	}
 	</script>
 
 	<a class="button" onclick="addField()" > Informationen/Links hinzufügen</a>
@@ -64,6 +64,14 @@ title: c¼h editieren
 
 	<p>Captcha: Gebe hier "NoName e.V." ein:<br>
 	<input type="text" placeholder="NoName e.V." id="captcha" name="captcha" required="required" /></p>
+
+	<p>Mit dem Absenden dieses Formulars erklären Sie sich damit
+	einverstanden, dass die oben angegebenen Daten auf dem Webserver
+	gespeichert und auf der Webseite veröffentlicht werden. Es werden keine
+	weiteren Daten im zu den eingegebenen gespeichert in Bezug gesetzt.
+	Weitere Informationen zum Datenschutz, Ihren Widerspruchs- und
+	Auskunftsrechten und Ansprechpartner finden Sie in der
+	<a href="datenschutzerklaerung.html">Datenschutzerklärung</a>.</p>
 
 	<input type="submit" value="c¼h speichern" />
 	((if ge .Id 0))

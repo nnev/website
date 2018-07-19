@@ -48,6 +48,15 @@ nochmal hier auf diese Seite, bevor du zu Hause losläufst!
 	<label for="kommentar">Kommentar</label>
 	<input type="text" placeholder="Kommentar (Optional)" id="kommentar" name="kommentar" value="<<.Kommentar>>" /><br>
 
+        <p>Mit dem Absenden dieses Formulars erklären Sie sich damit
+        einverstanden, dass die oben angegebenen Daten auf dem Webserver
+        gespeichert und auf der Webseite veröffentlicht werden. Die Daten
+        werden spätestens bis zum 14. jeden Monats gelöscht. Es werden keine
+        weiteren Daten zu den Eingegebenen in Bezug gesetzt. Weitere
+        Informationen zum Datenschutz, Ihren Widerspruchs- und Auskunftsrechten
+        und Ansprechpartner finden Sie in der
+	<a href="datenschutzerklaerung.html">Datenschutzerklärung</a>.</p>
+
 	<input type="submit" value="Yarp" name="kommt"/>
 	<input type="submit" value="Narp" name="kommt"/>
 </form>
