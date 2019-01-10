@@ -30,7 +30,7 @@ der du dich anmelden kannst.
 
 
 <span style="float: left; width: 7rem; font-size: 2rem;text-align: center; vertical-align: middle; line-height: 2rem; margin-right: 1rem">&#9742;</span>
-Während dem Chaostreff haben wir auch ein Handy, unter dem du uns erreichen kannst (vor allem wenn die Tür zu ist): [+49&nbsp;1579&nbsp;2307561](tel:004915792307561)
+Während des Chaostreffs haben wir auch ein Handy, unter dem du uns erreichen kannst (vor allem wenn die Tür zu ist): [+49&nbsp;1579&nbsp;2307561](tel:004915792307561)
 
 
 <div style="height: 3em"></div>
