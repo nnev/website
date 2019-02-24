@@ -18,7 +18,7 @@ module Jekyll
 		end
 
 		def real(site)
-			conn = PGconn.open(:dbname => 'nnev')
+			conn = PG.connect(:dbname => 'nnev')
 			res = conn.exec('SELECT stammtisch, override, location, termine.date AS date, topic, abstract, vortraege.id AS c14h_id FROM termine LEFT JOIN vortraege ON termine.date = vortraege.date WHERE termine.date >= CURRENT_DATE ORDER BY termine.date LIMIT 4')
 			termine = []
 			res.each do |tuple|
