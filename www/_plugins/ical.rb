@@ -34,7 +34,7 @@ module Jekyll
 				t.tzid = 'Europe/Berlin'
 			end
 
-			conn = PGconn.open(:dbname => 'nnev')
+			conn = PG.connect(:dbname => 'nnev')
 			res = conn.exec(
 				<<-SQL
 				SELECT stammtisch, override, override_long, location, termine.date AS date, topic, abstract, speaker, vortraege.id AS c14h_id
