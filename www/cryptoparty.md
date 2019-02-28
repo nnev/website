@@ -52,6 +52,7 @@ Gegenwärtig sind von unserer Seite leider keine Termine in der nahen Zukunft ge
 ## Spuren im Netz
 * Handout zur [Spurenvermeidung im Browser](cryptoparty/spurenvermeidung_browser.pdf)
 * Handout zu [alternativen Diensten](cryptoparty/alternative_dienste.pdf)
+* Handout zu [Passwörtern](cryptoparty/passwoerter.pdf)
 
 
 # Noch Fragen?
