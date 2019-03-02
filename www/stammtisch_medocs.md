@@ -5,11 +5,11 @@ title:    "Stammtisch: Medocs"
 locname:      Medocs
 phone:        06221 20468
 site_url:     http://www.medocs-cafe.de/
+menu_url:     http://www.medocs-cafe.de/download/karte-oktober2018.pdf
 
 address:      Sofienstraße 7b,  69115 Heidelberg
 address_desc: "Haltestelle: Bismarckplatz"
 
-49.4103065, 8.6935009
 lat:          49.4103065
 lon:          8.6935009
 map_lat:      49.4103065
