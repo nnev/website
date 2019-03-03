@@ -16,7 +16,6 @@ lon:          8.68814
 map_lat:      49.41247
 map_lon:      8.68814
 map_zoom:     17
-gmaps_url:    https://maps.google.com/maps?q=neckarwiese+heidelberg
 ---
 Statt uns in verrauchten Kneipen und abgeranzten, hygienisch zweifelhaften
 Lokalen rumzutreiben, grillen wir auf der Neckarwiese.  Da brauchen wir nicht

@@ -16,7 +16,6 @@ lon:          8.68684
 map_lat:      49.40525
 map_lon:      8.68530
 map_zoom:     17
-gmaps_url:    https://maps.google.com/maps?q=kleinschmidtstra%C3%9Fe+12
 ---
 Werbetexter müssen ja auch irgendwo honoriert werden. Zum Beispiel hier: "Das
 Restaurant Krokodil in Heidelberg bietet traditionelle, gutbürgerliche Küche mit

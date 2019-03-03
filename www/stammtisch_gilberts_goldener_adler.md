@@ -15,7 +15,6 @@ lon:          8.689018785953522
 map_lat:      49.426
 map_lon:      8.68857353925705
 map_zoom:     16
-gmaps_url:    https://maps.google.de/maps?q=Handschuhsheimer+Landstraße+96,+69121+Heidelberg
 ---
 Laut Selbstbeschreibung „gut bürgerliche Küche“. Haben ziemlich geilen
 Nachtisch-Flammkuchen und angeblich bis 1 Uhr offen.

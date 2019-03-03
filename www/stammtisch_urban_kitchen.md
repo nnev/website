@@ -15,7 +15,6 @@ lon:          8.6883819
 map_lat:      49.407
 map_lon:      8.688
 map_zoom:     16
-gmaps_url:    https://goo.gl/maps/K9REzuUCdP62
 ---
 Sucht man ein hippes Lokal in Heidelberg, dann stößt man auf die Urban Kitchen.
 Da das Lokal auch bis 1 Uhr geöffnet hat, kann der Stammtisch also auch

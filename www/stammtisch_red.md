@@ -16,7 +16,6 @@ lon:          8.68792
 map_lat:      49.40746
 map_lon:      8.68792
 map_zoom:     17
-gmaps_url:    https://maps.google.com/maps?q=red%20die%20grüne%20küche
 ---
 "Buffet? Jeden Tag in der Kantine… Vegetarisch? Vegan? Dieser Hipster-Scheiß,
 bleib weg damit!" - kommt bekannt vor? Dann ist das Red - die grüne Küche
