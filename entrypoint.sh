@@ -8,6 +8,6 @@ go install github.com/nnev/website/...
 cd /tmp/go/src/github.com/nnev/website/www
 createdb nnev || true
 ./_createdb.sh
-termine -hook=/build_website.sh -connect="dbname=nnev host=localhost sslmode=disable" next 4
+termine -hook=/build_website.sh -connect="dbname=nnev host=$PGHOST sslmode=disable" next 4
 jekyll build
 exec /usr/bin/supervisord -n -c /etc/supervisor/supervisord.conf
