@@ -5,17 +5,18 @@
 
 ### use the Makefile
 
-  * run `make`
-  * browse to [`127.0.0.1:80`](http://127.0.0.1:80) or issue `make open` beforehand
-  * when you are done, `Ctrl-C` out and rerun `make` to update the testinstance with your new changes
+  * make sure there are no running services on the port 8080, otherwise change the port in the `Makefile`
+  * run `make` (with docker privileges, e.g. as root)
+  * browse to [`127.0.0.1:8080`](http://127.0.0.1:8080) or issue `make open` beforehand
+  * when you are done, `Ctrl-C` out and rerun `make` to update the test instance with your new changes
 
 After testing your changes, `make clean` provides a convenient way to clean up after you, stopping and removing all the containers you have created in the process of testing.
-If you want to get rid of remainers of the process: `make clean` removes all containers, `make purge` removes all containers including all images (be aware that they need to be redownloaded and such next time you test the website, so you probably usually do not want to issue a `make purge` unless you are in severe need of disk space).
+If you want to get rid of remainders of the process: `make clean` removes all containers, `make purge` removes all containers including all images (be aware that they need to be redownloaded and such next time you test the website, so you probably usually do not want to issue a `make purge` unless you are in severe need of disk space).
 
-### run testenvironement manually
+### run test environment manually
 
-  * start postgresql: `docker run -p 127.0.0.1:5432:5432 postgres`
+  * start postgresql: `docker run -d --name=nnev-postgres postgres`
   * build website: `docker build -t nnev-website .`
-  * run website: `docker run --name=nnev-website --net=host -p 127.0.0.1:80:80 -v $PWD:/usr/src/ nnev-website`
-  * browse to [`127.0.0.1:80`](http://127.0.0.1:80) to inspect your state of the webpage
+  * run website: `docker run --name=nnev-website -p 127.0.0.1:8080:80 --link nnev-postgres:postgres -v $PWD:/usr/src/ nnev-website`
+  * browse to [`127.0.0.1:8080`](http://127.0.0.1:8080) to inspect your state of the webpage
   * restart: `Ctrl-C` out and run `docker kill nnev-website; docker rm nnev-website`, then goto `run website`
