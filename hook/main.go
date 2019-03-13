@@ -114,7 +114,7 @@ func HandleHook(r http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	l.Println("Signature is %q", req.Header.Get("X-Hub-Signature"))
+	l.Printf("Signature is %q\n", req.Header.Get("X-Hub-Signature"))
 
 	// github signs their events, we need to verify them.
 	v, err := newVerifier(req, secret)

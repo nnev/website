@@ -136,7 +136,7 @@ func handleGet(res http.ResponseWriter, req *http.Request) {
 
 	id, err := strconv.Atoi(idStr)
 	if err != nil {
-		writeError(http.StatusBadRequest, res, "Could not parse \"%d\" as int", idStr)
+		writeError(http.StatusBadRequest, res, "Could not parse \"%s\" as int", idStr)
 		return
 	}
 	if id <= 0 {
@@ -288,7 +288,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 			return
 		}
 
-		vortrag.Password = sql.NullString{newPw, true}
+		vortrag.Password = sql.NullString{String: newPw, Valid: true}
 	}
 
 	err = vortrag.Put()
