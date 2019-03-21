@@ -127,7 +127,7 @@ func ExpectNArg(fs *flag.FlagSet, n int) error {
 }
 
 func main() {
-	websitehook := flag.String("hook", "/usr/bin/update-website", "Hook zum neu Bauen der Website")
+	websitehook := flag.String("hook", "/usr/local/bin/update-website", "Hook zum neu Bauen der Website")
 	helpShort := flag.Bool("h", false, "")
 	help := flag.Bool("help", false, "Zeige Hilfe")
 

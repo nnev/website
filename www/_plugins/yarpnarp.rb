@@ -18,7 +18,7 @@ module Jekyll
 		end
 
 		def real(site)
-			conn = PGconn.open(:dbname => 'nnev')
+			conn = PG.connect(:dbname => 'nnev')
 
 			yarp = conn.exec('SELECT nick, kommentar FROM zusagen WHERE kommt = TRUE ORDER BY nick ASC').to_a
       narp = conn.exec('SELECT nick, kommentar FROM zusagen WHERE kommt = FALSE ORDER BY nick ASC').to_a

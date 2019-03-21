@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Creates and fills a production database (on eris) with _schema.sql and _data.sql
-sed 's/mero/postgres/g' _schema.sql | psql nnev
+psql nnev < _schema.sql
 psql nnev < _data.sql
 
 echo 'GRANT SELECT ON vortraege TO PUBLIC;' | psql nnev

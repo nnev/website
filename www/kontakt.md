@@ -22,7 +22,7 @@ kann.<br style="clear:both"/><br/>
 
 <span style="float: left; width: 7rem; font-size: 2rem;text-align: center; vertical-align: middle; line-height: 2rem; margin-right: 1rem">✉</span>
 Falls dir IRC nicht liegt, haben wir auch eine
-[Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/ccchd), bei
+[Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/treff), bei
 der du dich anmelden kannst.
 
 <a data-no-turbolink href="https://www.noname-ev.de/w/Kommunikationskan%C3%A4le">Mehr Details finden sich im Wiki</a>.
@@ -30,7 +30,7 @@ der du dich anmelden kannst.
 
 
 <span style="float: left; width: 7rem; font-size: 2rem;text-align: center; vertical-align: middle; line-height: 2rem; margin-right: 1rem">&#9742;</span>
-Während dem Chaostreff haben wir auch ein Handy, unter dem du uns erreichen kannst (vor allem wenn die Tür zu ist): [+49&nbsp;1579&nbsp;2307561](tel:004915792307561)
+Während des Chaostreffs haben wir auch ein Handy, unter dem du uns erreichen kannst (vor allem wenn die Tür zu ist): [+49&nbsp;1579&nbsp;2307561](tel:004915792307561)
 
 
 <div style="height: 3em"></div>
@@ -45,17 +45,15 @@ Verantwortlicher Dienstebetreiber:
 
 <address>
 NoName e.V. (VR 333127, Amtsgericht Mannheim)
-Johannes Visintini
-Ringstraße 39
-69115 Heidelberg
+c/o Johannes Visintini
+Heinrich-Fuchs-Straße 108
+69126 Heidelberg
 E-Mail: <img src="img/vorstand_mail.png" title="noname at joker234 dot de" style="vertical-align: text-bottom">
-Telefon: <a href="tel:004962217276066">+49 6221 7276066</a>
 </address>
 
-(Bitte die obige Mail-Adresse und Telefonnummer nur für Fragen zum Verein und
-der Webseite verwenden. Für alle andere Fragen (wie zum Beispiel zum Treff)
-gibt es die [Mailingliste]
-(https://eris.noname-ev.de/cgi-bin/mailman/listinfo/ccchd).)
+(Bitte die obige Mail-Adresse nur für Fragen zum Verein und der Webseite
+verwenden. Für alle andere Fragen (wie zum Beispiel zum Treff) gibt es die
+[Mailingliste] (https://eris.noname-ev.de/cgi-bin/mailman/listinfo/treff).)
 
 ##### Haftung für Inhalte
 

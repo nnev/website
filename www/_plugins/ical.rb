@@ -34,7 +34,7 @@ module Jekyll
 				t.tzid = 'Europe/Berlin'
 			end
 
-			conn = PGconn.open(:dbname => 'nnev')
+			conn = PG.connect(:dbname => 'nnev')
 			res = conn.exec(
 				<<-SQL
 				SELECT stammtisch, override, override_long, location, termine.date AS date, topic, abstract, speaker, vortraege.id AS c14h_id
@@ -94,7 +94,7 @@ module Jekyll
 					e.dtend       = DateTime.parse(tuple['date'] + ' 23:00')
 					e.summary     = topic
 					e.description = desc.strip
-					e.organizer   = 'ccchd@ccchd.de'
+					e.organizer   = 'treff@noname-ev.de'
 					e.location    = location
 					e.status      = status
 					e.uid         = "chaos-#{tuple['date']}@noname-ev.de"

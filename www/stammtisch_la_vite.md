@@ -16,6 +16,5 @@ lon:          8.69003
 map_lat:      49.40937
 map_lon:      8.69078
 map_zoom:     17
-gmaps_url:    https://maps.google.com/maps?q=bergheimer+stra%C3%9Fe+23
 ---
 Der Klassiker für AfterPartyMeetings in Heidelberg bietet leckere Speisen in gemütlicher Atmosphäre auch für Studenten, die nicht geerbt haben.

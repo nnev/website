@@ -3,6 +3,7 @@ markdown: redcarpet
 highlighter: pygments
 
 url: "https://www.noname-ev.de"
+baseurl: ""
 
 treff_lat: 49.417433
 treff_lon: 8.675255

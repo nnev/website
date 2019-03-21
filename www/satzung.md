@@ -5,7 +5,7 @@ title: Satzung
 
 # Satzung
 
-Stand: 2016-12-08, siehe auch [Beitragsordnung](beitragsordnung.html)
+Stand: 2018-03-22, siehe auch [Beitragsordnung](beitragsordnung.html)
 
 
 # §1 Name, Sitz und Geschäftsjahr
@@ -131,15 +131,11 @@ Stand: 2016-12-08, siehe auch [Beitragsordnung](beitragsordnung.html)
 
 # §6 Mitgliedsbeiträge
 
-Für die Höhe der jährlichen Mitgliederbeiträge, Förderbeiträge,
-Aufnahmegebühren, Umlagen, ist die jeweils gültige Beitragsordnung maßgebend,
-die von der Mitgliederversammlung beschlossen wird. Bei einer Änderung der
-Beitragsordnung erhalten alle Mitglieder ein exklusives Austrittsrecht, das
-innerhalb einer Frist von 30 Tagen nach Bekanntgabe der Änderung geltend
-gemacht werden muss.
-
-Die Mitgliedsbeiträge sind zum 15. eines jeden Monats zu entrichten. Die
-Mitgliedsbeiträge sind in Form von Geldzahlung zu leisten.
+Für die Höhe der jährlichen Mitgliederbeiträge und die Zahlungsweise ist die
+jeweils gültige Beitragsordnung maßgebend, die von der Mitgliederversammlung
+beschlossen wird. Bei einer Änderung der Beitragsordnung erhalten alle
+Mitglieder ein außerordentliches Austrittsrecht, das innerhalb einer Frist von
+30 Tagen nach Bekanntgabe der Änderung geltend gemacht werden muss.
 
 
 

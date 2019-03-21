@@ -1,16 +1,24 @@
 language: go
 
 go:
-    - 1.5
-    - 1.3.3
+    - 1.11 # Debian Testing
+
+services:
+    - docker
 
 install:
     - go get -v github.com/nnev/website/termine
     - go get -v github.com/nnev/website/c14h
     - go get -v github.com/nnev/website/yarpnarp
+    - make build
 
 script:
+    - go vet ./...
+    - go build -o termine_testbuild -v github.com/nnev/website/termine
+    - go build -o c14h_testbuild -v github.com/nnev/website/c14h
+    - go build -o yarpnarp_testbuild -v github.com/nnev/website/yarpnarp
     - go test ./...
+    - make travis-run
 
 notifications:
     email: false

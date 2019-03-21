@@ -20,10 +20,8 @@
 	</script>
 
 	<p>
-		{% if page.gmaps_url %}
-			<a href="{{page.gmaps_url | escape}}">Gaststätte in Google Maps anzeigen</a><br/>
-		{% endif %}
-		<br/><a href="http://fahrplanauskunft.vrn.de/vrn/XSLT_TRIP_REQUEST2?language=de&sessionID=0&name_destination={{page.address}}&type_destination=any&anyObjFilter_destination=8&locationServerActive=1">ÖPNV-Fahrplanauskunft</a><br/>
+		<a href="https://maps.openrouteservice.org/directions?a=null,null,{{page.lat}},{{page.lon}}">Routenplaner anzeigen</a><br/>
+		<a href="https://www.vrn.de/mng/#/XSLT_TRIP_REQUEST2?restriction=0&dest={{page.address}}&isDeparture=true">ÖPNV-Fahrplanauskunft</a><br/>
 		{% if page.phone %}
 			Telefon: <a href="tel://{{page.phone | escape}}" itemprop="tel">{{page.phone | escape}}</a><br/>
 		{% endif %}
