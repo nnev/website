@@ -45,10 +45,9 @@ Verantwortlicher Dienstebetreiber:
 
 <address>
 NoName e.V. (VR 333127, Amtsgericht Mannheim)
-c/o Johannes Visintini
 Heinrich-Fuchs-Straße 108
 69126 Heidelberg
-E-Mail: <img src="img/vorstand_mail.png" title="noname at joker234 dot de" style="vertical-align: text-bottom">
+E-Mail: <img src="img/vorstand_mail.png" title="vorstand at noname-ev dot de" style="vertical-align: text-bottom">
 </address>
 
 (Bitte die obige Mail-Adresse nur für Fragen zum Verein und der Webseite
