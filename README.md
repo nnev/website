@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/nnev/website.svg?branch=master)](https://travis-ci.com/nnev/website)
+
 ## Setup for testing the website locally
 
   * install docker: Installation instructions for [debian/linux](https://docs.docker.com/engine/installation/linux/docker-ce/debian/), [macOS](https://docs.docker.com/docker-for-mac/install/) and [windows](https://docs.docker.com/docker-for-windows/install/) can be found on the docker website. For Arch Linux, use `pacman -S docker`.
