@@ -33,6 +33,10 @@ Club Mate Cola, aber auch koffeinfreie Alternativen – und bestellen gemeinsam 
 einem lokalen Pizzadienst Essen. Um die Bestellung zu vereinfachen, haben
 wir ein [eigenes Bestellsystem](pizza.html).
 
+Die Pizza-Bestellung schicken wir pünktlich gegen 19:30 Uhr ab. Wenn du zum
+ersten mal kommst und mitbestellen möchtest, schau bitte, dass du bis 19:30 Uhr
+da bist!
+
 ### Chaos-Stammtisch
 Jeden ersten Donnerstag im Monat machen wir statt dem normalen Treff einen
 Stammtisch. Dann treffen wir uns nicht in unserem normalen Raum, sondern in
