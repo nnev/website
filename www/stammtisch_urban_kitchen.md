@@ -8,7 +8,7 @@ site_url:     https://urban-kitchen-heidelberg.de
 menu_url:     https://urban-kitchen-heidelberg.de/#page-karten/1
 
 address:      Poststraße 36/5, 69115 Heidelberg
-address_desc: "Die Urban Kitchen befindet sich im Alten Hallenbad, das sowohl Eingänge auf Seiten der Poststraße und der Bergheimer Straße hat. Haltestelle: Altes Hallenbad (Linien 22, 32, 34, 35)"
+address_desc: "Die Urban Kitchen befindet sich im Alten Hallenbad, das sowohl Eingänge auf Seiten der Poststraße und der Bergheimer Straße hat. Haltestelle: Altes Hallenbad (Linien 26, 32, 34, 35)"
 
 lat:          49.4077588
 lon:          8.6883819
