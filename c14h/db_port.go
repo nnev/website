@@ -15,7 +15,7 @@ import (
 var (
 	db      *sql.DB
 	driver  = flag.String("driver", "postgres", "The database driver to use")
-	connect = flag.String("connect", "dbname=nnev host=/var/run/postgresql sslmode=disable", "The connection string to use")
+	connect = flag.String("connect", "", "The connection string to use")
 )
 
 func openDB() (err error) {
