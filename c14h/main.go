@@ -88,6 +88,23 @@ func verifyCaptcha(req *http.Request) bool {
 	return req.FormValue("captcha") == "NoName e.V."
 }
 
+func verifyDate(date, dateFormat string, hasError bool) bool {
+	var dateLength = len(date)
+	var dateFormatLength = len(dateFormat)
+
+	// Verify if date is empty.
+	if (dateLength < 1) {
+		return true
+	}
+
+	// Verify if date and date format length have the same length.
+	if (! hasError && dateLength == dateFormatLength) {
+		return true
+	}
+
+	return false
+}
+
 func C14Handler(res http.ResponseWriter, req *http.Request) {
 	var err error
 	tpl, err = template.New("").Delims("((", "))").ParseFiles(*gettpl)
@@ -221,7 +238,13 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	date, _ := time.ParseInLocation("2006-01-02", dateStr, loc)
+	var dateFormat = "2006-01-02"
+	date, err := time.ParseInLocation(dateFormat, dateStr, loc)
+
+	if !verifyDate(dateStr, dateFormat, err != nil) {
+		writeError(http.StatusBadRequest, res, "Invalid date received (%s). Make sure the date provided matches the format (\"YYYY-mm-dd\") or is empty.", dateStr)
+		return
+	}
 
 	if !date.IsZero() && date.Weekday() != time.Thursday {
 		writeError(400, res, "The date is not a thursday, we currently (and for the forseeable future) don't have talks on non-thursdays.")
@@ -232,6 +255,7 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		writeError(400, res, "This is the first thursday of the month. Since we currently have our Stammtisch there, you can't give a talk.")
 		return
 	}
+
 
 	id, err := strconv.Atoi(idStr)
 	if err != nil {
