@@ -4,7 +4,7 @@
 
 	<b>Datum: {{ termin.date | escape }}</b> um 19 Uhr<br>
 	{% if termin.override != "" %}
-		{{ termin.override | escape | linkify }}<br>
+		{{ termin.override | escape | linkify }}
 	{% elsif termin.stammtisch %}
 		<a href="stammtisch.html">Stammtisch</a><br/>
 		<a href="yarpnarp.html">bitte zu/absagen</a><br/>
