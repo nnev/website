@@ -32,8 +32,8 @@ Nächstes Treffen
 <p itemscope itemtype="http://data-vocabulary.org/Event">
 	<time itemprop="startDate" datetime="{{termin.date}}T19:00"><b>{{ termin.date | escape }}</b> um 19 Uhr</time><br/>
 	{% if termin.override != "" %}
-		{{ termin.override | escape }}<br>
-		{{ termin.override_long | escape }}
+		{{ termin.override | escape | linkify }}<br>
+		{{ termin.override_long | markdownify }}
 	{% elsif termin.stammtisch %}
 		<b itemprop="summary">Chaos-Stammtisch</b> bei
 		{% for st in site.pages %}
