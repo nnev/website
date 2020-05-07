@@ -4,7 +4,7 @@ module Jekyll
   module LinkifyFilter
     def linkify(input)
       re = Regexp.new "(https://[^ ]+)", Regexp::MULTILINE
-      input.gsub re, '<a href="\1">\1</a>'
+      input.gsub re, '<a href="\1" data-no-turbolink>\1</a>'
     end
   end
 end
