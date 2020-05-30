@@ -228,7 +228,8 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	if !date.IsZero() && date.Day() < 8 {
+	// TODO: roll back to if !date.IsZero() && date.Day() < 8 { once Stammtisch is a thing again
+	if !date.IsZero() {
 		writeError(400, res, "This is the first thursday of the month. Since we currently have our Stammtisch there, you can't give a talk.")
 		return
 	}
