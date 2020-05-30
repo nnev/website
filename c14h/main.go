@@ -228,10 +228,11 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	if !date.IsZero() && date.Day() < 8 {
-		writeError(400, res, "This is the first thursday of the month. Since we currently have our Stammtisch there, you can't give a talk.")
-		return
-	}
+	// TODO: roll back once Stammtisch is a thing again
+	//if !date.IsZero() && date.Day() < 8 {
+	//	writeError(400, res, "This is the first thursday of the month. Since we currently have our Stammtisch there, you can't give a talk.")
+	//	return
+	//}
 
 	id, err := strconv.Atoi(idStr)
 	if err != nil {
