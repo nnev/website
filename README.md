@@ -5,7 +5,7 @@
   * install docker: Installation instructions for [debian/linux](https://docs.docker.com/engine/installation/linux/docker-ce/debian/), [macOS](https://docs.docker.com/docker-for-mac/install/) and [windows](https://docs.docker.com/docker-for-windows/install/) can be found on the docker website. For Arch Linux, use `pacman -S docker`.
   * start docker (usually `systemctl start docker.service` will suffice)
 
-### use the Makefile
+### use the Makefile carefuly
 
   * make sure there are no running services on the port 8080, otherwise change the port in the `Makefile`
   * run `make` (with docker privileges, e.g. as root)
