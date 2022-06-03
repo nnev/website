@@ -105,6 +105,11 @@ func handlePost(res http.ResponseWriter, req *http.Request) {
 	kommt := (req.FormValue("kommt") == "Yarp")
 	kommentar := req.FormValue("kommentar")
 
+	if req.FormValue("captcha") != "NoName e.V." {
+		writeError(http.StatusBadRequest, res, "Captcha muss ausgefüllt werden")
+		return
+	}
+
 	if nick == "" {
 		writeError(http.StatusBadRequest, res, "Nick darf nicht leer sein")
 		return
