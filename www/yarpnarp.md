@@ -48,6 +48,9 @@ nochmal hier auf diese Seite, bevor du zu Hause losläufst!
 	<label for="kommentar">Kommentar</label>
 	<input type="text" placeholder="Kommentar (Optional)" id="kommentar" name="kommentar" value="<<.Kommentar>>" /><br>
 
+	<label for="captcha">Captcha: Gebe hier "NoName e.V." ein:</label>
+	<input type="text" placeholder="NoName e.V." id="captcha" name="captcha" required="required" /><br>
+
 	<input type="submit" value="Yarp" name="kommt"/>
 	<input type="submit" value="Narp" name="kommt"/>
 </form>
