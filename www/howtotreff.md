@@ -37,6 +37,17 @@ Die Pizza-Bestellung schicken wir pünktlich gegen 19:30 Uhr ab. Wenn du zum
 ersten mal kommst und mitbestellen möchtest, schau bitte, dass du bis 19:30 Uhr
 da bist!
 
+### COVID-19 Schutzmaßnahmen
+
+Da wir uns in den Räumlichkeiten der Universität treffen, gelten die
+[Maßnahmen der Universität zum Schutz vor dem Coronavirus](https://www.uni-heidelberg.de/de/newsroom/massnahmen-der-universitaet-zum-schutz-vor-dem-coronavirus).
+Insbesondere bedeutet das (Stand 2022-06-29), dass während des Treffs im Raum
+eine FFP2-Maske oder eine medizinische Maske getragen werden muss, da wir
+vermutlich den Mindestabstand nicht einhalten können.
+
+Informiert euch aber bitte direkt unter obigem Link über die aktuellen genauen
+Regeln.
+
 ### Chaos-Stammtisch
 Jeden ersten Donnerstag im Monat machen wir statt dem normalen Treff einen
 Stammtisch. Dann treffen wir uns nicht in unserem normalen Raum, sondern in

@@ -24,6 +24,13 @@ Neugierig?
 
 Komm einfach vorbei! Der Treff ist offen für alle, neue Gesichter sind immer gerne gesehen.
 
+COVID-19 Schutzmaßnahmen
+===
+
+Da wir uns in den Räumlichkeiten der Universität treffen, gelten die
+[Maßnahmen der Universität zum Schutz vor dem Coronavirus](https://www.uni-heidelberg.de/de/newsroom/massnahmen-der-universitaet-zum-schutz-vor-dem-coronavirus).
+
+
 Nächstes Treffen
 ===
 
