@@ -85,7 +85,7 @@ module Jekyll
 					desc    << "\n\nVortragende/r: #{tuple['speaker']}" unless tuple['speaker'].nil? || tuple['speaker'].empty?
 					desc    << "\n\nhttp://www.openstreetmap.org/?mlat=#{site.config['treff_lat']}&mlon=#{site.config['treff_lon']}"
 
-					location = 'Im Neuenheimer Feld 368, Heidelberg'
+					location = 'Mathematikon B, Berliner Str. 41-49, 69120 Heidelberg'
 					url      = "#{site.config['url']}/anfahrt.html"
 				end
 
