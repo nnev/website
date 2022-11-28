@@ -4,8 +4,8 @@ title:    "Stammtisch: Urban Kitchen"
 
 locname:      Urban Kitchen
 phone:        06221 87338200
-site_url:     https://urban-kitchen-heidelberg.de
-menu_url:     https://urban-kitchen-heidelberg.de/#page-karten/1
+site_url:     https://www.urban-kitchen-heidelberg.com/
+menu_url:     https://www.urban-kitchen-heidelberg.com/karten
 
 address:      Poststraße 36/5, 69115 Heidelberg
 address_desc: "Die Urban Kitchen befindet sich im Alten Hallenbad, das sowohl Eingänge auf Seiten der Poststraße und der Bergheimer Straße hat. Haltestelle: Altes Hallenbad (Linien 26, 32, 34, 35)"
