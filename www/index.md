@@ -34,6 +34,8 @@ Da wir uns in den Räumlichkeiten der Universität treffen, gelten die
 Nächstes Treffen
 ===
 
+**2022-12-15: Ausnahmsweise ist der Treff in Seminarraum 1, im 2. Stockwerk des Mathematikons!**
+
 {% assign termin = page.termine | first %}
 
 <p itemscope itemtype="http://data-vocabulary.org/Event">
