@@ -3,14 +3,24 @@ layout: default
 title: Kontakt
 ---
 
+<pre style="float: left; font-weight: bold; width: 7rem; margin-right: 1rem">
+    __  ___
+   /  |/  /
+  / /|_/ /
+ / /  / /
+/_/  /_/atrix</pre>
+
+
+Du erreichst uns über [#ccchd:matrix.org](https://matrix.to/#/#ccchd:matrix.org)
+<br style="clear:both"/><br/>
+
 <pre style="float: left; font-weight: bold; width: 7rem; margin-right: 1rem">    _
    (_)_________
   / / ___/ ___/
  / / /  / /__
 /_/_/   \___/</pre>
 
-
-Der direkteste Weg, uns online zu erreichen, ist unser
+Oder
 [IRC](http://de.wikipedia.org/wiki/Internet_Relay_Chat)-Channel:
 [#chaos-hd auf robustirc.net](ircs://legacy-irc.robustirc.net/chaos-hd) (siehe
 [robustirc.net](http://robustirc.net/) für eine Anleitung zum Verbinden).
@@ -18,16 +28,12 @@ Rechne nicht unbedingt sofort mit einer Antwort, aber wenn du ein paar Minuten
 wartest, findet sich üblicherweise ein Gesprächspartner, der dir weiterhelfen
 kann.<br style="clear:both"/><br/>
 
-
-
 <span style="float: left; width: 7rem; font-size: 2rem;text-align: center; vertical-align: middle; line-height: 2rem; margin-right: 1rem">✉</span>
-Falls dir IRC nicht liegt, haben wir auch eine
+Falls dir Matrix/IRC nicht liegt, haben wir auch eine
 [Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/treff), bei
 der du dich anmelden kannst.
 
 <a data-no-turbolink href="https://www.noname-ev.de/w/Kommunikationskan%C3%A4le">Mehr Details finden sich im Wiki</a>.
-
-
 
 <span style="float: left; width: 7rem; font-size: 2rem;text-align: center; vertical-align: middle; line-height: 2rem; margin-right: 1rem">&#9742;</span>
 Während des Chaostreffs haben wir auch ein Handy, unter dem du uns erreichen kannst (vor allem wenn die Tür zu ist): [+49&nbsp;1579&nbsp;2307561](tel:004915792307561)
