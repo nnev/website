@@ -40,7 +40,7 @@ func init() {
 }
 
 func announceStammtisch(t *data.Termin) error {
-	maildraft := `Liebe Treffler,
+	maildraft := `Lieber Chaostreff,
 
 am kommenden Donnerstag ist wieder Stammtisch. Diesmal sind wir bei {{.Location}}.
 
@@ -71,7 +71,7 @@ func announceC14(t *data.Termin) error {
 		log.Fatal("Kann vortrag nicht lesen:", err)
 	}
 
-	maildraft := `Liebe Treffler,
+	maildraft := `Lieber Chaostreff,
 
 am kommenden Donnerstag wird {{.Speaker}} eine c¼h zum Thema
 
@@ -94,6 +94,22 @@ Wer mehr Informationen möchte:
 	}
 	mail := mailbuf.Bytes()
 	return sendAnnouncement(vortrag.Topic, mail)
+}
+
+func announceOverride(t *data.Termin) error {
+	if !t.Date.Valid {
+		return errors.New("Termin hat kein Datum")
+	}
+	if t.Override == "" {
+		return errors.New("Termin hat keinen override")
+	}
+	d := t.Date.Time.Format("2006-01-02")
+	subj := fmt.Sprintf("Treff %s: %s", d, t.Override)
+	msg := "Lieber Chaostreff,\n\n" + t.OverrideLong
+	if t.OverrideLong == "" {
+		msg = "[kein text, siehe Betreff]"
+	}
+	return sendAnnouncement(subj, []byte(msg))
 }
 
 func sendAnnouncement(subject string, msg []byte) error {
@@ -157,6 +173,9 @@ func RunAnnounce() error {
 
 	if t.Stammtisch.Bool {
 		return announceStammtisch(t)
+	}
+	if t.Override != "" {
+		return announceOverride(t)
 	}
 	return announceC14(t)
 }
