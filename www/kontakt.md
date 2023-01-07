@@ -51,8 +51,8 @@ Verantwortlicher Dienstebetreiber:
 
 <address>
 NoName e.V. (VR 333127, Amtsgericht Mannheim)
-Heinrich-Fuchs-Straße 108
-69126 Heidelberg
+Wielandtstraße 16
+69120 Heidelberg
 E-Mail: <img src="img/vorstand_mail.png" title="vorstand at noname-ev dot de" style="vertical-align: text-bottom">
 </address>
 
