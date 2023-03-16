@@ -34,6 +34,8 @@ Da wir uns in den Räumlichkeiten der Universität treffen, gelten die
 Nächstes Treffen
 ===
 
+**2023-03-16: Ausnahmsweise ist der Treff in Seminarraum 3, im 3. Stockwerk des Mathematikons!**
+
 {% assign termin = page.termine | first %}
 
 <p itemscope itemtype="http://data-vocabulary.org/Event">
