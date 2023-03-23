@@ -23,8 +23,6 @@ Im Neuenheimer Feld 205
 69120 Heidelberg
 </address>
 
-**2023-03-16: Ausnahmsweise ist der Treff in Seminarraum 3, im 3. Stockwerk des Mathematikons!**
-
 Am besten kommt man zu uns, wenn man von Norden in den Innenhof läuft und an der Tür in der Süd-West-Ecke kurz klopft.
 
 Die nächste Haltestelle ist das „[Bun&shy;sen&shy;gym&shy;na&shy;sium](http://fahrplanauskunft.vrn.de/vrn/XSLT_TRIP_REQUEST2?language=de&sessionID=0&name_destination=Neuenheim,%20Bunsengymnasium&type_destination=stop)“ (Bus 31, 32, Tram 21, 24). Par&shy;ken ist im Stadtteil Neuenheim (auf der anderen Seite der Berliner Straße) kostenfrei möglich, vor 19 Uhr sollte aber eine Parkscheibe verwendet werden [\[1\]](https://www.heidelberg.de/site/Heidelberg_ROOT/get/documents/heidelberg/PB5Documents/pdf/81_pdf_Parken_Neuenheim_1uebersichtsplan.pdf). Alternativ gibt es im nördlichen Bauteil des Mathematikons eine kostenpflichtige Tiefgarage.
