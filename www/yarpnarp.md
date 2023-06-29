@@ -43,10 +43,10 @@ nochmal hier auf diese Seite, bevor du zu Hause losläufst!
 
 <form method="POST">
 	<label for="nick">Dein Nick</label>
-	<input type="text" placeholder="Dein Nick" id="nick" name="nick" value="<<.Nick>>" required="required"/><br>
+	<input type="text" placeholder="Dein Nick" id="nick" name="nick" value="[[.Nick]]" required="required"/><br>
 
 	<label for="kommentar">Kommentar</label>
-	<input type="text" placeholder="Kommentar (Optional)" id="kommentar" name="kommentar" value="<<.Kommentar>>" /><br>
+	<input type="text" placeholder="Kommentar (Optional)" id="kommentar" name="kommentar" value="[[.Kommentar]]" /><br>
 
 	<label for="captcha">Captcha: Gebe hier "NoName e.V." ein:</label>
 	<input type="text" placeholder="NoName e.V." id="captcha" name="captcha" required="required" /><br>
@@ -59,17 +59,17 @@ nochmal hier auf diese Seite, bevor du zu Hause losläufst!
 ### Status
 
 <div>
-<< if .HasKommt >>
-	<< if .Kommt >>
+[[ if .HasKommt ]]
+	[[ if .Kommt ]]
 		<div class="yarpnarpstatus yarp">
 			<b>Dein Status:</b> Du kommst (ツ)
 		</div>
-	<< else >>
+	[[ else ]]
 		<div class="yarpnarpstatus narp">
 			<b>Dein Status:</b> Du kommst nicht (⊙︿⊙)
 		</div>
-	<< end >>
-<< end >>
+	[[ end ]]
+[[ end ]]
 </div>
 
 <table class="yarpnarp">

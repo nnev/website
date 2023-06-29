@@ -47,7 +47,7 @@ func writeError(errno int, res http.ResponseWriter, format string, args ...inter
 
 func YarpNarpHandler(res http.ResponseWriter, req *http.Request) {
 	var err error
-	tpl, err = template.New("").Delims("<<", ">>").ParseFiles(*gettpl)
+	tpl, err = template.New("").Delims("[[", "]]").ParseFiles(*gettpl)
 	if err != nil {
 		log.Fatal("Could not parse template:", err)
 	}
@@ -154,7 +154,7 @@ func main() {
 		log.Fatal("Could not connect to database:", err)
 	}
 
-	tpl, err = template.New("").Delims("<<", ">>").ParseFiles(*gettpl)
+	tpl, err = template.New("").Delims("[[", "]]").ParseFiles(*gettpl)
 	if err != nil {
 		log.Fatal("Could not parse template:", err)
 	}
