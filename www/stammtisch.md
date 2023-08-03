@@ -5,7 +5,11 @@ title: Chaos-Stammtisch
 
 # Chaos-Stammtisch
 
-Der Chaos-Stammtisch findet in wechselnden Lokalen statt. Wir reservieren nach Bedarf, bitte nutze daher das [Anmeldesystem](yarpnarp.html). Der Treffpunkt steht üblicherweise eine Woche im Voraus fest, ab dann kannst Du Dich auch ins System eintragen. Wir starten üblicherweise so gegen 19 Uhr.
+Der Chaos-Stammtisch findet in wechselnden Lokalen statt. Wir reservieren nach
+Bedarf, bitte nutze daher das [Anmeldesystem](yarpnarp.html). Der Treffpunkt
+steht üblicherweise eine Woche im Voraus fest, ab dann kannst Du Dich auch ins
+System eintragen. Wir starten so gegen 19 Uhr. Die Reservierung läuft im
+Allgemeinen auf den Namen "F. Nord".
 
 Du willst nichts verpassen? [Abonniere den ICS-Kalender](c14h.ics).
 
