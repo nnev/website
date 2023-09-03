@@ -15,9 +15,10 @@ kann via E-Mail erfolgen an die Adresse vorstand AT noname-ev DOT de.
 # Mitgliedschaft
 
 Mitglieder erhalten vom Verein einen Blog auf blogs.noname-ev.de, sowie einen
-Shell-Account auf dem Vereinsserver. Dort lässt sich zum Beispiel ein
-[irssi](http://www.irssi.org/) laufen lassen, um in den IRC-Channels des Treffs
-und des Vereins zu idlen.
+Shell-Account auf dem Vereinsserver. Von dort kann z.B. per Kommand-line tool
+die Website verwaltet werden und auf vereinsinterne
+[git-repositories](https://www.noname-ev.de/w/Infrastruktur#Git-Repos)
+zugegriffen werden.
 
 Mitgliedschaft beantragen kannst du, indem du den
 [Mitgliedsantrag](mitgliedsantrag.pdf) ausfüllst und einem Vorstandsmitglied

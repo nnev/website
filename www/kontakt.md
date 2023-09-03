@@ -14,22 +14,8 @@ title: Kontakt
 Du erreichst uns über [#ccchd:matrix.org](https://matrix.to/#/#ccchd:matrix.org)
 <br style="clear:both"/><br/>
 
-<pre style="float: left; font-weight: bold; width: 7rem; margin-right: 1rem">    _
-   (_)_________
-  / / ___/ ___/
- / / /  / /__
-/_/_/   \___/</pre>
-
-Oder
-[IRC](http://de.wikipedia.org/wiki/Internet_Relay_Chat)-Channel:
-[#chaos-hd auf robustirc.net](ircs://legacy-irc.robustirc.net/chaos-hd) (siehe
-[robustirc.net](http://robustirc.net/) für eine Anleitung zum Verbinden).
-Rechne nicht unbedingt sofort mit einer Antwort, aber wenn du ein paar Minuten
-wartest, findet sich üblicherweise ein Gesprächspartner, der dir weiterhelfen
-kann.<br style="clear:both"/><br/>
-
 <span style="float: left; width: 7rem; font-size: 2rem;text-align: center; vertical-align: middle; line-height: 2rem; margin-right: 1rem">✉</span>
-Falls dir Matrix/IRC nicht liegt, haben wir auch eine
+Falls dir Matrix nicht liegt, haben wir auch eine
 [Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/treff), bei
 der du dich anmelden kannst.
 
