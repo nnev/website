@@ -34,6 +34,8 @@ Da wir uns in den Räumlichkeiten der Universität treffen, gelten die
 Nächstes Treffen
 ===
 
+**2023-10-12: Heute ausnahmsweise im Seminarraum 1 (2. OG)**
+
 {% assign termin = page.termine | first %}
 
 <p itemscope itemtype="http://data-vocabulary.org/Event">
