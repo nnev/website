@@ -10,7 +10,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update && \
 # TODO: install as debian package once available
 RUN gem install icalendar
 
-ENV PGUSER=postgres PGHOST=postgres
+ENV PGUSER=postgres PGHOST=postgres PGDATABASE=nnev PGSSLMODE=disable
 # tell jekyll to use utf-8 (website build fails otherwise)
 ENV LC_ALL=C.UTF-8
 ENV GOPATH=/tmp/go

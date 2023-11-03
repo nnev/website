@@ -19,7 +19,7 @@ import (
 var (
 	addr    = flag.String("listen", "0.0.0.0:5417", "The address to listen on")
 	driver  = flag.String("driver", "postgres", "The database driver to use")
-	connect = flag.String("connect", "dbname=nnev host=/var/run/postgresql sslmode=disable", "The connection string to use")
+	connect = flag.String("connect", "", "The connection string to use")
 	gettpl  = flag.String("template", "/var/www/www.noname-ev.de/yarpnarp.html", "The template to serve for editing zusagen")
 	hook    = flag.String("hook", "", "A hook to run on every change")
 
