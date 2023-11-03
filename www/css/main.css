@@ -324,3 +324,7 @@ a.button:hover {
 	background: #CCBD8F;
 	cursor: pointer;
 }
+
+.language_switcher {
+	padding-left: 25px;
+}
