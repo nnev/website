@@ -17,7 +17,7 @@ Du erreichst uns über [#ccchd:matrix.org](https://matrix.to/#/#ccchd:matrix.org
 <span style="float: left; width: 7rem; font-size: 2rem;text-align: center; vertical-align: middle; line-height: 2rem; margin-right: 1rem">✉</span>
 Falls dir Matrix nicht liegt, haben wir auch eine
 [Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/treff), bei
-der du dich anmelden kannst.
+der du dich anmelden kannst: <img src="img/treff_mail.png" title="treff at noname-ev dot de" style="vertical-align: text-bottom">.
 
 <a data-no-turbolink href="https://www.noname-ev.de/w/Kommunikationskan%C3%A4le">Mehr Details finden sich im Wiki</a>.
 
@@ -44,7 +44,7 @@ E-Mail: <img src="img/vorstand_mail.png" title="vorstand at noname-ev dot de" st
 
 (Bitte die obige Mail-Adresse nur für Fragen zum Verein und der Webseite
 verwenden. Für alle andere Fragen (wie zum Beispiel zum Treff) gibt es die
-[Mailingliste] (https://eris.noname-ev.de/cgi-bin/mailman/listinfo/treff).)
+[Mailingliste](https://eris.noname-ev.de/cgi-bin/mailman/listinfo/treff).)
 
 ##### Haftung für Inhalte
 
