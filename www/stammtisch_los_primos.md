@@ -11,10 +11,10 @@ menu_url:     https://los-primos-catering.de/speisekarte/
 address:      Neugasse 21, 69117 Heidelberg
 address_desc: "Haltestelle: Bismarckplatz"
 
-lat: 49.4089186
-lon: 8.6927864
-map_lat: 49.4089186
-map_lon: 8.6927864
+lat: 49.40920
+lon: 8.69523
+map_lat: 49.40920
+map_lon: 8.69523
 map_zoom: 17
 ---
 Peruanisches Restaurant mit breiter Auswahl, inklusive vegetarischem und
