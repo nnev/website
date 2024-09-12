@@ -27,6 +27,8 @@ Komm einfach vorbei! Der Treff ist offen für alle, neue Gesichter sind immer ge
 Nächstes Treffen
 ===
 
+**2024-09-12: Heute Ausnahmsweise im Seminarraum 3 (3. OG)**
+
 {% assign termin = page.termine | first %}
 
 <p itemscope itemtype="http://data-vocabulary.org/Event">
