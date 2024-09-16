@@ -9,7 +9,7 @@ title: c¼h editieren
 <p>
 	Bitte speichere folgenden Link. Du brauchst ihn, wenn du in Zukunft deinen
 	Eintrag editieren willst:<br />
-	<a href="/edit_c14.html?id=(( .Id ))&pw=(( .Password.String ))">http://www.noname-ev.de/edit_c14.html?id=(( .Id ))&pw=(( .Password.String ))</a>
+	<a href="edit_c14.html?id=(( .Id ))&pw=(( .Password.String ))">http://www.noname-ev.de/edit_c14.html?id=(( .Id ))&pw=(( .Password.String ))</a>
 </p>
 (( end ))
 

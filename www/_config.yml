@@ -13,3 +13,11 @@ map_js: |
   maxZoom: 18,
   detectRetina: true
   }).addTo(map);
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: "pages"
+    values:
+      lang: "de"
