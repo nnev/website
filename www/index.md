@@ -27,8 +27,6 @@ Komm einfach vorbei! Der Treff ist offen für alle, neue Gesichter sind immer ge
 Nächstes Treffen
 ===
 
-**2024-10-03: Heute keinen Stammtisch, weil <a href="https://mrmcd.de">MRMCD</a>**
-
 {% assign termin = page.termine | first %}
 
 <p itemscope itemtype="http://data-vocabulary.org/Event">
