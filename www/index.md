@@ -15,7 +15,6 @@ Jeden Donnerstag ab 19 Uhr.
 
 Wo?
 ===
-**Heute (10.10) in SR2 (2te Etage, da eine Veranstaltung der Fachschaft stattfinded)**
 
 Meistens [Mathematikon, Im Neuenheimer Feld 205, Seminarraum A](anfahrt.html).<br/>
 Jeden ersten Donnerstag im Monat ist [Stammtisch](stammtisch.html) (abwechselnde Gaststätte).
