@@ -13,8 +13,8 @@ address_desc: "Haltestelle: Brückenstraße (Linien 5, 26, 31, 39)"
 
 lat: 49.413900
 lon: 8.691374
-lat: 49.413900
-lon: 8.691374
+map_lat: 49.413900
+map_lon: 8.691374
 map_zoom: 17
 ---
 Pizza und Pasta, um die 15€ pro Gericht. Sollte rechtzeitig reserviert werden, da nur begrenzt Platz ist.
