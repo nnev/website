@@ -49,6 +49,8 @@ Gegenwärtig sind von unserer Seite leider keine Termine in der nahen Zukunft ge
 
 # Unser Material
 
+[Folien](cryptoparty/digitale-selbstverteidigung_heidelberger-symposium_20250525.pdf) vom Workshop "Digitale Selbstverteidigung" Heidelberger-Symposium 25.05.2025
+
 ## Spuren im Netz
 * Handout zur [Spurenvermeidung im Browser](cryptoparty/spurenvermeidung_browser.pdf)
 * Handout zu [alternativen Diensten](cryptoparty/alternative_dienste.pdf)
