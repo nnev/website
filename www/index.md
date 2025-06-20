@@ -27,8 +27,6 @@ Komm einfach vorbei! Der Treff ist offen für alle, neue Gesichter sind immer ge
 Nächstes Treffen
 ===
 
-**2025-06-19: Heute keinen Treff, weil <a href="https://entropia.de/GPN23">GPN</a>**
-
 {% assign termin = page.termine | first %}
 
 <p itemscope itemtype="http://data-vocabulary.org/Event">
