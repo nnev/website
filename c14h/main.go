@@ -322,7 +322,7 @@ func main() {
 		log.Fatal("Could not connect to database:", err)
 	}
 
-	loc, err = time.LoadLocation("CET")
+	loc, err = time.LoadLocation("Europe/Berlin")
 	if err != nil {
 		log.Fatal("Could not load timezone-data:", err)
 	}
